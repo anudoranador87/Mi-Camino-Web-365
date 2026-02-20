@@ -1,0 +1,23 @@
+📓 Bitácora de Desarrollo | Día 20 de Febrero, 2026
+
+📝 Resumen del Día
+Hoy he alcanzado mi primer "clic" mental importante. Mi enfoque no ha sido solo escribir líneas de código, sino dominar el arte del debugging y entender el flujo de control profundo en JavaScript y la jerarquía de selectores en CSS.
+
+🛠️ Conceptos Técnicos Dominados:
+
+💻 JavaScript: Lógica y Estructura
+Gestión de Variables: Perfeccioné el uso de let y la reasignación dinámica.
+Template Literals: Implementé el uso de backticks (`) para inyectar variables en strings de forma limpia.
+Operador de Módulo (%): Clave para resolver la lógica de precios según productos pares/impares.
+Scope de Bloque: Entendí por qué las variables declaradas con let viven y mueren dentro de las llaves {}.
+
+🎨 CSS: Maquetación y Selectores
+Box Model: Análisis profundo de padding, border y margin para evitar el desbordamiento de contenedores.
+Interacción (UX): Uso de pseudoclases :hover para feedback visual.
+Selectores de Relación:
++ (Hermano adyacente).
+~ (Hermano general).
+🧩 Resolución de Problemas (Debug Log)
+
+💡 Mi Nota Mental
+"La lógica es mi superpoder, la sintaxis es solo la herramienta."
