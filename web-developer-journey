@@ -24,3 +24,12 @@ Mi estructura de Flexbox está empezando a tener sentido.
 
 💡 Mi Nota Mental
 "La lógica es mi superpoder, la sintaxis es solo la herramienta."
+
+📓 Bitácora de Desarrollo | Día 22 de Febrero, 2026 . Forjando el Formulario de Odin project.
+Hoy he terminado el proyecto del formulario de registro y, sinceramente, el cambio de nivel se nota. No solo he picado código, sino que he tomado decisiones de diseño y he usado herramientas profesionales.
+
+🧠 Lo que he aprendido hoy
+Grid y Alineación Real: He dominado cómo dividir la pantalla en columnas (2fr 3fr) y cómo usar grid-template-columns: 1fr 1fr dentro del formulario para que todos los inputs queden perfectamente alineados en parejas sin que se muevan según el texto.
+Jerarquía Tipográfica: He reservado la fuente Norse para el branding y el botón de acción, y he usado Inter para que los textos largos y los labels se lean sin esfuerzo.
+Sombras con Intención: He pasado de las sombras genéricas que no me gustaban a crear una sombra direccional (Bottom Shadow) usando el eje Y (box-shadow: 0 8px 15px rgba(0,0,0,0.1)). Ahora el formulario parece que flota, no que está sucio.
+Micro-interacciones: He configurado un efecto :hover profesional que no solo cambia el color, sino que eleva el botón con transform: translateY(-3px). Se siente "vivo".
