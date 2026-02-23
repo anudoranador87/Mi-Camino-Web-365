@@ -1,4 +1,4 @@
-📓 Bitácora de Desarrollo | Día 20 de Febrero, 2026
+**📓 Bitácora de Desarrollo | Día 20 de Febrero, 2026**
 
 📝 Resumen del Día
 Hoy he alcanzado mi primer "clic" mental importante. Mi enfoque no ha sido solo escribir líneas de código, sino dominar el arte del debugging y entender el flujo de control profundo en JavaScript y la jerarquía de selectores en CSS.
@@ -25,7 +25,7 @@ Mi estructura de Flexbox está empezando a tener sentido.
 💡 Mi Nota Mental
 "La lógica es mi superpoder, la sintaxis es solo la herramienta."
 
-📓 Bitácora de Desarrollo | Día 22 de Febrero, 2026 . Forjando el Formulario de Odin project.
+**📓 Bitácora de Desarrollo | Día 22 de Febrero, 2026 . Forjando el Formulario de Odin project.**
 Hoy he terminado el proyecto del formulario de registro y, sinceramente, el cambio de nivel se nota. No solo he picado código, sino que he tomado decisiones de diseño y he usado herramientas profesionales.
 
 🧠 Lo que he aprendido hoy
@@ -33,3 +33,40 @@ Grid y Alineación Real: He dominado cómo dividir la pantalla en columnas (2fr 
 Jerarquía Tipográfica: He reservado la fuente Norse para el branding y el botón de acción, y he usado Inter para que los textos largos y los labels se lean sin esfuerzo.
 Sombras con Intención: He pasado de las sombras genéricas que no me gustaban a crear una sombra direccional (Bottom Shadow) usando el eje Y (box-shadow: 0 8px 15px rgba(0,0,0,0.1)). Ahora el formulario parece que flota, no que está sucio.
 Micro-interacciones: He configurado un efecto :hover profesional que no solo cambia el color, sino que eleva el botón con transform: translateY(-3px). Se siente "vivo".
+
+
+**📓 Bitácora de Desarrollo | Día 23 de Febrero, 2026**
+
+"Hoy he dejado de hacer una web 'que funciona' para hacer una web profesional"
+Hoy ha sido un día de una intensidad brutal. He saltado del diseño visual a la lógica pura, enfrentándome a problemas que separan a los aficionados de los desarrolladores reales. 
+
+Así ha sido mi jornada:
+
+📱** La Batalla por la Adaptabilidad (Responsive Design)**
+No me he conformado con que la web se vea bien en mi monitor. He luchado con las Media Queries para que la experiencia sea fluida en móviles y tablets:
+El cambio de estrategia: He tenido que refactorizar el contenedor principal. Lo que en escritorio era un Grid organizado, en pantallas pequeñas lo he transformado en un Flexbox con flex-direction: column.
+Superando el Caos del CSS: Mi mayor dificultad aquí ha sido la Cascada de CSS. Los estilos globales se daban de bofetadas con los de las Media Queries. He tenido que aprender a priorizar y organizar mis selectores para que la web no se "rompiera" al encoger la ventana.
+
+🎨 Perfeccionando la Experiencia (UI & UX Avanzado)
+He querido que el usuario sienta que está en una web de calidad premium:
+Validación Inteligente: He implementado la pseudoclase :user-invalid. Me volví loco al principio porque los bordes rojos salían nada más cargar la página, lo cual era súper agresivo. Ahora, el feedback solo aparece después de que el usuario interactúa. Es un detalle de "pro".
+Micro-interacciones: He añadido efectos de transition y transform en los input:focus. Ahora los campos "reaccionan" cuando vas a escribir, dándole un toque táctil y moderno.
+Tipografía de Élite: He configurado las fuentes 'Norse' e 'Inter' ajustando el letter-spacing. He aprendido que el diseño está en los detalles invisibles.
+
+🥊 JavaScript y la Lógica de Reservas (El gran reto)
+"De la frustración al éxito: Cómo construí el motor de Campus & Crema"
+
+Hoy no ha sido un día cualquiera. Ha sido el día en el que he pasado de "escribir cosas que no entiendo" a controlar el flujo de mi propia aplicación. No ha sido fácil, y esta es la crónica de cómo lo he conseguido:
+1. El Momento del "Borrón y Cuenta Nueva"
+Empecé el día con un código que era una jungla. En lugar de seguir poniendo parches, tomé la decisión más difícil pero más inteligente: empezar de cero. He aprendido que, en programación, a veces hay que derribar el edificio para construir unos cimientos sólidos. He definido mi Array de mesasOcupadas con precisión, entendiendo que cada dato cuenta.
+2. El Laberinto de la Sintaxis (Mis dificultades)
+He tropezado varias veces con las mismas piedras, pero cada caída me ha enseñado algo:
+La guerra de los símbolos: Al principio me volvía loco con el = y el ===. Me frustraba ver que el "semáforo" no cambiaba de color. He descubierto que usar (estaOcupada === true) dentro de un bucle es como hacer una pregunta al aire sin anotar la respuesta.
+La solución fue entender que necesitaba una orden directa: estaOcupada = true;.
+El caos de los paréntesis y llaves: Ha sido mi mayor reto. He tenido errores de "gramática" de código que me daban ganas de mandarlo todo a paseo. Paréntesis que abrían pero no cerraban, o ese if que se quedaba cojo por no tener su "cajita" de paréntesis.
+El punto y coma traicionero: Hubo un momento en que puse un punto y coma justo después de un for, bloqueando todo el motor. Aprender a "ver" estos errores invisibles ha sido un entrenamiento visual increíble.
+
+🧠 Reflexión Final (Error Lógico)
+Hoy he visto que el desarrollo web es un equilibrio.
+De nada sirve un JS perfecto si la web se ve mal en un iPhone, y de nada sirve un CSS precioso si el botón de reserva no sabe distinguir una hora libre de una ocupada. 
+El error lógico de hoy ha sido entender que el diseño y la lógica son un solo cuerpo.
