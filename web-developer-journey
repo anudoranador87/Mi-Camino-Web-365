@@ -70,3 +70,19 @@ El punto y coma traicionero: Hubo un momento en que puse un punto y coma justo d
 Hoy he visto que el desarrollo web es un equilibrio.
 De nada sirve un JS perfecto si la web se ve mal en un iPhone, y de nada sirve un CSS precioso si el botón de reserva no sabe distinguir una hora libre de una ocupada. 
 El error lógico de hoy ha sido entender que el diseño y la lógica son un solo cuerpo.
+
+
+**📓 Bitácora de Desarrollo | Día 24 de Febrero, 2026**
+
+"Sesión de Entrenamiento: Algoritmos y Estructuras de Datos"
+
+🚀 Logros del día (Basados en ejercicios)
+Resolución de Casos de Uso: He realizado una serie de ejercicios prácticos simulando entornos reales (E-commerce, Sistemas de Login y Perfiles de Usuario).
+Construcción de Lógica Dinámica: A través de retos, he aprendido a generar estructuras de HTML dinámico mediante funciones y Template Literals.
+Arquitectura de Información: He practicado la anidación de datos, integrando Arrays dentro de Objetos para gestionar perfiles complejos.
+
+🥊 La "pelea" con el código (Aprendizaje basado en errores)
+Hoy la sesión de prácticas ha sido un "combate" constante contra la sintaxis y la lógica:
+Guerra de Símbolos: Durante los ejercicios, me "pelee" con el uso de () vs {} vs []. Tras varios intentos fallidos, he consolidado que las llaves son para objetos y los corchetes para listas.
+El desafío del "Return": En las prácticas de funciones, identifiqué el error común de intentar usar return fuera de su ámbito o confundirlo con console.log.
+Mutación vs Asignación: En el reto de gestión de inventario, sufrí las consecuencias de usar = en lugar de .push(), aprendiendo por las malas cómo un error de asignación puede destruir una base de datos de strings.
