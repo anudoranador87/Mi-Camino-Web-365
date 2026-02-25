@@ -14,6 +14,16 @@ For a recruiter, the question is always: *Can he actually solve problems?*. Here
 
 ---
 
+# 🧭 Learning Roadmap (Monthly View)
+
+| Month | Core Focus | Projects & Challenges | Key Skills |
+| :--- | :--- | :--- | :--- |
+| **January** | ✅ **Web Fundamentals (freeCodeCamp)** | Campus & Crema Web, Sign-up Forms | Semantic HTML5, CSS3, Basic Layout. |
+| **February** | 🔥 **CSS & JS Specialization (Meta)** | Mangata & Gallo, Card Game Logic, Reservation App (WIP), Leveling System | CSS in Depth, Array Logic, Functions, DOM Manipulation. |
+| **March** | 🏗️ **Coming Soon** | *To be defined...* | *To be defined...* |
+
+---
+
 ## 🗓️ [Day 20: February 20th, 2026]
 
 ### 📝 Daily Summary
@@ -91,3 +101,65 @@ Today was a day of **brutal intensity.** I jumped from visual design to pure log
 * **🧪 Mutation vs Assignment:** Learned the hard way how using **=** instead of **.push()** can destroy a string-based database.
 
 ---
+
+# 🗓️ [Day 25: February 25th, 2026]
+
+### 🏋️ "Training Session: Advanced DOM State & CSS Motion"
+
+---
+
+### 🚀 [Daily Achievements](#)
+* **`🔵 Circular State Engine`**: Successfully built a logic loop that increments from level 1 to 10 and executes a hard reset to `0` upon reaching level 11.
+
+* **`🔵 Legendary Mode`**: Developed a visual trigger that transforms the UI (scale, gold borders, and glow) when the user hits the maximum level milestone.
+---
+### 🥊 [The "Fight" with the Code (The Real Debugging)](#)
+
+> [!IMPORTANT]
+> **Session Summary:** Today was a high-intensity combat between JS Logic and CSS Rendering.
+*
+* **↪️ The Premature Cleanup (Else Conflict):**
+    * **The Fail:** When the level reset to 0, my `else` statement was stripping the "Legendary" styles instantly. The user couldn't even see the achievement before it vanished.
+    * **The Fix:** I restructured the conditional logic to ensure the UI state lifecycle allows for visual feedback before the reset phase takes over.
+* **🧪 The Syntax Nightmare (Parenthesis & dots):**
+    * **The Fail:** The script crashed due to a stray parenthesis in `else{(this.classList...` and a common beginner error: adding dots inside `classList.add('.class')`.
+    * **The Fix:** Hard-learned lesson: `classList` methods are already looking for classes, so the dot `.` is redundant and breaks the selector.
+
+---
+
+### 🏆 [Visual Proof of Achievement](#)
+
+![Level Up Achievement](./cardsrestart.gif)
+
+
+--
+
+### 🏋️ "Training Session on afternoon: JS Error Handling & Diagnostics (Meta - Coursera)"
+
+### 🚀 Daily Achievements
+* **`🔴 Specialized Training`**: Advanced through the **Meta - Coursera** curriculum, focusing on code resilience via error management.
+* **`🔴 Error Classification`**: Mastered the identification of the "4 Horsemen" of JS errors: **Reference**, **Type**, **Range**, and **Syntax**.
+* **`🔴 Fault Tolerance`**: Implemented `try...catch` blocks to build professional applications that don't crash due to unexpected failures.
+* **`🔴 Error Object Anatomy`**: Leveraged `.name` and `.message` properties to extract critical data during debugging.
+
+### 🥊 The "Fight" with the Code (Error Logs)
+
+* **⚔️ The ReferenceError:**
+    * **The Fail:** Attempting to call an undeclared variable.
+    * **The Lesson:** Without `let` or `const`, JavaScript cannot find the "character" in memory.
+* **⚔️ The TypeError:**
+    * **The Fail:** Using incompatible methods (e.g., `.toUpperCase()` on a number).
+    * **The Lesson:** Each data type has its own tools; you can't whisk an egg with a screwdriver.
+* **⚔️ The RangeError:**
+    * **The Fail:** Passing numerical values that exceed legal limits (e.g., `new Array(-1)`).
+    * **The Lesson:** Forcing logical boundaries halts the execution engine.
+* **⚔️ The SyntaxError:**
+    * **The Fail:** Missing a brace `}` or a parenthesis `)`.
+    * **The Lesson:** A "grammar" error that prevents the code from even starting.
+
+### 🧠 Engineering Reflection: The Logical Error
+
+Thanks to the **Meta** materials, I’ve internalized that logical errors are the most critical because the console won't warn you. Constant review and critical thinking are our best defenses.
+
+---
+

@@ -12,6 +12,16 @@ Para un reclutador, la duda siempre es: *¿Realmente sabe resolver problemas?*. 
 * **Mentalidad de Debugging:** No solo muestro el código que funciona, sino cómo **"derribé el edificio"** para construir cimientos más sólidos cuando las cosas se pusieron difíciles.
 * **Seniority en Actitud:** Mi experiencia previa no es un paréntesis; es el **motor** que acelera mi capacidad de aprendizaje y mi visión de producto orientada al usuario real.
 
+# 🧭 Roadmap de Aprendizaje (Vista Mensual)
+
+| Mes | Tema Principal | Proyectos y Retos | Habilidades Clave |
+| :--- | :--- | :--- | :--- |
+| **Enero** | ✅ **Fundamentos Web (freeCodeCamp)** | Web Campus & Crema Teatinos, Formularios de Registro | HTML5 Semántico, CSS3, Maquetación básica. |
+| **Febrero** | 🔥 **Especialización CSS & JS (Meta)** | Mangata & Gallo, Juego de Cartas, App de Reservas (WIP), Sistema de Niveles | CSS in Depth, Lógica de Arrays, Funciones, Manipulación del DOM. |
+| **Marzo** | 🏗️ **Próximamente** | *Por definir...* | *Por definir...* |
+
+---
+
 ## 🗓️ [Día 20 de Febrero, 2026]
 ### 📝 Resumen del Día
 Hoy he alcanzado mi primer **"clic" mental importante**. Mi enfoque no ha sido solo escribir líneas de código, sino dominar el arte del **debugging** y entender el flujo de control profundo en JavaScript y la jerarquía de selectores en CSS.
@@ -91,3 +101,53 @@ Hoy la sesión de prácticas ha sido un **"combate" constante** contra la sintax
 * **⚔️ Guerra de Símbolos:** Durante los ejercicios, me **"pelee"** con el uso de `()` vs `{}` vs `[]`. Tras varios intentos fallidos, he consolidado que las llaves son para objetos y los corchetes para listas.
 * **↪️ El desafío del "Return":** En las prácticas de funciones, identifiqué el error común de intentar usar **return** fuera de su ámbito o confundirlo con **console.log**.
 * **🧪 Mutación vs Asignación:** En el reto de gestión de inventario, sufrí las consecuencias de usar `=` en lugar de `.push()`, aprendiendo por las malas cómo un error de asignación puede destruir una base de datos de strings.
+
+
+## 🗓️ [Día 25 de Febrero, 2026]
+
+### 🚀 [Logros del Día](#)
+
+* **`🔵 Motor de Estado Circular`**: Creación de un bucle lógico que incrementa del 1 al 10 y reinicia a `0` al llegar al nivel 11.
+
+* **`🔵 Modo Legendario`**: Disparador visual (escala, bordes dorados y brillo) al alcanzar el nivel máximo.
+
+### 🥊 [La "Pelea" con el Código (Depuración Real)](#)
+
+* **↪️ El Conflicto del Else (Limpieza Prematura):**
+    * **Fallo:** Al volver a 0, el efecto dorado desaparecía tan rápido que mataba la experiencia del usuario.
+    * **Solución:** Reorganización del flujo `if/else` para priorizar la persistencia visual del hito alcanzado.
+
+* **🧪 Pesadilla de Sintaxis:**
+    * **Fallo:** Código muerto por un paréntesis extra `{(this...` y por usar puntos `.` dentro de `classList`.
+    * **Solución:** Consolidación de sintaxis: `classList` no lleva punto y los bloques de código deben estar limpios de caracteres huérfanos.
+
+    ### 🏆 [Prueba visuual del logro](#)
+    
+    ![Subida de nivel](./cardsrestart.gif)
+  
+    
+    ---
+
+### 🏋️ "Sesión de Entrenamiento por la tarde : Diagnóstico y Gestión de Errores en JS (Meta - Coursera)"
+
+### 🚀 Logros del día
+* **`🔴 Formación Especializada`**: Avance en el curso de **Meta en Coursera**, profundizando en la resiliencia del código a través de la gestión de errores.
+* **`🔴 Clasificación de Errores`**: Identificación y resolución de los 4 jinetes del apocalipsis en JS: **Reference**, **Type**, **Range** y **Syntax**.
+* **`🔴 Estructuras de Control de Fallos`**: Implementación de bloques `try...catch` para crear aplicaciones profesionales que no se detienen ante fallos inesperados.
+* **`🔴 Anatomía del Objeto Error`**: Uso de las propiedades `.name` y `.message` para extraer información crítica durante el debugging.
+
+### 🥊 La "pelea" con el código (Tipos de errores detectados)
+
+* **⚔️ El Error de Referencia (ReferenceError):** * **Fallo:** Llamar a una variable no declarada.
+    * **Lección:** Sin `let` o `const`, JavaScript no encuentra el "personaje" en memoria.
+* **⚔️ El Conflicto de Tipos (TypeError):** * **Fallo:** Usar métodos incompatibles (ej: `.toUpperCase()` en un número).
+    * **Lección:** Cada tipo de dato tiene sus propias herramientas; no puedes batir un huevo con un destornillador.
+* **⚔️ Fuera de Rango (RangeError):** * **Fallo:** Valores numéricos fuera de los límites legales (ej: `new Array(-1)`).
+    * **Lección:** Forzar los límites lógicos de JS detiene el motor de ejecución.
+* **⚔️ La Barrera de la Sintaxis (SyntaxError):** * **Fallo:** Olvidar una llave `}` o un paréntesis `)`.
+    * **Lección:** Es un error de gramática que impide que el código siquiera arranque.
+
+### 🧠 Reflexión de Ingeniería: El Error Lógico
+Gracias a los materiales de **Meta**, hoy he interiorizado que los errores lógicos son los más críticos porque la consola no te avisa. La revisión constante y el pensamiento crítico son nuestra mejor defensa.
+
+---
