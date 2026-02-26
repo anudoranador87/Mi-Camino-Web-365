@@ -163,3 +163,76 @@ Thanks to the **Meta** materials, I’ve internalized that logical errors are th
 
 ---
 
+# 📔 Dev Log - Jose María
+## 📅 Date: February 26th, 2026
+## 🎯 Status: Growth & Deep Understanding
+
+---
+
+### 📖 The Context: The Coursera Exam
+Today I completed the official **Coursera** exam on JavaScript functions. Although the system gave me a passing grade, it wasn't enough for me. The exam focused heavily on theory: using `%c` for console styling, local variable scope, and basic function chaining.
+
+Despite having the certificate, I felt the **"syntax nightmare"** was still there. I didn't fully grasp how data traveled from one function to another or why certain symbols were used. The exam felt like a memory test; I wanted a logic test.
+
+---
+
+### 🚀 The Decision: Going Beyond Theory
+Dissatisfied with just "passing the test," I decided to bring the code down to earth. I set aside the theoretical exercises and set out to build a **Real-World Case: A Supermarket Ticket Generator**.
+
+My goal was to understand three things the exam didn't quite clarify:
+1. **The Data Source:** Where do variables come from if they aren't defined at the top? (Understood: Parameters act as "reserved seats").
+2. **Communication:** How does one function pass its result to the next? (Understood: The flow from `return` to argument).
+3. **Invocation:** Why can't I use the `+` sign to call a function? (Understood: Parentheses `()` are the only real "power switch").
+
+---
+
+### 🛠️ Technical Achievement: Modular Architecture
+I designed a three-tier system that I now understand perfectly:
+* **Processor:** `formatearPrecio` (Transforms numbers into currency).
+* **Interface:** `imprimirTicket` (Displays the message to the human user).
+* **Controller:** `realizarCompra` (The "Boss" function that coordinates the flow between the other two).
+
+---
+
+### 🥊 Debugging Battle (What I actually learned)
+* **Conceptual Error:** Trying to "add" functions using `+`. Fixed by understanding that functions must be **invoked**.
+* **Syntax Error:** Mixing `${}` with parentheses. I learned that Template Literals are surgical: if you don't close the braces correctly, the code dies.
+* **The "Click" Moment:** Understanding that `product` and `price` are temporary names I choose so the code makes sense to other humans.
+
+---
+
+### 📸 Final Code Structure
+```javascript
+function formatearPrecio(cantidad) {
+    return `€${cantidad}`;
+}
+
+function imprimirTicket(producto, precioConSimbolo) {
+    console.log(`Has purchased: ${producto} for a total of ${precioConSimbolo}`);
+}
+
+function realizarCompra(nombreArticulo, valorNumerico) {
+    let resultado = formatearPrecio(valorNumerico);
+    imprimirTicket(nombreArticulo, resultado);
+}
+
+// The call that starts it all:
+realizarCompra("Apples", 5);
+
+---
+---
+
+## 💎 Project: Mangata & Gallo - Form Implementation
+
+**Focus:** Building and connecting the customer inquiry form for the jewelry catalog.
+
+* **JavaScript Integration:** Linked the form to a `script.js` file using the `<script>` tag at the end of the body to handle submission logic.
+* **Asset Management:** Applied CSS to the form background to ensure the brand's aesthetic remains consistent without distorting the background imagery.
+
+### ⚠️ Technical Debt (Current Status)
+* **Functional Logic:** The script is successfully linked, but the data collection logic is still being refined.
+* **The "Fight":** Currently debugging a logical error where the form data isn't being captured correctly on the "submit" event. I plan to apply the "Master Function" structure learned today to better organize this process.
+* **Goal:** Achieve a fully functional validation system for the contact section.
+
+![Current state of the form and developer console](captura1.png)
+

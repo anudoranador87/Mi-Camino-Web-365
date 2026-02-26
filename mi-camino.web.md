@@ -151,3 +151,79 @@ Hoy la sesión de prácticas ha sido un **"combate" constante** contra la sintax
 Gracias a los materiales de **Meta**, hoy he interiorizado que los errores lógicos son los más críticos porque la consola no te avisa. La revisión constante y el pensamiento crítico son nuestra mejor defensa.
 
 ---
+
+
+# 
+# 📔 Diario de Bitácora - Jose María
+## 📅 Fecha: 26 de febrero de 2026
+## 🎯 Estado: Superación y Comprensión Profunda
+
+---
+
+### 📖 El Contexto: El Examen de Coursera
+Hoy completé el examen oficial de **Coursera** sobre funciones en JavaScript. El sistema marcó un aprobado, pero para mí no era suficiente. El examen se centraba mucho en la teoría: el uso de `%c` para dar formato a la consola, el manejo de variables locales y el encadenamiento básico. 
+
+A pesar de tener el certificado, sentía que la **"pesadilla de la sintaxis"** seguía ahí. No entendía del todo cómo los datos viajaban de una función a otra ni por qué usábamos ciertos símbolos. El examen era una prueba de memoria; yo quería una prueba de lógica.
+
+---
+
+### 🚀 La Decisión: Ir más allá de la teoría
+Inconforme con solo "pasar el test", decidí bajar el código al suelo. Aparqué los ejercicios teóricos y me propuse construir un **Caso Real: Un Generador de Tickets de Supermercado**. 
+
+Mi objetivo era entender tres cosas que el examen no me terminaba de aclarar:
+1.  **El origen de los datos:** ¿De dónde salen las variables si no están definidas arriba? (Entendido: Parámetros como asientos reservados).
+2.  **La comunicación:** ¿Cómo le pasa una función el resultado a la siguiente? (Entendido: El flujo del `return` al argumento).
+3.  **La activación:** ¿Por qué no puedo usar el signo `+` para llamar a una función? (Entendido: El uso de los paréntesis `()` como el único interruptor real).
+
+---
+
+### 🛠️ El Logro Técnico: Arquitectura Modular
+He diseñado un sistema de tres niveles que ahora entiendo a la perfección:
+* **Procesador:** `formatearPrecio` (Transforma el número en dinero).
+* **Interfaz:** `imprimirTicket` (Muestra el mensaje al humano).
+* **Controlador:** `realizarCompra` (La jefa que coordina el flujo entre ambas).
+
+---
+
+### 🥊 Batalla de Debugging (Lo que realmente aprendí)
+* **Error de concepto:** Intentar sumar funciones con `+`. Corregido al entender que la función se **invoca**.
+* **Error de sintaxis:** Mezclar `${}` con paréntesis. Aprendí que los Template Literals son quirúrgicos: si no cierras bien la llave, el código muere.
+* **El momento "Click":** Entender que `producto` y `precio` son nombres temporales que yo elijo para que el código sea legible para otros humanos.
+
+---
+
+### 📸 Estructura del Código Final
+```javascript
+function formatearPrecio(cantidad) {
+    return `€${cantidad}`;
+}
+
+function imprimirTicket(producto, precioConSimbolo) {
+    console.log(`Has comprado: ${producto} por un total de ${precioConSimbolo}`);
+}
+
+function realizarCompra(nombreArticulo, valorNumerico) {
+    let resultado = formatearPrecio(valorNumerico);
+    imprimirTicket(nombreArticulo, resultado);
+}
+
+// La llamada que lo inicia todo:
+realizarCompra("Manzanas", 5);
+
+---
+
+## 💎Avances con el "Proyecto": Mangata & Gallo - Implementación de Formulario
+
+**Objetivo:** Construcción y conexión del formulario de consulta para el catálogo de joyería.
+
+* **Integración de JavaScript:** He vinculado el formulario a un archivo `script.js` mediante la etiqueta `<script>` al final del body.
+ Mi meta es aplicar la lógica de funciones que he practicado hoy para gestionar el envío.
+* **Gestión de Activos (Assets):** Aplicación de CSS al fondo del formulario para mantener la estética de marca (lujo y precisión) sin distorsionar las imágenes de fondo.
+
+### ⚠️ Deuda Técnica (Estado Actual)
+* **Lógica Funcional:** El script está vinculado, pero estoy refinando la captura de datos.
+* **El "Combate":** Estoy depurando un error lógico donde los datos no se capturan correctamente en el evento `submit`. 
+Voy a aplicar la estructura de "Función Maestra" que aprendí hoy para organizar mejor este proceso.
+* **Meta:** Lograr un sistema de validación total para la sección de contacto.
+
+![Captura del estado actual del formulario y consola](captura1.png)
