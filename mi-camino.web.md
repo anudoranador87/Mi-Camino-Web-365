@@ -227,3 +227,41 @@ Voy a aplicar la estructura de "Función Maestra" que aprendí hoy para organiza
 * **Meta:** Lograr un sistema de validación total para la sección de contacto.
 
 ![Captura del estado actual del formulario y consola](captura1.png)
+
+
+#
+# 📔 Diario de Bitácora - Jose María
+## 📅 Fecha: 27 de febrero de 2026
+## 🎯 Estado: Comprension de javascript aplicado a botones
+
+
+### 🌓 El Logro: Modo Oscuro Nativo
+Hoy he finalizado la implementación de un **Modo Oscuro** funcional en mi portafolio web. Tras varias sesiones de trabajo, he logrado que la interfaz se adapte a las preferencias del usuario, mejorando la accesibilidad y la salud visual.
+
+#### 🛠️ ¿Cómo lo he hecho?
+
+1. **Lógica con JavaScript**: Utilicé manipulación del DOM para crear un *Event Listener* que detecta el clic en el botón de cambio de tema, activando un `classList.toggle('dark-mode')` en el cuerpo del documento.
+
+2. **Arquitectura CSS (Design Tokens)**: En lugar de cambiar colores de forma individual, diseñé un sistema de **Variables CSS (`Custom Properties`)**. Esto permite que el cambio de tema sea centralizado, escalable y extremadamente rápido.
+
+#### ⚔️ Dificultades y Aprendizaje
+* **Orden vs. Caos**: Me enfrenté a una selva de estilos duplicados y colores fijos (*hardcoded*) que bloqueaban la herencia. Limpiar el código fue vital para que las variables funcionaran.
+* **Sintaxis Estricta**: Descubrí que el CSS es implacable; una llave `}` mal cerrada invalidaba secciones enteras de mi código. Aprendí que la **jerarquía y el orden** no son opcionales, sino la base de un desarrollo profesional.
+
+#### 🚀 Resultado
+He pasado de un archivo desordenado a una arquitectura limpia que impresiona por su eficiencia.
+
+![🎥Demostración Modo Oscuro](dark-button.gif)
+
+# 📓 Bitácora de Aprendizaje - JavaScript POO
+
+## Profundización en POO y Herencia (Curso de Meta)
+### 📝 Resumen del Progreso 
+
+* **S (Situación):** 📍 Me encontraba avanzando en el curso de **Meta**, enfrentándome a conceptos de Programación Orientada a Objetos (POO) que me resultaban muy abstractos y difíciles de visualizar en la práctica.
+* **T (Tarea):** 🎯 El objetivo era comprender y aplicar la jerarquía de clases y la herencia en JavaScript, pasando de la teoría a la construcción de un modelo funcional de `Persona` y `Empleado`.
+* **A (Acción):** 🛠️ Diseñé y depuré una estructura de clases donde:
+    * Implementé `extends` para establecer la herencia entre clases.
+    * Corregí la implementación de `super()`, comprendiendo su función como invocador del constructor padre para la inicialización de propiedades.
+    * Aseguré el acceso correcto a los datos mediante `this` y optimicé la salida de datos utilizando **Template Literals** (backticks).
+* **R (Resultado):** ✅ Logré aterrizar conceptos complejos en un código sólido y funcional. He consolidado el dominio de la mecánica de herencia, lo que me permite estructurar aplicaciones más escalables en mis próximos proyectos.

@@ -236,3 +236,41 @@ realizarCompra("Apples", 5);
 
 ![Current state of the form and developer console](captura1.png)
 
+
+
+# 📔 Dev Log - Jose María
+## 📅 Date: February 27th, 2026
+## 🎯 Status: Dark Mode button implemented
+
+### 🌓 The Achievement: Native Dark Mode
+Today I finalized the implementation of a functional **Dark Mode** for my web portfolio. After several working sessions, I’ve successfully made the interface adapt to user preferences, improving accessibility and eye comfort.
+
+#### 🛠️ How I did it
+1. **JavaScript Logic**: I used DOM manipulation to create an *Event Listener* that detects clicks on the theme toggle button, triggering a `classList.toggle('dark-mode')` on the document body.
+2. **CSS Architecture (Design Tokens)**: Instead of changing colors individually, I designed a system using **CSS Variables (`Custom Properties`)**. This makes the theme switch centralized, scalable, and extremely fast.
+
+#### ⚔️ Challenges & Learning
+* **Order vs. Chaos**: I faced a "jungle" of duplicated styles and hardcoded colors that were blocking inheritance. Refactoring the code was essential for the variables to work properly.
+* **Strict Syntax**: I discovered that CSS is unforgiving; a single misplaced closing brace `}` could invalidate entire sections of my code. I learned that **hierarchy and order** are not optional, but the foundation of professional development.
+
+#### 🚀 Result
+I moved from a cluttered file to a clean architecture that stands out for its efficiency.
+
+![### 🎥 Proof of Work](dark-button.gif)
+
+
+
+## Session: Deep Dive into OOP and Inheritance (Meta Course)
+**Date:** February 27, 2026
+
+### 📝 Progress Summary 
+
+* **S (Situation):** 📍 While progressing through the **Meta** specialization, I encountered Object-Oriented Programming (OOP) concepts that felt highly abstract and challenging to visualize in practice.
+* **T (Task):** 🎯 My goal was to understand and apply class hierarchy and inheritance in JavaScript, moving from theory to building a functional `Person` and `Employee` model.
+* **A (Action):** 🛠️ I designed and debugged a class structure where I:
+    * Implemented `extends` to establish inheritance between classes.
+    * Refined the use of `super()`, learning to invoke it as a function to initialize parent properties correctly.
+    * Ensured proper data access using `this` and optimized the output formatting with **Template Literals** (backticks).
+* **R (Result):** ✅ I successfully translated abstract concepts into solid, functional code. I have consolidated my mastery of inheritance mechanics, enabling me to build more scalable logic for my upcoming web development projects.
+
+---
