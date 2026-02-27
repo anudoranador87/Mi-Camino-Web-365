@@ -230,7 +230,7 @@ Voy a aplicar la estructura de "Función Maestra" que aprendí hoy para organiza
 ![Captura del estado actual del formulario y consola](captura1.png)
 
 
-# 📓 THE 365-DAY DEV JOURNEY: Jose Aparicio
+
 
 ## 🗓️ [Día 27 de Febrero, 2026]
 ### 🎯 Estado: Comprensión de JavaScript aplicado a componentes e interfaces
@@ -254,7 +254,7 @@ Hoy he finalizado la implementación de un **Modo Oscuro** funcional en mi porta
 #### 🚀 Resultado
 He pasado de un archivo desordenado a una arquitectura limpia que impresiona por su eficiencia.
 
-![🎥Demostración Modo Oscuro](dark.button.gif)
+![🎥Demostración Modo Oscuro](dark-button.gif)
 
 ### 📓 Bitácora de Aprendizaje - JavaScript POO
 **Sesión:** Profundización en POO y Herencia (Curso de Meta)
@@ -272,15 +272,3 @@ He pasado de un archivo desordenado a una arquitectura limpia que impresiona por
 
 
 ---
-
-### 💎 Avances con el "Proyecto": Mangata & Gallo
-**Objetivo:** Construcción y conexión del formulario de consulta para el catálogo de joyería.
-
-***Integración de JavaScript:** He vinculado el formulario a un archivo `script.js` mediante la etiqueta `<script>` al final del body.
-***Gestión de Assets:** Aplicación de CSS al fondo del formulario para mantener la estética de marca (lujo y precisión) sin distorsionar las imágenes.
-
-#### ⚠️ Deuda Técnica (Estado Actual)
-***Lógica Funcional:** El script está vinculado, pero estoy refinando la captura de datos.
-***El "Combate":** Estoy depurando un error lógico donde los datos no se capturan correctamente en el evento `submit`. Voy a aplicar la estructura de "Función Maestra" aprendida hoy.
-
-> **💡 Nota Mental:** "La lógica es mi superpoder, la sintaxis es solo la herramienta."
