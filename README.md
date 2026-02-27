@@ -218,6 +218,7 @@ function realizarCompra(nombreArticulo, valorNumerico) {
 
 // The call that starts it all:
 realizarCompra("Apples", 5);
+```
 
 ---
 ---
@@ -256,9 +257,10 @@ Today I finalized the implementation of a functional **Dark Mode** for my web po
 #### 🚀 Result
 I moved from a cluttered file to a clean architecture that stands out for its efficiency.
 
-![### 🎥 Proof of Work](dark-button.gif)
+#### 🚀 Results
 
 
+![🎥Demostración Modo Oscuro](dark.button.gif)
 
 ## Session: Deep Dive into OOP and Inheritance (Meta Course)
 **Date:** February 27, 2026
