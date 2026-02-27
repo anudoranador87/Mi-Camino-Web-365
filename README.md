@@ -260,7 +260,7 @@ I moved from a cluttered file to a clean architecture that stands out for its ef
 #### 🚀 Results
 
 
-![🎥Demostración Modo Oscuro](dark.button.gif)
+![🎥Demostración Modo Oscuro](dark-button.gif)
 
 ## Session: Deep Dive into OOP and Inheritance (Meta Course)
 **Date:** February 27, 2026
