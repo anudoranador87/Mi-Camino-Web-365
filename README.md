@@ -276,3 +276,96 @@ I moved from a cluttered file to a clean architecture that stands out for its ef
 * **R (Result):** ✅ I successfully translated abstract concepts into solid, functional code. I have consolidated my mastery of inheritance mechanics, enabling me to build more scalable logic for my upcoming web development projects.
 
 ---
+
+
+# 📔 Logbook - Jose María
+
+## 📅 Date: February 28, 2026
+
+## 🚀 Phase 1: Foundations of EquiShift Málaga Architecture
+
+---
+
+#### 🌟 SITUATION (The Challenge of Fair Scheduling)
+
+In my workplace in Málaga, I have identified that manual shift management fails in the most sacred aspect: **rest equity**. The complexity of mixing 37.5h and 40h contracts results in an unequal and unfair distribution of free weekends by the end of the year. To solve this real-world problem, I am developing the **EquiShift** application over the coming months.
+
+**Today's Objective:** Design a logical core that guarantees **everyone has the same number of free weekends per year**. I’m not just looking for an Excel sheet; I aim to code a mathematical rotation system where the schedule is, for the first time, truly egalitarian for everyone.
+
+---
+
+### 🎯 TASK (Initial Goals)
+
+1. **Data Modeling (WIP):** Define the object structure for employees. This is a functional prototype, not the final list.
+2. **Location Dataset:** Map the **Málaga 2026** holiday calendar.
+3. **Rotation Logic (Research):** Study the use of modular arithmetic (`%`) for the future shift wheel.
+
+---
+
+### 🛠️ ACTION (Actions & Challenges)
+
+**1. Defining Structures (Initial Objects)**
+I created the `trabajadores` (workers) array. The key here has been **scalability**:
+* Each object contains contract metadata and day balances.
+* I have prepared the `calendario: []` array. It’s currently empty as I haven't built the engine to populate it yet, but the "hook" is already installed.
+
+**2. Mapping Local Holidays**
+I injected key dates into the code, such as August 19th (Feria) and September 8th (Victoria).
+* **Technical Difficulty:** Understanding how JavaScript handles dates compared to strings. I decided to use the `YYYY-MM-DD` format to avoid timezone errors in this initial phase.
+
+#### 📂 Data Model Structure (Snippet)
+
+To ensure scalability and **algorithmic fairness**, each employee is defined by an object with specific metadata:
+
+```javascript
+{ 
+  id: 1, 
+  nombre: "Jose María", 
+  contrato: 37.50,         // Base for overtime/excess hours calculation
+  festivosDisponibles: 13, // Dynamic balance based on Málaga 2026 agreement
+  vacacionesDisponibles: 28, 
+  calendario: []           // Target for the master loop output
+}
+
+### 3. Debug Log (Today's "Fight")
+
+* **Data Nesting:** I struggled with the syntax of objects within arrays. A simple error in a comma or a brace `{}` reminded me that in Phase 1, syntactic discipline is more important than speed.
+* **Deduction Logic:** I outlined the `Balance--` logic, but it’s not yet automated. I’ve realized I need a validator to prevent negative balances.
+
+---
+
+### 🏆 RESULT (Milestones Achieved Today)
+
+* ✅ **Functional Skeleton:** I don't have the App yet, but I have its "genetic map."
+* ✅ **Validated Dataset:** Málaga 2026 holidays are already integrated into the dev environment.
+* ✅ **Architectural Clarity:** I’ve moved from a mental idea to an interconnected object structure.
+
+---
+
+### 🚧 NEXT STEPS (Technical Debt)
+
+* [ ] **Loop Engine:** Build the `for` loop to iterate through all 365 days.
+* [ ] **Equity Algorithm:** Apply the `%` operator so weekend rotation becomes automatic.
+* [ ] **Contract Validator:** Automatically differentiate holiday treatment for 37.5h contracts.
+
+---
+
+### 🏋️ Training Session: Fundamentals & Agility (Afternoon)
+
+**Objective:** Gain fluency in modern syntax and complex data manipulation to prepare the **EquiShift** rotation engine.
+
+* **Data Structures:** Intensive practice on **nesting Objects within Arrays**. I consolidated the ability to access and modify specific employee properties (like `festivosDisponibles`) using loops.
+* **Functional Logic (ES6+):** Implementation of **Arrow Functions** for quick calculations. I migrated traditional logic to arrow functions to process variables like intensity and salary, optimizing code cleanliness.
+* **Flow Control:** Using **`for` loops** to simulate chronological daily progress, validating rest conditions through nested **`if/else` conditionals**.
+
+---
+
+### 🥊 Debug Log (Challenges Overcome)
+
+* **Syntactic Discipline:** Overcame the "battle of the braces" `{}` and commas in complex structures. I've internalized that a punctuation error is an architectural error.
+* **Property Precision:** Recurring correction of the `.length` property. I have automated the detection of this typo, gaining speed in visual debugging.
+
+---
+
+> [!IMPORTANT]
+> **My Reflection:** > *"Today I understood that code is justice, but justice requires firm foundations. EquiShift is in its infancy; the greatest difficulty isn't writing the code, but designing a structure that won't break when the rotation algorithm becomes complex."*
