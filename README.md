@@ -369,3 +369,37 @@ To ensure scalability and **algorithmic fairness**, each employee is defined by 
 
 > [!IMPORTANT]
 > **My Reflection:** > *"Today I understood that code is justice, but justice requires firm foundations. EquiShift is in its infancy; the greatest difficulty isn't writing the code, but designing a structure that won't break when the rotation algorithm becomes complex."*
+
+
+# 📔 MY DIARY: 365 DAYS CHALLENGE
+
+## 📅 Date: March 1, 2026
+**Status:** Brain full, but feeling proud.
+
+---
+
+### 🧠 The Reality of Learning
+These past weeks have been intense. It wasn't just one platform; it was a constant bombardment of overlapping concepts from **freeCodeCamp** and **Coursera**:
+* **Layout:** HTML, CSS, and structural design.
+* **Asset Management:** Managing paths and images.
+* **JS Logic:** Arrays, objects, `for...of` loops, and template literals.
+
+Too many new pieces trying to fit together in a very short time.
+
+### 🏆 The Breakthrough
+Today, it finally **"clicked"**. I understood how to extract data from objects without feeling like I was guessing. Moving from doubt to absolute control over the syntax feels huge.
+
+### 🛑 Strategic Pause
+Right now, I feel **saturated**, but not blocked. I’m heading out for a few days of vacation, and the timing is perfect:
+* **Disconnection:** Changing my environment and stepping away from the computer.
+* **Recovery:** Better sleep and a full system reset.
+* **Assimilation:** Letting my brain process all the information in the background without forcing it.
+
+> "It's not about quitting; it's about letting the brain do its work. Learning also means knowing when to stop."
+
+---
+
+### 🚀 Conclusion
+I’m leaving with peace of mind because I’m leaving after a **victory**. I know that when I return, many things that were a struggle today will come naturally.
+
+**See you after the break!**
