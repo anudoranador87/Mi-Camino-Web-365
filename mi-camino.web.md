@@ -354,3 +354,35 @@ Para garantizar la escalabilidad y la **equidad algorítmica**, cada empleado se
 
 ---
 
+# 📔 MI DIARIO: RETO 365 DÍAS
+
+## 📅 Fecha: 1 de marzo de 2026
+**Estado:** Cabeza llena, pero orgulloso.
+---
+
+### 🧠 La Realidad del Aprendizaje
+Estas semanas han sido intensas. No ha sido solo una plataforma; ha sido un bombardeo constante de conceptos cruzados entre **freeCodeCamp** y **Coursera**:
+* **Maquetación:** HTML, CSS y estructuras.
+* **Assets:** Gestión de rutas e imágenes.
+* **Lógica JS:** Arrays, objetos, bucles `for...of` y *backticks*.
+
+Demasiadas piezas nuevas intentando encajar en muy poco tiempo.
+
+### 🏆 La Victoria
+Hoy por fin tuve el **“clic”**. Entendí cómo sacar datos de los objetos sin sentir que estaba adivinando. Pasar de la duda al control absoluto de la sintaxis se siente enorme. 
+
+### 🛑 Parada Estratégica
+Actualmente me siento **saturado**, que no bloqueado. Justo ahora me voy de vacaciones unos días fuera y el *timing* es perfecto:
+* **Desconexión:** Cambiar de entorno y alejarme del ordenador.
+* **Recuperación:** Dormir mejor y resetear el sistema.
+* **Asimilación:** Dejar que el cerebro procese toda la información en segundo plano sin forzarlo.
+
+> "No es abandonar, es dejar que el cerebro haga su trabajo. Aprender también es saber cuándo parar."
+
+---
+
+### 🚀 Conclusión
+Me voy tranquilo porque me voy después de una **victoria**. Sé que cuando vuelva, muchas cosas que hoy me han costado esfuerzo saldrán de forma natural. 
+
+**¡Nos vemos después del descanso!**
+
