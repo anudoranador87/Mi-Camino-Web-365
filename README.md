@@ -326,7 +326,7 @@ To ensure scalability and **algorithmic fairness**, each employee is defined by 
   vacacionesDisponibles: 28, 
   calendario: []           // Target for the master loop output
 }
-
+```
 ### 3. Debug Log (Today's "Fight")
 
 * **Data Nesting:** I struggled with the syntax of objects within arrays. A simple error in a comma or a brace `{}` reminded me that in Phase 1, syntactic discipline is more important than speed.
