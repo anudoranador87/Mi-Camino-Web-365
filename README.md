@@ -1,4 +1,7 @@
 # 📓 THE 365-DAY DEV JOURNEY: Jose Aparicio  EN-VERSION
+
+🇬🇧 English Version &nbsp;|&nbsp; 🇪🇸 [Versión Española](./mi-camino.web.md)
+
 > **"Logic is my superpower, syntax is just the tool."**
 
 ## 🚀 MY CAREER UPGRADE: FROM HOSPITALITY TO WEB DEVELOPER
