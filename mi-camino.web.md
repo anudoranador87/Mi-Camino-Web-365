@@ -1,4 +1,7 @@
 # 📓 THE 365-DAY DEV JOURNEY: Jose Aparicio ES-VERSION
+
+🇬🇧 [English Version](./README.md) &nbsp;|&nbsp; 🇪🇸 Versión Española
+
 > **"La lógica es mi superpoder, la sintaxis es solo la herramienta."**
 
 ## 🚀 MI "UPGRADE" DE CARRERA: DE HOSPITALITY A WEB DEVELOPER
