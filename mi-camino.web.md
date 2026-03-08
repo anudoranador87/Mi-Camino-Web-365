@@ -1,4 +1,7 @@
 # 📓 THE 365-DAY DEV JOURNEY: Jose Aparicio ES-VERSION
+
+🇬🇧 [English Version](./README.md) &nbsp;|&nbsp; 🇪🇸 Versión Española
+
 > **"La lógica es mi superpoder, la sintaxis es solo la herramienta."**
 
 ## 🚀 MI "UPGRADE" DE CARRERA: DE HOSPITALITY A WEB DEVELOPER
@@ -230,7 +233,7 @@ Voy a aplicar la estructura de "Función Maestra" que aprendí hoy para organiza
 ![Captura del estado actual del formulario y consola](captura1.png)
 
 
-# 📓 THE 365-DAY DEV JOURNEY: Jose Aparicio
+
 
 ## 🗓️ [Día 27 de Febrero, 2026]
 ### 🎯 Estado: Comprensión de JavaScript aplicado a componentes e interfaces
@@ -254,7 +257,7 @@ Hoy he finalizado la implementación de un **Modo Oscuro** funcional en mi porta
 #### 🚀 Resultado
 He pasado de un archivo desordenado a una arquitectura limpia que impresiona por su eficiencia.
 
-![🎥Demostración Modo Oscuro](dark.button.gif)
+![🎥Demostración Modo Oscuro](dark-button.gif)
 
 ### 📓 Bitácora de Aprendizaje - JavaScript POO
 **Sesión:** Profundización en POO y Herencia (Curso de Meta)
@@ -273,14 +276,116 @@ He pasado de un archivo desordenado a una arquitectura limpia que impresiona por
 
 ---
 
-### 💎 Avances con el "Proyecto": Mangata & Gallo
-**Objetivo:** Construcción y conexión del formulario de consulta para el catálogo de joyería.
+---
+# 📔 Diario de Bitácora - Jose María
+## 📅 Fecha: 28 de febrero de 2026
+## 🚀 Fase 1: Cimientos de la Arquitectura EquiShift Málaga
 
-***Integración de JavaScript:** He vinculado el formulario a un archivo `script.js` mediante la etiqueta `<script>` al final del body.
-***Gestión de Assets:** Aplicación de CSS al fondo del formulario para mantener la estética de marca (lujo y precisión) sin distorsionar las imágenes.
+---
 
-#### ⚠️ Deuda Técnica (Estado Actual)
-***Lógica Funcional:** El script está vinculado, pero estoy refinando la captura de datos.
-***El "Combate":** Estoy depurando un error lógico donde los datos no se capturan correctamente en el evento `submit`. Voy a aplicar la estructura de "Función Maestra" aprendida hoy.
+#### 🌟 SITUATION (El Desafío de la Justicia Horaria)
+En mi entorno laboral en Málaga, he detectado que la gestión manual de turnos falla en lo más sagrado: **la equidad del descanso**. La complejidad de mezclar contratos de 37.5h y 40h hace que, a final de año, el reparto de fines de semana libres sea desigual e injusto ,con el objetivo de dar solucion a una problematica real, voy a desarrollar estos meses la aplicacion EquiShift.
 
-> **💡 Nota Mental:** "La lógica es mi superpoder, la sintaxis es solo la herramienta."
+**Objetivo de hoy:** Diseñar un núcleo lógico que garantice que **todos libren los mismos fines de semana al año**. No busco solo una tabla de Excel; busco codificar un sistema de rotación matemática donde el horario sea, por primera vez, igualitario para todos.
+---
+### 🎯 TASK (Tarea de Inicio)
+1.  **Modelado de Datos (WIP):** Definir la estructura de objetos para empleados. No es una lista final, sino un prototipo funcional.
+2.  **Dataset de Localización:** Mapear el calendario de **Málaga 2026**.
+3.  **Lógica de Rotación (Investigación):** Estudiar el uso de aritmética modular (`%`) para la futura rueda de turnos.
+
+---
+
+### 🛠️ ACTION (Acción y Desafíos)
+
+**1. Definición de Estructuras (Objetos Iniciales)**
+He creado el array `trabajadores`. La clave aquí ha sido la **escalabilidad**:
+* Cada objeto tiene metadatos de contrato y bolsas de días.
+* He dejado preparado el array `calendario: []`. Está vacío porque aún no he construido el motor que lo rellena, pero la "percha" ya está instalada.
+
+**2. Mapeo de Festivos Locales**
+He inyectado en código fechas clave como el 19 de agosto (Feria) y el 8 de septiembre (Victoria).
+* **Dificultad técnica:** Entender cómo JavaScript maneja las fechas comparándolas con strings. He decidido usar el formato `YYYY-MM-DD` para evitar errores de zona horaria en esta fase inicial.
+* 
+### 📂 Estructura del Modelo de Datos (Extracto)
+Para garantizar la escalabilidad y la **equidad algorítmica**, cada empleado se define mediante un objeto con metadatos específicos:
+
+```javascript
+{ 
+  id: 1, 
+  nombre: "Jose María", 
+  contrato: 37.50,         // Base para el cálculo de exceso de jornada
+  festivosDisponibles: 13, // Saldo dinámico según convenio Málaga 2026
+  vacacionesDisponibles: 28, 
+  calendario: []           // Target para el volcado del bucle maestro
+}
+```
+
+**3. Debug Log (La "Pelea" del día)**
+* **Anidación de Datos:** Me he peleado con la sintaxis de los objetos dentro de arrays. Un simple error en una coma o una llave `{}` me ha recordado que en la Fase 1, la **disciplina sintáctica** es más importante que la velocidad.
+* **Lógica de Descuento:** He esbozado la lógica `Bolsa--`, pero aún no está automatizada. He detectado que necesito un validador que impida que el saldo sea negativo.
+---
+### 🏆 RESULT (Hitos Logrados hoy)
+* ✅ **Esqueleto Funcional:** No tengo la App, pero tengo el **mapa genético** de la misma.
+* ✅ **Dataset Validado:** Los festivos de Málaga 2026 ya están integrados en el entorno de desarrollo.
+* ✅ **Claridad de Arquitectura:** He pasado de la idea mental a una estructura de objetos interconectados.
+
+---
+
+### 🚧 PRÓXIMOS PASOS (Deuda Técnica)
+* [ ] **Motor de Bucle:** Construir el `for` que recorra los 365 días.
+* [ ] **Algoritmo de Equidad:** Aplicar el operador `%` para que la rotación de fines de semana sea automática.
+* [ ] **Validador de Contratos:** Diferenciar automáticamente el trato de los festivos para los contratos de 37.5h.
+
+---
+---
+
+### 🏋️ Sesión de Entrenamiento: Fundamentos y Agilidad (Tarde)
+
+**Objetivo:** Ganar fluidez en la escritura de sintaxis moderna y manipulación de datos complejos para preparar el motor de rotación de **EquiShift**.
+
+* **Estructuras de Datos:** Práctica intensiva en la **anidación de Objetos dentro de Arrays**. He consolidado la capacidad de acceder y modificar propiedades específicas de empleados (como `festivosDisponibles`) recorriendo la lista mediante bucles.
+* **Lógica Funcional (ES6+):** Implementación de **Arrow Functions** para cálculos rápidos. He migrado lógica tradicional a funciones de flecha para procesar variables de `intensidad` y `salario`, optimizando la limpieza del código.
+* **Control de Flujo:** Uso de **bucles `for`** para simular el recorrido cronológico de días, validando condiciones de descanso mediante **condicionales `if/else`** anidados.
+
+#### 🥊 Debug Log (Desafíos Superados)
+
+* **Disciplina Sintáctica:** Superada la "batalla de las llaves" `{}` y las comas en estructuras complejas. He interiorizado que un error de puntuación es un error de arquitectura.
+* **Precisión de Propiedades:** Corrección recurrente de la propiedad `.length`. He automatizado la detección de este error tipográfico, ganando velocidad en el *debugging* visual.
+  
+> [!IMPORTANT]
+> **Mi reflexion:** > *"Hoy he comprendido que el código es justicia, pero la justicia requiere cimientos firmes. EquiShift está en su infancia; la mayor dificultad no es escribir el código, sino diseñar una estructura que no se rompa cuando el algoritmo de rotación se vuelva complejo."*
+
+---
+
+# 📔 MI DIARIO: RETO 365 DÍAS
+
+## 📅 Fecha: 1 de marzo de 2026
+**Estado:** Cabeza llena, pero orgulloso.
+---
+
+### 🧠 La Realidad del Aprendizaje
+Estas semanas han sido intensas. No ha sido solo una plataforma; ha sido un bombardeo constante de conceptos cruzados entre **freeCodeCamp** y **Coursera**:
+* **Maquetación:** HTML, CSS y estructuras.
+* **Assets:** Gestión de rutas e imágenes.
+* **Lógica JS:** Arrays, objetos, bucles `for...of` y *backticks*.
+
+Demasiadas piezas nuevas intentando encajar en muy poco tiempo.
+
+### 🏆 La Victoria
+Hoy por fin tuve el **“clic”**. Entendí cómo sacar datos de los objetos sin sentir que estaba adivinando. Pasar de la duda al control absoluto de la sintaxis se siente enorme. 
+
+### 🛑 Parada Estratégica
+Actualmente me siento **saturado**, que no bloqueado. Justo ahora me voy de vacaciones unos días fuera y el *timing* es perfecto:
+* **Desconexión:** Cambiar de entorno y alejarme del ordenador.
+* **Recuperación:** Dormir mejor y resetear el sistema.
+* **Asimilación:** Dejar que el cerebro procese toda la información en segundo plano sin forzarlo.
+
+> "No es abandonar, es dejar que el cerebro haga su trabajo. Aprender también es saber cuándo parar."
+
+---
+
+### 🚀 Conclusión
+Me voy tranquilo porque me voy después de una **victoria**. Sé que cuando vuelva, muchas cosas que hoy me han costado esfuerzo saldrán de forma natural. 
+
+**¡Nos vemos después del descanso!**
+
