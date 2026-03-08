@@ -406,3 +406,87 @@ Right now, I feel **saturated**, but not blocked. I’m heading out for a few da
 I’m leaving with peace of mind because I’m leaving after a **victory**. I know that when I return, many things that were a struggle today will come naturally.
 
 **See you after the break!**
+
+
+---
+
+# 📔 MY DIARY: 365-DAY CHALLENGE
+
+## 📅 Date: March 8, 2026
+## 🎯 Status: First real "click" with Arrow Functions and Default Parameters
+
+---
+
+### 📝 Day Summary (STAR Method)
+
+* **S (Situation):** 📍 Several days into Jonas Schmedtmann's course, working through function types. I only knew how to write Function Declarations — it was the only tool I had. Today I faced rewriting real code using Arrow Functions for the first time — no safety net.
+* **T (Task):** 🎯 Refactor the `formatearPrecio` function from Day 26, converting it into an Arrow Function that also accepts an optional currency symbol with `€` as the default value.
+* **A (Action):** 🛠️ Started with a Pythagoras Notebook session — guided hints, no direct solutions. Built the function in layers: basic arrow structure → second parameter → correct order inside the template literal → understanding the default value concept.
+* **R (Result):** ✅ Function built from scratch, with real understanding of every single part.
+
+---
+
+### 🛠️ Technical Concepts Mastered Today
+
+#### 💻 Arrow Functions — The Three Zones
+
+* **ZONE 1 — Parameters** (before `=>`): what data the function will receive.
+* **ZONE 2 — The arrow `=>`**: the operator connecting input to output.
+* **ZONE 3 — The body** (after `=>`): where you use the data and return something.
+
+> Today's confusion was putting Zone 3 data into Zone 1. Like hiring an employee without telling them their name, then calling them down the hallway.
+
+#### 💡 Default Parameters
+
+When a parameter carries `= value`, JavaScript uses that value if nothing is passed:
+```javascript
+formatearPrecio(5);        // currency = "€" automatic → "€5"
+formatearPrecio("£", 5);   // currency = "£" → "£5"
+```
+
+#### 📐 Function Declaration vs Arrow Function
+I used Function Declarations before because they were the only thing I knew. Today I understand the choice has to be **conscious**, not by default.
+
+---
+
+### 🥊 Fighting the Code (Real Debug Log)
+
+* **Attempt 1 — Total concept error:**
+    * `const maquinaFormato = formatearPrevio => 5:`
+    * **Fail:** Confused the function name with the parameter. Used a colon instead of an arrow.
+    * **Lesson:** A parameter is a temporary name, not a fixed value.
+
+* **Attempt 2 — Fixed value as a parameter:**
+    * `const formatearPrecio = 5 =>`
+    * **Fail:** `5` is a concrete value, not a reserved seat.
+    * **Lesson:** Parameters are reserved seats, not specific passengers.
+
+* **Attempt 3 — Unclosed template literal:**
+    * `const formatearPrecio = cantidad => \`€${cantidad}`
+    * **Fail:** The closing backtick wasn't there. The code died silently.
+    * **Lesson:** Everything that opens must close. No exceptions.
+
+* **Attempt 4 — Inverted order:**
+    * `${cantidad}${moneda}` → returns `"5€"` instead of `"€5"`
+    * **Lesson:** The order inside the template literal is the order on screen.
+
+* **Attempt 5 — The "bb" at the end:**
+    * `\`${cantidad} ${moneda} bb\``
+    * Clear sign of saturation. **Strategic break applied.**
+
+#### ✅ Final Result
+```javascript
+const formatearPrecio = (moneda = "€", cantidad) => `${moneda}${cantidad}`;
+```
+
+---
+
+### 🧠 Final Reflection — The Right Angle
+
+During 8 years in hospitality I learned there are two types of employees: those who do what has always been done because *"it works"*, and those who understand **why** it works and can adapt when the context changes.
+
+Today I was the first type when it came to functions. From now on I'll be the second: **the one who chooses consciously.**
+
+> **💡 Mental Note:** *"A parameter is not a value. It's a reserved seat for whatever value arrives."*
+
+---

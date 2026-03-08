@@ -389,3 +389,87 @@ Me voy tranquilo porque me voy después de una **victoria**. Sé que cuando vuel
 
 **¡Nos vemos después del descanso!**
 
+---
+
+---
+
+# 📔 MI DIARIO: RETO 365 DÍAS
+
+## 📅 Fecha: 8 de marzo de 2026
+## 🎯 Estado: Primer "clic" real con Arrow Functions y Parámetros por Defecto
+
+---
+
+### 📝 Resumen del Día (Metodología STAR)
+
+* **S (Situación):** 📍 Varios días con Jonas Schmedtmann trabajando tipos de funciones. Sabía escribir Function Declarations porque era lo único que conocía. Hoy me enfrenté a reescribir código real usando Arrow Functions por primera vez — sin red de seguridad.
+* **T (Tarea):** 🎯 Refactorizar la función `formatearPrecio` del Día 26 convirtiéndola en una Arrow Function con parámetro por defecto (`€`).
+* **A (Acción):** 🛠️ Sesión del Cuaderno de Pitágoras — pistas graduales, sin soluciones directas. Construí la función en capas: estructura básica → segundo parámetro → orden del template literal → concepto de default.
+* **R (Resultado):** ✅ Función construida desde cero, con comprensión real de cada parte.
+
+---
+
+### 🛠️ Conceptos Técnicos Dominados Hoy
+
+#### 💻 Arrow Functions — Las Tres Zonas
+
+* **ZONA 1 — Parámetros** (antes de `=>`): qué datos va a recibir la función.
+* **ZONA 2 — La flecha `=>`**: el operador que conecta entrada con salida.
+* **ZONA 3 — El cuerpo** (después de `=>`): donde usas los datos y devuelves algo.
+
+> La confusión de hoy era meter datos de la Zona 3 en la Zona 1. Como contratar a un empleado sin decirle su nombre y luego llamarle por el pasillo.
+
+#### 💡 Parámetros por Defecto
+
+Cuando un parámetro lleva `= valor`, JavaScript usa ese valor si no se pasa nada:
+```javascript
+formatearPrecio(5);        // moneda = "€" automático → "€5"
+formatearPrecio("£", 5);   // moneda = "£" → "£5"
+```
+
+#### 📐 Function Declaration vs Arrow Function
+Antes usaba Function Declarations porque era lo único que conocía. Hoy sé que la elección tiene que ser **consciente**, no por defecto.
+
+---
+
+### 🥊 La Pelea con el Código (Debug Log Real)
+
+* **Intento 1 — Error de concepto total:**
+    * `const maquinaFormato = formatearPrevio => 5:`
+    * **Fallo:** Confundí el nombre de la función con el parámetro. Dos puntos en lugar de flecha.
+    * **Lección:** El parámetro es un nombre temporal, no un valor fijo.
+
+* **Intento 2 — El valor fijo en el parámetro:**
+    * `const formatearPrecio = 5 =>`
+    * **Fallo:** El `5` es un valor concreto, no un asiento reservado.
+    * **Lección:** Los parámetros son asientos reservados, no pasajeros concretos.
+
+* **Intento 3 — Template literal sin cerrar:**
+    * `const formatearPrecio = cantidad => \`€${cantidad}`
+    * **Fallo:** El backtick de cierre no estaba. El código moría en silencio.
+    * **Lección:** Todo lo que abre necesita cerrarse. Sin excepción.
+
+* **Intento 4 — El orden invertido:**
+    * `${cantidad}${moneda}` → devuelve `"5€"` en lugar de `"€5"`
+    * **Lección:** El orden dentro del template literal es el orden en pantalla.
+
+* **Intento 5 — El "bb" al final:**
+    * `\`${cantidad} ${moneda} bb\``
+    * Señal clara de saturación. **Pausa estratégica aplicada.**
+
+#### ✅ Resultado Final
+```javascript
+const formatearPrecio = (moneda = "€", cantidad) => `${moneda}${cantidad}`;
+```
+
+---
+
+### 🧠 Reflexión Final — El Ángulo Recto
+
+Durante 8 años en hostelería aprendí que hay dos tipos de empleados: los que hacen lo que siempre se ha hecho porque *"así funciona"*, y los que entienden **por qué** se hace así y pueden adaptarlo cuando cambia el contexto.
+
+Hoy era el primer tipo con las funciones. A partir de ahora voy a ser el segundo: **el que elige conscientemente**.
+
+> **💡 Nota Mental:** *"Un parámetro no es un valor. Es un asiento reservado para cualquier valor que llegue."*
+
+---
