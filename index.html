@@ -121,6 +121,290 @@
   </p>
 </section>
 
+
+
+
+<!-- ============================
+     DÍA 18 — COMPLETO
+=============================== -->
+
+<article class="entry" data-tags="js algo debug" aria-labelledby="title-d18">
+  <header class="entry-kicker">
+    <span class="day-badge">Día 18</span>
+    <time datetime="2026-03-09">9 de Marzo, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">JS</li>
+      <li class="etag">Destructuring</li>
+      <li class="etag">forEach</li>
+      <li class="etag">filter</li>
+      <li class="etag">map</li>
+      <li class="etag">Cuaderno de Pitágoras</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d18">
+    Destructuring, forEach, filter y map:<br>el día que empecé a pensar en cadenas de datos.
+  </h2>
+
+  <p class="entry-deck">
+    Cuatro conceptos en una sesión. Costó arrancar en cada uno — pero en todos llegué solo
+    a la solución. El error de singular/plural apareció varias veces. Ya lo detecto antes de que me lo digan.
+  </p>
+
+  <div class="cols">
+
+    <!-- COLUMNA IZQUIERDA -->
+    <div>
+      <h3 class="col-label">Resumen STAR</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Sesión del Cuaderno de Pitágoras. Lab de Coursera Meta sobre destructuring y métodos de arrays — forEach, filter y map.<br><br>
+        <strong>T —</strong> Interiorizar los cuatro conceptos hasta poder combinarlos en un ejercicio encadenado.<br><br>
+        <strong>A —</strong> Cada concepto construido en capas con pistas graduales. Repetí ejercicios hasta eliminar errores recurrentes. El ejercicio final combinó filter + map + forEach en una cadena real.<br><br>
+        <strong>R —</strong> Los cuatro conceptos resueltos con comprensión real. La cadena filter → map → forEach funcionó a la primera en lógica.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px">Victorias del día</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Array destructuring — nombres libres, manda la posición del asiento</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Object destructuring — nombres tienen que coincidir con las propiedades</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">forEach con objetos — parámetro singular + punto + propiedad</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">filter — devuelve solo los elementos que pasan la prueba</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">map — transforma cada elemento y devuelve un array nuevo</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Cadena filter → map → forEach — lógica comprendida y ejecutada</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "filter filtra, map transforma, forEach muestra. Cada uno tiene un trabajo. No los mezcles."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px">Cuándo usar cada uno</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">→</span>
+        <span class="li-text"><strong>forEach</strong> — recorrer y hacer algo con cada elemento. No devuelve nada.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">→</span>
+        <span class="li-text"><strong>filter</strong> — seleccionar elementos que cumplen una condición. Devuelve array filtrado.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">→</span>
+        <span class="li-text"><strong>map</strong> — transformar cada elemento. Devuelve array nuevo del mismo tamaño.</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:16px">Niveles al cierre del día</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">Destructuring</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">forEach</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="75"></div>
+        </div>
+        <span class="skill-pct">75%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">filter</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">map</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="55"></div>
+        </div>
+        <span class="skill-pct">55%</span>
+      </div>
+
+    </div>
+
+    <!-- COLUMNA DERECHA -->
+    <div class="col-rule">
+
+      <h3 class="col-label">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> <code>const ["name", "work"] = team[1]</code> — strings en el lado izquierdo del destructuring</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">El lado izquierdo siempre son nombres de variables, nunca valores.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> <code>empleados.salario</code> en vez de <code>empleado.salario</code> — el array entero en vez del elemento</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">forEach, filter y map pasan UN elemento. El parámetro siempre en singular.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> <code>precio + 0.80</code> en vez de <code>precio * 0.80</code> — suma en vez de porcentaje</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Un descuento del 20% es multiplicar por 0.80, no sumar 0.80.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> <code>map</code> sobre <code>productos</code> en vez de sobre <code>resultado</code> — saltarse el filtro</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">En una cadena, cada paso trabaja sobre el resultado del anterior.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Ejercicio final — filter + map + forEach encadenados — lógica correcta a la primera.</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px">Código del día — La cadena completa</h3>
+
+      <pre class="code-block"><code>
+const productos = [
+  { nombre: "Camiseta", precio: 15, disponible: true },
+  { nombre: "Zapatillas", precio: 80, disponible: false },
+  { nombre: "Gorra", precio: 20, disponible: true },
+  { nombre: "Chaqueta", precio: 120, disponible: false }
+];
+
+// PASO 1 — filter: solo disponibles
+const resultado = productos.filter(
+  function(producto) {
+    return producto.disponible === true;
+  }
+);
+
+// PASO 2 — map: aplicar 20% descuento
+const descuentos = resultado.map(
+  function(descuento) {
+    return {
+      nombre: descuento.nombre,
+      precio: descuento.precio * 0.80
+    };
+  }
+);
+
+// PASO 3 — forEach: mostrar resultados
+descuentos.forEach(function(item) {
+  console.log(
+    `${item.nombre} — ${item.precio}€`
+  );
+});
+
+// → Camiseta — 12€
+// → Gorra — 16€
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "Cada método trabaja sobre el resultado del anterior. Eso es pensar en cadenas de datos."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
+
+<!-- BLOQUE EXTRA — EquiShift -->
+<div style="margin-top: 40px; border-top: 2px solid var(--ink); padding-top: 32px;">
+
+  <h3 class="col-label">⚙️ EquiShift — Aplicando lo aprendido al proyecto real</h3>
+
+  <p class="body-text" style="margin-top: 12px;">
+    Al final de la sesión apliqué <code>filter</code> y <code>forEach</code> directamente al código de EquiShift.
+    No como ejercicio — como lógica real de negocio. El resultado fue el <strong>Motor de Clasificación por Contrato</strong>:
+    el primer bloque funcional del algoritmo de equidad.
+  </p>
+
+  <div class="cols" style="margin-top: 20px;">
+    <div>
+      <div class="col-label">Por qué es importante</div>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">37.5h → 13 festivos. 40h → 14 festivos. Sin clasificación, el algoritmo sería injusto.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Filtrar por <code>contrato</code>, no por <code>festivosDisponibles</code> — los festivos pueden cambiar por ley, el contrato no.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Cada grupo tendrá su propia rueda de rotación — matemáticamente independiente.</span>
+      </p>
+      <blockquote class="pullquote" style="margin-top: 16px;">
+        "Este filter no es un ejercicio. Es el corazón de la lógica de equidad de EquiShift."
+      </blockquote>
+    </div>
+    <div class="col-rule">
+      <div class="col-label">Código — Motor de Clasificación</div>
+      <pre class="code-block"><code>
+// Clasificar por tipo de contrato
+const jornada375 = trabajadores.filter(
+  function(trabajador) {
+    return trabajador.contrato === 37.50;
+  }
+);
+
+const jornada40 = trabajadores.filter(
+  function(trabajador) {
+    return trabajador.contrato === 40;
+  }
+);
+
+// Verificar clasificación
+console.log("--- Jornada 37.5h ---");
+jornada375.forEach(function(mostrar) {
+  console.log(
+    `${mostrar.contrato}h — ${mostrar.nombre}
+     — ${mostrar.festivosDisponibles} festivos`
+  );
+});
+
+console.log("--- Jornada 40h ---");
+jornada40.forEach(function(mostrar) {
+  console.log(
+    `${mostrar.contrato}h — ${mostrar.nombre}
+     — ${mostrar.festivosDisponibles} festivos`
+  );
+});
+      </code></pre>
+    </div>
+  </div>
+
+</div>
 <!-- ============================
      DÍA 17 — COMPLETO
 =============================== -->

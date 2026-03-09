@@ -490,3 +490,183 @@ Today I was the first type when it came to functions. From now on I'll be the se
 > **💡 Mental Note:** *"A parameter is not a value. It's a reserved seat for whatever value arrives."*
 
 ---
+## 🗓️ [Day 18 — March 9, 2026]
+🎯 **Status:** Destructuring, forEach, filter, map — and the first functional block of EquiShift
+
+---
+
+### 📝 Day Summary (STAR Methodology)
+
+* **S (Situation):** 📍 Cuaderno de Pitágoras session. Coursera Meta lab on destructuring and array methods. Four concepts in one session — none of them internalized at the start.
+* **T (Task):** 🎯 Internalize array and object destructuring, and master `forEach`, `filter` and `map` until I could chain them together in a real exercise.
+* **A (Action):** 🛠️ Each concept built in layers with graduated hints. Repeated exercises until recurring errors were eliminated. The final exercise chained `filter` + `map` + `forEach` on real data. At the end, applied everything to EquiShift's codebase.
+* **R (Result):** ✅ All four concepts solved with real understanding. The `filter → map → forEach` chain worked on the first try in terms of logic. First functional block of EquiShift written.
+
+---
+
+### 🛠️ Technical Concepts Mastered Today
+
+#### 💻 Destructuring — Arrays and Objects
+
+* **Array destructuring** — names are free, **position** is what matters:
+```javascript
+const [secondProductName, secondProductPrice] = products[1];
+// → "Phone", 500
+```
+
+* **Object destructuring** — names must **match** the property names:
+```javascript
+const { title, author, timePosted } = review;
+```
+
+* **Skipping seats** in arrays — empty comma, no values, no quotes:
+```javascript
+const [, second] = products; // skips seat 0
+```
+
+> In arrays, position rules. In objects, name rules.
+
+---
+
+#### 💻 forEach, filter and map — When to Use Each
+
+| Method | Returns something? | What for? |
+|--------|-------------------|-----------|
+| `forEach` | No | Loop and execute something |
+| `filter` | Yes — filtered array | Select elements |
+| `map` | Yes — new array | Transform elements |
+
+* **The golden rule of forEach with objects:**
+`singular parameter` + `.` + `property name`
+
+```javascript
+employees.forEach(function(employee) {
+    console.log(`${employee.name} earns ${employee.salary}€`);
+});
+```
+
+* **filter** — returns only those that pass the test:
+```javascript
+const available = products.filter(function(product) {
+    return product.available === true;
+});
+```
+
+* **map** — transforms each element and returns a new array:
+```javascript
+const discounted = filtered.map(function(item) {
+    return { name: item.name, price: item.price * 0.80 };
+});
+```
+
+---
+
+#### 💻 The Full Chain — filter + map + forEach
+
+```javascript
+// STEP 1 — filter: only available products
+const filtered = products.filter(function(product) {
+    return product.available === true;
+});
+
+// STEP 2 — map: apply 20% discount
+const discounted = filtered.map(function(item) {
+    return {
+        name: item.name,
+        price: item.price * 0.80
+    };
+});
+
+// STEP 3 — forEach: display results
+discounted.forEach(function(item) {
+    console.log(`${item.name} — ${item.price}€`);
+});
+// → T-Shirt — 12€
+// → Cap — 16€
+```
+
+> Each method works on the result of the previous one. That's thinking in data pipelines.
+
+---
+
+### ⚙️ EquiShift — Applying Today's Learning to a Real Project
+
+At the end of the session I applied `filter` and `forEach` directly to EquiShift's codebase. Not as an exercise — as real business logic.
+
+**Contract Classification Engine** — first functional block of the algorithm:
+
+```javascript
+// Classify by contract type
+const shift375 = workers.filter(function(worker) {
+    return worker.contract === 37.50;
+});
+// → Jose María, Salvador, Miguel (13 public holidays)
+
+const shift40 = workers.filter(function(worker) {
+    return worker.contract === 40;
+});
+// → Diego, Rafa (14 public holidays)
+
+// Verify classification
+console.log("--- 37.5h Contract ---");
+shift375.forEach(function(worker) {
+    console.log(`${worker.contract}h — ${worker.nombre} — ${worker.festivosDisponibles} holidays`);
+});
+
+console.log("--- 40h Contract ---");
+shift40.forEach(function(worker) {
+    console.log(`${worker.contract}h — ${worker.nombre} — ${worker.festivosDisponibles} holidays`);
+});
+```
+
+> Why filter by `contract` and not by `availableHolidays`? Holiday entitlements can change by law. The contract type is the stable anchor — always anchor your logic to the data point that doesn't change.
+
+---
+
+### 🥊 The Fight with the Code (Real Debug Log)
+
+* **Bug 1 — Strings on the left side of destructuring:**
+    * `const ["name", "work", years] = team[1]`
+    * **Fail:** Values on the left side — not labels.
+    * **Lesson:** The left side is always variable names. No quotes. No values.
+
+* **Bug 2 — Singular vs plural error:**
+    * `employees.salary` instead of `employee.salary`
+    * **Fail:** The entire array instead of a single element.
+    * **Lesson:** `forEach`, `filter` and `map` pass ONE element. The parameter is always singular.
+
+* **Bug 3 — Whole object instead of property:**
+    * `${item}` instead of `${item.name}`
+    * **Fail:** `item` returns `[object Object]` — you need to reach the property.
+    * **Lesson:** parameter + dot + property name. Always.
+
+* **Bug 4 — Percentage confused with addition:**
+    * `price + 0.80` instead of `price * 0.80`
+    * **Fail:** Adding 0.80€ is not applying a 20% discount.
+    * **Lesson:** A 20% discount means multiplying by 0.80.
+
+* **Bug 5 — map on the original array instead of the filtered one:**
+    * `products.map(...)` instead of `filtered.map(...)`
+    * **Fail:** Skipping the filter — discount would apply to unavailable products too.
+    * **Lesson:** In a chain, each step works on the result of the previous one.
+
+#### ✅ Final Result
+
+```javascript
+// The full chain — filter → map → forEach
+const filtered = products.filter(p => p.available === true);
+const discounted = filtered.map(p => ({ name: p.name, price: p.price * 0.80 }));
+discounted.forEach(item => console.log(`${item.name} — ${item.price}€`));
+```
+
+---
+
+### 🧠 Final Reflection — The Right Angle
+
+Today I understood that `forEach`, `filter` and `map` are not three separate methods — they are three ways of thinking about data. Before I saw them as isolated tools. Now I see them as a pipeline where each link has a specific job.
+
+And most importantly: I applied them to a real problem. EquiShift now has its first functional block — not because I copied it from a tutorial, but because I understood the problem and knew which tool to use.
+
+> **💡 Mental Note:** *"filter filters, map transforms, forEach displays. Each one has a job. Don't mix them up."*
+
+---
