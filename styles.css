@@ -70,14 +70,14 @@ code {
 ========================================= */
 
 .entries {
-  width: min(1100px, 92%);
+  width: min(900px, 90%);
   margin: 0 auto;
 }
 
 .cols {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 36px;
+  gap: 28px;
   margin-top: 20px;
 }
 
@@ -97,11 +97,11 @@ code {
   width: 100%;
   background: var(--paper);
   border-bottom: 1px solid var(--paper-d);
-  padding: 14px 40px;
+  padding: 14px 28px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 50;
+  z-index: 100; /* por encima del filter-nav sticky (z-index: 40) y cualquier contenido */
 }
 
 .nav-brand {
@@ -169,11 +169,8 @@ code {
 
 .masthead {
   text-align: center;
-  padding: 60px 40px 40px;
+  padding: 60px 0 40px;
   border-bottom: 1px solid var(--paper-d);
-  max-width: 1100px;
-  margin: 0 auto;
-  width: 92%;
 }
 
 .mast-top {
@@ -181,13 +178,13 @@ code {
   font-size: 0.8rem;
   color: var(--ink-soft);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   gap: 18px;
   margin-bottom: 12px;
 }
 
 .mast-title {
-  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-size: 3rem;
   font-weight: 900;
   margin-bottom: 6px;
 }
@@ -215,11 +212,8 @@ code {
   display: flex;
   justify-content: center;
   gap: 40px;
-  padding: 30px 40px;
+  padding: 30px 0;
   border-bottom: 1px solid var(--paper-d);
-  max-width: 1100px;
-  margin: 0 auto;
-  width: 92%;
 }
 
 .stat-item {
@@ -245,14 +239,15 @@ code {
 
 .filter-nav {
   display: flex;
-  justify-content: flex-start;
-  gap: 10px;
+  justify-content: center;
+  gap: 14px;
   padding: 22px 0;
   border-bottom: 1px solid var(--paper-d);
-  max-width: 1100px;
-  margin: 0 auto;
-  width: 92%;
-  flex-wrap: wrap;
+  /* Sticky: se queda visible al scrollear, justo debajo de la navbar fija */
+  position: sticky;
+  top: 57px;           /* altura exacta de .nav (padding 14px*2 + línea) */
+  background: var(--paper);
+  z-index: 40;         /* por debajo de .nav (z-index: 100) pero sobre el contenido */
 }
 
 .filter-btn {
@@ -430,7 +425,7 @@ code {
 .cols {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 36px;
+  gap: 28px;
   margin-top: 20px;
 }
 
@@ -796,4 +791,143 @@ button,
     flex-direction: column;
     gap: 10px;
   }
+}
+
+/* ── NEXT TARGET ── */
+.next-target {
+  margin-top: 32px;
+  border-top: 2px solid var(--ink);
+  padding-top: 20px;
+}
+
+.next-target-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+
+.next-target-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.next-target-list li {
+  font-family: var(--body-serif);
+  font-size: 13px;
+  color: var(--ink-mid);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.next-target-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.next-target-list code {
+  background: var(--paper-dark);
+  padding: 1px 5px;
+  font-family: var(--mono);
+  font-size: 11px;
+}
+
+/* ── PROBLEM PATTERN ── */
+.problem-pattern {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  margin-top: 32px;
+  border-top: 1px solid var(--ink-light);
+  border-bottom: 1px solid var(--ink-light);
+  padding: 20px 0;
+}
+
+@media (max-width: 800px) {
+  .problem-pattern {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.pp-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pp-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 4px;
+}
+
+.pp-text {
+  font-family: var(--body-serif);
+  font-size: 13px;
+  color: var(--ink-mid);
+  line-height: 1.7;
+  margin: 0;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+/* ── MENTAL MODEL ── */
+.mental-model {
+  margin-top: 32px;
+  border-top: 1px solid var(--ink-light);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--ink-light);
+}
+
+.mental-model-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+
+.mental-model-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.mental-model-list li {
+  font-family: var(--body-serif);
+  font-size: 13px;
+  color: var(--ink-mid);
+  background: var(--paper-dark);
+  padding: 6px 14px;
+  line-height: 1.5;
+}
+
+.mental-model-list code {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--ink);
+  background: none;
+  padding: 0;
 }

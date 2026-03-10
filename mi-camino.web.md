@@ -473,3 +473,366 @@ Hoy era el primer tipo con las funciones. A partir de ahora voy a ser el segundo
 > **💡 Nota Mental:** *"Un parámetro no es un valor. Es un asiento reservado para cualquier valor que llegue."*
 
 ---
+# 🗓️ [Día 18 — 9 de Marzo, 2026]
+🎯 **Estado:** Destructuring, forEach, filter, map — y el primer bloque funcional de EquiShift
+
+---
+
+### 📝 Resumen del Día (Metodología STAR)
+
+* **S (Situación):** 📍 Sesión del Cuaderno de Pitágoras. Lab de Coursera Meta sobre destructuring y métodos de arrays. Cuatro conceptos en una sola sesión — ninguno interiorizado al empezar.
+* **T (Tarea):** 🎯 Interiorizar destructuring de arrays y objetos, y dominar `forEach`, `filter` y `map` hasta poder combinarlos en un ejercicio encadenado real.
+* **A (Acción):** 🛠️ Cada concepto construido en capas con pistas graduales. Repetí ejercicios hasta eliminar errores recurrentes. El ejercicio final combinó `filter` + `map` + `forEach` en una cadena real. Al cierre, apliqué todo al código de EquiShift.
+* **R (Resultado):** ✅ Los cuatro conceptos resueltos con comprensión real. La cadena `filter → map → forEach` funcionó a la primera en lógica. Primer bloque funcional de EquiShift escrito.
+
+---
+
+### 🛠️ Conceptos Técnicos Dominados Hoy
+
+#### 💻 Destructuring — Arrays y Objetos
+
+* **Array destructuring** — los nombres son libres, manda la **posición**:
+```javascript
+const [secondProductName, secondProductPrice] = products[1];
+// → "Phone", 500
+```
+
+* **Object destructuring** — los nombres tienen que **coincidir** con las propiedades:
+```javascript
+const { title, author, timePosted } = review;
+```
+
+* **Saltar asientos** en arrays — coma vacía, sin valores, sin comillas:
+```javascript
+const [, segundo] = products; // salta el asiento 0
+```
+
+> En arrays manda el asiento. En objetos manda el nombre.
+
+---
+
+#### 💻 forEach, filter y map — Cuándo usar cada uno
+
+| Método | ¿Devuelve algo? | ¿Para qué? |
+|--------|----------------|------------|
+| `forEach` | No | Recorrer y ejecutar algo |
+| `filter` | Sí — array filtrado | Seleccionar elementos |
+| `map` | Sí — array nuevo | Transformar elementos |
+
+* **La regla de oro del forEach con objetos:**
+`parámetro singular` + `.` + `nombre de la propiedad`
+
+```javascript
+empleados.forEach(function(empleado) {
+    console.log(`${empleado.nombre} cobra ${empleado.salario}€`);
+});
+```
+
+* **filter** — devuelve solo los que pasan la prueba:
+```javascript
+const disponibles = productos.filter(function(producto) {
+    return producto.disponible === true;
+});
+```
+
+* **map** — transforma cada elemento y devuelve array nuevo:
+```javascript
+const descuentos = resultado.map(function(item) {
+    return { nombre: item.nombre, precio: item.precio * 0.80 };
+});
+```
+
+---
+
+#### 💻 La Cadena Completa — filter + map + forEach
+
+```javascript
+// PASO 1 — filter: solo disponibles
+const resultado = productos.filter(function(producto) {
+    return producto.disponible === true;
+});
+
+// PASO 2 — map: aplicar 20% descuento
+const descuentos = resultado.map(function(descuento) {
+    return {
+        nombre: descuento.nombre,
+        precio: descuento.precio * 0.80
+    };
+});
+
+// PASO 3 — forEach: mostrar resultados
+descuentos.forEach(function(item) {
+    console.log(`${item.nombre} — ${item.precio}€`);
+});
+// → Camiseta — 12€
+// → Gorra — 16€
+```
+
+> Cada método trabaja sobre el resultado del anterior. Eso es pensar en cadenas de datos.
+
+---
+
+### ⚙️ EquiShift — Aplicando lo aprendido al proyecto real
+
+Al cierre de sesión apliqué `filter` y `forEach` directamente al código de EquiShift. No como ejercicio — como lógica real de negocio.
+
+**Motor de Clasificación por Contrato** — primer bloque funcional del algoritmo:
+
+```javascript
+// Clasificar por tipo de contrato
+const jornada375 = trabajadores.filter(function(trabajador) {
+    return trabajador.contrato === 37.50;
+});
+// → Jose María, Salvador, Miguel (13 festivos)
+
+const jornada40 = trabajadores.filter(function(trabajador) {
+    return trabajador.contrato === 40;
+});
+// → Diego, Rafa (14 festivos)
+
+// Verificar clasificación
+console.log("--- Jornada 37.5h ---");
+jornada375.forEach(function(mostrar) {
+    console.log(`${mostrar.contrato}h — ${mostrar.nombre} — ${mostrar.festivosDisponibles} festivos`);
+});
+
+console.log("--- Jornada 40h ---");
+jornada40.forEach(function(mostrar) {
+    console.log(`${mostrar.contrato}h — ${mostrar.nombre} — ${mostrar.festivosDisponibles} festivos`);
+});
+```
+
+> ¿Por qué filtrar por `contrato` y no por `festivosDisponibles`? Los festivos pueden cambiar por ley. El contrato es el dato más estable — siempre ancla tu lógica al dato que no cambia.
+
+---
+
+### 🥊 La Pelea con el Código (Debug Log Real)
+
+* **Bug 1 — Strings en el lado izquierdo del destructuring:**
+    * `const ["name", "work", years] = team[1]`
+    * **Fallo:** Strings en el lado izquierdo — los valores, no las etiquetas.
+    * **Lección:** El lado izquierdo siempre son nombres de variables. Sin comillas. Sin valores.
+
+* **Bug 2 — El error de singular/plural:**
+    * `empleados.salario` en vez de `empleado.salario`
+    * **Fallo:** El array entero en vez del elemento individual.
+    * **Lección:** `forEach`, `filter` y `map` pasan UN elemento. El parámetro siempre en singular.
+
+* **Bug 3 — Objeto entero en vez de propiedad:**
+    * `${item}` en vez de `${item.nombre}`
+    * **Fallo:** `item` devuelve `[object Object]` — hay que llegar a la propiedad.
+    * **Lección:** parámetro + punto + nombre de la propiedad. Siempre.
+
+* **Bug 4 — Porcentaje confundido con suma:**
+    * `precio + 0.80` en vez de `precio * 0.80`
+    * **Fallo:** Sumar 0.80€ no es aplicar un descuento del 20%.
+    * **Lección:** Un descuento del 20% es multiplicar por 0.80.
+
+* **Bug 5 — map sobre el array original en vez del filtrado:**
+    * `productos.map(...)` en vez de `resultado.map(...)`
+    * **Fallo:** Saltarse el filtro — se aplicaría el descuento a productos no disponibles.
+    * **Lección:** En una cadena, cada paso trabaja sobre el resultado del anterior.
+
+#### ✅ Resultado Final
+
+```javascript
+// La cadena completa — filter → map → forEach
+const resultado = productos.filter(p => p.disponible === true);
+const descuentos = resultado.map(p => ({ nombre: p.nombre, precio: p.precio * 0.80 }));
+descuentos.forEach(item => console.log(`${item.nombre} — ${item.precio}€`));
+```
+
+---
+
+### 🧠 Reflexión Final — El Ángulo Recto
+
+Hoy entendí que `forEach`, `filter` y `map` no son tres métodos distintos — son tres formas de pensar sobre los datos. Antes los veía como herramientas separadas. Ahora los veo como una cadena de montaje donde cada eslabón tiene un trabajo concreto.
+
+Y lo más importante: los apliqué a un problema real. EquiShift ya tiene su primer bloque funcional — no porque lo copiara de un tutorial, sino porque entendí el problema y supe qué herramienta usar.
+
+> **💡 Nota Mental:** *"filter filtra, map transforma, forEach muestra. Cada uno tiene un trabajo. No los mezcles."*
+
+## 🗓️ [Día 19 — 10 de Marzo, 2026]
+🎯 **Estado:** Prueba de nivel sin Google — 4/5 resueltos · Spread operator en EquiShift · Roadmap del juego de cartas
+
+---
+
+### 📝 Resumen del Día (Metodología STAR)
+
+* **S (Situación):** 📍 Después de 18 días de sesiones guiadas surgió una duda real: ¿estoy resolviendo problemas o solo reconociendo patrones cuando los veo? Decidí hacer una prueba de nivel real — sin documentación, sin Google, sobre datos reales de mis proyectos.
+* **T (Tarea):** 🎯 Resolver 5 problemas usando `filter`, `forEach` y `map` sobre el mazo de We Playing Cards y la plantilla de trabajadores de EquiShift. Sin ayuda externa. Solo la lógica.
+* **A (Acción):** 🛠️ Ataqué los problemas por orden de dificultad. Identifiqué el método correcto antes de escribir una línea. En el Problema 4 apliqué `map + if/else + spread` para actualizar EquiShift — primera vez usando spread operator en código de producción real.
+* **R (Resultado):** ✅ 4/5 problemas resueltos. Lógica correcta en todos. Los errores fueron solo de sintaxis — paréntesis, llaves, template literals. El Problema 5 queda pendiente para el Día 20.
+
+---
+
+### 🛠️ Conceptos Técnicos Dominados Hoy
+
+#### 💻 `filter()` — Seleccionar con condición
+
+```javascript
+// Filtrar solo las cartas activas del mazo
+const cartasActivas = mazo.filter(function(carta) {
+    return carta.activa === true;
+});
+
+// Mostrar nombres de las cartas activas
+cartasActivas.forEach(function(carta) {
+    console.log(carta.nombre);
+});
+```
+
+> `filter` devuelve un array nuevo. Nunca modifica el original.
+
+---
+
+#### 💻 `map()` — Transformar sin mutar
+
+```javascript
+// Aumentar el ataque de todas las cartas en 10
+const mazoPotenciado = mazo.map(function(carta) {
+    return {
+        nombre: carta.nombre,
+        ataque: carta.ataque + 10
+    };
+});
+```
+
+> `map` transforma cada elemento y devuelve un array nuevo del mismo tamaño. El original queda intacto.
+
+---
+
+#### 💻 `map + if/else + spread` — Actualización condicional sin mutación
+
+El patrón más importante del día. Aplicado directamente en EquiShift:
+
+```javascript
+// Actualizar festivos disponibles según tipo de contrato
+const trabajadoresActualizados = trabajadores.map(function(trabajador) {
+    if (trabajador.contrato === 40) {
+        return { ...trabajador, festivosDisponibles: 14 };
+    } else {
+        return { ...trabajador, festivosDisponibles: 13 };
+    }
+});
+```
+
+**¿Por qué `...spread` y no asignación directa?**
+
+```javascript
+// ❌ Mutación directa — modifica el objeto original
+trabajador.festivosDisponibles = 14;
+
+// ✅ Spread — copia todas las propiedades y sobreescribe solo la que necesitas
+return { ...trabajador, festivosDisponibles: 14 };
+```
+
+> El spread `...` copia todas las propiedades del objeto y solo sobreescribe la que especificas. El original queda intacto. Eso es inmutabilidad en la práctica.
+
+---
+
+#### 💻 Mental Model — Tres métodos, tres trabajos
+
+| Método | ¿Devuelve algo? | ¿Para qué? |
+|--------|----------------|------------|
+| `filter()` | Sí — array filtrado (mismo tamaño o menor) | Seleccionar elementos |
+| `map()` | Sí — array nuevo (mismo tamaño, elementos transformados) | Transformar elementos |
+| `forEach()` | No | Ejecutar una acción por cada elemento |
+
+```
+filter()  → selecciona elementos que cumplen una condición
+map()     → transforma cada elemento, devuelve array nuevo
+forEach() → ejecuta acción por cada elemento, no devuelve nada
+spread... → copia propiedades de un objeto sin mutarlo
+```
+
+---
+
+### 🃏 EquiShift y We Playing Cards — Aplicando lo aprendido
+
+#### ⚙️ EquiShift — Spread operator en producción
+
+Primera aplicación real del spread operator al modelo de datos de EquiShift:
+
+```javascript
+const trabajadoresActualizados = trabajadores.map(function(trabajador) {
+    if (trabajador.contrato === 40) {
+        return { ...trabajador, festivosDisponibles: 14 };
+    } else {
+        return { ...trabajador, festivosDisponibles: 13 };
+    }
+});
+
+// Jose María → 13 festivos ✓
+// Salvador   → 13 festivos ✓
+// Miguel     → 13 festivos ✓
+// Diego      → 14 festivos ✓
+// Rafa       → 14 festivos ✓
+```
+
+#### 🃏 We Playing Cards — Roadmap del Juego Inteligente
+
+| Fase | Objetivo | Estado |
+|------|----------|--------|
+| **Fase 1** | Array de objetos con stats reales: `ataque`, `defensa`, `velocidad` | ⏳ Día 20 |
+| **Fase 2** | Shuffle Fisher-Yates · repartir mano de 3 cartas | 🔜 Pendiente |
+| **Fase 3** | Lógica de combate — comparar stats y calcular ganador | 🔜 Pendiente |
+| **Fase 4** | IA básica — el rival elige la carta con mayor probabilidad de ganar | 🔜 Pendiente |
+
+---
+
+### 🥊 La Pelea con el Código (Debug Log Real)
+
+* **Bug 1 — Llave de cierre olvidada en `if/else`:**
+    * **Fallo:** El parser llega al `else` sin encontrar el `}` de cierre del `if`. Error de sintaxis silencioso.
+    * **Lección:** Escribe el bloque de cierre `}` antes de rellenar el contenido. Cada `{` necesita su pareja.
+
+* **Bug 2 — Spread dentro de template literal:**
+    * `return \`${...trabajador}\`` en vez de `return { ...trabajador }`
+    * **Fallo:** El spread operator va dentro de un objeto `{}`, no de backticks.
+    * **Lección:** `...spread` vive dentro de `{}` cuando copias objetos. Los backticks son para strings.
+
+* **Bug 3 — `map` sobre el array incorrecto:**
+    * `mazo.map(...)` cuando el paso anterior era un `filter`
+    * **Fallo:** La transformación se aplicó a todas las cartas, no solo a las filtradas.
+    * **Lección:** En una cadena, cada paso trabaja sobre el resultado del anterior. Nombra bien las variables intermedias.
+
+* **Bug 4 — Retorno de objeto sin llaves:**
+    * `return ...trabajador, festivosDisponibles: 14` sin `{}`
+    * **Fallo:** Sin `{}` no hay objeto literal — JavaScript no sabe qué estás construyendo.
+    * **Lección:** Un objeto literal siempre necesita `{}`. `return { ...obj, clave: valor }`.
+
+#### ✅ Patrón Final — actualización condicional sin mutación
+
+```javascript
+const actualizado = array.map(function(elemento) {
+    if (condicion) {
+        return { ...elemento, propiedad: nuevoValor };
+    } else {
+        return { ...elemento, propiedad: otroValor };
+    }
+});
+```
+
+---
+
+### 🧠 Reflexión Final — El Ángulo Recto
+
+Hoy aprendí algo que va más allá de los métodos: la diferencia entre **saber que una herramienta existe** y **saber cuándo usarla sin que nadie te lo diga**.
+
+En 8 años de hostelería aprendí a distinguir a los empleados que necesitan un procedimiento escrito para cada situación de los que entienden el objetivo y adaptan la solución. En código es igual. Hoy fui el segundo tipo — identifiqué el problema, elegí la herramienta y la apliqué a datos reales sin instrucciones.
+
+
+> **💡 Nota Mental del Día:** *"La lógica ya estaba ahí. Lo único que necesitaba era escribirla."*
+
+---
+
+### 📊 Estado del Nivel
+
+| Habilidad | Nivel | Notas |
+|-----------|-------|-------|
+| `filter()` | ████████░░ 80% | Sólido — lógica y sintaxis automáticas |
+| `map()` | ███████░░░ 70% | Bien — spread operator integrado |
+| `forEach()` | ███████░░░ 70% | Bien — singular/plural ya no falla |
+| Sintaxis general | █████░░░░░ 50% | Llaves de cierre y template literals — zona de mejora |
+

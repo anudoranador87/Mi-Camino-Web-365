@@ -670,3 +670,186 @@ And most importantly: I applied them to a real problem. EquiShift now has its fi
 > **💡 Mental Note:** *"filter filters, map transforms, forEach displays. Each one has a job. Don't mix them up."*
 
 ---
+
+## 🗓️ [Day 19 — March 10, 2026]
+🎯 **Status:** Level test without Google — 4/5 solved · Spread operator in EquiShift · Card game roadmap designed
+
+---
+
+### 📝 Day Summary (STAR Methodology)
+
+* **S (Situation):** 📍 After 18 days of guided sessions a real question appeared: am I actually solving problems or just recognising patterns when I see them? I decided to run a real level test — no documentation, no Google, on real data from my own projects.
+* **T (Task):** 🎯 Solve 5 problems using `filter`, `forEach` and `map` on the We Playing Cards deck and the EquiShift worker template. No external help. Logic only.
+* **A (Action):** 🛠️ Attacked the problems in order of difficulty. Identified the right method before writing a single line. On Problem 4, applied `map + if/else + spread` to update EquiShift — first real use of the spread operator on production data.
+* **R (Result):** ✅ 4/5 problems solved. Logic correct in all of them. Errors were syntax only — brackets, braces, template literals. Problem 5 held over for Day 20.
+
+---
+
+### 🛠️ Technical Concepts Mastered Today
+
+#### 💻 `filter()` — Select with a condition
+
+```javascript
+// Filter only the active cards in the deck
+const activeCards = deck.filter(function(card) {
+    return card.active === true;
+});
+
+// Display active card names
+activeCards.forEach(function(card) {
+    console.log(card.name);
+});
+```
+
+> `filter` returns a new array. It never modifies the original.
+
+---
+
+#### 💻 `map()` — Transform without mutating
+
+```javascript
+// Increase attack stat of all cards by 10
+const boostedDeck = deck.map(function(card) {
+    return {
+        name: card.name,
+        attack: card.attack + 10
+    };
+});
+```
+
+> `map` transforms each element and returns a new array of the same size. The original is untouched.
+
+---
+
+#### 💻 `map + if/else + spread` — Conditional update without mutation
+
+The most important pattern of the day. Applied directly to EquiShift:
+
+```javascript
+// Update available holidays based on contract type
+const updatedWorkers = workers.map(function(worker) {
+    if (worker.contract === 40) {
+        return { ...worker, availableHolidays: 14 };
+    } else {
+        return { ...worker, availableHolidays: 13 };
+    }
+});
+```
+
+**Why `...spread` instead of direct assignment?**
+
+```javascript
+// ❌ Direct mutation — modifies the original object
+worker.availableHolidays = 14;
+
+// ✅ Spread — copies all properties, overwrites only the one you need
+return { ...worker, availableHolidays: 14 };
+```
+
+> The spread `...` copies all object properties and only overwrites the one you specify. The original stays intact. That is immutability in practice.
+
+---
+
+#### 💻 Mental Model — Three methods, three jobs
+
+| Method | Returns? | What for? |
+|--------|----------|-----------|
+| `filter()` | Yes — filtered array (same size or smaller) | Select elements |
+| `map()` | Yes — new array (same size, transformed elements) | Transform elements |
+| `forEach()` | No | Execute an action per element |
+
+```
+filter()  → select elements that meet a condition
+map()     → transform every element, returns new array
+forEach() → execute action per element, returns nothing
+spread... → copy object properties without mutation
+```
+
+---
+
+### 🃏 EquiShift and We Playing Cards — Applying the learning
+
+#### ⚙️ EquiShift — Spread operator in production
+
+First real application of the spread operator to the EquiShift data model:
+
+```javascript
+const updatedWorkers = workers.map(function(worker) {
+    if (worker.contract === 40) {
+        return { ...worker, availableHolidays: 14 };
+    } else {
+        return { ...worker, availableHolidays: 13 };
+    }
+});
+
+// Jose María → 13 holidays ✓
+// Salvador   → 13 holidays ✓
+// Miguel     → 13 holidays ✓
+// Diego      → 14 holidays ✓
+// Rafa       → 14 holidays ✓
+```
+
+#### 🃏 We Playing Cards — Intelligent Game Roadmap
+
+| Phase | Goal | Status |
+|-------|------|--------|
+| **Phase 1** | Object array with real stats: `attack`, `defense`, `speed` | ⏳ Day 20 |
+| **Phase 2** | Fisher-Yates shuffle · deal hand of 3 cards | 🔜 Pending |
+| **Phase 3** | Combat logic — compare stats and calculate winner | 🔜 Pending |
+| **Phase 4** | Basic AI — opponent picks card with highest win probability | 🔜 Pending |
+
+---
+
+### 🥊 The Code Fight (Real Debug Log)
+
+* **Bug 1 — Missing closing brace in `if/else`:**
+    * **Failure:** The parser reaches `else` without finding the closing `}` of the `if`. Silent syntax error.
+    * **Lesson:** Write the closing `}` before filling in the content. Every `{` needs its pair.
+
+* **Bug 2 — Spread inside a template literal:**
+    * **Failure:** The spread operator goes inside `{}` when copying objects — not inside backticks.
+    * **Lesson:** `...spread` lives inside `{}` for objects. Backticks are for strings.
+
+* **Bug 3 — `map` on the wrong array:**
+    * **Failure:** The transformation applied to all cards, not just the filtered ones.
+    * **Lesson:** In a chain, each step works on the result of the previous one. Name your intermediate variables clearly.
+
+* **Bug 4 — Object return without braces:**
+    * **Failure:** Without `{}` there is no object literal — JavaScript does not know what you are building.
+    * **Lesson:** An object literal always needs `{}`. `return { ...obj, key: value }`.
+
+#### ✅ Final Pattern — conditional update without mutation
+
+```javascript
+const updated = array.map(function(element) {
+    if (condition) {
+        return { ...element, property: newValue };
+    } else {
+        return { ...element, property: otherValue };
+    }
+});
+```
+
+---
+
+### 🧠 Final Reflection — The Right Angle
+
+Today I learned something that goes beyond the methods themselves: the difference between **knowing a tool exists** and **knowing when to use it without being told**.
+
+After 8 years in hospitality I learned to tell apart the employees who need a written procedure for every situation from those who understand the goal and adapt the solution. Code is the same. Today I was the second type — I identified the problem, chose the right tool and applied it to real data without instructions.
+
+
+
+> **💡 Mental Note of the Day:** *"The logic was already there. All it needed was to be written."*
+
+---
+
+### 📊 Skill Level Status
+
+| Skill | Level | Notes |
+|-------|-------|-------|
+| `filter()` | ████████░░ 80% | Solid — logic and syntax automatic |
+| `map()` | ███████░░░ 70% | Good — spread operator integrated |
+| `forEach()` | ███████░░░ 70% | Good — singular/plural no longer a problem |
+| General syntax | █████░░░░░ 50% | Closing braces and template literals — improvement zone |
+
