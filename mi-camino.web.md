@@ -836,3 +836,271 @@ En 8 años de hostelería aprendí a distinguir a los empleados que necesitan un
 | `forEach()` | ███████░░░ 70% | Bien — singular/plural ya no falla |
 | Sintaxis general | █████░░░░░ 50% | Llaves de cierre y template literals — zona de mejora |
 
+# 🗓️ [Día 20 — 11 de Marzo, 2026]
+🎯 **Estado:** DOM en Meta — switch + addEventListener · Sistema de batalla en We Playing Cards · filter/find/Math.random en producción real
+
+---
+
+## 🌅 Bloque 1 — El módulo DOM: por fin el puente entre la lógica y lo que ve el usuario
+
+### 📝 Resumen del Día (Metodología STAR)
+
+* **S (Situación):** 📍 Primer día del módulo "JavaScript en el navegador" en Meta. Por primera vez desde que comencé el curso vi para qué sirve todo lo que llevo aprendiendo. El DOM es lo que conecta JavaScript con lo que el usuario ve en pantalla.
+* **T (Tarea):** 🎯 Completar el ejercicio `handleClicks` — una función con `switch` que cambia el texto de un `h1` al hacer clic, usando un array de 4 valores. Sin ayuda directa.
+* **A (Acción):** 🛠️ Lo construí paso a paso en el Cuaderno de Pitágoras: primero el selector DOM, luego el array, luego el switch caso por caso, finalmente el `addEventListener` que lo conecta todo. Cometí errores en cada pieza — y los corregí solo con pistas.
+* **R (Resultado):** ✅ Función completa, construida con comprensión real de cada línea. Sin copiar. Sin ver la solución antes.
+
+---
+
+### 🛠️ Conceptos Técnicos Dominados — Bloque 1
+
+#### 💻 DOM + switch + addEventListener
+
+```javascript
+const h1 = document.querySelector('h1')
+
+const arr = [
+    'Example Domain',
+    'First Click',
+    'Second Click',
+    'Third Click'
+]
+
+function handleClicks() {
+  switch(h1.innerText) {
+    case arr[0]:
+      h1.innerText = arr[1]
+      break;
+    case arr[1]:
+      h1.innerText = arr[2]
+      break;
+    case arr[2]:
+      h1.innerText = arr[3]
+      break;
+    default:
+      h1.innerText = arr[0]
+      break;
+  }
+}
+
+h1.addEventListener('click', handleClicks);
+```
+
+> En recepción: Reservada → Check-in → En casa → Check-out. En código: arr[0] → arr[1] → arr[2] → arr[3]. Llevo 8 años gestionando estados sin saberlo.
+
+---
+
+### 🥊 La Pelea con el Código — Bloque 1
+
+* **Bug 1 — `case` delante del `default`:**
+    * **Fallo:** Puse `case` delante del `default` como si fuera un case normal.
+    * **Lección:** El `default` no compara nada — captura todo lo que no coincidió. No lleva `case` delante.
+
+* **Bug 2 — `addEventListener` sin referencia:**
+    * `addEventListener('click', handleClicks)` sin `h1.` delante.
+    * **Fallo:** Sin referencia al elemento, JS no sabe a quién escuchar.
+    * **Lección:** Siempre: `elemento.addEventListener()`.
+
+* **Bug 3 — Dos puntos al final:**
+    * `h1.addEventListener('click', handleClicks):` — `:` en lugar de `;`
+    * **Fallo:** Los `:` son de los cases del switch. El `;` cierra la instrucción.
+    * **Lección:** No son intercambiables. El switch usa `:`, las instrucciones usan `;`.
+
+* **✅ Función construida, conectada y funcionando — sin ver la solución.**
+
+---
+
+#### 💡 Mental Model — Bloque 1
+
+```
+document.querySelector()    → selecciona un elemento del HTML y lo trae a JS
+elemento.innerText          → lee o cambia el texto visible de un elemento
+switch(valor)               → evalúa el valor y ejecuta el bloque del case que coincide
+default                     → se ejecuta cuando ningún case coincide — el plan B
+addEventListener('click', fn) → escucha el evento y ejecuta la función cuando ocurre
+```
+
+**Patrón encontrado:** Máquina de estados con el DOM — `switch + innerText + addEventListener` es el patrón básico para cualquier componente interactivo: toggles, tabs, carruseles. El mismo patrón que usaré para el cambio de idioma EN/ES en mi Web CV.
+
+---
+
+### 📊 Niveles al cierre del Bloque 1
+
+| Habilidad | Nivel | Notas |
+|-----------|-------|-------|
+| DOM basics | ████░░░░░░ 40% | querySelector y innerText dominados |
+| Event Listeners | ███░░░░░░░ 35% | addEventListener comprendido en práctica |
+| switch | █████░░░░░ 55% | case / break / default sin confusión |
+
+---
+
+## 🌆 Bloque 2 — We Playing Cards: el sistema de batalla funciona en el navegador
+
+### 📝 Resumen del Día (Metodología STAR)
+
+* **S (Situación):** 📍 Con el DOM recién aprendido, el siguiente paso lógico era aplicarlo a un proyecto real. We Playing Cards tiene 3 cartas en HTML — era el momento de conectarlas con la lógica de JS y crear el primer sistema de batalla real.
+* **T (Tarea):** 🎯 Que al hacer clic en una carta, el sistema elija una carta aleatoria para la máquina, compare los ataques y muestre el resultado en consola. Sin estructura dada — solo el problema.
+* **A (Acción):** 🛠️ Construí el sistema paso a paso: `data-nombre` en el HTML para conectar carta visual con objeto JS, `dataset.nombre` para leerlo, `find()` para buscar en el mazo, `Math.random()` para la carta de la máquina, `if/else` para el resultado. Todo dentro del `addEventListener`.
+* **R (Resultado):** ✅ Sistema de batalla funcionando en el navegador. Cada clic dispara una batalla real con resultado en consola. Primer proyecto interactivo con lógica de datos real.
+
+---
+
+### 🛠️ Conceptos Técnicos Dominados — Bloque 2
+
+#### 💻 data-attributes — conectar HTML con JS
+
+```html
+<!-- HTML — el dato vive en el elemento -->
+<div class="card" data-nombre="Dragón">...</div>
+<div class="card" data-nombre="Sirena">...</div>
+<div class="card" data-nombre="Fénix">...</div>
+```
+
+```javascript
+// JS — lo lees con dataset
+this.dataset.nombre  // → "Dragón", "Sirena" o "Fénix"
+```
+
+> El `data-nombre` es el puente entre lo visual y lo lógico. Sin él, JS no sabe qué carta es cada `div`.
+
+---
+
+#### 💻 `find()` — como `filter` pero devuelve uno solo
+
+```javascript
+// filter → devuelve ARRAY con todos los que cumplen
+const cartasFuego = mazo.filter(function(carta){
+  return carta.tipo === "fuego"
+});
+
+// find → devuelve UN SOLO objeto, el primero que cumple
+const cartaJugador = mazo.find(function(carta){
+  return carta.nombre === nombreElegido
+});
+```
+
+> La estructura es idéntica a `filter`. La diferencia: `find` para cuando buscas uno, `filter` para cuando buscas varios.
+
+---
+
+#### 💻 El sistema de batalla completo
+
+```javascript
+const mazo = [
+  { nombre: "Dragón",   tipo: "fuego",  ataque: 95, defensa: 40 },
+  { nombre: "Sirena",   tipo: "agua",   ataque: 60, defensa: 80 },
+  { nombre: "Fénix",    tipo: "fuego",  ataque: 85, defensa: 50 },
+  { nombre: "Golem",    tipo: "tierra", ataque: 50, defensa: 95 },
+  { nombre: "Rayo",     tipo: "aire",   ataque: 75, defensa: 35 },
+  { nombre: "Kraken",   tipo: "agua",   ataque: 70, defensa: 75 },
+];
+
+const cartas = document.querySelectorAll('.card');
+
+cartas.forEach((carta) => {
+  carta.addEventListener('click', function() {
+
+    // Sistema de nivel (ya existía)
+    const span = this.querySelector('.counter');
+    let nivel = parseInt(span.innerText);
+    span.innerText = nivel + 1;
+    if(nivel + 1 === 11){ span.innerText = 0 }
+    if(nivel + 1 == 10){ this.classList.add('card-legendary') }
+    else { this.classList.remove('card-legendary') }
+
+    // Sistema de batalla (nuevo)
+    const nombreElegido = this.dataset.nombre;
+    const cartaJugador  = mazo.find(function(b){ return b.nombre === nombreElegido });
+    const cartaMaquina  = mazo[Math.floor(Math.random() * mazo.length)];
+
+    if(cartaJugador.ataque > cartaMaquina.ataque) {
+      console.log(`${nombreElegido} (${cartaJugador.ataque}) vs ${cartaMaquina.nombre} (${cartaMaquina.ataque}) → ¡Gana ${nombreElegido}!`)
+    } else {
+      console.log(`¡Gana la máquina con ${cartaMaquina.nombre}!`)
+    }
+
+  });
+});
+```
+
+**Salida real en consola:**
+```
+Dragón (95) vs Rayo (75) → ¡Gana Dragón!
+¡Gana la máquina con Fénix!
+Sirena (60) vs Golem (50) → ¡Gana Sirena!
+Fénix (85) vs Rayo (75) → ¡Gana Fénix!
+```
+
+---
+
+### 🥊 La Pelea con el Código — Bloque 2
+
+* **Bug 1 — `nombreElegido` hardcodeado:**
+    * `return buscoNombre.nombre === "Fénix"` — siempre buscaba Fénix.
+    * **Lección:** Una variable hace el código dinámico. Un string fijo lo rompe.
+
+* **Bug 2 — `return buscoNombre.nombre === true`:**
+    * **Fallo:** Un string nunca es igual a `true`. Hay que comparar con el valor concreto.
+    * **Lección:** `find` necesita una condición `true/false` — siempre comparas con un valor real.
+
+* **Bug 3 — `${cartaMaquina}` en vez de `${cartaMaquina.nombre}`:**
+    * **Fallo:** Imprime `[object Object]` — hay que llegar a la propiedad.
+    * **Lección:** Variable + punto + propiedad. Siempre.
+
+* **Bug 4 — código de batalla fuera del `addEventListener`:**
+    * **Fallo:** El código se ejecutaba al cargar la página, no al hacer clic.
+    * **Lección:** Todo lo que depende de una interacción del usuario va dentro del listener.
+
+* **Bug 5 — doble backtick en template literal:** ` `` ` en vez de ` ` `
+    * **Lección:** Un template literal abre y cierra con un solo backtick. Todo va dentro.
+
+* **✅ Sistema de batalla funcionando — primer proyecto interactivo con lógica real.**
+
+---
+
+#### 💡 Mental Model — Bloque 2
+
+```
+data-nombre              → guarda datos en el HTML para que JS los lea
+dataset.nombre           → lee ese dato desde JS al hacer clic
+find()                   → busca un elemento en un array — devuelve el primero que cumple
+Math.floor(Math.random() * array.length) → índice aleatorio válido para cualquier array
+addEventListener dentro de forEach → cada elemento escucha su propio evento
+```
+
+**Patrón encontrado:** `data-attribute + dataset + find` es el puente estándar entre el DOM y los datos en JS. Lo usaré en EquiShift para conectar cada fila del cuadrante con el objeto trabajador correspondiente.
+
+---
+
+### 📊 Niveles al cierre del Día 20
+
+| Habilidad | Nivel | Notas |
+|-----------|-------|-------|
+| `filter()` | ████████░░ 80% | Encadenado con forEach — sin errores |
+| `find()` | ██████░░░░ 60% | Primer uso real — lógica clara |
+| `forEach()` | ███████░░░ 70% | Acumulación con variable externa dominada |
+| `addEventListener` | █████░░░░░ 55% | Dentro de forEach — patrón comprendido |
+| `data-attributes` | █████░░░░░ 50% | Primer uso — concepto claro |
+| `Math.random()` | ██████░░░░ 60% | Índice aleatorio en array — funcionando |
+| Sintaxis general | ██████░░░░ 60% | Mejora visible respecto al Día 19 |
+
+---
+
+### 🧠 Reflexión Final — El Ángulo Recto
+
+Hoy pasé de estudiar el DOM en un ejercicio de tutorial a aplicarlo en un proyecto real que funciona en el navegador. Esa distancia — del ejercicio al proyecto — es la más difícil de recorrer. Y la recorrí en el mismo día.
+
+Lo más importante no fue el código. Fue darme cuenta de que los errores que cometí no eran de lógica — eran de sintaxis. La lógica la tenía. Solo necesitaba la herramienta para escribirla.
+
+En hostelería aprendí que la diferencia entre un empleado bueno y uno excelente no es el conocimiento — es saber aplicarlo cuando la situación lo exige, sin un manual delante. Hoy fui ese tipo de empleado.
+
+> **💡 Nota Mental del Día:** *"Aprender una herramienta en un tutorial es el 20%. Aplicarla a un problema real el mismo día es el 80% restante."*
+
+---
+
+### 🎯 Next Target
+
+- Implementar el cambio de idioma EN/ES en la Web CV usando el DOM — yo solo, paso a paso
+- Mostrar el resultado de la batalla en el HTML, no solo en consola — `innerText` aplicado al proyecto
+- Añadir `turnosNoche` al objeto trabajador de EquiShift — 3 dimensiones de equidad
+- Fase 2 We Playing Cards — shuffle y mano de 3 cartas

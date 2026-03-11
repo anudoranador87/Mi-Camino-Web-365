@@ -120,7 +120,157 @@
     Día 1 = 20 de febrero de 2026 · Los 365 días se cuentan desde ahí · No todos los días tienen entrada
   </p>
 </section>
+<!-- ============================
+     DÍA 20 — DOM + BATALLA DE CARTAS
+=============================== -->
 
+<article class="entry" data-tags="js dom project" aria-labelledby="title-d20">
+  <header class="entry-kicker">
+    <span class="day-badge">Día 20</span>
+    <time datetime="2026-03-11" data-i18n="d20-date">11 de Marzo, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">JS</li>
+      <li class="etag">DOM</li>
+      <li class="etag">addEventListener</li>
+      <li class="etag">find()</li>
+      <li class="etag">We Playing Cards</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d20" data-i18n="d20-headline">
+    Del switch al sistema de batalla:<br>hoy el DOM dejó de ser teoría.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d20-deck">
+    Empecé el día con el módulo DOM en Meta — un switch, un array, un clic. Lo terminé con un sistema de batalla real funcionando en el navegador: clic en una carta, la máquina elige al azar, gana el de más ataque. Todo construido línea a línea, sin ver la solución.
+  </p>
+
+  <div class="cols">
+
+    <!-- COLUMNA IZQUIERDA -->
+    <div>
+      <h3 class="col-label" data-i18n="d20-lbl-star">Resumen STAR</h3>
+      <p class="body-text">
+        <strong>S —</strong> Primer día del módulo "JavaScript en el navegador" en Meta. Por primera vez vi para qué sirve todo lo que llevo aprendiendo. El DOM es el puente entre JavaScript y lo que el usuario ve en pantalla.<br><br>
+        <strong>T —</strong> Dos objetivos en el mismo día: completar el ejercicio <code>handleClicks</code> del curso, y aplicar inmediatamente el DOM a We Playing Cards con un sistema de batalla real.<br><br>
+        <strong>A —</strong> Construí el switch paso a paso en el Cuaderno de Pitágoras. Luego conecté <code>data-nombre</code> en el HTML con el array <code>mazo</code> en JS usando <code>dataset</code>, <code>find()</code> y <code>Math.random()</code>. Cada pieza la razoné yo solo con pistas graduadas.<br><br>
+        <strong>R —</strong> Dos sistemas funcionando: la máquina de estados del curso y el sistema de batalla del juego. Primer proyecto real con DOM conectado a datos reales.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d20-lbl-wins">Victorias del día</h3>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text"><code>document.querySelector()</code> — primer selector DOM real en ejercicio propio</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text"><code>switch</code> dominado — patrón <code>case / break / default</code> comprendido y aplicado</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text"><code>dataset.nombre</code> — conectar atributo HTML con lógica JS por primera vez</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text"><code>find()</code> en producción — buscar carta del jugador en el mazo por nombre</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text"><code>Math.random()</code> aplicado — carta aleatoria de la máquina funcionando</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">Sistema de batalla completo: clic → find → random → if/else → resultado en consola</span></p>
+
+      <blockquote class="pullquote">"El DOM es el puente entre la lógica y lo que el usuario ve. Hoy crucé ese puente — y construí un juego al otro lado."</blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d20-lbl-levels">Niveles al cierre del día</h3>
+      <div class="skill-row"><span class="skill-name">DOM basics</span><div class="skill-bar-bg" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"><div class="skill-bar-fill" data-width="45"></div></div><span class="skill-pct">45%</span></div>
+      <div class="skill-row"><span class="skill-name">addEventListener</span><div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"><div class="skill-bar-fill" data-width="55"></div></div><span class="skill-pct">55%</span></div>
+      <div class="skill-row"><span class="skill-name">find()</span><div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"><div class="skill-bar-fill" data-width="70"></div></div><span class="skill-pct">70%</span></div>
+      <div class="skill-row"><span class="skill-name">switch</span><div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"><div class="skill-bar-fill" data-width="55"></div></div><span class="skill-pct">55%</span></div>
+    </div>
+
+    <!-- COLUMNA DERECHA -->
+    <div class="col-rule">
+      <h3 class="col-label" data-i18n="d20-lbl-debug">Debug Log</h3>
+
+      <p class="log-item"><span class="li-icon b">✗</span><span class="li-text"><strong>case default mal escrito:</strong> puse <code>case default:</code> como si fuera un case normal.</span></p>
+      <p class="log-item"><span class="li-icon f">→</span><span class="li-text">El <code>default</code> no compara nada — captura todo lo que no coincidió. No lleva <code>case</code> delante.</span></p>
+
+      <p class="log-item"><span class="li-icon b">✗</span><span class="li-text"><strong>addEventListener sin referencia:</strong> <code>addEventListener('click', fn)</code> sin el elemento delante.</span></p>
+      <p class="log-item"><span class="li-icon f">→</span><span class="li-text">Sin referencia JS no sabe a quién escuchar. Siempre: <code>elemento.addEventListener()</code></span></p>
+
+      <p class="log-item"><span class="li-icon b">✗</span><span class="li-text"><strong>find() sin condición:</strong> <code>return buscoNombre.nombre</code> devuelve el valor, no compara.</span></p>
+      <p class="log-item"><span class="li-icon f">→</span><span class="li-text"><code>find()</code> necesita <code>===</code> — una condición que devuelva <code>true</code> o <code>false</code>.</span></p>
+
+      <p class="log-item"><span class="li-icon b">✗</span><span class="li-text"><strong>código fuera del addEventListener:</strong> la batalla se ejecutaba al cargar la página, no al hacer clic.</span></p>
+      <p class="log-item"><span class="li-icon f">→</span><span class="li-text">Todo lo que depende del clic tiene que vivir dentro de las <code>{}</code> del listener.</span></p>
+
+      <p class="log-item"><span class="li-icon w">✓</span><span class="li-text">Sistema de batalla funcionando — clic en carta real dispara batalla real en consola.</span></p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d20-lbl-code">Código del día — Sistema de Batalla</h3>
+      <pre class="code-block"><code>const mazo = [
+  { nombre: "Dragón", tipo: "fuego", ataque: 95, defensa: 40 },
+  { nombre: "Sirena", tipo: "agua",  ataque: 60, defensa: 80 },
+  { nombre: "Fénix",  tipo: "fuego", ataque: 85, defensa: 50 },
+  // ...
+];
+
+cartas.forEach((carta) => {
+  carta.addEventListener('click', function() {
+
+    // 1. Carta del jugador — lee data-nombre del HTML
+    const nombreElegido = this.dataset.nombre;
+    const cartaJugador = mazo.find(function(b){
+      return b.nombre === nombreElegido;
+    });
+
+    // 2. Carta de la máquina — al azar
+    const cartaMaquina = mazo[
+      Math.floor(Math.random() * mazo.length)
+    ];
+
+    // 3. Batalla
+    if(cartaJugador.ataque > cartaMaquina.ataque) {
+      console.log(`${nombreElegido} (${cartaJugador.ataque})
+vs ${cartaMaquina.nombre} (${cartaMaquina.ataque})
+→ ¡Gana ${nombreElegido}!`);
+    } else {
+      console.log(`¡Gana la máquina con ${cartaMaquina.nombre}!`);
+    }
+
+  });
+});</code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">"En recepción: Reservada → Check-in → En casa → Check-out. En código: arr[0] → arr[1] → arr[2] → arr[3]. Llevo 8 años gestionando estados sin saberlo."</blockquote>
+    </div>
+  </div>
+
+  <!-- MENTAL MODEL -->
+  <div class="mental-model">
+    <h3 class="mental-model-label">Mental model</h3>
+    <ul class="mental-model-list">
+      <li><code>document.querySelector()</code> → selecciona un elemento del HTML y lo trae a JavaScript</li>
+      <li><code>dataset.nombre</code> → lee el atributo <code>data-nombre</code> del elemento clickeado</li>
+      <li><code>find()</code> → como <code>filter()</code> pero devuelve solo el primer objeto que cumple la condición</li>
+      <li><code>Math.floor(Math.random() * array.length)</code> → índice aleatorio válido para cualquier array</li>
+      <li><code>switch</code> → máquina de estados: evalúa un valor y ejecuta el bloque del case que coincide</li>
+      <li><code>addEventListener</code> dentro de <code>forEach</code> → cada elemento del DOM escucha su propio evento</li>
+    </ul>
+  </div>
+
+  <!-- PROBLEMA DEL DÍA -->
+  <div class="problem-pattern">
+    <div class="pp-item">
+      <span class="pp-label">Problema del día</span>
+      <p class="pp-text">Conectar una carta visual del HTML con su objeto de datos en JavaScript, y usar esa conexión para construir un sistema de batalla al hacer clic.</p>
+    </div>
+    <div class="pp-item">
+      <span class="pp-label">Cómo lo modelé</span>
+      <p class="pp-text"><code>data-nombre</code> en el HTML → <code>dataset.nombre</code> en JS para leer el nombre → <code>find()</code> para buscar el objeto en el mazo → <code>Math.random()</code> para la carta de la máquina → <code>if/else</code> para decidir el ganador.</p>
+    </div>
+    <div class="pp-item">
+      <span class="pp-label">Qué patrón encontré</span>
+      <p class="pp-text">HTML como fuente de datos + JS como motor de lógica. <code>data-attributes</code> son el puente entre los dos. Este patrón se repite en cualquier lista interactiva, carrito de compra o dashboard.</p>
+    </div>
+  </div>
+
+  <!-- NEXT TARGET -->
+  <div class="next-target">
+    <h3 class="next-target-label">Next target</h3>
+    <ul class="next-target-list">
+      <li>Implementar el cambio de idioma EN/ES en la Web CV usando el DOM — yo solo, paso a paso</li>
+      <li>Mostrar el resultado de la batalla en el HTML, no solo en la consola</li>
+      <li>Avanzar en EquiShift — añadir <code>turnosNoche</code> y función <code>contarFinesdeSemanaLibres()</code></li>
+      <li>Fase 1 We Playing Cards — mostrar stats de ataque y defensa en cada carta</li>
+    </ul>
+  </div>
+
+</article>
 <!-- ============================
      DÍA 19 — COMPLETO
 =============================== -->
