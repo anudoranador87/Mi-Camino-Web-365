@@ -151,16 +151,38 @@ code {
 }
 
 .lang-btn {
-  border: 1px solid var(--paper-d);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: 1.5px solid var(--paper-d);
   background: white;
-  padding: 6px 10px;
-  border-radius: var(--radius);
+  padding: 5px 12px;
+  border-radius: 20px;
   cursor: pointer;
-  transition: background var(--speed);
+  text-decoration: none;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: all 0.2s ease;
 }
 
 .lang-btn:hover {
-  background: var(--paper-d);
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(55,66,250,0.2);
+}
+
+.lang-flag {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.lang-label {
+  line-height: 1;
 }
 
 /* =========================================

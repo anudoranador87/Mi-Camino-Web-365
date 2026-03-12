@@ -1121,3 +1121,273 @@ In hospitality I learned that the difference between a good employee and an exce
 - Show the battle result in the HTML, not just in the console — `innerText` applied to the project
 - Add `turnosNoche` to the EquiShift worker object — 3 dimensions of fairness
 - We Playing Cards Phase 2 — shuffle and hand of 3 cards
+
+# 🗓️ Day 21 — March 11, 2026
+
+🎯 **Status:** Architecture decision documented · English version published · JS counters pending · scalability problem identified
+
+---
+
+## 📝 Day Summary (STAR Methodology)
+
+### S — Situation
+
+The diary had grown to 1300+ lines of HTML in 21 days.
+I wanted to publish an English version so anyone could read the learning process without language being a barrier.
+
+This raised a real architecture question:
+
+> What is the best way to manage bilingual content in a static project?
+
+### T — Task
+
+Create a complete English version of the diary, maintaining:
+
+- simplicity of maintenance
+- full compatibility with GitHub Pages
+- backend independence
+- understandable architecture for a personal project
+
+### A — Action
+
+I evaluated two approaches.
+
+**Option A — Dynamic i18n (JSON + fetch)**
+```javascript
+const translations = await fetch(`/lang/${language}.json`);
+const t = await translations.json();
+
+document.querySelectorAll("[data-i18n]").forEach(el => {
+  el.textContent = t[el.dataset.i18n];
+});
+```
+
+**Advantages**
+- Single HTML file
+- Real-time language switch
+- Adding new languages is straightforward
+
+**Problems in this project**
+- The diary has 1300+ lines
+- Almost all content would need `data-i18n` tags
+- Expensive implementation for a static documentation project
+- Unnecessary complexity on GitHub Pages
+
+---
+
+**Option B — Separate static HTML per language**
+```
+diario-365.html     → Spanish
+diario-365en.html   → English
+          │
+          ▼
+      styles.css
+```
+
+**Advantages**
+- Fast implementation
+- Zero dependencies
+- Compatible with GitHub Pages without extra configuration
+- Extremely simple architecture
+
+**Problems**
+- Duplicated content
+- Every entry must be maintained in both files
+- Scales poorly when adding more languages
+
+### Decision
+
+For a static project with two languages, the simplest solution is the correct one.
+
+**Principle applied:**
+
+> **YAGNI — You Aren't Gonna Need It**
+> Implementing dynamic i18n now would add complexity to a problem that doesn't exist yet.
+
+### R — Result
+
+✅ `diario-365.html` (ES) and `diario-365en.html` (EN) published on GitHub Pages. Language toggle with flags on both. Shared CSS. Active public URL.
+
+---
+
+## 🏗️ Current architecture
+
+```
+             ┌───────────────┐
+             │  GitHub Pages │
+             └───────┬───────┘
+                     │
+         ┌───────────┴───────────┐
+         │                       │
+  diario-365.html         diario-365en.html
+     (Spanish)                (English)
+         │                       │
+         └───────────┬───────────┘
+                     │
+                styles.css
+```
+
+A single shared CSS maintains visual consistency and reduces maintenance.
+
+---
+
+## 🌍 Diary accessibility
+
+The goal is not only professional visibility.
+
+The primary purpose is **accessibility of knowledge**.
+
+Most of the technical documentation I consult daily is in English. Publishing the diary in two languages allows developers anywhere to follow the learning process — someone learning to code in London, Mexico City or Manila can find value in it exactly as I find value in the English technical documentation I consult every day.
+
+A bilingual technical diary is an open resource. There's no point documenting a learning process and then limiting it to people who speak your language.
+
+---
+
+## ⚙️ JS Pending — Diary counters
+
+The header counters exist visually but the logic is still manual.
+
+**Current state:**
+```javascript
+const STATS = {
+  days: 19,
+  bugs: 24,
+  proj: 4,
+  streak: 19
+};
+```
+
+The goal is to calculate them automatically.
+
+**Technical options**
+
+**1. Count DOM articles**
+```javascript
+document.querySelectorAll("article").length
+```
+Advantage: very simple implementation.
+
+**2. Maintain a JSON index**
+```json
+[
+  {"day": 1, "date": "2026-02-19"},
+  {"day": 2, "date": "2026-02-20"}
+]
+```
+Advantage: structured content control.
+
+**3. Parse dates from content**
+
+Extract dates from the DOM and calculate number of entries, consecutive streak and active days.
+
+**4. Generate statistics at build time**
+
+Using a static generator that calculates statistics before deploy.
+
+For now, this logic stays pending until DOM manipulation is better consolidated.
+
+---
+
+## 🔭 Next objective — i18n in the Web CV
+
+The dynamic i18n system I didn't apply to the diary does make sense for the Web CV — short document, controlled, ~50 taggable texts.
+
+```javascript
+// What I need to implement myself
+const translations = {
+  es: { "nav-projects": "Proyectos", "nav-contact": "Contacto" },
+  en: { "nav-projects": "Projects", "nav-contact": "Contact" }
+};
+// How do I connect this object to the data-i18n attributes in the HTML?
+// Next Cuaderno de Pitágoras session 🧮
+```
+
+---
+
+## ⚠️ Problem identified — Diary scalability
+
+**Approximate projection:**
+```
+1300 lines → 21 days
+365 days   → ~22,000 lines of HTML
+```
+
+**Potential problems:**
+- Excessively large DOM
+- Higher rendering times
+- Complicated maintenance
+
+**Options to research**
+
+| Option | Description |
+|--------|-------------|
+| Pagination | 20-30 entries per page |
+| Lazy loading | Load entries on scroll |
+| Separate entries | `/entries/day-001.html` |
+| Static site generator | 11ty, Jekyll |
+| JSON content + dynamic render | Fetch + DOM |
+
+The decision is not urgent yet, but should be resolved before **Day 100**.
+
+---
+
+## ⚠️ Technical Debt introduced today
+
+The current system introduces a small technical debt:
+
+- Duplicated content between languages
+- Manual entry synchronisation
+
+Acceptable because:
+- The project is still small
+- Only two languages
+- Maintenance is still manageable
+
+If the diary grows significantly, this decision will need to be revisited.
+
+---
+
+## 💡 Mental Model — Bilingual architecture
+
+```
+Small / static / 2 languages          → Separate HTML per language
+Large / dynamic / multiple languages   → Dynamic i18n
+Web CV (short document)                → Dynamic i18n as learning exercise
+```
+
+---
+
+## 📊 Skill Levels — End of Day 21
+
+| Skill | Level | Notes |
+|-------|-------|-------|
+| Architecture decisions | ██████░░░░ 60% | First decision documented |
+| Semantic HTML | █████████░ 90% | Clear structure |
+| Modular CSS | ███████░░░ 70% | Shared CSS |
+| Dynamic i18n | ███░░░░░░░ 30% | Concept clear |
+| DOM logic | ████░░░░░░ 40% | Counters pending |
+| GitHub Pages deploy | ████████░░ 80% | Simple pipeline |
+
+---
+
+## 🧠 Final Reflection
+
+Today I didn't write algorithms.
+
+I made an architecture decision, evaluated alternatives and documented the reasoning.
+
+In engineering, identifying problems before they become critical is as important as solving them.
+
+> **💡 Mental note of the day**
+> *Prefer the simplest solution that satisfies the current requirements.*
+
+---
+
+## 🎯 Next Target
+
+- Implement dynamic i18n in the Web CV
+- Consolidate DOM manipulation
+- Implement automatic counters
+- Research diary scalability before Day 100
+- freeCodeCamp JavaScript Algorithms (20-30 min daily)
+- Add `turnosNoche` to EquiShift worker object

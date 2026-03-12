@@ -13,18 +13,21 @@
 </head>
 <body>
 
-<nav class="nav" aria-label="Navegación principal">
+<nav class="nav" aria-label="Main navigation">
   <a href="index.html" class="nav-brand">jose<em>.</em>dev</a>
   <ul class="nav-links">
     <li><a href="index.html#about">Skills</a></li>
-    <li><a href="index.html#projects" data-i18n="nav-projects">Proyectos</a></li>
+    <li><a href="index.html#projects">Projects</a></li>
     <li><a href="index.html#doors">EquiShift</a></li>
-    <li><a href="index.html#education" data-i18n="nav-education">Formación</a></li>
-    <li><a href="diario-365.html" class="here" aria-current="page">Dev Log 365</a></li>
+    <li><a href="index.html#education">Education</a></li>
+    <li><a href="diario-365en.html" class="here" aria-current="page">Dev Log 365</a></li>
     <li><a href="https://github.com/anudoranador87" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-    <li><a href="index.html#contact" class="nav-cta" data-i18n="nav-contact">Contacto</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
   </ul>
-  <button class="lang-btn" id="langToggle" aria-label="Switch to English">EN</button>
+  <a href="diario-365en.html" class="lang-btn" aria-label="Cambiar a Español">
+    <span class="lang-flag">EN</span>
+    <span class="lang-label"></span>
+  </a>
 </nav>
 
 <header class="masthead">
@@ -120,6 +123,235 @@
     Día 1 = 20 de febrero de 2026 · Los 365 días se cuentan desde ahí · No todos los días tienen entrada
   </p>
 </section>
+
+<!-- ============================
+     DÍA 21 — COMPLETO
+=============================== -->
+
+<article id="day-21" class="entry" data-tags="arquitectura i18n deploy" aria-labelledby="title-d21">
+
+  <header class="entry-kicker">
+    <span class="day-badge">Día 21</span>
+    <time datetime="2026-03-11">11 Mar 2026</time>
+    <ul class="entry-tags" aria-label="Tags">
+      <li class="etag">Arquitectura</li>
+      <li class="etag">i18n</li>
+      <li class="etag">GitHub Pages</li>
+      <li class="etag">Technical Debt</li>
+      <li class="etag">YAGNI</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d21">
+    Decisión de arquitectura documentada:<br>
+    la versión más simple es la correcta.
+  </h2>
+
+  <p class="entry-deck">
+    El diario creció hasta 1300+ líneas. Necesitaba una versión en inglés para que cualquier persona pudiera leer el proceso sin que el idioma fuese una barrera. La pregunta técnica real: ¿i18n dinámico o HTML estático separado? Evalué, decidí y documenté — con su technical debt incluido.
+  </p>
+
+  <div class="cols">
+
+    <!-- COLUMNA IZQUIERDA -->
+    <div>
+
+      <h3 class="col-label">Resumen STAR</h3>
+      <p class="body-text">
+        <strong>S —</strong> El diario tenía 1300+ líneas de HTML. Quería publicar una versión inglesa para hacer el contenido accesible a cualquier persona, sin que el idioma fuese una barrera.<br><br>
+        <strong>T —</strong> Crear la versión inglesa completa manteniendo simplicidad de mantenimiento, compatibilidad con GitHub Pages e independencia de backend.<br><br>
+        <strong>A —</strong> Evalué dos enfoques: i18n dinámico con JSON + fetch vs. HTML estático separado por idioma. Analicé tamaño, dependencias y coste de mantenimiento. Decidí HTML estático. El CSS quedó compartido — simplificación correcta.<br><br>
+        <strong>R —</strong>
+        <code>diario-365.html</code> (ES) y
+        <code>diario-365en.html</code> (EN) publicados en GitHub Pages con botón de cambio de idioma y CSS compartido.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px">Las dos opciones evaluadas</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">A</span>
+        <span class="li-text">
+          <strong>i18n dinámico (JSON + fetch)</strong> — un solo HTML, cambio en tiempo real, escalable.
+          Pero: 1300+ líneas a etiquetar y complejidad innecesaria para un proyecto estático en GitHub Pages.
+        </span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">B</span>
+        <span class="li-text">
+          <strong>HTML estático separado</strong> — implementación rápida, cero dependencias y compatible sin configuración.
+          Pero introduce contenido duplicado y sincronización manual.
+        </span>
+      </p>
+
+      <blockquote class="pullquote">
+        YAGNI — <em>You Aren't Gonna Need It</em>.<br>
+        No implementar complejidad para problemas que aún no existen.
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px">Habilidades — Estado actual</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">Arquitectura</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="60"></div>
+        </div>
+        <span class="skill-pct">Needs reinforcement</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">HTML semántico</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="90"></div>
+        </div>
+        <span class="skill-pct">Practiced</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">CSS modular</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="70"></div>
+        </div>
+        <span class="skill-pct">Practiced</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">i18n dinámico</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="30"></div>
+        </div>
+        <span class="skill-pct">Needs reinforcement</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Lógica DOM</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="40"></div>
+        </div>
+        <span class="skill-pct">Needs reinforcement</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">GitHub Pages</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="80"></div>
+        </div>
+        <span class="skill-pct">Practiced</span>
+      </div>
+
+    </div>
+
+    <!-- COLUMNA DERECHA -->
+    <div class="col-rule">
+
+      <h3 class="col-label">Arquitectura actual</h3>
+
+<pre class="code-block"><code>       ┌───────────────┐
+       │  GitHub Pages │
+       └───────┬───────┘
+               │
+   ┌───────────┴───────────┐
+   │                       │
+diario-365.html     diario-365en.html
+   (Spanish)            (English)
+   │                       │
+   └───────────┬───────────┘
+               │
+          styles.css</code></pre>
+
+      <h3 class="col-label" style="margin-top:20px">JS pendiente — Contadores</h3>
+
+<pre class="code-block"><code>// Estado actual — manual
+const STATS = {
+  days: 19,
+  bugs: 24,
+  proj: 4,
+  streak: 19
+};
+
+// Objetivo — automático
+
+// Opción 1: contar entradas del DOM
+document.querySelectorAll(".entry").length
+
+// Opción 2: índice JSON externo
+[{"day": 1, "date": "2026-02-19"}, ...]
+
+// Opción 3: parsear fechas del DOM
+// → calcular racha y días activos
+
+// Opción 4: generador estático en build
+// → 11ty / Jekyll calculan antes del deploy
+
+// Pendiente hasta afianzar lógica DOM</code></pre>
+
+      <h3 class="col-label" style="margin-top:20px">⚠️ Technical Debt introducido</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text">Contenido duplicado entre idiomas</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text">Sincronización manual de entradas</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Aceptable — proyecto pequeño, dos idiomas, mantenimiento manejable</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Revisar antes del Día 100 si el diario supera las 5.000 líneas</span>
+      </p>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        Prefer the simplest solution that satisfies the current requirements.
+      </blockquote>
+
+    </div>
+  </div>
+
+  <!-- MENTAL MODEL -->
+  <div class="mental-model">
+    <h3 class="mental-model-label">Mental model</h3>
+    <ul class="mental-model-list">
+      <li>Proyecto pequeño / estático / 2 idiomas → HTML separado por idioma</li>
+      <li>Proyecto grande / dinámico / múltiples idiomas → i18n con JSON + fetch</li>
+      <li>Web CV (documento corto) → i18n dinámico como ejercicio DOM pendiente</li>
+      <li>YAGNI → no añadir complejidad para problemas que aún no existen</li>
+      <li>Technical Debt → documentarlo siempre con condición de revisión explícita</li>
+    </ul>
+  </div>
+
+  <!-- PROBLEMA DEL DÍA -->
+  <div class="problem-pattern">
+    <div class="pp-item">
+      <span class="pp-label">Decisión del día</span>
+      <p class="pp-text">Publicar el diario en inglés para hacerlo accesible a cualquier persona. Gran parte de la documentación técnica que consulto está en inglés — un recurso técnico bilingüe es un recurso abierto.</p>
+    </div>
+    <div class="pp-item">
+      <span class="pp-label">Cómo lo modelé</span>
+      <p class="pp-text">Evalué i18n dinámico vs. HTML estático → 1300+ líneas hacen inviable el etiquetado → apliqué YAGNI → elegí HTML estático → documenté el trade-off y la deuda técnica introducida.</p>
+    </div>
+    <div class="pp-item">
+      <span class="pp-label">⚠️ Problema identificado — Escalabilidad</span>
+      <p class="pp-text">Proyección: ~22.000 líneas de HTML en 365 días. Opciones a estudiar antes del Día 100: paginación, lazy loading, entradas separadas, generador estático (11ty / Jekyll), o JSON + render dinámico.</p>
+    </div>
+  </div>
+
+  <!-- NEXT TARGET -->
+  <div class="next-target">
+    <h3 class="next-target-label">Next target</h3>
+    <ul class="next-target-list">
+      <li>Implementar i18n dinámico en la Web CV — módulo DOM, solo con pistas</li>
+      <li>Afianzar lógica DOM antes de atacar los contadores automáticos</li>
+      <li>freeCodeCamp JavaScript Algorithms — 20-30 min diarios</li>
+      <li>Estudiar opciones de escalabilidad antes del Día 100</li>
+      <li>Añadir <code>turnosNoche</code> al objeto trabajador de EquiShift</li>
+    </ul>
+  </div>
+
+</article>
 <!-- ============================
      DÍA 20 — DOM + BATALLA DE CARTAS
 =============================== -->

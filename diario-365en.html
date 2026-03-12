@@ -1,0 +1,1560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dev Log 365 — Jose Aparicio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Space+Mono:wght@400;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-brand">jose<em>.</em>dev</a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">Skills</a></li>
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="index.html#doors">EquiShift</a></li>
+    <li><a href="index.html#education">Education</a></li>
+    <li><a href="diario-365en.html" class="here" aria-current="page">Dev Log 365</a></li>
+    <li><a href="https://github.com/anudoranador87" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+  </ul>
+  <a href="index.html" class="lang-btn" aria-label="Cambiar a Español">
+    <span class="lang-flag"></span>
+    <span class="lang-label">ES</span>
+  </a>
+</nav>
+
+<header class="masthead">
+  <p class="mast-top">
+    <span>MÁLAGA, SPAIN — 2026</span>
+    <span>VOL. I · No. 17 / 365</span>
+    <span>anudoranador87.github.io</span>
+  </p>
+
+  <h1 class="mast-title">
+    Dev Log 365
+    <span class="sub">The Engineering Journal of Jose Aparicio</span>
+  </h1>
+
+  <p class="mast-tagline">
+    "Logic is my superpower · Syntax is just the tool"
+    | 17 days · Real errors · No filters
+  </p>
+</header>
+
+<section class="stats-row" aria-label="Learning statistics">
+  <article class="stat-item">
+    <span class="stat-n" id="c-days">0</span>
+    <span class="stat-l">Active days</span>
+  </article>
+  <article class="stat-item">
+    <span class="stat-n" id="c-bugs">0</span>
+    <span class="stat-l">Bugs documented</span>
+  </article>
+  <article class="stat-item">
+    <span class="stat-n" id="c-proj">0</span>
+    <span class="stat-l">Real projects</span>
+  </article>
+  <article class="stat-item">
+    <span class="stat-n" id="c-streak">0</span>
+    <span class="stat-l">Day streak</span>
+  </article>
+</section>
+
+<nav class="filter-nav" aria-label="Filter entries by category">
+  <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+  <button class="filter-btn" data-filter="js" aria-pressed="false">JavaScript</button>
+  <button class="filter-btn" data-filter="css" aria-pressed="false">CSS</button>
+  <button class="filter-btn" data-filter="debug" aria-pressed="false">Debug</button>
+  <button class="filter-btn" data-filter="project" aria-pressed="false">Project</button>
+  <button class="filter-btn" data-filter="algo" aria-pressed="false">Algorithms</button>
+</nav>
+
+<main class="entries" id="entries" aria-label="Diary entries">
+
+<p class="no-results" id="no-results" role="status" aria-live="polite">
+  No entries found for this filter
+</p>
+
+<section class="intro-block" aria-labelledby="intro-title">
+  <p class="intro-kicker">About this log</p>
+
+  <h2 class="intro-headline" id="intro-title">
+    365 days of learning.<br>Documented when I study. No filler.
+  </h2>
+
+  <p class="intro-body">
+    This log starts on February 20, 2026 — the first day I sit down to study and document it.
+    The journey lasts 365 days from that date. There is not one entry per calendar day:
+    there is one entry per day I study, learn or build something real.
+    Days with no entry mean no session. No excuses, no filler.
+  </p>
+
+  <p class="intro-body">
+    Each entry documents real errors, architecture decisions and the process of turning
+    theory into code that works — or doesn't work, and why. The technical foundation comes from two sources:
+  </p>
+
+  <ul class="intro-sources" aria-label="Learning sources">
+    <li class="intro-source">
+      <span class="source-dot" style="background:#0056d2"></span>
+      <p class="source-info">
+        <strong class="source-name">Meta Front-End Developer</strong>
+        <small class="source-sub">Coursera · Professional Certificate · In progress</small>
+      </p>
+    </li>
+
+    <li class="intro-source">
+      <span class="source-dot" style="background:#006400"></span>
+      <p class="source-info">
+        <strong class="source-name">freeCodeCamp</strong>
+        <small class="source-sub">Responsive Web Design · JavaScript Algorithms · In progress</small>
+      </p>
+    </li>
+  </ul>
+
+  <p class="intro-note">
+    Day 1 = February 20, 2026 · The 365 days are counted from there · Not every day has an entry
+  </p>
+</section>
+<!-- ============================
+     DAY 21 — COMPLETE
+=============================== -->
+
+<article id="day-21" class="entry" data-tags="architecture i18n deploy" aria-labelledby="title-d21">
+
+  <header class="entry-kicker">
+    <span class="day-badge">Day 21</span>
+    <time datetime="2026-03-11">11 Mar 2026</time>
+    <ul class="entry-tags" aria-label="Tags">
+      <li class="etag">Architecture</li>
+      <li class="etag">i18n</li>
+      <li class="etag">GitHub Pages</li>
+      <li class="etag">Technical Debt</li>
+      <li class="etag">YAGNI</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d21">
+    Architecture decision documented:<br>
+    the simplest version is the correct one.
+  </h2>
+
+  <p class="entry-deck">
+    The diary grew to 1300+ lines. I needed an English version so anyone could follow the process without language being a barrier. The real technical question: dynamic i18n or separate static HTML? I evaluated, decided and documented — including the technical debt.
+  </p>
+
+  <div class="cols">
+
+    <!-- LEFT COLUMN -->
+    <div>
+
+      <h3 class="col-label">STAR Summary</h3>
+      <p class="body-text">
+        <strong>S —</strong> The diary had 1300+ lines of HTML. I wanted to publish an English version to make the content accessible to anyone, without language being a barrier.<br><br>
+        <strong>T —</strong> Create a complete English version maintaining simplicity of maintenance, full GitHub Pages compatibility and backend independence.<br><br>
+        <strong>A —</strong> Evaluated two approaches: dynamic i18n with JSON + fetch vs. separate static HTML per language. Analysed size, dependencies and maintenance cost. Chose static HTML. CSS ended up shared — correct simplification.<br><br>
+        <strong>R —</strong>
+        <code>diario-365.html</code> (ES) and
+        <code>diario-365en.html</code> (EN) published on GitHub Pages with language toggle and shared CSS.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px">The two options evaluated</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">A</span>
+        <span class="li-text">
+          <strong>Dynamic i18n (JSON + fetch)</strong> — single HTML, real-time switch, scalable.
+          But: 1300+ lines to tag and unnecessary complexity for a static GitHub Pages project.
+        </span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">B</span>
+        <span class="li-text">
+          <strong>Separate static HTML</strong> — fast implementation, zero dependencies, works without configuration.
+          But introduces duplicated content and manual synchronisation.
+        </span>
+      </p>
+
+      <blockquote class="pullquote">
+        YAGNI — <em>You Aren't Gonna Need It</em>.<br>
+        Don't implement complexity for problems that don't exist yet.
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px">Skills — Current status</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">Architecture</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="60"></div>
+        </div>
+        <span class="skill-pct">Needs reinforcement</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Semantic HTML</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="90"></div>
+        </div>
+        <span class="skill-pct">Practiced</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Modular CSS</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="70"></div>
+        </div>
+        <span class="skill-pct">Practiced</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Dynamic i18n</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="30"></div>
+        </div>
+        <span class="skill-pct">Needs reinforcement</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">DOM logic</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="40"></div>
+        </div>
+        <span class="skill-pct">Needs reinforcement</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">GitHub Pages</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="80"></div>
+        </div>
+        <span class="skill-pct">Practiced</span>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="col-rule">
+
+      <h3 class="col-label">Current architecture</h3>
+
+<pre class="code-block"><code>       ┌───────────────┐
+       │  GitHub Pages │
+       └───────┬───────┘
+               │
+   ┌───────────┴───────────┐
+   │                       │
+diario-365.html     diario-365en.html
+   (Spanish)            (English)
+   │                       │
+   └───────────┬───────────┘
+               │
+          styles.css</code></pre>
+
+      <h3 class="col-label" style="margin-top:20px">JS pending — Counters</h3>
+
+<pre class="code-block"><code>// Current state — manual
+const STATS = {
+  days: 19,
+  bugs: 24,
+  proj: 4,
+  streak: 19
+};
+
+// Goal — automatic
+
+// Option 1: count DOM entries
+document.querySelectorAll(".entry").length
+
+// Option 2: external JSON index
+[{"day": 1, "date": "2026-02-19"}, ...]
+
+// Option 3: parse dates from DOM
+// → calculate streak and active days
+
+// Option 4: static generator at build time
+// → 11ty / Jekyll calculate before deploy
+
+// Pending until DOM logic is consolidated</code></pre>
+
+      <h3 class="col-label" style="margin-top:20px">⚠️ Technical Debt introduced</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text">Duplicated content between languages</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text">Manual entry synchronisation</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Acceptable — small project, two languages, manageable maintenance</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Revisit before Day 100 if diary exceeds 5,000 lines</span>
+      </p>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        Prefer the simplest solution that satisfies the current requirements.
+      </blockquote>
+
+    </div>
+  </div>
+
+  <!-- MENTAL MODEL -->
+  <div class="mental-model">
+    <h3 class="mental-model-label">Mental model</h3>
+    <ul class="mental-model-list">
+      <li>Small / static / 2 languages → separate HTML per language</li>
+      <li>Large / dynamic / multiple languages → i18n with JSON + fetch</li>
+      <li>Web CV (short document) → dynamic i18n as pending DOM exercise</li>
+      <li>YAGNI → don't add complexity for problems that don't exist yet</li>
+      <li>Technical Debt → always document it with an explicit review condition</li>
+    </ul>
+  </div>
+
+  <!-- PROBLEM PATTERN -->
+  <div class="problem-pattern">
+    <div class="pp-item">
+      <span class="pp-label">Decision of the day</span>
+      <p class="pp-text">Publish the diary in English to make it accessible to anyone. Most of the technical documentation I consult is in English — a bilingual technical resource is an open resource.</p>
+    </div>
+    <div class="pp-item">
+      <span class="pp-label">How I modelled it</span>
+      <p class="pp-text">Evaluated dynamic i18n vs. static HTML → 1300+ lines make tagging unfeasible → applied YAGNI → chose static HTML → documented the trade-off and technical debt introduced.</p>
+    </div>
+    <div class="pp-item">
+      <span class="pp-label">⚠️ Problem identified — Scalability</span>
+      <p class="pp-text">Projection: ~22,000 lines of HTML at Day 365. Options to research before Day 100: pagination, lazy loading, separate entry files, static generator (11ty / Jekyll), or JSON + dynamic render.</p>
+    </div>
+  </div>
+
+  <!-- NEXT TARGET -->
+  <div class="next-target">
+    <h3 class="next-target-label">Next target</h3>
+    <ul class="next-target-list">
+      <li>Implement dynamic i18n in the Web CV — DOM module, hints only</li>
+      <li>Consolidate DOM logic before tackling automatic counters</li>
+      <li>freeCodeCamp JavaScript Algorithms — 20-30 min daily</li>
+      <li>Research scalability options before Day 100</li>
+      <li>Add <code>turnosNoche</code> to EquiShift worker object</li>
+    </ul>
+  </div>
+
+</article>
+<!-- ============================
+     DAY 19 — COMPLETE
+=============================== -->
+
+<article class="entry" data-tags="js project algo" aria-labelledby="title-d19">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 19</span>
+    <time datetime="2026-03-09">March 9, 2026</time>
+    <ul class="entry-tags">
+      <li class="etag">JS</li>
+      <li class="etag">filter()</li>
+      <li class="etag">map()</li>
+      <li class="etag">forEach()</li>
+      <li class="etag">EquiShift</li>
+      <li class="etag">Cards</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d19">
+    No-Google level test:<br>the logic was already there.
+  </h2>
+
+  <p class="entry-deck">
+    After 67 days of learning a real question surfaced: am I solving problems or just recognising patterns when I see them? A test with no documentation, no Google, on real data from my own projects answered the question.
+  </p>
+
+  <div class="cols">
+
+    <!-- LEFT COLUMN -->
+    <div>
+      <h3 class="col-label">STAR Summary</h3>
+      <p class="body-text">
+        <strong>S —</strong> After 67 days learning JavaScript the question arose: do I know how to program or do I only recognise patterns when I see them?<br><br>
+        <strong>T —</strong> Solve 5 real exercises with <code>filter</code>, <code>forEach</code> and <code>map</code> — no documentation, no Google, on data from my own projects.<br><br>
+        <strong>A —</strong> 4 problems solved on the We Playing Cards deck and the EquiShift worker roster. Identified the correct method in all cases without external help.<br><br>
+        <strong>R —</strong> Confirmed: the logic works. Errors were exclusively syntactical. Logic is the hard part — and I've got it.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px">Wins of the day</h3>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text"><code>filter</code> + <code>forEach</code> chained — correct on the first attempt</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text"><code>map</code> returning full object — solution found without external reference</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">Spread operator applied in production — first real use in EquiShift</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">Real collective agreement update with <code>map</code> + <code>if/else</code></span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">Complete smart card game roadmap — 4 phases designed</span></p>
+
+      <blockquote class="pullquote">"The logic was already there. I just needed to write it."</blockquote>
+
+      <h3 class="col-label" style="margin-top:16px">Skill levels at end of day</h3>
+      <div class="skill-row"><span class="skill-name">filter()</span><div class="skill-bar-bg" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"><div class="skill-bar-fill" data-width="80"></div></div><span class="skill-pct">80%</span></div>
+      <div class="skill-row"><span class="skill-name">map()</span><div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"><div class="skill-bar-fill" data-width="70"></div></div><span class="skill-pct">70%</span></div>
+      <div class="skill-row"><span class="skill-name">forEach()</span><div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"><div class="skill-bar-fill" data-width="70"></div></div><span class="skill-pct">70%</span></div>
+      <div class="skill-row"><span class="skill-name">Syntax</span><div class="skill-bar-bg" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><div class="skill-bar-fill" data-width="50"></div></div><span class="skill-pct">50%</span></div>
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="col-rule">
+      <h3 class="col-label">Debug Log</h3>
+
+      <p class="log-item"><span class="li-icon b">✗</span><span class="li-text"><strong>Unclosed blocks:</strong> recurring error in functions inside array methods.</span></p>
+      <p class="log-item"><span class="li-icon f">→</span><span class="li-text">The function opens with <code>{</code> and must close with <code>}</code> before the method's <code>)</code>.</span></p>
+
+      <p class="log-item"><span class="li-icon b">✗</span><span class="li-text"><strong>return with commas:</strong> <code>return name, contract, holidays</code> does not create an object.</span></p>
+      <p class="log-item"><span class="li-icon f">→</span><span class="li-text">An object needs <code>&#123; property: value &#125;</code> — curly braces are mandatory.</span></p>
+
+      <p class="log-item"><span class="li-icon b">✗</span><span class="li-text"><strong>Template literals inside objects:</strong> context confusion.</span></p>
+      <p class="log-item"><span class="li-icon f">→</span><span class="li-text">Template literals → generate text. Objects → store data. Don't mix them.</span></p>
+
+      <p class="log-item"><span class="li-icon b">✗</span><span class="li-text"><strong>forEach on wrong array:</strong> applied to <code>deck</code> instead of the <code>filter</code> result.</span></p>
+      <p class="log-item"><span class="li-icon f">→</span><span class="li-text">forEach iterates the filter result, not the original array.</span></p>
+
+      <p class="log-item"><span class="li-icon w">✓</span><span class="li-text">Correct logic in all 4 problems. Every error was syntactical, not conceptual.</span></p>
+
+      <h3 class="col-label" style="margin-top:20px">Code of the day — EquiShift</h3>
+      <pre class="code-block"><code>const fewerHolidays = workers.map(
+  function(worker) {
+
+    if(worker.holidaysAvailable === 13){
+      return {
+        ...worker,
+        holidaysAvailable:
+          worker.holidaysAvailable - 1
+      }
+    }
+
+    return worker
+  }
+);
+
+// Jose María → 12 holidays
+// Salvador   → 12 holidays
+// Miguel     → 12 holidays
+// Diego      → 14 holidays (no change)
+// Rafa       → 14 holidays (no change)</code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">"The project grows at the same pace as my learning. Not the other way around."</blockquote>
+    </div>
+  </div>
+
+  <!-- MENTAL MODEL -->
+  <div class="mental-model">
+    <h3 class="mental-model-label">Mental model</h3>
+    <ul class="mental-model-list">
+      <li><code>filter()</code> → selects elements that meet a condition</li>
+      <li><code>map()</code> → transforms each element, returns new array</li>
+      <li><code>forEach()</code> → executes an action per element, returns nothing</li>
+      <li><code>spread ...</code> → copies object properties without mutating it</li>
+      <li><code>if/else inside map()</code> → transforms only elements that meet the condition</li>
+    </ul>
+  </div>
+
+  <!-- PROBLEM PATTERN -->
+  <div class="problem-pattern">
+    <div class="pp-item">
+      <span class="pp-label">Problem of the day</span>
+      <p class="pp-text">Update the holiday balance of 37.5h workers after a collective agreement change, without touching the 40h workers' data.</p>
+    </div>
+    <div class="pp-item">
+      <span class="pp-label">How I modelled it</span>
+      <p class="pp-text">Array of objects → <code>map()</code> to iterate all → <code>if/else</code> to distinguish contracts → <code>spread</code> to return the modified object without repeating properties.</p>
+    </div>
+    <div class="pp-item">
+      <span class="pp-label">Pattern found</span>
+      <p class="pp-text">Conditional object transformation: <code>map + if/else + spread</code> is the standard pattern for updating only some elements of an array without mutating the original.</p>
+    </div>
+  </div>
+
+  <!-- NEXT TARGET -->
+  <div class="next-target">
+    <h3 class="next-target-label">Next target</h3>
+    <ul class="next-target-list">
+      <li>Reduce syntax errors in nested functions — automate closing of <code>{}</code></li>
+      <li>Solve pending Problem 5 — the hardest of the level test</li>
+      <li>We Playing Cards Phase 1 — convert hardcoded cards to array of objects with real stats</li>
+      <li>Chain <code>filter</code> → <code>map</code> → <code>forEach</code> on the card deck</li>
+    </ul>
+  </div>
+
+  <!-- EQUISHIFT DISCOVERY -->
+  <div class="problem-pattern" style="margin-top:24px; border-left-color: #e74c3c;">
+    <div class="pp-item">
+      <span class="pp-label" style="background:#e74c3c;">🔴 EquiShift Discovery — The Injustice Documented</span>
+      <p class="pp-text">Analysing the real physical schedule from the hotel, I quantified the inequity of the manual system for the first time. The data speaks for itself:</p>
+      <pre class="code-block" style="margin-top:10px;"><code>// Weekend free days by rotation (vacations excluded)
+Diego:    70 days  ← 43% of total — same contract as Rafa
+Salvador: 29 days
+Miguel:   26 days
+Jose:     22 days  ← me
+Rafa:     17 days  ← also 40h, but only 17
+─────────────────────────────────
+TOTAL available: 164 days
+Fair distribution: ~33 days per person (~16 full weekends)</code></pre>
+    </div>
+    <div class="pp-item">
+      <span class="pp-label">The business rule that defines the algorithm</span>
+      <p class="pp-text">It's not just about how many holidays you work — it's about <strong>when you get your compensatory rest day back</strong>. If the compensatory day falls on a weekend, it harms the team by reducing collective Saturday and Sunday free days. EquiShift must ensure compensatory days are assigned <strong>on weekdays</strong>.</p>
+    </div>
+    <div class="pp-item">
+      <span class="pp-label">The core constant of EquiShift</span>
+      <p class="pp-text">With the real data calculated, the constant the algorithm must respect is:</p>
+      <pre class="code-block" style="margin-top:10px;"><code>const MAX_WEEKEND_ROTATION = 33; // ~16 full weekends
+// Nobody above this threshold.
+// Diego goes from 70 → 33. The algorithm redistributes the excess.</code></pre>
+    </div>
+    <div class="pp-item">
+      <span class="pp-label">Why this is not a tutorial project</span>
+      <p class="pp-text">These numbers come from a real schedule, a real hotel, a problem that affects real people. Eight years in hospitality gave me the context to understand the injustice. Learning to code is giving me the tools to fix it.</p>
+    </div>
+  </div>
+
+</article>
+
+<!-- ============================
+     DAY 17 — COMPLETE
+=============================== -->
+
+<article class="entry" data-tags="js debug" aria-labelledby="title-d17">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 17</span>
+    <time datetime="2026-03-08">March 8, 2026</time>
+    <ul class="entry-tags">
+      <li class="etag">JS</li>
+      <li class="etag">Arrow Fn</li>
+      <li class="etag">Debug</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d17">
+    Arrow Functions, five failed attempts<br>and a "click" that changes how I think about code.
+  </h2>
+
+  <p class="entry-deck">
+    I knew how to write Function Declarations because it was the only thing I knew. Today I had to rewrite real code with Arrow Functions — no safety net. The process was uncomfortable, slow, and exactly what I needed.
+  </p>
+
+  <div class="cols">
+    <div>
+      <h3 class="col-label">STAR Summary</h3>
+      <p class="body-text">
+        <strong>S —</strong> Several days with Jonas Schmedtmann working on function types. Only knew Function Declarations.<br><br>
+        <strong>T —</strong> Refactor <code style="background:var(--paper-d);padding:1px 5px;font-family:var(--mono);font-size:11px;">formatearPrecio</code> from Day 7 into an Arrow Function with a default parameter.<br><br>
+        <strong>A —</strong> Cuaderno de Pitágoras session — graduated hints, no direct solutions. Built the function in layers: basic structure → second parameter → template literal order → default concept.<br><br>
+        <strong>R —</strong> Function built from scratch with real understanding of every part.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px">The Three Zones of an Arrow Function</h3>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text"><strong>ZONE 1 — Parameters</strong> (before ⇒): what data it will receive.</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text"><strong>ZONE 2 — The arrow =&gt;</strong>: connects input to output.</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text"><strong>ZONE 3 — The body</strong>: uses the data and returns something.</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">Default parameters: with <code>= value</code>, JS uses it if nothing is passed.</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">The choice between Declaration and Arrow must be conscious, not by habit.</span></p>
+
+      <blockquote class="pullquote">"A parameter is not a value. It's a reserved seat for any value that arrives."</blockquote>
+
+      <h3 class="col-label" style="margin-top:16px">Skill levels at end of day</h3>
+      <div class="skill-row"><span class="skill-name">Arrow Fn</span><div class="skill-bar-bg" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"><div class="skill-bar-fill" data-width="40"></div></div><span class="skill-pct">40%</span></div>
+      <div class="skill-row"><span class="skill-name">Defaults</span><div class="skill-bar-bg" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"><div class="skill-bar-fill" data-width="30"></div></div><span class="skill-pct">30%</span></div>
+      <div class="skill-row"><span class="skill-name">Literals</span><div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"><div class="skill-bar-fill" data-width="70"></div></div><span class="skill-pct">70%</span></div>
+    </div>
+
+    <div class="col-rule">
+      <h3 class="col-label">Debug Log — The 5 Attempts</h3>
+
+      <p class="log-item"><span class="li-icon b">✗</span><span class="li-text"><strong>Attempt 1:</strong> Confused function name with parameter. Colon instead of arrow.<br><code>const formatMachine = formatPrev => 5:</code></span></p>
+      <p class="log-item"><span class="li-icon f">→</span><span class="li-text">The parameter is a temporary name, not a fixed value.</span></p>
+
+      <p class="log-item"><span class="li-icon b">✗</span><span class="li-text"><strong>Attempt 2:</strong> <code>const formatPrice = 5 =></code> — the 5 is a concrete passenger, not a seat.</span></p>
+      <p class="log-item"><span class="li-icon b">✗</span><span class="li-text"><strong>Attempt 3:</strong> Missing closing backtick. Code died silently.</span></p>
+      <p class="log-item"><span class="li-icon f">→</span><span class="li-text">Everything that opens must close. No exceptions.</span></p>
+
+      <p class="log-item"><span class="li-icon b">✗</span><span class="li-text"><strong>Attempt 4:</strong> Reversed order — <code>${amount}${currency}</code> returns "5€" instead of "€5".</span></p>
+      <p class="log-item"><span class="li-icon b">✗</span><span class="li-text"><strong>Attempt 5:</strong> Random "bb" at the end of the template literal. Signal of saturation. Strategic pause.</span></p>
+      <p class="log-item"><span class="li-icon w">✓</span><span class="li-text">Result: function built from scratch with real understanding of every part.</span></p>
+
+      <h3 class="col-label" style="margin-top:20px">Final Function</h3>
+      <pre class="code-block"><code>
+// Arrow Function + default parameter
+const formatPrice =
+  (currency = "€", amount) =>
+    `${currency}${amount}`;
+
+formatPrice(5);        // → "€5"
+formatPrice("£", 5);   // → "£5"
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">"Before I used Declarations because it was the only thing I knew. Now I choose consciously."</blockquote>
+    </div>
+  </div>
+
+  <!-- MENTAL MODEL -->
+  <div class="mental-model">
+    <h3 class="mental-model-label">Mental model</h3>
+    <ul class="mental-model-list">
+      <li><code>const fn = (params) => body</code> → Arrow Function — compact syntax, implicit return possible</li>
+      <li><code>param = "default"</code> → default parameter — JS uses it if nothing is passed</li>
+      <li>Arrow vs Declaration → same power, different syntax — choose consciously</li>
+      <li>Template literal order matters → <code>${currency}${amount}</code> ≠ <code>${amount}${currency}</code></li>
+    </ul>
+  </div>
+
+  <!-- PROBLEM PATTERN -->
+  <div class="problem-pattern">
+    <div class="pp-item">
+      <span class="pp-label">Problem of the day</span>
+      <p class="pp-text">Rewrite a Function Declaration as an Arrow Function with a default parameter — without losing the logic or the output format.</p>
+    </div>
+    <div class="pp-item">
+      <span class="pp-label">How I modelled it</span>
+      <p class="pp-text">Identify the three zones (parameters / arrow / body) → add default value to first parameter → verify template literal order → test with and without argument.</p>
+    </div>
+    <div class="pp-item">
+      <span class="pp-label">Pattern found</span>
+      <p class="pp-text">Arrow Function with default parameter: <code>(param = "default", otherParam) => `${param}${otherParam}`</code> — compact, readable, production-ready.</p>
+    </div>
+  </div>
+
+  <!-- NEXT TARGET -->
+  <div class="next-target">
+    <h3 class="next-target-label">Next target</h3>
+    <ul class="next-target-list">
+      <li>Add third parameter <code>units</code> to <code>formatPrice</code> — calculate total price</li>
+      <li>Apply Arrow Functions in EquiShift utility functions</li>
+      <li>Practice implicit return with one-liner arrow functions</li>
+    </ul>
+  </div>
+
+</article>
+
+<!-- ============================
+     DAY 10
+=============================== -->
+
+<article class="entry" data-tags="css js" aria-labelledby="title-d10">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 10</span>
+    <time datetime="2026-03-01">March 1, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">Reflection</li>
+      <li class="etag">Milestone</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d10">
+    Positive saturation:<br>the brain also needs to compile.
+  </h2>
+
+  <p class="entry-deck">
+    After weeks of constant bombardment between freeCodeCamp and Coursera, the definitive "click" arrived — and with it, the smartest decision: stop. Not quitting. Letting the brain do its job.
+  </p>
+
+  <div class="cols">
+    <div>
+      <h3 class="col-label">The win before stopping</h3>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">The definitive "click": extracting data from objects without guessing the syntax</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">60 consecutive days: HTML, CSS, JS, real projects, EquiShift</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">Full syntax control — from doubt to mastery in 8 weeks</span></p>
+
+      <blockquote class="pullquote">
+        "Learning also means knowing when to stop. I'm leaving on a win, not running from a block."
+      </blockquote>
+    </div>
+
+    <div class="col-rule">
+      <h3 class="col-label">The decision</h3>
+      <p class="body-text">
+        Saturation is not a block — it's the symptom of having absorbed too well.
+        When I come back, many things that cost effort today will come naturally.
+        <strong>The brain also needs time to compile.</strong>
+      </p>
+    </div>
+  </div>
+
+  <!-- PROBLEM PATTERN -->
+  <div class="problem-pattern">
+    <div class="pp-item">
+      <span class="pp-label">Reflection of the day</span>
+      <p class="pp-text">Saturation after sustained learning is not failure — it's consolidation in progress. The brain processes and connects concepts during rest. Stopping on a win preserves motivation and accelerates recovery.</p>
+    </div>
+    <div class="pp-item">
+      <span class="pp-label">Pattern found</span>
+      <p class="pp-text">The best moment to stop is right after a win — not when blocked. This is the same principle as ending a hotel shift with everything in order, not in the middle of a check-in rush.</p>
+    </div>
+  </div>
+
+  <!-- NEXT TARGET -->
+  <div class="next-target">
+    <h3 class="next-target-label">Next target</h3>
+    <ul class="next-target-list">
+      <li>Return to JavaScript after the compile pause — Arrow Functions and array methods</li>
+      <li>Apply object extraction without syntax guessing in a real project</li>
+    </ul>
+  </div>
+
+</article>
+
+<!-- ============================
+     DAY 9
+=============================== -->
+
+<article class="entry" data-tags="js algo project" aria-labelledby="title-d9">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 9</span>
+    <time datetime="2026-02-28">February 28, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">JS</li>
+      <li class="etag">Algorithms</li>
+      <li class="etag">Project</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d9">
+    EquiShift Málaga: The day I started<br>coding labour justice.
+  </h2>
+
+  <p class="entry-deck">
+    Manual shift management has been generating inequity in my workplace for years.
+    Today I designed the logical core of the algorithm that will change it — with objects,
+    nested arrays and modular arithmetic.
+  </p>
+
+  <div class="cols">
+    <div>
+      <h3 class="col-label">The real problem</h3>
+      <p class="body-text" style="margin-bottom:16px;">
+        With rosters mixing 37.5h and 40h contracts, guaranteeing everyone gets the same
+        number of free weekends per year is mathematically impossible by hand.
+        <strong>This is not a tutorial project.</strong>
+        It solves a real operational problem.
+      </p>
+
+      <blockquote class="pullquote">
+        "I'm not looking for a spreadsheet. I'm looking for a system where the schedule is, for the first time, truly equal for everyone."
+      </blockquote>
+
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">Data model: worker object with contract metadata and day balance tracking</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">Dataset: 14 Málaga 2026 holidays — national, regional and local integrated</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">calendario: [] as a "hook" — structure exists before the engine</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">YYYY-MM-DD format to avoid timezone errors in early phase</span></p>
+      <p class="log-item"><span class="li-icon b">✗</span><span class="li-text">Object nesting in arrays — one misplaced comma kills the entire script</span></p>
+      <p class="log-item"><span class="li-icon f">→</span><span class="li-text">Data architecture demands surgical precision from Phase 1</span></p>
+    </div>
+
+    <div class="col-rule">
+      <h3 class="col-label">Data model structure</h3>
+      <pre class="code-block"><code>
+// Each employee — scalable and fair
+{
+  id: 1,
+  nombre: "Jose María",
+  contrato: 37.50,
+  festivosDisponibles: 13,
+  vacacionesDisponibles: 28,
+  calendario: [] // Target of the master loop
+}
+      </code></pre>
+
+      <h3 class="col-label" style="margin-top:20px;">Modular rotation algorithm</h3>
+      <pre class="code-block"><code>
+function calcularTurno(dia, idx) {
+  return turnos[
+    (dia + idx) % turnos.length
+  ];
+}
+// % guarantees perfect rotation
+// regardless of roster size or days
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "Thinking about architecture before writing code is not wasting time.
+        It's building on rock, not on sand."
+      </blockquote>
+    </div>
+  </div>
+
+  <!-- MENTAL MODEL -->
+  <div class="mental-model">
+    <h3 class="mental-model-label">Mental model</h3>
+    <ul class="mental-model-list">
+      <li>Object with nested array → the base data structure for any real-world entity</li>
+      <li><code>calendario: []</code> → empty array as a hook — structure first, data later</li>
+      <li>Modular arithmetic <code>%</code> → guarantees cyclic rotation regardless of array size</li>
+      <li>YYYY-MM-DD → timezone-safe date format for string comparisons</li>
+    </ul>
+  </div>
+
+  <!-- PROBLEM PATTERN -->
+  <div class="problem-pattern">
+    <div class="pp-item">
+      <span class="pp-label">Problem of the day</span>
+      <p class="pp-text">Model a real workforce with mixed contracts (37.5h and 40h) so that an algorithm can assign shifts fairly, tracking holidays, vacations and rotation simultaneously.</p>
+    </div>
+    <div class="pp-item">
+      <span class="pp-label">How I modelled it</span>
+      <p class="pp-text">One object per worker → properties for contract, holiday balance, vacation balance → empty <code>calendario</code> array as target for the master loop → modular rotation formula to assign shifts cyclically.</p>
+    </div>
+    <div class="pp-item">
+      <span class="pp-label">Pattern found</span>
+      <p class="pp-text">Data architecture precedes engine logic. Define your data model completely before writing a single loop — it's impossible to build a fair algorithm on top of an incomplete data structure.</p>
+    </div>
+  </div>
+
+  <!-- NEXT TARGET -->
+  <div class="next-target">
+    <h3 class="next-target-label">Next target</h3>
+    <ul class="next-target-list">
+      <li>Build the master loop — populate <code>calendario</code> for all 365 days</li>
+      <li>Integrate holiday detection — <code>esFestivo(fecha)</code> utility function</li>
+      <li>First equity report — count free weekends per worker after rotation</li>
+    </ul>
+  </div>
+
+</article>
+
+<!-- ============================
+     DAY 8
+=============================== -->
+
+<article class="entry" data-tags="js css poo" aria-labelledby="title-d8">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 8</span>
+    <time datetime="2026-02-27">February 27, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">JS</li>
+      <li class="etag">CSS</li>
+      <li class="etag">OOP</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d8">
+    Native Dark Mode with CSS Variables:<br>from the jungle to clean architecture.
+  </h2>
+
+  <p class="entry-deck">
+    I implemented a dark mode using Design Tokens — and learned that a well-named CSS variable is worth more than 50 lines of hardcoded colours.
+  </p>
+
+  <div class="cols">
+    <div>
+      <h3 class="col-label">Dark Mode — technical solution</h3>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">classList.toggle('dark-mode') via Event Listener — real DOM manipulation</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">Centralised CSS Custom Properties — theme change in a single point</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">Design Tokens architecture: scalable and maintainable from day one</span></p>
+      <p class="log-item"><span class="li-icon b">✗</span><span class="li-text">Jungle of duplicate styles was blocking CSS variable inheritance</span></p>
+      <p class="log-item"><span class="li-icon b">✗</span><span class="li-text">Unclosed } was invalidating entire CSS sections</span></p>
+      <p class="log-item"><span class="li-icon f">→</span><span class="li-text">Clean before you build: order is the foundation of professional development</span></p>
+
+      <blockquote class="pullquote">"A well-named CSS variable is worth more than 50 lines of hardcoded colours."</blockquote>
+    </div>
+
+    <div class="col-rule">
+      <h3 class="col-label">Toggle architecture</h3>
+      <pre class="code-block"><code>
+/* Design Token System */
+:root {
+  --bg:   #ffffff;
+  --text: #333333;
+}
+
+.dark-mode {
+  --bg:   #121212;
+  --text: #f0f0f0;
+}
+
+// JS — one toggle changes everything
+btn.addEventListener('click', () =>
+  document.body.classList
+    .toggle('dark-mode')
+);
+      </code></pre>
+    </div>
+  </div>
+
+  <!-- MENTAL MODEL -->
+  <div class="mental-model">
+    <h3 class="mental-model-label">Mental model</h3>
+    <ul class="mental-model-list">
+      <li><code>:root { --var: value }</code> → define token once, use everywhere</li>
+      <li><code>.dark-mode { --var: newValue }</code> → override token in dark context</li>
+      <li><code>classList.toggle()</code> → adds class if absent, removes if present — one line toggle</li>
+      <li>Design Tokens → the single source of truth for all visual decisions</li>
+    </ul>
+  </div>
+
+  <!-- PROBLEM PATTERN -->
+  <div class="problem-pattern">
+    <div class="pp-item">
+      <span class="pp-label">Problem of the day</span>
+      <p class="pp-text">Implement a dark mode toggle that switches the entire site theme with a single click — without duplicating CSS rules for every element.</p>
+    </div>
+    <div class="pp-item">
+      <span class="pp-label">How I modelled it</span>
+      <p class="pp-text">Define colour tokens in <code>:root</code> → override same tokens in <code>.dark-mode</code> → use <code>classList.toggle</code> on click → all elements update automatically via CSS inheritance.</p>
+    </div>
+    <div class="pp-item">
+      <span class="pp-label">Pattern found</span>
+      <p class="pp-text">Design Token System: define values once at the root, reference everywhere. Changing a theme is changing one class, not fifty rules. This is the same principle as changing a hotel's brand standards — one update, everything follows.</p>
+    </div>
+  </div>
+
+  <!-- NEXT TARGET -->
+  <div class="next-target">
+    <h3 class="next-target-label">Next target</h3>
+    <ul class="next-target-list">
+      <li>Persist dark mode preference with <code>localStorage</code></li>
+      <li>Apply Design Token system to Web CV</li>
+      <li>Add transition animation to theme switch</li>
+    </ul>
+  </div>
+
+</article>
+
+<!-- ============================
+     DAY 7
+=============================== -->
+
+<article class="entry" data-tags="js funciones project" aria-labelledby="title-d7">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 7</span>
+    <time datetime="2026-02-26">February 26, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">JS</li>
+      <li class="etag">Functions</li>
+      <li class="etag">Project</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d7">
+    Coursera exam passed.<br>It wasn't enough.
+  </h2>
+
+  <p class="entry-deck">
+    The system marked it passed. I built a supermarket ticket generator anyway — because passing a test is memory, and building something is real understanding.
+  </p>
+
+  <div class="cols">
+    <div>
+      <h3 class="col-label">The decision</h3>
+      <p class="body-text">
+        The exam focused on theory: local variables, basic chaining.
+        I had the certificate but the "syntax nightmare" was still there.
+        I decided to build a real case to understand how data travels between functions —
+        the origin, the communication and the activation.
+      </p>
+
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">Parameters as reserved seats — not fixed data</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">The flow from return to argument — communication between functions</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">The () are the only real switch of a function</span></p>
+      <p class="log-item"><span class="li-icon b">✗</span><span class="li-text">Trying to add functions with + — functions are invoked, not operated on</span></p>
+      <p class="log-item"><span class="li-icon b">✗</span><span class="li-text">Mixing ${} with parentheses — the Template Literal is surgical</span></p>
+
+      <blockquote class="pullquote">"product and price are temporary names I choose so the code is readable to other humans."</blockquote>
+    </div>
+
+    <div class="col-rule">
+      <h3 class="col-label">Modular architecture</h3>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">formatPrice() — Processor. Number → money with symbol.</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">printTicket() — Interface. Talks to the human.</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">makePurchase() — Controller. Coordinates the flow between both.</span></p>
+
+      <h3 class="col-label" style="margin-top:20px;">Generator code</h3>
+      <pre class="code-block"><code>
+function formatPrice(amount) {
+  return `€${amount}`;
+}
+
+function printTicket(prod, price) {
+  console.log(
+    `${prod} → ${price}`
+  );
+}
+
+function makePurchase(item, val) {
+  let r = formatPrice(val);
+  printTicket(item, r);
+}
+
+makePurchase("Apples", 5);
+// → "Apples → €5"
+      </code></pre>
+    </div>
+  </div>
+
+  <!-- MENTAL MODEL -->
+  <div class="mental-model">
+    <h3 class="mental-model-label">Mental model</h3>
+    <ul class="mental-model-list">
+      <li>Parameters → reserved seats, not fixed values</li>
+      <li><code>return</code> → sends data out of the function to whoever called it</li>
+      <li>Function chaining → the output of one becomes the input of the next</li>
+      <li><code>()</code> → the only real switch that activates a function</li>
+      <li>Modular architecture → one function, one responsibility (Processor / Interface / Controller)</li>
+    </ul>
+  </div>
+
+  <!-- PROBLEM PATTERN -->
+  <div class="problem-pattern">
+    <div class="pp-item">
+      <span class="pp-label">Problem of the day</span>
+      <p class="pp-text">Generate a formatted supermarket receipt from raw product and price data — using chained functions instead of one monolithic block.</p>
+    </div>
+    <div class="pp-item">
+      <span class="pp-label">How I modelled it</span>
+      <p class="pp-text">Split the logic into three responsibilities: format the price (Processor) → print the line (Interface) → coordinate the flow (Controller). Each function has one job and one job only.</p>
+    </div>
+    <div class="pp-item">
+      <span class="pp-label">Pattern found</span>
+      <p class="pp-text">Single Responsibility principle in practice: small focused functions that chain together are easier to debug, reuse and scale than one large function that does everything. This mirrors how a hotel team works — each role has a specific task, the manager coordinates.</p>
+    </div>
+  </div>
+
+  <!-- NEXT TARGET -->
+  <div class="next-target">
+    <h3 class="next-target-label">Next target</h3>
+    <ul class="next-target-list">
+      <li>Refactor <code>formatPrice</code> into an Arrow Function — Day 17 challenge</li>
+      <li>Add discount logic — apply percentage reduction before formatting</li>
+      <li>Generate receipt for multiple items with a loop</li>
+    </ul>
+  </div>
+
+</article>
+
+<!-- ============================
+     DAY 6
+=============================== -->
+
+<article class="entry" data-tags="js dom debug" aria-labelledby="title-d6">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 6</span>
+    <time datetime="2026-02-25">February 25, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">JS</li>
+      <li class="etag">DOM</li>
+      <li class="etag">Debug</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d6">
+    Circular State Engine:<br>from level 1 to 10, and back to the start.
+  </h2>
+
+  <p class="entry-deck">
+    A logic loop that increments levels and triggers a visual Legendary Mode at the maximum.
+    What seems simple hides three syntax traps that cost me the entire afternoon.
+  </p>
+
+  <div class="cols">
+    <div>
+      <h3 class="col-label">Wins of the day</h3>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">Circular State Engine: logic loop that increments from 1 to 10 and resets to 0 at level 11.</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">Legendary Mode: visual trigger (scale, golden borders and glow) at max level.</span></p>
+
+      <h3 class="col-label" style="margin-top:20px;">Error handling — Meta Coursera</h3>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">The 4 horsemen: ReferenceError, TypeError, RangeError, SyntaxError — identified and mastered.</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">try...catch blocks for applications that don't die on unexpected failures.</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">.name and .message to extract critical info from the Error object.</span></p>
+
+      <blockquote class="pullquote">"Logic errors are the most critical because the console doesn't warn you. Critical thinking is the only defence."</blockquote>
+    </div>
+
+    <div class="col-rule">
+      <h3 class="col-label">Debug Log</h3>
+      <p class="log-item"><span class="li-icon b">✗</span><span class="li-text">The Else Conflict: When resetting to 0, the golden effect disappeared so fast it killed the UX.</span></p>
+      <p class="log-item"><span class="li-icon f">→</span><span class="li-text">Reorganised the if/else flow to prioritise the visual persistence of the milestone reached.</span></p>
+      <p class="log-item"><span class="li-icon b">✗</span><span class="li-text">Extra parenthesis: {(this... dead code instantly.</span></p>
+      <p class="log-item"><span class="li-icon b">✗</span><span class="li-text">Dot inside classList: classList has no dot. Orphan character = engine stopped.</span></p>
+      <p class="log-item"><span class="li-icon f">→</span><span class="li-text">Code blocks must be clean of orphan characters.</span></p>
+
+      <h3 class="col-label" style="margin-top:20px;">Engine code</h3>
+      <pre class="code-block"><code>
+// Circular engine
+if (level >= 10) {
+  // Show Legendary Mode first
+  activateLegendary();
+  level = 0; // then reset
+} else {
+  level++;
+}
+      </code></pre>
+    </div>
+  </div>
+
+  <!-- MENTAL MODEL -->
+  <div class="mental-model">
+    <h3 class="mental-model-label">Mental model</h3>
+    <ul class="mental-model-list">
+      <li><code>if/else</code> order matters → always handle the special case before the general one</li>
+      <li><code>classList.add/remove</code> → toggle visual states without touching inline styles</li>
+      <li><code>parseInt()</code> → converts string from DOM to number for arithmetic</li>
+      <li>try/catch → the application survives unexpected input; never crashes the user</li>
+      <li>Circular state → reset to 0 when max is exceeded, not when it equals max</li>
+    </ul>
+  </div>
+
+  <!-- PROBLEM PATTERN -->
+  <div class="problem-pattern">
+    <div class="pp-item">
+      <span class="pp-label">Problem of the day</span>
+      <p class="pp-text">Build a circular counter that increments on click, triggers a special visual state at level 10, and resets to 0 at level 11 — without the visual state disappearing before the user sees it.</p>
+    </div>
+    <div class="pp-item">
+      <span class="pp-label">How I modelled it</span>
+      <p class="pp-text">Read current level from DOM → increment → check if level equals 10 (add legendary class) → check if level equals 11 (reset to 0) → if neither, remove legendary class. Order of checks is critical.</p>
+    </div>
+    <div class="pp-item">
+      <span class="pp-label">Pattern found</span>
+      <p class="pp-text">Circular state machine: <code>if special → if reset → else normal</code>. The same pattern used in hotel shift status — Active → Closing → Closed → Active. The order of checks defines the UX.</p>
+    </div>
+  </div>
+
+  <!-- NEXT TARGET -->
+  <div class="next-target">
+    <h3 class="next-target-label">Next target</h3>
+    <ul class="next-target-list">
+      <li>Apply circular state pattern to card level system in We Playing Cards</li>
+      <li>Add sound or animation feedback at level 10</li>
+      <li>Connect level counter to battle system — higher level = attack bonus</li>
+    </ul>
+  </div>
+
+</article>
+
+<!-- ============================
+     DAY 5
+=============================== -->
+
+<article class="entry" data-tags="js algo arrays" aria-labelledby="title-d5">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 5</span>
+    <time datetime="2026-02-24">February 24, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">JS</li>
+      <li class="etag">Algorithms</li>
+      <li class="etag">Arrays</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d5">
+    Training session:<br>Algorithms and Data Structures.
+  </h2>
+
+  <p class="entry-deck">
+    A series of practical exercises simulating real environments — e-commerce, login systems,
+    user profiles. Today's battle was not against the problem itself, but against syntax.
+    And syntax won several rounds.
+  </p>
+
+  <div class="cols">
+    <div>
+      <h3 class="col-label">Wins of the day</h3>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">Dynamic HTML: generated from scratch via functions and Template Literals — data that becomes interface</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">Information architecture: arrays nested inside objects to manage complex user profiles</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">Consolidated symbol map: curly braces {} for objects, brackets [] for lists, parentheses () for functions</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">return vs console.log: return sends data back; console.log only displays it</span></p>
+
+      <h3 class="col-label" style="margin-top:20px;">Fighting the code</h3>
+      <p class="log-item"><span class="li-icon b">✗</span><span class="li-text">Symbol War: () vs {} vs [] — several failed attempts before consolidating the role of each</span></p>
+      <p class="log-item"><span class="li-icon b">✗</span><span class="li-text">return outside a function: tried to use it in global scope — JavaScript rejects it without a clear explanation</span></p>
+      <p class="log-item"><span class="li-icon b">✗</span><span class="li-text">Mutation vs Assignment: using = instead of .push() overwrote the entire array with a single string</span></p>
+      <p class="log-item"><span class="li-icon f">→</span><span class="li-text">= assigns and destroys what was before. .push() adds to the end. Different tools, opposite consequences.</span></p>
+
+      <blockquote class="pullquote">"Arrays are not boxes that get replaced — they are lists that grow. .push() is the only one that understands that."</blockquote>
+    </div>
+
+    <div class="col-rule">
+      <h3 class="col-label">The pattern that changed everything</h3>
+      <pre class="code-block"><code>
+// User profile — array inside object
+const user = {
+  name: "Jose",
+  role: "admin",
+  permissions: ["read", "write", "delete"]
+};
+
+// = destroys the entire array ❌
+user.permissions = "publish";
+// → permissions: "publish" (string, not array)
+
+// .push() adds to the end ✅
+user.permissions.push("publish");
+// → ["read","write","delete","publish"]
+      </code></pre>
+
+      <p class="body-text" style="margin-top:16px;">
+        This pattern — object with nested array — is exactly the foundation of the EquiShift data model.
+        Without practising it today, the Day 9 architecture would have been impossible.
+      </p>
+    </div>
+  </div>
+
+  <!-- MENTAL MODEL -->
+  <div class="mental-model">
+    <h3 class="mental-model-label">Mental model</h3>
+    <ul class="mental-model-list">
+      <li><code>{}</code> → objects (key-value pairs, unordered)</li>
+      <li><code>[]</code> → arrays (ordered lists, index-accessed)</li>
+      <li><code>()</code> → functions (invocation, grouping)</li>
+      <li><code>return</code> → only valid inside a function — sends data out</li>
+      <li><code>.push()</code> → adds to array end; <code>=</code> replaces the entire array</li>
+      <li>Nested structures → array inside object → the foundation of any real data model</li>
+    </ul>
+  </div>
+
+  <!-- PROBLEM PATTERN -->
+  <div class="problem-pattern">
+    <div class="pp-item">
+      <span class="pp-label">Problem of the day</span>
+      <p class="pp-text">Model a user profile with dynamic permissions — adding new permissions without destroying the existing ones, and generating HTML output from the data structure.</p>
+    </div>
+    <div class="pp-item">
+      <span class="pp-label">How I modelled it</span>
+      <p class="pp-text">Object with nested permissions array → <code>.push()</code> to add without mutation → function with template literal to generate the HTML string from the data.</p>
+    </div>
+    <div class="pp-item">
+      <span class="pp-label">Pattern found</span>
+      <p class="pp-text">Object + nested array is the universal pattern for any entity with multiple attributes of the same type — user permissions, worker shifts, card abilities. Master this structure and you can model almost any real-world problem.</p>
+    </div>
+  </div>
+
+  <!-- NEXT TARGET -->
+  <div class="next-target">
+    <h3 class="next-target-label">Next target</h3>
+    <ul class="next-target-list">
+      <li>Apply nested object pattern to EquiShift worker model — Day 9</li>
+      <li>Generate HTML from array of objects using a loop</li>
+      <li>Practice <code>.push()</code>, <code>.pop()</code>, <code>.splice()</code> on real data</li>
+    </ul>
+  </div>
+
+</article>
+
+<!-- ============================
+     DAY 4
+=============================== -->
+
+<article class="entry" data-tags="js css responsive debug" aria-labelledby="title-d4">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 4</span>
+    <time datetime="2026-02-23">February 23, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">JS</li>
+      <li class="etag">CSS</li>
+      <li class="etag">Responsive</li>
+      <li class="etag">Debug</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d4">
+    Today I stopped making a web "that works"<br>and started making a professional one.
+  </h2>
+
+  <p class="entry-deck">
+    A day of brutal intensity. I jumped from visual design to pure logic, facing the problems that separate amateurs from real developers.
+  </p>
+
+  <div class="cols">
+    <div>
+      <h3 class="col-label">Battle for Responsive Design</h3>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">Main container refactor: Grid on desktop → Flexbox column on mobile</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">:user-invalid: the red feedback only appears after the user interacts. A "pro" detail.</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">Micro-interactions: input:focus with transition and transform — the fields "react"</span></p>
+      <p class="log-item"><span class="li-icon b">✗</span><span class="li-text">The CSS Cascade: global styles clashing with Media Query styles</span></p>
+      <p class="log-item"><span class="li-icon f">→</span><span class="li-text">Prioritise and organise selectors — the cascade is a feature, not a bug, if you control it</span></p>
+
+      <blockquote class="pullquote">"A perfect JS is worthless if the site looks bad on an iPhone. Design and logic are one body."</blockquote>
+    </div>
+
+    <div class="col-rule">
+      <h3 class="col-label">JavaScript and Booking Logic</h3>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">Smart decision: threw the code away and started from scratch. Demolish the building to build solid foundations.</span></p>
+      <p class="log-item"><span class="li-icon b">✗</span><span class="li-text">= vs ===: using === in a loop is like asking a question without noting the answer.</span></p>
+      <p class="log-item"><span class="li-icon b">✗</span><span class="li-text">Semicolon after for: blocked the entire engine. One invisible character, total consequences.</span></p>
+      <p class="log-item"><span class="li-icon b">✗</span><span class="li-text">The parentheses and braces chaos: the if that was lame for not having its "box".</span></p>
+
+      <h3 class="col-label" style="margin-top:20px;">Code of the day</h3>
+      <pre class="code-block"><code>
+/* Simplified example of the corrected pattern */
+if (activeBooking === true) {
+  processBooking();
+} else {
+  showError();
+}
+      </code></pre>
+    </div>
+  </div>
+
+  <!-- MENTAL MODEL -->
+  <div class="mental-model">
+    <h3 class="mental-model-label">Mental model</h3>
+    <ul class="mental-model-list">
+      <li><code>=</code> → assignment (sets a value) | <code>===</code> → strict comparison (asks a question)</li>
+      <li>CSS cascade → specificity + order. Control it, don't fight it</li>
+      <li><code>:user-invalid</code> → feedback only after interaction — never punish before the user acts</li>
+      <li>Mobile-first → design for the smallest screen first, enhance upward</li>
+      <li>Starting over → sometimes the fastest path forward is a clean slate</li>
+    </ul>
+  </div>
+
+  <!-- PROBLEM PATTERN -->
+  <div class="problem-pattern">
+    <div class="pp-item">
+      <span class="pp-label">Problem of the day</span>
+      <p class="pp-text">Build a responsive form that works on both desktop and mobile, with real-time validation feedback — and a booking logic that evaluates availability without false positives.</p>
+    </div>
+    <div class="pp-item">
+      <span class="pp-label">How I modelled it</span>
+      <p class="pp-text">Grid for desktop layout → Flexbox column for mobile → <code>:user-invalid</code> for post-interaction feedback → <code>===</code> strict equality in booking logic → <code>if/else</code> with clean brace structure.</p>
+    </div>
+    <div class="pp-item">
+      <span class="pp-label">Pattern found</span>
+      <p class="pp-text">Professional development means making deliberate decisions — not just making things work. Every CSS rule needs a reason. Every JS comparison needs to be strict. This is the difference between a site that works and a site that's maintainable.</p>
+    </div>
+  </div>
+
+  <!-- NEXT TARGET -->
+  <div class="next-target">
+    <h3 class="next-target-label">Next target</h3>
+    <ul class="next-target-list">
+      <li>Consolidate responsive design patterns — Grid vs Flexbox decision framework</li>
+      <li>Apply <code>:focus</code> and <code>:valid</code> states to form inputs</li>
+      <li>Build booking availability logic with a real date comparison</li>
+    </ul>
+  </div>
+
+</article>
+
+<!-- ============================
+     DAY 3
+=============================== -->
+
+<article class="entry" data-tags="css grid project" aria-labelledby="title-d3">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 3</span>
+    <time datetime="2026-02-22">February 22, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">CSS</li>
+      <li class="etag">Grid</li>
+      <li class="etag">Project</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d3">
+    Forging the Odin Project Form:<br>Grid, elite typography and intentional shadows.
+  </h2>
+
+  <p class="entry-deck">
+    Today I finished the registration form project. I didn't just write code —
+    I made conscious design decisions and used professional tools for the first time.
+    The level change is noticeable.
+  </p>
+
+  <div class="cols">
+    <div>
+      <h3 class="col-label">Concepts mastered</h3>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">Real Grid: column split (2fr 3fr) and grid-template-columns: 1fr 1fr — inputs aligned in perfect pairs without shifting with the text.</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">Typographic hierarchy: Norse for branding and the action button; Inter for long texts and labels. Two fonts, two roles, zero conflict.</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">Intentional shadows: moved from generic shadows to a directional Bottom Shadow — the form floats, it's not dirty.</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">Micro-interaction: :hover doesn't just change colour — it elevates the button with translateY(-3px). It feels "alive".</span></p>
+
+      <h3 class="col-label" style="margin-top:20px;">Debug Log</h3>
+      <p class="log-item"><span class="li-icon b">✗</span><span class="li-text">Initial generic shadows made the form look "dirty" — applied them without direction or intention.</span></p>
+      <p class="log-item"><span class="li-icon b">✗</span><span class="li-text">Grid misaligned when label text changed — hadn't set a fixed width for the input column.</span></p>
+      <p class="log-item"><span class="li-icon b">✗</span><span class="li-text">The two fonts clashed visually — used Norse for everything before understanding typographic hierarchy.</span></p>
+      <p class="log-item"><span class="li-icon f">→</span><span class="li-text">Design is not decoration — it's communication. Every visual decision must have a reason.</span></p>
+
+      <blockquote class="pullquote">"Design lives in the invisible details. A letter-spacing of 0.5px changes everything."</blockquote>
+    </div>
+
+    <div class="col-rule">
+      <h3 class="col-label">Decision code</h3>
+      <pre class="code-block"><code>
+/* Shadow with direction — Y axis only */
+box-shadow: 0 8px 15px
+  rgba(0,0,0,0.1);
+
+/* Micro-interaction that feels alive */
+.btn:hover {
+  transform: translateY(-3px);
+  transition: 0.3s ease;
+}
+
+/* Aligned input Grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+      </code></pre>
+    </div>
+  </div>
+
+  <!-- MENTAL MODEL -->
+  <div class="mental-model">
+    <h3 class="mental-model-label">Mental model</h3>
+    <ul class="mental-model-list">
+      <li>Typographic hierarchy → two fonts maximum: one for identity, one for readability</li>
+      <li>Directional shadows → <code>0 8px 15px</code> lifts the element; <code>0 0 15px</code> just blurs it</li>
+      <li><code>translateY(-3px)</code> on hover → micro-interaction that communicates interactivity</li>
+      <li>Grid columns → <code>1fr 1fr</code> creates equal columns that don't break on text change</li>
+      <li>Design decisions → every choice needs a reason, not just a preference</li>
+    </ul>
+  </div>
+
+  <!-- PROBLEM PATTERN -->
+  <div class="problem-pattern">
+    <div class="pp-item">
+      <span class="pp-label">Problem of the day</span>
+      <p class="pp-text">Build a registration form that looks professional — with aligned inputs, intentional typography, directional shadows and micro-interactions that feel alive without being distracting.</p>
+    </div>
+    <div class="pp-item">
+      <span class="pp-label">How I modelled it</span>
+      <p class="pp-text">Grid for input pairs → two-font hierarchy (Norse for identity, Inter for content) → directional shadow on Y axis only → <code>translateY</code> hover on the CTA button → every decision justified, not just applied.</p>
+    </div>
+    <div class="pp-item">
+      <span class="pp-label">Pattern found</span>
+      <p class="pp-text">Professional design is not about adding more — it's about making each element intentional. A form that looks clean has fewer rules, not more. The same principle applies to hotel design: the most luxurious spaces are the most minimal.</p>
+    </div>
+  </div>
+
+  <!-- NEXT TARGET -->
+  <div class="next-target">
+    <h3 class="next-target-label">Next target</h3>
+    <ul class="next-target-list">
+      <li>Add <code>:user-invalid</code> validation feedback to the form inputs</li>
+      <li>Make the form responsive — single column on mobile</li>
+      <li>Apply the same typographic hierarchy principles to Web CV</li>
+    </ul>
+  </div>
+
+</article>
+
+<!-- ============================
+     DAY 1
+=============================== -->
+
+<article class="entry" data-tags="html css inicio" aria-labelledby="title-d1">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 1</span>
+    <time datetime="2026-02-20">February 20, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">HTML</li>
+      <li class="etag">CSS</li>
+      <li class="etag">Start</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d1">
+    The day it all started:<br>the first line of conscious code.
+  </h2>
+
+  <p class="entry-deck">
+    It wasn't pretty. It wasn't fast. It wasn't elegant.<br>
+    But it was real.<br>
+    Today the 365-day journey began — no shortcuts, no templates, no copy-paste.
+  </p>
+
+  <div class="cols">
+    <div>
+      <h3 class="col-label">What I learned today</h3>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">HTML is not "placing boxes" — it's semantic structure. Every tag has a purpose.</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">CSS is not decoration — it's visual architecture. Order, hierarchy and consistency.</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">The web responds to rules, not wishes. If something fails, it's on me, not on it.</span></p>
+
+      <blockquote class="pullquote">"I knew nothing. But I knew I didn't want to keep not knowing."</blockquote>
+    </div>
+
+    <div class="col-rule">
+      <h3 class="col-label">My first block of code</h3>
+      <pre class="code-block"><code>
+&lt;!-- The first real block I wrote --&gt;
+&lt;h1&gt;Hello World&lt;/h1&gt;
+&lt;p&gt;This is my first web page.&lt;/p&gt;
+      </code></pre>
+
+      <p class="body-text" style="margin-top:16px;">
+        It wasn't much. But it was mine.<br>
+        And most importantly: I understood every line.<br>
+        That was the real beginning.
+      </p>
+    </div>
+  </div>
+
+  <!-- MENTAL MODEL -->
+  <div class="mental-model">
+    <h3 class="mental-model-label">Mental model</h3>
+    <ul class="mental-model-list">
+      <li>HTML → structure and meaning (semantics, not just boxes)</li>
+      <li>CSS → visual architecture (hierarchy, consistency, order)</li>
+      <li>The web has rules → if it breaks, it's the code, not the browser</li>
+      <li>Understanding every line → the only real measure of progress</li>
+    </ul>
+  </div>
+
+  <!-- PROBLEM PATTERN -->
+  <div class="problem-pattern">
+    <div class="pp-item">
+      <span class="pp-label">Starting point</span>
+      <p class="pp-text">No prior programming knowledge. 8 years in hospitality. A decision to change careers and document every step of the way — honestly, without filters.</p>
+    </div>
+    <div class="pp-item">
+      <span class="pp-label">First principle</span>
+      <p class="pp-text">Don't copy-paste. Don't use templates. Write every line yourself and understand it before moving on. Slow is smooth, smooth is fast.</p>
+    </div>
+    <div class="pp-item">
+      <span class="pp-label">Pattern found</span>
+      <p class="pp-text">The first day is not about the code — it's about establishing the habit. The code on Day 1 doesn't matter. The fact that Day 2 happens does.</p>
+    </div>
+  </div>
+
+  <!-- NEXT TARGET -->
+  <div class="next-target">
+    <h3 class="next-target-label">Next target</h3>
+    <ul class="next-target-list">
+      <li>Build a real page — not just Hello World</li>
+      <li>Learn CSS layout — Flexbox and Grid basics</li>
+      <li>Start freeCodeCamp Responsive Web Design curriculum</li>
+    </ul>
+  </div>
+
+</article>
+
+<!-- ============================
+     FOOTER
+=============================== -->
+
+<footer class="footer">
+  <p class="footer-text">
+    © 2026 Jose Aparicio — Dev Log 365
+    <span>All rights reserved.</span>
+  </p>
+
+  <ul class="footer-links">
+    <li><a href="index.html#about">Skills</a></li>
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="index.html#doors">EquiShift</a></li>
+    <li><a href="index.html#education">Education</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+
+  <p class="footer-copy">
+    <i class="fa-solid fa-code"></i>
+    Built by hand, line by line.
+  </p>
+</footer>
+
+<script src="diario.js" defer></script>
+  <!-- DATA — update STATS in diario.js when adding entries -->
+
+</body>
+</html>
