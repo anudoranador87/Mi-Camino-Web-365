@@ -1,0 +1,24 @@
+{
+  "name": "mi-camino-web-365",
+  "version": "1.0.0",
+  "description": "🇬🇧 English Version &nbsp;|&nbsp; 🇪🇸 [Versión Española](./mi-camino.web.md)",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"mp
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anudoranador87/Mi-Camino-Web-365.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/anudoranador87/Mi-Camino-Web-365/issues"
+  },
+  "homepage": "https://github.com/anudoranador87/Mi-Camino-Web-365#readme",
+  "devDependencies": {
+    "jest": "^30.3.0"
+  }
+}
