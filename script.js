@@ -36,7 +36,7 @@
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
       syncIcon();
     });
-  });s
+  });
 
   /* ── HELPER: actualiza el icono luna/sol ─────────────────── */
   function syncIcon() {
@@ -47,3 +47,25 @@
   }
 
 })();
+
+/* ── CONTADORES DE ESTADISTICAS ─────────────────── */
+
+// CReo Objeto que almacena todas las métricas del Dev Log.
+// La clave del objeto coincide con el id del elemento en el HTML.
+document.addEventListener("DOMContentLoaded", () => {
+
+  const stats = {
+    "c-days": document.querySelectorAll(".entry").length,
+    "c-bugs": document.querySelectorAll(".li-icon.b").length,
+    "stat-projects": document.querySelectorAll('[data-tags*="project"]').length,
+    "stat-lines": 18400,
+    "stat-algo": 24,
+    "c-streak": 12
+  };
+
+  for (const id in stats) {
+    const el = document.getElementById(id);
+    if (el) el.textContent = stats[id];
+  }
+
+});

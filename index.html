@@ -47,26 +47,39 @@
     | 17 días · Errores reales · Sin filtros
   </p>
 </header>
+<section class="stats-row" aria-label="Dev statistics">
 
-<section class="stats-row" aria-label="Estadísticas de aprendizaje">
   <article class="stat-item">
     <span class="stat-n" id="c-days">0</span>
-    <span class="stat-l" data-i18n="stat-days">Días activos</span>
+    <span class="stat-l">Active Days</span>
   </article>
+
   <article class="stat-item">
     <span class="stat-n" id="c-bugs">0</span>
-    <span class="stat-l" data-i18n="stat-bugs">Bugs documentados</span>
+    <span class="stat-l">Bugs Documented</span>
   </article>
+
   <article class="stat-item">
-    <span class="stat-n" id="c-proj">0</span>
-    <span class="stat-l" data-i18n="stat-proj">Proyectos reales</span>
+    <span class="stat-n" id="stat-lines">0</span>
+    <span class="stat-l">Lines of Code</span>
   </article>
+
+  <article class="stat-item">
+    <span class="stat-n" id="stat-algo">0</span>
+    <span class="stat-l">Algorithms</span>
+  </article>
+
+  <article class="stat-item">
+    <span class="stat-n" id="stat-projects">0</span>
+    <span class="stat-l">Projects Built</span>
+  </article>
+
   <article class="stat-item">
     <span class="stat-n" id="c-streak">0</span>
-    <span class="stat-l" data-i18n="stat-streak">Racha de días</span>
+    <span class="stat-l">Current Streak</span>
   </article>
-</section>
 
+</section>
 <nav class="filter-nav" aria-label="Filtrar entradas por categoría">
   <button class="filter-btn active" data-filter="all" aria-pressed="true" data-i18n="filter-all">Todas</button>
   <button class="filter-btn" data-filter="js" aria-pressed="false">JavaScript</button>
@@ -123,6 +136,177 @@
     Día 1 = 20 de febrero de 2026 · Los 365 días se cuentan desde ahí · No todos los días tienen entrada
   </p>
 </section>
+<!-- DÍA 23 -->
+<article class="entry" data-tags="js poo project" aria-labelledby="title-d73">
+  <header class="entry-kicker">
+    <span class="day-badge">Día 23</span>
+    <time datetime="2026-03-14" data-i18n="d73-date">14 de Marzo, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">JS</li>
+      <li class="etag">POO</li>
+      <li class="etag">Proyecto</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d73" data-i18n="d73-headline">
+    MiniShop: De objeto suelto a sistema.<br>La lógica ya la tengo, la sintaxis la voy puliendo.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d73-deck">
+    Hoy no hice un ejercicio de POO. Construí un sistema de compra desde cero:
+    un producto que se describe a sí mismo y un carrito que acumula y calcula.
+    Dos clases. Un flujo real. Sin tutorial.
+  </p>
+
+  <div class="cols">
+
+    <!-- COLUMNA IZQUIERDA -->
+    <div>
+
+      <h3 class="col-label" data-i18n="d73-lbl-star">Resumen STAR</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Llevo varias sesiones con POO en el Cuaderno,
+        Los conceptos de constructor y this ya no son extraños, pero necesitaba
+        comprobarlos en algo que se pareciera a un sistema real, no a un ejercicio
+        de libro de texto.<br><br>
+
+        <strong>T —</strong> Construir un MiniShop en JS puro desde cero:
+        clase <code>Product</code> con descripción propia, clase <code>Cart</code>
+        con capacidad de añadir productos. Sin copiar. Sin red.<br><br>
+
+        <strong>A —</strong> Empecé por el objeto más pequeño — el producto.
+        Una vez que <code>describe()</code> funcionó y el <code>this</code> tenía sentido,
+        construí el carrito encima. Primero el constructor vacío, luego
+        <code>addProduct()</code> con <code>push()</code>.
+        Cada paso validado en consola antes de avanzar al siguiente.<br><br>
+
+        <strong>R —</strong> Paso 1 ✅ — <code>Product</code> con <code>describe()</code> funcional.<br>
+        Paso 2 ✅ — <code>Cart</code> con <code>addProduct()</code> y array interno.<br>
+        Paso 3 🔜 — <code>getTotal()</code> con <code>reduce()</code> — pendiente próxima sesión.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d73-lbl-wins">Victorias del día</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text"><code>this</code> dentro del constructor — ya no es magia, es referencia al objeto que se está creando</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text"><code>push()</code> dentro de un método de clase — el array vive en la instancia, no fuera</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Dos clases que se comunican: <code>Cart</code> recibe objetos <code>Product</code> — diseño orientado a responsabilidades</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "La lógica ya la tengo. La sintaxis la voy puliendo."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d73-lbl-levels">Niveles al cierre del día</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">POO / Clases</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="55"></div>
+        </div>
+        <span class="skill-pct">55%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">this / constructor</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Array methods</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="70"></div>
+        </div>
+        <span class="skill-pct">70%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">reduce()</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="20"></div>
+        </div>
+        <span class="skill-pct">20% — próxima batalla</span>
+      </div>
+
+    </div>
+
+    <!-- COLUMNA DERECHA -->
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d73-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> <code>this.name</code> en <code>describe()</code> devolvía <code>undefined</code> — el parámetro del constructor tenía nombre distinto al de la propiedad</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: <code>this.name = name</code> — el lado izquierdo es la propiedad del objeto, el derecho es el parámetro que entra. Son dos cosas distintas con el mismo nombre por convención, no por magia.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> <code>addProduct()</code> no acumulaba — el array <code>items</code> estaba declarado fuera del constructor, no como propiedad de la instancia</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: <code>this.items = []</code> dentro del constructor. Cada instancia de Cart necesita su propio carrito, no uno compartido entre todas.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Resultado: <code>cart.addProduct(leche)</code> y <code>cart.addProduct(pan)</code> — ambos en <code>cart.items</code>, listos para que <code>getTotal()</code> los sume con <code>reduce()</code></span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d73-lbl-code">Código del día</h3>
+
+      <pre class="code-block"><code>
+class Product {
+  constructor(name, price) {
+    this.name  = name;
+    this.price = price;
+  }
+  describe() {
+    return `${this.name} — €${this.price}`;
+  }
+}
+
+class Cart {
+  constructor() {
+    this.items = [];
+  }
+  addProduct(product) {
+    this.items.push(product);
+  }
+  // getTotal() con reduce() → Día 74
+}
+
+const leche = new Product("Leche", 1.20);
+const pan   = new Product("Pan",   0.85);
+const cart  = new Cart();
+cart.addProduct(leche);
+cart.addProduct(pan);
+console.log(cart.items); // [leche, pan] ✅
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "Cada clase tiene una sola responsabilidad. Product sabe lo que es. Cart sabe lo que tiene. Nadie hace el trabajo del otro."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
 <!-- DÍA 22 — LAB LITTLE LEMON + CUADERNO DE PITÁGORAS -->
 
 <article class="entry" data-tags="js algo debug" aria-labelledby="title-d22">
@@ -1956,8 +2140,8 @@ box-shadow: 0 8px 15px
   </p>
 </footer>
 
-<script src="diario.js" defer></script>
-  <!-- DATOS — actualiza STATS en diario.js cuando añadas entradas -->
+<script src="script.js" defer></script>
+ 
 
 </body>
 </html>
