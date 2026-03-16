@@ -1391,3 +1391,186 @@ In engineering, identifying problems before they become critical is as important
 - Research diary scalability before Day 100
 - freeCodeCamp JavaScript Algorithms (20-30 min daily)
 - Add `turnosNoche` to EquiShift worker object
+
+# 🗓️ Day 23 — March 14, 2026
+
+🎯 **Status:** MiniShop architecture working · OOP applied to a real system · `reduce()` next step
+
+---
+
+# 📝 Day Summary (STAR Method)
+
+## S — Situation
+
+I have been working with **Object-Oriented Programming in JavaScript** for several sessions.
+
+Concepts like `constructor` and `this` are no longer unfamiliar, but I needed to test them in something closer to **a real system**, not a tutorial exercise.
+
+---
+
+## T — Task
+
+Build a **MiniShop in pure JavaScript from scratch**.
+
+Two clear responsibilities:
+
+- `Product` → represents a product
+- `Cart` → manages added products
+
+Rules:
+
+- No tutorials
+- No copied code
+- Everything tested step by step in the console
+
+---
+
+## A — Action
+
+I started with the smallest object: **Product**.
+
+First I defined the constructor with `name` and `price`.
+
+Then I added a `describe()` method to verify that `this` worked correctly.
+
+Once the product worked, I built **Cart**:
+
+1. Empty constructor  
+2. Internal array `items`  
+3. `addProduct()` using `push()`  
+
+Each step was validated in the console before continuing.
+
+---
+
+## R — Result
+
+Step 1 ✅ `Product` with working `describe()`  
+Step 2 ✅ `Cart` with `addProduct()` and object storage  
+Step 3 🔜 `getTotal()` using `reduce()` — next session
+
+---
+
+# 🧩 Code of the Day
+
+```javascript
+class Product {
+  constructor(name, price) {
+    this.name = name
+    this.price = price
+  }
+
+  describe() {
+    return `${this.name} — €${this.price}`
+  }
+}
+
+class Cart {
+  constructor() {
+    this.items = []
+  }
+
+  addProduct(product) {
+    this.items.push(product)
+  }
+}
+
+const leche = new Product("Milk", 1.20)
+const pan   = new Product("Bread", 0.85)
+
+const cart = new Cart()
+
+cart.addProduct(leche)
+cart.addProduct(pan)
+
+console.log(cart.items)
+```
+
+---
+
+# 🥊 Fighting the Code
+
+## Bug 1 — `this.name` returned `undefined`
+
+The constructor parameter name did not match the property name.
+
+**Fix**
+
+```javascript
+this.name = name
+```
+
+**Lesson**
+
+- Left side → object property  
+- Right side → constructor parameter  
+
+---
+
+## Bug 2 — `addProduct()` did not accumulate
+
+The `items` array was declared outside the constructor.
+
+**Fix**
+
+```javascript
+constructor() {
+  this.items = []
+}
+```
+
+Each `Cart` instance needs **its own array**.
+
+---
+
+# 💡 Mental Model
+
+```
+class Product → represents an entity
+constructor   → initializes properties
+this          → reference to the created object
+class Cart    → manages a collection of products
+push()        → adds objects to an array
+```
+
+**Design principle**
+
+```
+Single Responsibility Principle
+```
+
+```
+Product → knows what it is
+Cart    → knows what it contains
+```
+
+---
+
+# 📊 Skill Levels — End of Day 23
+
+| Skill | Level | Notes |
+|------|------|------|
+| OOP / Classes | ██████░░░░ 55% | First architecture |
+| this / constructor | ███████░░░ 65% | Concept understood |
+| Array methods | ████████░░ 70% | push() inside classes |
+| reduce() | ██░░░░░░░░ 20% | Next target |
+
+---
+
+# 🧠 Final Reflection
+
+Today I wasn't trying to learn new syntax.
+
+I was testing whether I could **translate programming concepts into a working system**, even a small one.
+
+The logic was already clear:
+
+- a product knows what it is  
+- a cart knows what it contains  
+- the total is the sum of prices  
+
+> **The problem is no longer logic.  
+> The problem is only the tool.**
+
+---
+
