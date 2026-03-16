@@ -121,7 +121,179 @@
     Day 1 = February 20, 2026 · The 365 days are counted from there · Not every day has an entry
   </p>
 </section>
+<!-- DAY 23 -->
+<article class="entry" data-tags="js oop project" aria-labelledby="title-d73">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 23</span>
+    <time datetime="2026-03-14" data-i18n="d73-date">March 14, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">JS</li>
+      <li class="etag">OOP</li>
+      <li class="etag">Project</li>
+    </ul>
+  </header>
 
+  <h2 class="entry-headline" id="title-d73" data-i18n="d73-headline">
+    MiniShop: From a loose object to a system.<br>The logic is already there — I refine the syntax as I go.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d73-deck">
+    Today I didn’t just do an OOP exercise. I built a purchase system from scratch:
+    a product that can describe itself and a cart that accumulates and calculates.
+    Two classes. One real flow. No tutorial.
+  </p>
+
+  <div class="cols">
+
+    <!-- LEFT COLUMN -->
+    <div>
+
+      <h3 class="col-label" data-i18n="d73-lbl-star">STAR Summary</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> I’ve spent several sessions working on OOP in the Notebook.
+        Concepts like constructors and <code>this</code> are no longer strange,
+        but I needed to test them in something that looked like a real system,
+        not a textbook exercise.<br><br>
+
+        <strong>T —</strong> Build a MiniShop in pure JavaScript from scratch:
+        a <code>Product</code> class with its own description, and a <code>Cart</code>
+        class capable of storing products. No copying. No internet.<br><br>
+
+        <strong>A —</strong> I started with the smallest object — the product.
+        Once <code>describe()</code> worked and <code>this</code> made sense,
+        I built the cart on top of it. First an empty constructor, then
+        <code>addProduct()</code> using <code>push()</code>.
+        Every step tested in the console before moving forward.<br><br>
+
+        <strong>R —</strong> Step 1 ✅ — <code>Product</code> with a working <code>describe()</code>.<br>
+        Step 2 ✅ — <code>Cart</code> with <code>addProduct()</code> and an internal array.<br>
+        Step 3 🔜 — <code>getTotal()</code> using <code>reduce()</code> — next session.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d73-lbl-wins">Wins of the day</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text"><code>this</code> inside the constructor — no longer magic, just a reference to the object being created</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text"><code>push()</code> inside a class method — the array lives in the instance, not outside</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Two communicating classes: <code>Cart</code> receives <code>Product</code> objects — responsibility-oriented design</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "The logic is already there. I refine the syntax as I go."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d73-lbl-levels">Levels at the end of the day</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">OOP / Classes</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="55"></div>
+        </div>
+        <span class="skill-pct">55%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">this / constructor</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Array methods</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="70"></div>
+        </div>
+        <span class="skill-pct">70%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">reduce()</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="20"></div>
+        </div>
+        <span class="skill-pct">20% — next battle</span>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d73-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> <code>this.name</code> in <code>describe()</code> returned <code>undefined</code> — the constructor parameter had a different name than the property</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: <code>this.name = name</code> — the left side is the object property, the right side is the incoming parameter. They are two different things with the same name by convention, not by magic.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> <code>addProduct()</code> did not accumulate — the <code>items</code> array was declared outside the constructor instead of as an instance property</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: <code>this.items = []</code> inside the constructor. Each Cart instance needs its own cart, not one shared across all instances.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Result: <code>cart.addProduct(leche)</code> and <code>cart.addProduct(pan)</code> — both inside <code>cart.items</code>, ready for <code>getTotal()</code> to sum them using <code>reduce()</code></span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d73-lbl-code">Code of the day</h3>
+
+      <pre class="code-block"><code>
+class Product {
+  constructor(name, price) {
+    this.name  = name;
+    this.price = price;
+  }
+  describe() {
+    return `${this.name} — €${this.price}`;
+  }
+}
+
+class Cart {
+  constructor() {
+    this.items = [];
+  }
+  addProduct(product) {
+    this.items.push(product);
+  }
+  // getTotal() with reduce() → Day 74
+}
+
+const leche = new Product("Milk", 1.20);
+const pan   = new Product("Bread", 0.85);
+const cart  = new Cart();
+
+cart.addProduct(leche);
+cart.addProduct(pan);
+
+console.log(cart.items); // [leche, pan] ✅
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "Each class has a single responsibility. Product knows what it is. Cart knows what it holds. No one does the other's job."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
 <!-- DAY 22 — LITTLE LEMON LAB + PYTHAGORAS NOTEBOOK -->
 
 <article class="entry" data-tags="js algo debug" aria-labelledby="title-d22">

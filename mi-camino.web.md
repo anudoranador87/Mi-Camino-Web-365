@@ -1379,3 +1379,190 @@ Tomé una decisión de arquitectura, evalué alternativas y documenté el razona
 - Estudiar escalabilidad del diario antes del Día 100
 - freeCodeCamp JavaScript Algorithms (20-30 min diarios)
 - Añadir `turnosNoche` al objeto trabajador de EquiShift
+
+# 🗓️ Día 23 — 14 de Marzo, 2026
+
+🎯 **Estado:** Arquitectura MiniShop funcionando · POO aplicada a un sistema real · `reduce()` próximo paso
+
+---
+
+# 📝 Resumen del Día (Metodología STAR)
+
+## S — Situación
+
+Llevo varias sesiones trabajando con **Programación Orientada a Objetos en JavaScript**.
+
+Los conceptos de `constructor` y `this` ya no son extraños, pero necesitaba comprobarlos en algo que se pareciera a **un sistema real**, no a un ejercicio de tutorial.
+
+---
+
+## T — Tarea
+
+Construir un **MiniShop en JavaScript puro desde cero**.
+
+Dos responsabilidades claras:
+
+- `Product` → representa un producto
+- `Cart` → gestiona productos añadidos
+
+Reglas:
+
+- Sin tutorial
+- Sin copiar código
+- Todo probado paso a paso en consola
+
+---
+
+## A — Acción
+
+Empecé por el objeto más pequeño: **Product**.
+
+Primero definí el constructor con `name` y `price`.
+
+Después añadí un método `describe()` para comprobar que `this` funcionaba correctamente.
+
+Una vez validado el producto, construí **Cart**:
+
+1. Constructor vacío  
+2. Array interno `items`  
+3. Método `addProduct()` usando `push()`  
+
+Cada paso se validó en la consola antes de continuar.
+
+---
+
+## R — Resultado
+
+Paso 1 ✅ `Product` con `describe()` funcionando  
+Paso 2 ✅ `Cart` con `addProduct()` y almacenamiento de objetos  
+Paso 3 🔜 `getTotal()` con `reduce()` — próxima sesión
+
+---
+
+# 🧩 Código del Día
+
+```javascript
+class Product {
+  constructor(name, price) {
+    this.name = name
+    this.price = price
+  }
+
+  describe() {
+    return `${this.name} — €${this.price}`
+  }
+}
+
+class Cart {
+  constructor() {
+    this.items = []
+  }
+
+  addProduct(product) {
+    this.items.push(product)
+  }
+}
+
+const leche = new Product("Leche", 1.20)
+const pan   = new Product("Pan", 0.85)
+
+const cart = new Cart()
+
+cart.addProduct(leche)
+cart.addProduct(pan)
+
+console.log(cart.items)
+```
+
+---
+
+# 🥊 Peleando con el Código
+
+## Bug 1 — `this.name` devolvía `undefined`
+
+El parámetro del constructor tenía un nombre distinto al de la propiedad.
+
+**Solución**
+
+```javascript
+this.name = name
+```
+
+**Lección**
+
+- Lado izquierdo → propiedad del objeto  
+- Lado derecho → parámetro del constructor  
+
+No es magia: son dos cosas distintas con el mismo nombre por convención.
+
+---
+
+## Bug 2 — `addProduct()` no acumulaba
+
+El array `items` estaba declarado fuera del constructor.
+
+**Solución**
+
+```javascript
+constructor() {
+  this.items = []
+}
+```
+
+Cada instancia de `Cart` necesita **su propio carrito**.
+
+---
+
+# 💡 Modelo Mental
+
+```
+class Product → representa una entidad
+constructor   → inicializa propiedades
+this          → referencia al objeto creado
+class Cart    → gestiona una colección de productos
+push()        → añade objetos al array
+```
+
+**Principio aplicado**
+
+```
+Single Responsibility Principle
+```
+
+```
+Product → sabe lo que es
+Cart    → sabe lo que tiene
+```
+
+---
+
+# 📊 Niveles de Habilidad — Fin del Día 23
+
+| Skill | Nivel | Notas |
+|------|------|------|
+| OOP / Classes | ██████░░░░ 55% | Primera arquitectura |
+| this / constructor | ███████░░░ 65% | Concepto claro |
+| Array methods | ████████░░ 70% | push() usado en clases |
+| reduce() | ██░░░░░░░░ 20% | Próximo objetivo |
+
+---
+
+# 🧠 Reflexión Final
+
+Hoy no estaba intentando aprender sintaxis nueva.
+
+Estaba intentando comprobar si podía **convertir conceptos de programación en un sistema real**, aunque fuera pequeño.
+
+La lógica ya estaba clara:
+
+- un producto sabe lo que es  
+- un carrito sabe lo que contiene  
+- el total es la suma de los precios  
+
+El único trabajo era traducir esa lógica a JavaScript.
+
+> **El problema ya no es la lógica.  
+> El problema es únicamente la herramienta.**
+
+---
+
