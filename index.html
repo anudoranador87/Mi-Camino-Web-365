@@ -136,6 +136,242 @@
     Día 1 = 20 de febrero de 2026 · Los 365 días se cuentan desde ahí · No todos los días tienen entrada
   </p>
 </section>
+<!-- DÍA 24 -->
+<article class="entry" data-tags="js algo project" aria-labelledby="title-d24">
+  <header class="entry-kicker">
+    <span class="day-badge">Entrada 24</span>
+    <time datetime="2026-03-17" data-i18n="d24-date">17 de Marzo, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">JS</li>
+      <li class="etag">Algoritmos</li>
+      <li class="etag">Proyecto</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d24" data-i18n="d24-headline">
+    EquiShift: el motor arranca.<br>
+    365 días, aritmética modular y 104 fines de semana validados.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d24-deck">
+    Hoy EquiShift dejó de ser una base de datos estática y se convirtió
+    en un motor que piensa. Un bucle de 365 días con aritmética modular
+    detecta fines de semana automáticamente — y los cuenta exacto.
+    La columna vertebral del algoritmo ya existe.
+  </p>
+
+  <div class="cols">
+
+    <!-- COLUMNA IZQUIERDA -->
+    <div>
+
+      <h3 class="col-label" data-i18n="d24-lbl-star">Resumen STAR</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> EquiShift tenía la base de datos de trabajadores
+        y los festivos de Málaga 2026. Sabía quién trabajaba y bajo qué
+        contrato. Pero no sabía nada del tiempo — no tenía calendario,
+        no tenía motor, no sabía qué día era fin de semana ni cuándo
+        tocaría descanso a cada uno.<br><br>
+
+        <strong>T —</strong> Construir la columna vertebral del motor:
+        un bucle que recorra los 365 días del año y sea capaz de detectar
+        automáticamente cuáles son fin de semana. Sin eso, no hay rotación
+        equitativa posible.<br><br>
+
+        <strong>A —</strong> Añadí <code>turnosNoche: 0</code> a los cuatro
+        rotativos — contador para garantizar que las noches de Rafa se
+        reparten con equidad. Rafa no lo necesita: él solo hace noche,
+        nunca cubre a otros. Luego construí el bucle <code>for</code> de
+        365 días con aritmética modular — el día 1 de 2026 es jueves,
+        y con <code>i % 7</code> puedo saber en qué punto de la semana
+        estoy en cualquier momento del año. Sábado = resto 3.
+        Domingo = resto 4. El patrón se repite cada 7 días exacto.<br><br>
+
+        <strong>R —</strong>
+        <code>findeSemana</code> → 104 ✅<br>
+        52 sábados + 52 domingos — el motor cuenta bien.<br>
+        La columna vertebral del algoritmo está construida.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d24-lbl-wins">Victorias del día</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">
+          <code>turnosNoche: 0</code> añadido al modelo de datos —
+          la equidad en noches cubiertas ya tiene contador.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">
+          Bucle <code>for</code> de 365 días construido desde cero —
+          la columna vertebral del motor existe.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">
+          Aritmética modular aplicada a un problema real —
+          <code>% 7</code> detecta el día de la semana de cualquier
+          día del año sin necesitar un calendario externo.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">
+          104 fines de semana validados — el motor no miente.
+        </span>
+      </p>
+
+      <blockquote class="pullquote">
+        "No busco una tabla de Excel.<br>
+        Busco codificar un sistema donde el horario sea,<br>
+        por primera vez, igualitario para todos."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d24-lbl-levels">Niveles al cierre</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">Algoritmos</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="60"></div>
+        </div>
+        <span class="skill-pct">60%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Bucles / for</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Aritmética modular</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="55"></div>
+        </div>
+        <span class="skill-pct">55%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Modelado de datos</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="70"></div>
+        </div>
+        <span class="skill-pct">70%</span>
+      </div>
+
+    </div>
+
+    <!-- COLUMNA DERECHA -->
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d24-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text">
+          <strong>Bug 1 — Array trabajadores sin cerrar:</strong>
+          faltaba <code>];</code> al final del array. Error de sintaxis
+          que bloqueaba todo el script.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">
+          Fix: <code>];</code> al final. Los arrays, como las clases,
+          se cierran una sola vez.
+        </span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text">
+          <strong>Bug 2 — Coma faltante en objetos:</strong>
+          <code>calendario: []</code> sin coma antes de
+          <code>turnosNoche: 0</code> — JavaScript no sabe
+          dónde termina una propiedad y empieza la siguiente.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">
+          Fix: <code>calendario: [],</code> — cada propiedad
+          excepto la última lleva coma al final.
+        </span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text">
+          <strong>Bug 3 — Condición de fin de semana incorrecta:</strong>
+          comparé <code>i === 3 && i === 4</code> — un número
+          no puede ser dos cosas a la vez. Nunca se cumplía.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">
+          Fix: comparar el <strong>resto</strong> con
+          <code>||</code> — <code>i % 7 === 3 || i % 7 === 4</code>.
+          No el día, el resto. No Y, sino O.
+        </span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">
+          <code>console.log(findeSemana)</code> → 104 ✅
+        </span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d24-lbl-code">Código del motor</h3>
+
+      <pre class="code-block"><code>
+// El día 1 de 2026 es jueves — punto de anclaje
+// i % 7 da la posición en la semana:
+//   resto 1 = jueves · resto 2 = viernes
+//   resto 3 = sábado · resto 4 = domingo
+//   resto 5 = lunes  · resto 6 = martes
+//   resto 0 = miércoles
+
+let findeSemana = 0;
+
+for (let i = 1; i <= 365; i++) {
+  if (i % 7 === 3 || i % 7 === 4) {
+    findeSemana += 1;
+  }
+}
+
+console.log(findeSemana); // → 104 ✅
+
+// Próximo paso: asignar turnos dentro del bucle
+// mañana, tarde y noche con rotación equitativa
+// criterio: el que menos fines de semana libres
+// lleva, descansa primero
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "El operador % no multiplica — divide y da el resto.<br>
+        Ese resto es el mapa del tiempo."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:20px">Repositorio</h3>
+
+      <p class="body-text">
+        Código completo, README actualizado y commits documentados:<br><br>
+        <a href="https://github.com/anudoranador87/EquiShift-M-laga-2026-Algoritmo-de-cuadrantes-equitativos-con-JS"
+           target="_blank"
+           rel="noopener noreferrer"
+           style="font-family:var(--mono);font-size:12px;color:var(--ink);border-bottom:1px solid var(--ink);">
+          github.com/anudoranador87/EquiShift-Málaga-2026
+        </a>
+      </p>
+
+    </div>
+  </div>
+</article>
 <!-- DÍA 23 -->
 <article class="entry" data-tags="js poo project" aria-labelledby="title-d73">
   <header class="entry-kicker">

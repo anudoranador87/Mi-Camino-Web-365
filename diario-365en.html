@@ -121,6 +121,227 @@
     Day 1 = February 20, 2026 · The 365 days are counted from there · Not every day has an entry
   </p>
 </section>
+<!-- DAY 24 -->
+ <article class="entry" data-tags="js algorithm project" aria-labelledby="title-d24">
+  <header class="entry-kicker">
+    <span class="day-badge">Entry 24</span>
+    <time datetime="2026-03-17">March 17, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">JS</li>
+      <li class="etag">Algorithms</li>
+      <li class="etag">Project</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d24">
+    EquiShift: the engine starts.<br>
+    365 days, modular arithmetic, and 104 weekends validated.
+  </h2>
+
+  <p class="entry-deck">
+    Today, EquiShift stopped being a static database and became
+    a thinking engine. A 365-day loop with modular arithmetic
+    automatically detects weekends — and counts them accurately.
+    The backbone of the algorithm now exists.
+  </p>
+
+  <div class="cols">
+
+    <!-- LEFT COLUMN -->
+    <div>
+
+      <h3 class="col-label">STAR Summary</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> EquiShift already had a database of workers
+        and Málaga 2026 holidays. It knew who works and under which
+        contract. But it knew nothing about time — no calendar,
+        no engine, no awareness of weekends or rest cycles.<br><br>
+
+        <strong>T —</strong> Build the backbone of the engine:
+        a loop that iterates through all 365 days and automatically
+        detects weekends. Without that, fair rotation is impossible.<br><br>
+
+        <strong>A —</strong> I added <code>turnosNoche: 0</code> to the rotating workers —
+        a counter to ensure night shifts are distributed fairly.
+        Rafa doesn’t need it: he only works nights and never covers others.
+        Then I built a 365-day <code>for</code> loop using modular arithmetic.
+        January 1st, 2026 is a Thursday, and using <code>i % 7</code>
+        I can determine the day of the week at any point in the year.
+        Saturday = remainder 3. Sunday = remainder 4.
+        The pattern repeats every 7 days.<br><br>
+
+        <strong>R —</strong>
+        <code>weekendDays</code> → 104 ✅<br>
+        52 Saturdays + 52 Sundays — the engine is correct.<br>
+        The backbone of the algorithm is built.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px">Wins of the day</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">
+          <code>turnosNoche: 0</code> added to the data model —
+          fairness in night shifts now has a measurable counter.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">
+          365-day <code>for</code> loop built from scratch —
+          the engine backbone exists.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">
+          Modular arithmetic applied to a real problem —
+          <code>% 7</code> determines the weekday of any date
+          without relying on external libraries.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">
+          104 weekend days validated — the engine doesn't lie.
+        </span>
+      </p>
+
+      <blockquote class="pullquote">
+        "I’m not trying to build an Excel sheet.<br>
+        I’m trying to encode a system where scheduling becomes,<br>
+        for the first time, truly fair."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px">End-of-day levels</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">Algorithms</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="60"></div>
+        </div>
+        <span class="skill-pct">60%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Loops / for</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Modular arithmetic</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="55"></div>
+        </div>
+        <span class="skill-pct">55%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Data modeling</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="70"></div>
+        </div>
+        <span class="skill-pct">70%</span>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="col-rule">
+
+      <h3 class="col-label">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text">
+          <strong>Bug 1 — Unclosed workers array:</strong>
+          missing <code>];</code> at the end. Syntax error
+          that broke the entire script.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">
+          Fix: add <code>];</code>. Arrays, like classes,
+          are closed once.
+        </span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text">
+          <strong>Bug 2 — Missing comma in object:</strong>
+          <code>calendario: []</code> without a comma before
+          <code>turnosNoche: 0</code> — JavaScript can't
+          separate properties.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">
+          Fix: <code>calendario: [],</code> — every property
+          except the last needs a comma.
+        </span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text">
+          <strong>Bug 3 — Wrong weekend condition:</strong>
+          used <code>i === 3 && i === 4</code> —
+          impossible condition, always false.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">
+          Fix: compare the <strong>remainder</strong> using
+          <code>||</code> — <code>i % 7 === 3 || i % 7 === 4</code>.
+          Not the day, the remainder. Not AND, but OR.
+        </span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">
+          <code>console.log(weekendDays)</code> → 104 ✅
+        </span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px">Engine code</h3>
+
+      <pre class="code-block"><code>
+// January 1st, 2026 is Thursday — anchor point
+// i % 7 gives position in the week:
+//   remainder 1 = Thursday · remainder 2 = Friday
+//   remainder 3 = Saturday · remainder 4 = Sunday
+//   remainder 5 = Monday  · remainder 6 = Tuesday
+//   remainder 0 = Wednesday
+
+let weekendDays = 0;
+
+for (let i = 1; i <= 365; i++) {
+  if (i % 7 === 3 || i % 7 === 4) {
+    weekendDays += 1;
+  }
+}
+
+console.log(weekendDays); // → 104 ✅
+
+// Next step: assign shifts inside the loop
+// morning, afternoon, night with fair rotation
+// rule: whoever has fewer free weekends rests first
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "The % operator doesn’t multiply — it divides and returns the remainder.<br>
+        That remainder is a map of time."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
 <!-- DAY 23 -->
 <article class="entry" data-tags="js oop project" aria-labelledby="title-d73">
   <header class="entry-kicker">
