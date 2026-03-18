@@ -136,6 +136,119 @@
     Día 1 = 20 de febrero de 2026 · Los 365 días se cuentan desde ahí · No todos los días tienen entrada
   </p>
 </section>
+
+
+
+<!-- ============================
+     ENTRADA 25 — DÍA 18 — Menú hamburguesa + JS (Campus & Crema)
+=============================== -->
+
+<article class="entry" data-tags="js css debug html project" aria-labelledby="title-d18">
+  <header class="entry-kicker">
+    <span class="day-badge">Día 18</span>
+    <time datetime="2026-03-18" data-i18n="d18-date">18 de Marzo, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">JS</li>
+      <li class="etag">CSS</li>
+      <li class="etag">Debug</li>
+      <li class="etag">HTML</li>
+    </ul>
+  </header>
+
+  <!-- TITULAR -->
+  <h2 class="entry-headline" id="title-d18" data-i18n="d18-headline">
+    Menú hamburguesa funcionando<br>y avances sólidos en JavaScript
+  </h2>
+
+  <!-- DECK -->
+  <p class="entry-deck" data-i18n="d18-deck">
+    Día centrado en unir JavaScript con la estructura real de mi web <a href="https://anudoranador87.github.io/campus-crema-web/#contacto" target="_blank">Campus & Crema</a>.  
+    El menú hamburguesa ya funciona correctamente y entendí por qué antes no lo hacía.  
+    Además, reforcé conceptos clave de funciones, condicionales y objetos en JS mediante ejercicios de freeCodeCamp.
+  </p>
+
+  <div class="cols">
+
+    <!-- COLUMNA IZQUIERDA -->
+    <div>
+
+      <!-- STAR -->
+      <h3 class="col-label" data-i18n="d18-lbl-star">Resumen STAR</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Estaba trabajando en ejercicios de JavaScript y en mejorar la versión móvil de <a href="https://anudoranador87.github.io/campus-crema-web/#contacto" target="_blank">Campus & Crema</a>.<br><br>
+        <strong>T —</strong> Conseguir que el menú hamburguesa funcionara y afianzar mi lógica en funciones, condicionales y objetos usando ejercicios de freeCodeCamp.<br><br>
+        <strong>A —</strong> Revisé la estructura del header, moví el botón fuera del nav, ajusté media queries y añadí un script con <code>classList.toggle()</code>. Además repasé funciones, returns, parámetros y objetos en JS.<br><br>
+        <strong>R —</strong> El menú ya funciona perfectamente en móvil y siento que mi lógica en JS está más clara y sólida.
+      </p>
+
+      <!-- VICTORIAS -->
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d18-lbl-wins">Victorias del día</h3>
+
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">Entendí por qué el menú hamburguesa de Campus & Crema no funcionaba: el botón estaba dentro del nav.</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">Aprendí a usar <code>classList.toggle()</code> para interacciones simples.</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">Afianzo mi comprensión de funciones, condicionales y objetos en JS con freeCodeCamp.</span></p>
+
+      <!-- CITA -->
+      <blockquote class="pullquote">
+        "Si algo no funciona, revisa la estructura antes que el código."
+      </blockquote>
+
+      <!-- NIVELES -->
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d18-lbl-levels">Niveles al cierre del día</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">JavaScript</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="45"></div>
+        </div>
+        <span class="skill-pct">45%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Responsive Design</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="60"></div>
+        </div>
+        <span class="skill-pct">60%</span>
+      </div>
+
+    </div>
+
+    <!-- COLUMNA DERECHA -->
+    <div class="col-rule">
+
+      <!-- DEBUG LOG -->
+      <h3 class="col-label" data-i18n="d18-lbl-debug">Debug Log</h3>
+
+      <p class="log-item"><span class="li-icon b">✗</span><span class="li-text"><strong>Bug 1:</strong> El botón hamburguesa desaparecía en móvil.</span></p>
+      <p class="log-item"><span class="li-icon f">→</span><span class="li-text">Fix: Estaba dentro del nav, que se ocultaba con media queries.</span></p>
+
+      <p class="log-item"><span class="li-icon b">✗</span><span class="li-text"><strong>Bug 2:</strong> El JS no encontraba el botón para el evento click.</span></p>
+      <p class="log-item"><span class="li-icon f">→</span><span class="li-text">Fix: Mover el botón fuera del nav y apuntar correctamente con <code>getElementById</code>.</span></p>
+
+      <p class="log-item"><span class="li-icon w">✓</span><span class="li-text">Resultado final: menú hamburguesa totalmente funcional en Campus & Crema.</span></p>
+
+      <!-- CÓDIGO -->
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d18-lbl-code">Código del día</h3>
+
+      <pre class="code-block"><code>
+// Script del menú hamburguesa (Campus & Crema)
+const btn = document.getElementById("hamburgerBtn");
+const nav = document.querySelector(".nav");
+
+btn.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "La interacción no es magia: es estructura + estilo + lógica."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
 <!-- DÍA 24 -->
 <article class="entry" data-tags="js algo project" aria-labelledby="title-d24">
   <header class="entry-kicker">
