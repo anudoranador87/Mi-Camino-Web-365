@@ -121,6 +121,106 @@
     Day 1 = February 20, 2026 · The 365 days are counted from there · Not every day has an entry
   </p>
 </section>
+<!-- ============================
+     ENTRY 25 — DAY 18 — Hamburger Menu + JS (Campus & Crema)
+=============================== -->
+
+<article class="entry" data-tags="js css debug html project" aria-labelledby="title-d18">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 25</span>
+    <time datetime="2026-03-18" data-i18n="d18-date">March 18, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">JS</li>
+      <li class="etag">CSS</li>
+      <li class="etag">Debug</li>
+      <li class="etag">HTML</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d18" data-i18n="d18-headline">
+    Hamburger menu working<br>and solid progress in JavaScript
+  </h2>
+
+  <p class="entry-deck" data-i18n="d18-deck">
+    A day focused on connecting JavaScript with the real structure of my website <a href="https://anudoranador87.github.io/campus-crema-web/#contacto" target="_blank">Campus & Crema</a>.  
+    The hamburger menu is now working correctly and I understood why it didn’t before.  
+    I also reinforced key concepts in functions, conditionals, and objects in JS using freeCodeCamp exercises.
+  </p>
+
+  <div class="cols">
+
+    <div>
+
+      <h3 class="col-label" data-i18n="d18-lbl-star">STAR Summary</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> I was working on JavaScript exercises and improving the mobile version of <a href="https://anudoranador87.github.io/campus-crema-web/#contacto" target="_blank">Campus & Crema</a>.<br><br>
+        <strong>T —</strong> Get the hamburger menu working and strengthen my logic in functions, conditionals, and objects using freeCodeCamp exercises.<br><br>
+        <strong>A —</strong> I reviewed the header structure, moved the button outside the nav, adjusted media queries, and added a script with <code>classList.toggle()</code>. I also reviewed functions, returns, parameters, and objects in JS.<br><br>
+        <strong>R —</strong> The menu now works perfectly on mobile, and I feel my JS logic is much clearer and stronger.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d18-lbl-wins">Wins of the Day</h3>
+
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">I understood why the hamburger menu of Campus & Crema wasn’t working: the button was inside the nav.</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">I learned how to use <code>classList.toggle()</code> for simple interactions.</span></p>
+      <p class="log-item"><span class="li-icon w">+</span><span class="li-text">I strengthened my understanding of functions, conditionals, and objects in JS with freeCodeCamp.</span></p>
+
+      <blockquote class="pullquote">
+        "If something doesn’t work, check the structure before the code."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d18-lbl-levels">End-of-Day Levels</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">JavaScript</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="45"></div>
+        </div>
+        <span class="skill-pct">45%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Responsive Design</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="60"></div>
+        </div>
+        <span class="skill-pct">60%</span>
+      </div>
+
+    </div>
+
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d18-lbl-debug">Debug Log</h3>
+
+      <p class="log-item"><span class="li-icon b">✗</span><span class="li-text"><strong>Bug 1:</strong> The hamburger button disappeared on mobile.</span></p>
+      <p class="log-item"><span class="li-icon f">→</span><span class="li-text">Fix: It was inside the nav, which was hidden by media queries.</span></p>
+
+      <p class="log-item"><span class="li-icon b">✗</span><span class="li-text"><strong>Bug 2:</strong> The JS couldn’t find the button for the click event.</span></p>
+      <p class="log-item"><span class="li-icon f">→</span><span class="li-text">Fix: Moved the button outside the nav and correctly targeted it with <code>getElementById</code>.</span></p>
+
+      <p class="log-item"><span class="li-icon w">✓</span><span class="li-text">Final result: fully functional hamburger menu in Campus & Crema.</span></p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d18-lbl-code">Code of the Day</h3>
+
+      <pre class="code-block"><code>
+// Hamburger menu script (Campus & Crema)
+const btn = document.getElementById("hamburgerBtn");
+const nav = document.querySelector(".nav");
+
+btn.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "Interaction is not magic: it's structure + style + logic."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
 <!-- DAY 24 -->
  <article class="entry" data-tags="js algorithm project" aria-labelledby="title-d24">
   <header class="entry-kicker">
