@@ -16,10 +16,11 @@
 <nav class="nav" aria-label="Main navigation">
   <a href="index.html" class="nav-brand">jose<em>.</em>dev</a>
   <ul class="nav-links">
-    <li><a href="Skills.html">Skills</a></li>
+   
+    <li><a href="https://anudoranador87.github.io/JoseMaria-Frondtend-Portfolio/" target="_blank" rel="noopener noreferrer" class="nav-cta">CV </a></li>
     <li><a href="Projects.html">Projects</a></li>
-    <li><a href="index.html#doors">EquiShift</a></li>
-    <li><a href="education.html">Education</a></li>
+   
+    
     <li><a href="index.html" class="here" aria-current="page">Dev Log 365</a></li>
     <li><a href="https://github.com/anudoranador87" target="_blank" rel="noopener noreferrer">GitHub</a></li>
     <li><a href="https://wa.me/34613019444" class="nav-cta">Contact</a></li>
@@ -136,9 +137,269 @@
     Día 1 = 20 de febrero de 2026 · Los 365 días se cuentan desde ahí · No todos los días tienen entrada
   </p>
 </section>
+<!-- ============================
+     ENTRADA 26— DÍA 19  MARZO 
+=============================== -->
+<!-- ============================
+     ENTRADA 26— DÍA 19  MARZO 
+=============================== -->
+<article class="entry" data-tags="js algo debug" aria-labelledby="title-d27">
+  <header class="entry-kicker">
+    <span class="day-badge">Entrada 26</span>
+    <time datetime="2026-03-19" data-i18n="d27-date">19 de Marzo, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">JS</li>
+      <li class="etag">Algoritmos</li>
+      <li class="etag">Debug</li>
+      <li class="etag">freeCodeCamp</li>
+    </ul>
+  </header>
 
+  <h2 class="entry-headline" id="title-d27" data-i18n="d27-headline">
+    Cinco ejercicios de freeCodeCamp en una sesión.<br>
+    Un patrón de error que se repite — y que ya sé nombrar.
+  </h2>
 
+  <p class="entry-deck" data-i18n="d27-deck">
+    Día intenso. Las funciones siguen siendo el punto de fricción —
+    demasiados nombres que llaman a otros nombres, y si no tienes claro
+    qué es cada cosa, te pierdes antes de empezar.
+    Cinco ejercicios completados. Un mismo error con distintas formas.
+  </p>
 
+  <div class="cols">
+
+    <!-- COLUMNA IZQUIERDA -->
+    <div>
+
+      <h3 class="col-label" data-i18n="d27-lbl-star">Resumen STAR</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Sesión de práctica intensiva en freeCodeCamp.
+        Después de varios días construyendo proyectos propios — MiniShop,
+        EquiShift, Campus & Crema — necesitaba volver a lo básico y
+        consolidar sintaxis con ejercicios guiados. Tests automáticos:
+        pasan o fallan. Sin interpretación.<br><br>
+
+        <strong>T —</strong> Completar cinco ejercicios de dificultad
+        creciente sin ver soluciones. Card Counting, Leap Year,
+        Golf Score, Book Organizer y Quiz Game. En ese orden.<br><br>
+
+        <strong>A —</strong> Todos construidos desde cero, con errores
+        detectados y corregidos en tiempo real. El punto clave fue
+        Book Organizer — primer uso consciente de <code>sort()</code>
+        con callback propio. En Quiz Game apareció complejidad real:
+        múltiples funciones comunicándose con <code>Math.random()</code>.<br><br>
+
+        <strong>R —</strong> Cinco ejercicios completados y validados ✅<br>
+        Patrón identificado: confundir el valor con la estructura que lo contiene
+        (elemento vs array / propiedad vs objeto).<br>
+        Entrada pendiente de ampliar con más ejercicios.
+      </p>
+
+      <p class="body-text">
+        <strong>Regla que me llevo:</strong>
+        antes de usar <code>.</code> o comparar algo,
+        tengo que saber exactamente si estoy trabajando con
+        el valor o con el contenedor.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d27-lbl-wins">Victorias del día</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">
+          Propuse <code>includes()</code> por iniciativa propia en Card Counting —
+          detecté que el <code>||</code> escalaba mal y busqué una solución más limpia.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">
+          <code>sort()</code> con callback entendido: defines la regla de comparación,
+          el motor ejecuta el orden. <code>-1, 1, 0</code> dejan de ser números
+          arbitrarios.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">
+          Uso real de <code>Math.floor(Math.random() * array.length)</code> —
+          acceso seguro a índices aleatorios.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">
+          Orden lógico en condicionales: en Leap Year,
+          400 → 100 → 4. La secuencia define el resultado.
+        </span>
+      </p>
+
+      <p class="body-text" style="margin-top:16px">
+        El problema ya no es escribir código.
+        Es mantener el contexto cuando hay varias funciones
+        interactuando entre sí.
+        <br><br>
+        Los nombres de parámetros siguen siendo ruido:
+        <code>arr</code>, <code>val</code>, <code>x</code>.
+        Entiendo que son arbitrarios, pero todavía no son intuitivos.
+        <br><br>
+        Aun así: cinco ejercicios validados.
+        El sistema empieza a asentarse.
+      </p>
+
+      <blockquote class="pullquote">
+        "Ya no fallo tanto en la sintaxis básica.<br>
+        Fallo en el modelo mental.<br>
+        Y eso es un problema mucho más interesante."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d27-lbl-levels">Niveles al cierre</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">Condicionales</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="75"></div>
+        </div>
+        <span class="skill-pct">75%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Array methods</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="78"></div>
+        </div>
+        <span class="skill-pct">78%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Objetos</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Callbacks</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="50"></div>
+        </div>
+        <span class="skill-pct">50%</span>
+      </div>
+
+    </div>
+
+    <!-- COLUMNA DERECHA -->
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d27-lbl-debug">Patrón de error del día — 5 ejercicios</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text">
+          <strong>Card Counting:</strong> <code>card &lt;= 0</code>
+          en lugar de <code>count &lt;= 0</code> — confundí entrada con estado acumulado.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">
+          El parámetro entra. El acumulador evoluciona. No son intercambiables.
+        </span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text">
+          <strong>Leap Year:</strong> <code>%{year}</code> en lugar
+          de <code>${year}</code> — error de sintaxis en template literal.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">
+          Template literal = <code>${}</code>. Siempre.
+        </span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text">
+          <strong>Golf Score:</strong> <code>strokes &gt;= 2</code>
+          en lugar de <code>strokes &gt;= par + 2</code> — lógica desacoplada del input.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">
+          Las condiciones deben depender de los parámetros, no de números fijos.
+        </span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text">
+          <strong>Book Organizer:</strong>
+          <code>function filteredBooks.filter()</code> — mezcla de declaración y ejecución.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">
+          <code>filter()</code> devuelve datos. No define funciones.
+        </span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text">
+          <strong>Quiz Game:</strong>
+          <code>computerChoice.answer</code> — asumí estructura donde solo había valor.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">
+          Comparar valor con valor: <code>computerChoice === question.answer</code>.
+        </span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">
+          Cinco ejercicios completados y validados por freeCodeCamp ✅
+        </span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d27-lbl-code">Código más relevante del día</h3>
+
+      <pre class="code-block"><code>
+// sort() con callback propio — Book Organizer
+function sortByYear(book1, book2) {
+  if (book1.releaseYear < book2.releaseYear) return -1;
+  if (book1.releaseYear > book2.releaseYear) return 1;
+  return 0;
+}
+
+// Math.random() para elemento aleatorio — Quiz Game
+function getRandomQuestion(arr) {
+  const randomIndex = Math.floor(Math.random() * arr.length);
+  return arr[randomIndex];
+}
+
+// includes() para múltiples valores — Card Counting
+if ([10, "J", "Q", "K", "A"].includes(card)) {
+  count -= 1;
+}
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "La soltura no llega entendiendo más.<br>
+        Llega repitiendo hasta que no tienes que pensar."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
 <!-- ============================
      ENTRADA 25 — DÍA 18 — Menú hamburguesa + JS (Campus & Crema)
 =============================== -->

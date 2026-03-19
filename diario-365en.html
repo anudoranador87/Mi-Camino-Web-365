@@ -14,10 +14,11 @@
 <nav class="nav" aria-label="Main navigation">
   <a href="index.html" class="nav-brand">jose<em>.</em>dev</a>
   <ul class="nav-links">
-    <li><a href="index.html#about">Skills</a></li>
-    <li><a href="index.html#projects">Projects</a></li>
-    <li><a href="index.html#doors">EquiShift</a></li>
-    <li><a href="index.html#education">Education</a></li>
+  
+    <li><a href="https://anudoranador87.github.io/JoseMaria-Frondtend-Portfolio/" target="_blank" rel="noopener noreferrer" class="nav-cta">CV </a></li>
+    
+    
+    <li><a href="Projects.html">Projects</a></li>
     <li><a href="diario-365en.html" class="here" aria-current="page">Dev Log 365</a></li>
     <li><a href="https://github.com/anudoranador87" target="_blank" rel="noopener noreferrer">GitHub</a></li>
     <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
@@ -45,24 +46,38 @@
     | 17 days · Real errors · No filters
   </p>
 </header>
+<<section class="stats-row" aria-label="Dev statistics">
 
-<section class="stats-row" aria-label="Learning statistics">
   <article class="stat-item">
     <span class="stat-n" id="c-days">0</span>
-    <span class="stat-l">Active days</span>
+    <span class="stat-l">Days activeo</span>
   </article>
+
   <article class="stat-item">
     <span class="stat-n" id="c-bugs">0</span>
-    <span class="stat-l">Bugs documented</span>
+    <span class="stat-l">Bugs Documented</span>
   </article>
+
   <article class="stat-item">
-    <span class="stat-n" id="c-proj">0</span>
-    <span class="stat-l">Real projects</span>
+    <span class="stat-n" id="stat-lines">0</span>
+    <span class="stat-l">Lines of code</span>
   </article>
+
+  <article class="stat-item">
+    <span class="stat-n" id="stat-algo">0</span>
+    <span class="stat-l">Algorithms</span>
+  </article>
+
+  <article class="stat-item">
+    <span class="stat-n" id="stat-projects">0</span>
+    <span class="stat-l">Projects built</span>
+  </article>
+
   <article class="stat-item">
     <span class="stat-n" id="c-streak">0</span>
-    <span class="stat-l">Day streak</span>
+    <span class="stat-l">Streak</span>
   </article>
+
 </section>
 
 <nav class="filter-nav" aria-label="Filter entries by category">
@@ -121,6 +136,266 @@
     Day 1 = February 20, 2026 · The 365 days are counted from there · Not every day has an entry
   </p>
 </section>
+<!-- ============================
+     ENTRY 26 — MARCH 19
+=============================== -->
+<article class="entry" data-tags="js algo debug" aria-labelledby="title-d27">
+  <header class="entry-kicker">
+    <span class="day-badge">Entry 26</span>
+    <time datetime="2026-03-19" data-i18n="d27-date">March 19, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">JS</li>
+      <li class="etag">Algorithms</li>
+      <li class="etag">Debug</li>
+      <li class="etag">freeCodeCamp</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d27" data-i18n="d27-headline">
+    Five freeCodeCamp exercises in one session.<br>
+    One recurring error pattern — and now I can name it.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d27-deck">
+    Intense session. Functions are still the friction point —
+    too many names calling other names, and if you don’t clearly
+    understand what each thing represents, you get lost before you even start.
+    Five exercises completed. Same mistake, different shapes.
+  </p>
+
+  <div class="cols">
+
+    <!-- LEFT COLUMN -->
+    <div>
+
+      <h3 class="col-label" data-i18n="d27-lbl-star">STAR Summary</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Intensive practice session on freeCodeCamp.
+        After several days building my own projects — MiniShop,
+        EquiShift, Campus & Crema — I needed to return to fundamentals
+        and reinforce syntax through guided exercises. Automatic tests:
+        pass or fail. No interpretation.<br><br>
+
+        <strong>T —</strong> Complete five progressively harder exercises
+        without looking at solutions. Card Counting, Leap Year,
+        Golf Score, Book Organizer, and Quiz Game. In that order.<br><br>
+
+        <strong>A —</strong> All built from scratch, with errors identified
+        and fixed in real time. The key moment was Book Organizer —
+        first deliberate use of <code>sort()</code> with a custom callback.
+        Quiz Game introduced real complexity: multiple functions interacting
+        through <code>Math.random()</code>.<br><br>
+
+        <strong>R —</strong> Five exercises completed and validated ✅<br>
+        Pattern identified: confusing the value with the structure that contains it
+        (element vs array / property vs object).<br>
+        Entry pending expansion with more exercises.
+      </p>
+
+      <p class="body-text">
+        <strong>Rule I’m taking with me:</strong>
+        before using <code>.</code> or comparing anything,
+        I need to know exactly whether I’m working with
+        the value or its container.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d27-lbl-wins">Wins of the day</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">
+          Proposed <code>includes()</code> on my own in Card Counting —
+          noticed <code>||</code> didn’t scale and looked for a cleaner solution.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">
+          Understood <code>sort()</code> with a callback:
+          you define the comparison rule, the engine handles the ordering.
+          <code>-1, 1, 0</code> are no longer arbitrary numbers.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">
+          Real use of <code>Math.floor(Math.random() * array.length)</code> —
+          safe access to random indices.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">
+          Order matters in condition chains — in Leap Year:
+          400 → 100 → 4. Sequence defines correctness.
+        </span>
+      </p>
+
+      <p class="body-text" style="margin-top:16px">
+        The problem is no longer writing code.
+        It’s keeping track of context when multiple functions
+        interact with each other.
+        <br><br>
+        Parameter names still feel like noise:
+        <code>arr</code>, <code>val</code>, <code>x</code>.
+        I understand they’re arbitrary, but they’re not intuitive yet.
+        <br><br>
+        Still: five exercises validated.
+        The system is starting to settle.
+      </p>
+
+      <blockquote class="pullquote">
+        "I don’t fail as much on basic syntax anymore.<br>
+        I fail on the mental model.<br>
+        And that’s a much more interesting problem."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d27-lbl-levels">Levels at close</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">Conditionals</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="75"></div>
+        </div>
+        <span class="skill-pct">75%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Array methods</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="78"></div>
+        </div>
+        <span class="skill-pct">78%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Objects</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Callbacks</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="50"></div>
+        </div>
+        <span class="skill-pct">50%</span>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d27-lbl-debug">Error pattern of the day — 5 exercises</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text">
+          <strong>Card Counting:</strong> <code>card &lt;= 0</code>
+          instead of <code>count &lt;= 0</code> — confused input with accumulated state.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">
+          The parameter comes in. The accumulator evolves. Not interchangeable.
+        </span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text">
+          <strong>Leap Year:</strong> <code>%{year}</code> instead of
+          <code>${year}</code> — template literal syntax error.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">
+          Template literals use <code>${}</code>. Always.
+        </span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text">
+          <strong>Golf Score:</strong> <code>strokes &gt;= 2</code>
+          instead of <code>strokes &gt;= par + 2</code> — logic disconnected from input.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">
+          Conditions must depend on parameters, not hardcoded numbers.
+        </span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text">
+          <strong>Book Organizer:</strong>
+          <code>function filteredBooks.filter()</code> — mixed declaration with execution.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">
+          <code>filter()</code> returns data. It doesn’t define functions.
+        </span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text">
+          <strong>Quiz Game:</strong>
+          <code>computerChoice.answer</code> — assumed structure where there was only a value.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">
+          Compare value to value: <code>computerChoice === question.answer</code>.
+        </span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">
+          Five exercises completed and validated by freeCodeCamp ✅
+        </span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d27-lbl-code">Most relevant code of the day</h3>
+
+      <pre class="code-block"><code>
+// sort() with custom callback — Book Organizer
+function sortByYear(book1, book2) {
+  if (book1.releaseYear < book2.releaseYear) return -1;
+  if (book1.releaseYear > book2.releaseYear) return 1;
+  return 0;
+}
+
+// Math.random() for random element — Quiz Game
+function getRandomQuestion(arr) {
+  const randomIndex = Math.floor(Math.random() * arr.length);
+  return arr[randomIndex];
+}
+
+// includes() for multiple values — Card Counting
+if ([10, "J", "Q", "K", "A"].includes(card)) {
+  count -= 1;
+}
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "Fluency doesn’t come from understanding more.<br>
+        It comes from repeating until you don’t have to think."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
 <!-- ============================
      ENTRY 25 — DAY 18 — Hamburger Menu + JS (Campus & Crema)
 =============================== -->
@@ -2280,7 +2555,7 @@ box-shadow: 0 8px 15px
   </p>
 </footer>
 
-<script src="diario.js" defer></script>
+<script src="script.js" defer></script>
   <!-- DATA — update STATS in diario.js when adding entries -->
 
 </body>
