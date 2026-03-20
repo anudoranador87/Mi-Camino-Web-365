@@ -136,6 +136,442 @@
   </p>
 </section>
 <!-- ============================
+     ENTRADA 27— DÍA 20  MARZO 
+=============================== -->
+
+
+<article class="entry" data-tags="js debug project algo" aria-labelledby="title-d28">
+  <header class="entry-kicker">
+    <span class="day-badge">Entrada 27</span>
+    <time datetime="2026-03-20" data-i18n="d28-date">20 de Marzo, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">JS</li>
+      <li class="etag">Funciones</li>
+      <li class="etag">Debug</li>
+      <li class="etag">EquiShift</li>
+      <li class="etag">Algoritmos</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d28" data-i18n="d28-headline">
+    Los errores de llaves han desaparecido.<br>
+    Ahora los errores son míos de verdad.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d28-deck">
+    Hoy empecé por la conexión, como siempre.
+    La regla del hotel — si cierras de noche, no puedes abrir de mañana —
+    y cómo decírselo al código sin que el código se rompa.
+    De camino descubrí que los errores que me quedan
+    ya no son de sintaxis. Son de lógica.
+    Eso es exactamente donde tiene que estar la dificultad.
+  </p>
+
+  <div class="cols">
+
+    <!-- COLUMNA IZQUIERDA -->
+    <div>
+
+      <h3 class="col-label" data-i18n="d28-lbl-star">Resumen STAR</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Antes de seguir con EquiShift necesitaba saber
+        si lo de esta semana se había quedado de verdad o solo en la superficie.
+        Con EquiShift no hay tests automáticos que te digan pasa o falla.
+        Con freeCodeCamp sí. Necesitaba eso.<br><br>
+
+        <strong>T —</strong> <code>truncateString</code>, <code>confirmEnding</code>
+        y el quiz de funciones. Y de fondo, la pregunta que llevo días
+        sin poder cerrar: cómo le digo al sistema que
+        noche → mañana es ilegal. Sin que el código se rompa.
+        Sin que la lógica viva en el sitio equivocado.<br><br>
+
+        <strong>A —</strong> En <code>truncateString</code> tardé seis intentos.
+        Leí línea a línea cada vez. Entendía lo que tenía que hacer.
+        No entendía por qué no funcionaba.
+        El código estaba dentro de comillas — JavaScript me lo devolvía
+        como texto. Cuando lo vi, no me pareció un error de sintaxis.
+        Me pareció un concepto que no había terminado de cerrar.<br><br>
+
+        El momento del día fue <code>return</code>.
+        Sé desde hace semanas que para la función.
+        Hoy lo vi parar de verdad — código debajo que no existía,
+        muerto, invisible para JavaScript.
+        Hay cosas que sabes y cosas que entiendes.
+        Hoy pasé de saber a entender.<br><br>
+
+        Con <code>esTurnoLegal</code> el problema no era de código.
+        Era que escribí la regla fuera de la función.
+        La función ya debería saber qué es ilegal.
+        Yo solo tengo que preguntarle.<br><br>
+
+        <strong>R —</strong> Dos ejercicios completados ✅ Quiz superado ✅
+        <code>esTurnoLegal</code> sin código todavía — pero ya sé dónde
+        tiene que vivir la lógica. Y hoy me di cuenta de algo
+        más difícil de medir: estoy en un nivel diferente
+        al de hace un mes. Los errores ya no son de llaves.
+        Son míos de verdad.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d28-lbl-wins">Victorias del día</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">
+          <code>slice(0, num) + "..."</code> — cortar un string
+          y pegarle texto al final. La semana pasada esto era
+          un misterio. Hoy es obvio. Eso es lo mejor
+          de este proceso — cuando algo que no entendías
+          de repente ya lo es.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">
+          <code>slice(-n)</code> con número negativo —
+          empieza desde el final. Lo encontré solo
+          intentando que funcionara. Me quedé un momento
+          mirándolo. No lo busqué. Llegó.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">
+          Parámetro vs argumento — el parámetro es
+          el turno de tarde en el protocolo del hotel.
+          El argumento es Salvador, martes 14.
+          Uno es el molde. El otro es lo que entra.
+          Cuando lo vi así, cerró.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">
+          <code>return</code> para. Sin excepciones.
+          Todo lo que hay debajo no existe para JavaScript.
+          Llevaba semanas sabiéndolo. Hoy lo entendí.
+          No es lo mismo.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">
+          La regla de negocio vive dentro de la función.
+          El exterior solo pregunta — sí o no.
+          No necesita saber por qué.
+          Eso es separar responsabilidades sin tener
+          que buscar la definición en ningún sitio.
+        </span>
+      </p>
+
+      <blockquote class="pullquote">
+        "Los errores de llaves han desaparecido.
+        Ahora los errores son míos de verdad."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d28-lbl-levels">Niveles al cierre</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">Funciones</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="72"></div>
+        </div>
+        <span class="skill-pct">72%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Strings</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Algoritmos</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="62"></div>
+        </div>
+        <span class="skill-pct">62%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Arquitectura</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="55"></div>
+        </div>
+        <span class="skill-pct">55% — recién empieza</span>
+      </div>
+
+      <h3 class="col-label" style="margin-top:24px">Lo que hay detrás de esTurnoLegal</h3>
+
+      <p class="body-text">
+        En el hotel la regla existe. Nadie puede abrir de mañana
+        si cerró de noche. Está en el convenio.
+        Está en el sentido común.<br><br>
+
+        En la práctica depende de que quien hace el cuadrante
+        ese mes se acuerde de mirar el turno del día anterior.
+        A veces se acuerda. A veces no.<br><br>
+
+        No quiero construir una mejora.
+        Quiero construir una garantía.
+        Algo que demuestre que puedo terminar
+        algo complejo de verdad —
+        no solo empezarlo.<br><br>
+
+        El diario es el testigo de que esto está pasando.
+        <code>esTurnoLegal</code> es la prueba de que
+        ocho años en hostelería tienen código dentro.
+        Solo hay que saber encontrarlo.
+      </p>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "Sin carrera de informática dicen que no llegas.
+        El diario lleva 28 días demostrando lo contrario."
+      </blockquote>
+
+    </div>
+
+    <!-- COLUMNA DERECHA -->
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d28-lbl-debug">Debug Log — truncateString</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text">
+          <strong>Intento 1:</strong> <code>return `string... + num`</code> —
+          todo dentro de backticks sin <code>${}</code>.
+          Le pedí que ejecutara algo
+          y me devolvió la receta escrita en papel.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">
+          Backticks sin <code>${}</code> son texto con acento grave.
+          Nada más.
+        </span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text">
+          <strong>Intento 2:</strong> <code>return " slice(string... + num)"</code> —
+          cambié los backticks por comillas. Mismo resultado.
+          El código entre comillas es un string, no una instrucción.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">
+          Las comillas son para datos. No para órdenes.
+        </span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text">
+          <strong>Intento 3:</strong> <code>string.slice(num)</code> —
+          corta desde <code>num</code> hasta el final.
+          Al revés de lo que necesitaba.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">
+          <code>slice(0, num)</code> — desde el principio hasta <code>num</code>.
+          El orden de los argumentos define la dirección.
+        </span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">
+          <code>string.slice(0, num) + "..."</code> ✅
+        </span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px">Debug Log — confirmEnding</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text">
+          <strong>Error 1:</strong> <code>target.length.slice()</code> —
+          los números no tienen <code>slice()</code>.
+          El número entra dentro de <code>slice()</code>, no lo llama.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">
+          <code>string1.slice(-target.length)</code> —
+          el número es el argumento, no el objeto.
+        </span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text">
+          <strong>Error 2:</strong> <code>if(string1.slice(-2) = string2)</code> —
+          no estaba comparando. Estaba asignando.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">
+          <code>=</code> es una orden. <code>===</code> es una pregunta.
+          Dentro de un <code>if</code> siempre pregunto.
+        </span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">
+          <code>string1.slice(-string2.length) === string2</code> ✅
+        </span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px">Debug Log — esTurnoLegal</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text">
+          <strong>Error de arquitectura:</strong>
+          escribí la regla <em>noche→mañana</em>
+          fuera de la función. Dupliqué la lógica
+          en el lugar equivocado. Y el <code>return</code>
+          devolvía un string en lugar de un booleano.
+          Tres errores en tres líneas.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">
+          La regla vive dentro de <code>esTurnoLegal</code>.
+          El exterior solo pregunta — ¿es legal? —
+          y actúa. No necesita saber por qué.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">
+          <code>return false</code> ≠ <code>return "false"</code>.
+          Una función de validación devuelve booleanos.
+          Siempre.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">
+          Arquitectura clara. Código pendiente.
+          Hoy es suficiente con saber dónde tiene que vivir la lógica.
+        </span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d28-lbl-code">Código del día</h3>
+
+      <pre class="code-block"><code>
+// truncateString — 6 intentos, 1 solución
+function truncateString(string, num) {
+  if (string.length > num) {
+    return string.slice(0, num) + "...";
+  } else {
+    return string;
+  }
+}
+
+// confirmEnding — slice negativo, dinámico
+// lo encontré solo. no lo busqué.
+function confirmEnding(string, target) {
+  if (string.slice(-target.length) === target) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+// esTurnoLegal — la regla del hotel en código
+// recibe turnoAyer y turnoHoy
+// devuelve false si la combinación es ilegal
+// devuelve true si es válida
+// noche → mañana: siempre false
+// TODO — próxima sesión. este frente no se abre
+// hasta que esté cerrado.
+function esTurnoLegal(turnoAyer, turnoHoy) {
+  // la lógica vive aquí dentro
+  // no fuera
+}
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "slice(-n) no es un truco raro.
+        Es una herramienta que estaba ahí
+        y yo no sabía que existía.
+        Ahora sí."
+      </blockquote>
+
+    </div>
+  </div>
+
+  <!-- MENTAL MODEL -->
+  <div class="mental-model">
+    <h3 class="mental-model-label">Mental model del día</h3>
+    <ul class="mental-model-list">
+      <li><code>slice(0, n)</code> → los primeros <code>n</code> caracteres</li>
+      <li><code>slice(-n)</code> → los últimos <code>n</code> desde el final — dinámico, sin calcular nada extra</li>
+      <li><code>return false</code> → booleano · <code>return "false"</code> → string · no son lo mismo, nunca</li>
+      <li>La regla de negocio vive dentro de la función — el exterior solo pregunta</li>
+      <li>Saber y entender no son lo mismo — hoy pasé de uno al otro con <code>return</code></li>
+    </ul>
+  </div>
+
+  <!-- PROBLEM PATTERN -->
+  <div class="problem-pattern">
+    <div class="pp-item">
+      <span class="pp-label">Problema del día</span>
+      <p class="pp-text">
+        Codificar una regla laboral real sin que la lógica
+        viva en el sitio equivocado.
+        Si cierras de noche, no puedes abrir de mañana.
+        En el hotel depende de que alguien se acuerde.
+        En EquiShift no depende de nadie.
+      </p>
+    </div>
+    <div class="pp-item">
+      <span class="pp-label">Cómo lo modelé</span>
+      <p class="pp-text">
+        <code>esTurnoLegal(turnoAyer, turnoHoy)</code> —
+        dos strings entran, un booleano sale.
+        La combinación <code>"noche" + "mañana"</code>
+        devuelve <code>false</code>.
+        El motor pregunta antes de asignar.
+        No asume. No recuerda. No tiene favoritos.
+      </p>
+    </div>
+    <div class="pp-item">
+      <span class="pp-label">Conexión con los 8 años</span>
+      <p class="pp-text">
+        En hostelería aprendí a pensar en el usuario final
+        antes de pensar en el proceso.
+        <code>esTurnoLegal</code> no es una función de validación.
+        Es la primera vez que el trabajador del hotel
+        tiene un sistema que no puede olvidarse de él.
+      </p>
+    </div>
+  </div>
+
+  <!-- NEXT TARGET -->
+  <div class="next-target">
+    <h3 class="next-target-label">Next target</h3>
+    <ul class="next-target-list">
+      <li>Escribir <code>esTurnoLegal</code> completa — solo booleanos, todas las combinaciones ilegales del convenio documentadas primero</li>
+      <li>Integrarla en el bucle de 365 días antes de asignar cualquier turno</li>
+      <li>No abrir ningún frente nuevo hasta que esto esté cerrado — abro demasiados y lo sé</li>
+      <li>Próximos ejercicios: <code>repeat()</code>, <code>includes()</code>, <code>indexOf()</code> — cuando <code>esTurnoLegal</code> funcione</li>
+    </ul>
+  </div>
+
+</article>
+<!-- ============================
      ENTRADA 26— DÍA 19  MARZO 
 =============================== -->
 <article class="entry" data-tags="js algo debug" aria-labelledby="title-d27">
