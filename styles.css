@@ -70,7 +70,7 @@ code {
 ========================================= */
 
 .entries {
-  width: min(900px, 90%);
+  width: min(1300px, 92%);
   margin: 0 auto;
 }
 
@@ -952,4 +952,84 @@ button,
   color: var(--ink);
   background: none;
   padding: 0;
+}
+
+/* ══════════════════════════════════════════════
+   FIX LAYOUT ESCRITORIO — Dev Log 365
+  En escritorio se veia demasiado espacio en blanc.
+══════════════════════════════════════════════ */
+
+/* Contenedor principal más ancho en escritorio */
+.entries {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+}
+
+
+.masthead {
+  padding: 60px 4% 40px;
+}
+
+
+.stats-row {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 4%;
+}
+
+
+.filter-nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 22px 4%;
+}
+
+
+@media (min-width: 1200px) {
+  .entries {
+    width: 92%;
+    max-width: 1300px;
+  }
+
+
+  .cols {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+
+
+  .code-block {
+    font-size: 0.95rem;
+  }
+
+
+  .entry {
+    padding: 60px 0;
+  }
+
+  
+  .nav {
+    padding: 14px 4%;
+  }
+
+  /* Filter nav sticky más baja
+     porque la nav es más alta en escritorio */
+  .filter-nav {
+    top: 57px;
+  }
+}
+
+/* Para Pantallas muy grandes — 1600px+ */
+@media (min-width: 1600px) {
+  .entries {
+    max-width: 1500px;
+  }
+
+  .cols {
+    gap: 64px;
+  }
+
+  .entry-headline {
+    font-size: 2.4rem;
+  }
 }

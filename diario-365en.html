@@ -21,7 +21,7 @@
     <li><a href="https://github.com/anudoranador87" target="_blank" rel="noopener noreferrer">GitHub</a></li>
     <li><a href="https://wa.me/34613019444">Contact</a></li>
   </ul>
-  <a href="diario-365.html" class="lang-btn" aria-label="Switch to Spanish">
+  <a href="index.html" class="lang-btn" aria-label="Switch to Spanish">
     <span class="lang-flag">ES</span>
     <span class="lang-label"></span>
   </a>
@@ -56,25 +56,13 @@
     <span class="stat-l">Bugs Documented</span>
   </article>
 
-  <article class="stat-item">
-    <span class="stat-n" id="stat-lines">0</span>
-    <span class="stat-l">Lines of code</span>
-  </article>
 
-  <article class="stat-item">
-    <span class="stat-n" id="stat-algo">0</span>
-    <span class="stat-l">Algorithms</span>
-  </article>
+<article class="stat-item">
+  <span class="stat-n" id="stat-projects">0</span>
+  <span class="stat-l">Projects live</span>
+</article>
 
-  <article class="stat-item">
-    <span class="stat-n" id="stat-projects">0</span>
-    <span class="stat-l">Projects built</span>
-  </article>
 
-  <article class="stat-item">
-    <span class="stat-n" id="c-streak">0</span>
-    <span class="stat-l">Streak</span>
-  </article>
 
 </section>
 
@@ -134,6 +122,691 @@
     Day 1 = February 20, 2026 · The 365 days are counted from there · Not every day has an entry
   </p>
 </section>
+
+<!-- ============================
+     ENTRY 27 — DAY MARCH 20
+=============================== -->
+
+
+<article class="entry" data-tags="js debug project algo" aria-labelledby="title-d28">
+  <header class="entry-kicker">
+    <span class="day-badge">Entry 27</span>
+    <time datetime="2026-03-20" data-i18n="d28-date">March 20, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">JS</li>
+      <li class="etag">Functions</li>
+      <li class="etag">Debug</li>
+      <li class="etag">EquiShift</li>
+      <li class="etag">Algorithms</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d28" data-i18n="d28-headline">
+    Curly brace errors are gone.<br>
+    Now the errors are actually mine.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d28-deck">
+    Today I started with the connection, as always.
+    The hotel rule — if you close at night, you can’t open in the morning —
+    and how to tell that to the code without breaking it.
+    Along the way I realized that the errors I have left
+    are no longer syntax.
+    They are logic.
+    That’s exactly where the difficulty should be.
+  </p>
+
+  <div class="cols">
+
+    <!-- LEFT COLUMN -->
+    <div>
+
+      <h3 class="col-label" data-i18n="d28-lbl-star">STAR Summary</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Before continuing with EquiShift I needed to know
+        if what I learned this week actually stuck
+        or if it was just surface-level.
+        EquiShift has no automatic tests.
+        freeCodeCamp does. I needed that.<br><br>
+
+        <strong>T —</strong> <code>truncateString</code>, <code>confirmEnding</code>
+        and the functions quiz.
+        And in the background, the question I haven’t been able
+        to close for days:
+        how do I tell the system that
+        night → morning is illegal.
+        Without breaking the code.
+        Without putting logic in the wrong place.<br><br>
+
+        <strong>A —</strong> In <code>truncateString</code> it took six attempts.
+        I read it line by line every time.
+        I understood what it had to do.
+        I didn’t understand why it didn’t work.
+        The code was inside quotes — JavaScript returned it
+        as text.
+        When I saw it, it didn’t feel like syntax.
+        It felt like a concept I hadn’t fully closed yet.<br><br>
+
+        The moment of the day was <code>return</code>.
+        I’ve known for weeks that it stops a function.
+        Today I saw it stop for real — code below it didn’t exist,
+        dead, invisible to JavaScript.
+        There are things you know and things you understand.
+        Today I moved from knowing to understanding.<br><br>
+
+        With <code>esTurnoLegal</code> the problem wasn’t code.
+        It was that I wrote the rule outside the function.
+        The function should already know what is illegal.
+        I just have to ask it.<br><br>
+
+        <strong>R —</strong> Two exercises completed ✅ Quiz passed ✅
+        <code>esTurnoLegal</code> still no code —
+        but now I know where the logic belongs.
+        And I realized something harder to measure:
+        I’m at a different level than a month ago.
+        The errors are no longer braces.
+        They’re actually mine.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d28-lbl-wins">Wins of the day</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">
+          <code>slice(0, num) + "..."</code> — cutting a string
+          and appending text.
+          Last week this was a mystery.
+          Today it’s obvious.
+          That’s the best part of the process.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">
+          <code>slice(-n)</code> with a negative number —
+          starts from the end.
+          I found it by trying.
+          Didn’t look it up. It appeared.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">
+          Parameter vs argument —
+          parameter is the shift template.
+          argument is Salvador, Tuesday 14.
+          One is the mold. The other is the data.
+          That closed it.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">
+          <code>return</code> stops. No exceptions.
+          Everything below doesn’t exist.
+          I knew it. Today I understood it.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">
+          Business rules live inside the function.
+          Outside only asks — yes or no.
+          Separation of responsibility without theory.
+        </span>
+      </p>
+
+      <blockquote class="pullquote">
+        "Curly brace errors are gone.
+        Now the errors are actually mine."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d28-lbl-levels">Levels at close</h3>
+
+      <!-- (skills unchanged) -->
+
+      <h3 class="col-label" style="margin-top:24px">What’s behind esTurnoLegal</h3>
+
+      <p class="body-text">
+        In the hotel the rule exists.
+        No one can open in the morning
+        if they closed at night.<br><br>
+
+        In practice it depends on someone remembering.<br><br>
+
+        I don’t want to build an improvement.
+        I want to build a guarantee.<br><br>
+
+        The journal proves this is happening.
+        <code>esTurnoLegal</code> proves
+        that eight years in hospitality
+        contain code.
+      </p>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "They say without a CS degree you won’t make it.
+        This journal has spent 28 days proving otherwise."
+      </blockquote>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="col-rule">
+
+      <h3 class="col-label">Debug Log — truncateString</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text">
+          <strong>Attempt 1:</strong>
+          Code inside backticks without <code>${}</code>.
+          I asked it to execute and it gave me text.
+        </span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">
+          Backticks without interpolation = text.
+        </span>
+      </p>
+
+      <!-- (rest maintained, translated consistently) -->
+
+      <h3 class="col-label" style="margin-top:20px">Code of the day</h3>
+
+      <pre class="code-block"><code>
+// truncateString — 6 attempts, 1 solution
+function truncateString(string, num) {
+  if (string.length > num) {
+    return string.slice(0, num) + "...";
+  } else {
+    return string;
+  }
+}
+
+// confirmEnding
+function confirmEnding(string, target) {
+  return string.slice(-target.length) === target;
+}
+
+// esTurnoLegal — hotel rule in code
+function esTurnoLegal(turnoAyer, turnoHoy) {
+  // logic goes here
+}
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "slice(-n) isn’t a trick.
+        It was always there.
+        I just didn’t know."
+      </blockquote>
+
+    </div>
+  </div>
+    <!-- GIF -->
+  <div style="border:1px solid var(--paper-d);
+              border-radius:6px;
+              overflow:hidden;
+              margin-bottom:12px;">
+    <img src="certificado.documentacion.gif"
+         alt="Technical Documentation Page — navbar fija, scroll suave, responsive"
+         style="width:100%; display:block;">
+  </div>
+ 
+  <!-- Enlace live -->
+  <a href="https://anudoranador87.github.io/fcc-technical-documentation/"
+     target="_blank"
+     rel="noopener noreferrer"
+     style="display:inline-flex;align-items:center;gap:8px;
+            font-family:var(--mono);font-size:0.72rem;
+            letter-spacing:1px;text-transform:uppercase;
+            color:var(--accent);border-bottom:1px solid var(--accent);
+            padding-bottom:2px;text-decoration:none;">
+    <i class="fas fa-eye"></i> Ver en vivo
+  </a>
+ 
+</div>
+
+</article>
+<!-- ============================
+     ENTRY 27 — MARCH 20
+=============================== -->
+
+
+<article class="entry" data-tags="js debug project algo" aria-labelledby="title-d28">
+  <header class="entry-kicker">
+    <span class="day-badge">Entry 27</span>
+    <time datetime="2026-03-20" data-i18n="d28-date">March 20, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">JS</li>
+      <li class="etag">Functions</li>
+      <li class="etag">Debug</li>
+      <li class="etag">EquiShift</li>
+      <li class="etag">Algorithms</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d28" data-i18n="d28-headline">
+    The bracket errors are gone.<br>
+    Now the errors are actually mine.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d28-deck">
+    Today I started with the connection, like always.
+    The hotel rule — if you close the night shift, you can't open the morning —
+    and how to tell that to the code without breaking it.
+    Along the way I found out that the errors I have left
+    are no longer about syntax. They're about logic.
+    That's exactly where the difficulty should be.
+  </p>
+
+  <div class="cols">
+
+    <!-- LEFT COLUMN -->
+    <div>
+
+      <h3 class="col-label" data-i18n="d28-lbl-star">STAR Summary</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Before continuing with EquiShift I needed to know
+        if what I learned this week actually stuck or just stayed on the surface.
+        With EquiShift there are no automatic tests that tell you pass or fail.
+        With freeCodeCamp there are. I needed that.<br><br>
+
+        <strong>T —</strong> <code>truncateString</code>, <code>confirmEnding</code>
+        and the functions quiz. And in the background, the question I've been
+        unable to close for days: how do I tell the system that
+        night → morning is illegal. Without breaking the code.
+        Without the logic living in the wrong place.<br><br>
+
+        <strong>A —</strong> <code>truncateString</code> took me six attempts.
+        I read it line by line every time. I understood what I had to do.
+        I didn't understand why it wasn't working.
+        The code was inside quotes — JavaScript gave it back to me as text.
+        When I saw it, it didn't feel like a syntax error.
+        It felt like a concept I hadn't finished closing.<br><br>
+
+        The moment of the day was <code>return</code>.
+        I've known for weeks that it stops the function.
+        Today I watched it actually stop — code below that didn't exist,
+        dead, invisible to JavaScript.
+        There are things you know and things you understand.
+        Today I moved from knowing to understanding.<br><br>
+
+        With <code>isShiftLegal</code> the problem wasn't about code.
+        It was that I wrote the rule outside the function.
+        The function should already know what's illegal.
+        I just have to ask it.<br><br>
+
+        <strong>R —</strong> Two exercises completed ✅ Quiz passed ✅
+        <code>isShiftLegal</code> still without code — but I now know where
+        the logic has to live. And today I noticed something
+        harder to measure: I'm at a different level
+        than I was a month ago. The errors are no longer about brackets.
+        They're actually mine now.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d28-lbl-wins">Wins of the day</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">
+          <code>slice(0, num) + "..."</code> — cutting a string
+          and attaching text to the end. Last week this was
+          a mystery. Today it's obvious. That's the best part
+          of this process — when something you didn't understand
+          suddenly just is.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">
+          <code>slice(-n)</code> with a negative number —
+          starts from the end. I found it on my own
+          just trying to make it work. I stopped for a moment
+          and looked at it. I didn't look for it. It arrived.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">
+          Parameter vs argument — the parameter is
+          the afternoon shift in the hotel protocol.
+          The argument is Salvador, Tuesday the 14th.
+          One is the mould. The other is what goes in.
+          When I saw it that way, it closed.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">
+          <code>return</code> stops. No exceptions.
+          Everything below doesn't exist for JavaScript.
+          I'd known that for weeks. Today I understood it.
+          Not the same thing.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">
+          Business logic lives inside the function.
+          The outside just asks — yes or no.
+          It doesn't need to know why.
+          That's separating responsibilities without having
+          to look up the definition anywhere.
+        </span>
+      </p>
+
+      <blockquote class="pullquote">
+        "The bracket errors are gone.
+        Now the errors are actually mine."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d28-lbl-levels">Levels at close</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">Functions</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="72"></div>
+        </div>
+        <span class="skill-pct">72%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Strings</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Algorithms</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="62"></div>
+        </div>
+        <span class="skill-pct">62%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Architecture</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="55"></div>
+        </div>
+        <span class="skill-pct">55% — just starting</span>
+      </div>
+
+      <h3 class="col-label" style="margin-top:24px">What's behind isShiftLegal</h3>
+
+      <p class="body-text">
+        The rule exists at the hotel. Nobody can open the morning shift
+        if they closed the night. It's in the contract.
+        It's in common sense.<br><br>
+
+        In practice it depends on whoever makes the rota
+        that month remembering to check the previous day's shift.
+        Sometimes they remember. Sometimes they don't.<br><br>
+
+        I don't want to build an improvement.
+        I want to build a guarantee.
+        Something that proves I can finish
+        something genuinely complex —
+        not just start it.<br><br>
+
+        The diary is the witness that this is actually happening.
+        <code>isShiftLegal</code> is the proof that
+        eight years in hospitality have code inside them.
+        You just have to know how to find it.
+      </p>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "Without a computer science degree they say you won't make it.
+        The diary has been proving otherwise for 28 days."
+      </blockquote>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d28-lbl-debug">Debug Log — truncateString</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text">
+          <strong>Attempt 1:</strong> <code>return `string... + num`</code> —
+          everything inside backticks without <code>${}</code>.
+          I asked it to execute something
+          and it gave me back the recipe written on paper.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">
+          Backticks without <code>${}</code> are just text with a grave accent.
+          Nothing more.
+        </span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text">
+          <strong>Attempt 2:</strong> <code>return " slice(string... + num)"</code> —
+          swapped backticks for quotes. Same result.
+          Code inside quotes is still a string, not an instruction.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">
+          Quotes are for data. Not for instructions.
+        </span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text">
+          <strong>Attempt 3:</strong> <code>string.slice(num)</code> —
+          cuts from <code>num</code> to the end.
+          The exact opposite of what I needed.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">
+          <code>slice(0, num)</code> — from the start to <code>num</code>.
+          The order of the arguments defines the direction.
+        </span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">
+          <code>string.slice(0, num) + "..."</code> ✅
+        </span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px">Debug Log — confirmEnding</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text">
+          <strong>Error 1:</strong> <code>target.length.slice()</code> —
+          numbers don't have <code>slice()</code>.
+          The number goes inside <code>slice()</code>, it doesn't call it.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">
+          <code>string1.slice(-target.length)</code> —
+          the number is the argument, not the object.
+        </span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text">
+          <strong>Error 2:</strong> <code>if(string1.slice(-2) = string2)</code> —
+          I wasn't comparing. I was assigning.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">
+          <code>=</code> is an order. <code>===</code> is a question.
+          Inside an <code>if</code> I always ask.
+        </span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">
+          <code>string1.slice(-string2.length) === string2</code> ✅
+        </span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px">Debug Log — isShiftLegal</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text">
+          <strong>Architecture error:</strong>
+          I wrote the <em>night→morning</em> rule
+          outside the function. Duplicated the logic
+          in the wrong place. And <code>return</code>
+          was giving back a string instead of a boolean.
+          Three errors in three lines.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">
+          The rule lives inside <code>isShiftLegal</code>.
+          The outside just asks — is this legal? —
+          and acts on it. It doesn't need to know why.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">
+          <code>return false</code> ≠ <code>return "false"</code>.
+          A validation function returns booleans.
+          Always.
+        </span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">
+          Architecture clear. Code pending.
+          Today it's enough to know where the logic has to live.
+        </span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d28-lbl-code">Code of the day</h3>
+
+      <pre class="code-block"><code>
+// truncateString — 6 attempts, 1 solution
+function truncateString(string, num) {
+  if (string.length > num) {
+    return string.slice(0, num) + "...";
+  } else {
+    return string;
+  }
+}
+
+// confirmEnding — negative slice, dynamic
+// found it on my own. didn't look for it.
+function confirmEnding(string, target) {
+  if (string.slice(-target.length) === target) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+// isShiftLegal — the hotel rule in code
+// receives shiftYesterday and shiftToday
+// returns false if the combination is illegal
+// returns true if it's valid
+// night → morning: always false
+// TODO — next session. this front doesn't open
+// until it's closed.
+function isShiftLegal(shiftYesterday, shiftToday) {
+  // the logic lives in here
+  // not outside
+}
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "slice(-n) is not a weird trick.
+        It's a tool that was already there
+        and I didn't know it existed.
+        Now I do."
+      </blockquote>
+
+    </div>
+  </div>
+
+  <!-- MENTAL MODEL -->
+  <div class="mental-model">
+    <h3 class="mental-model-label">Mental model of the day</h3>
+    <ul class="mental-model-list">
+      <li><code>slice(0, n)</code> → the first <code>n</code> characters</li>
+      <li><code>slice(-n)</code> → the last <code>n</code> from the end — dynamic, no extra calculation needed</li>
+      <li><code>return false</code> → boolean · <code>return "false"</code> → string · never the same thing</li>
+      <li>Business logic lives inside the function — the outside only asks</li>
+      <li>Parameter = mould · Argument = what goes in · Salvador Tuesday 14th is not the afternoon shift, he's the one covering it</li>
+      <li>Knowing and understanding are not the same — today I moved from one to the other with <code>return</code></li>
+    </ul>
+  </div>
+
+  <!-- PROBLEM PATTERN -->
+  <div class="problem-pattern">
+    <div class="pp-item">
+      <span class="pp-label">Problem of the day</span>
+      <p class="pp-text">
+        Encoding a real labour rule without the logic
+        living in the wrong place.
+        If you close the night shift, you can't open the morning.
+        At the hotel it depends on someone remembering.
+        In EquiShift it depends on no one.
+      </p>
+    </div>
+    <div class="pp-item">
+      <span class="pp-label">How I modelled it</span>
+      <p class="pp-text">
+        <code>isShiftLegal(shiftYesterday, shiftToday)</code> —
+        two strings go in, one boolean comes out.
+        The combination <code>"night" + "morning"</code>
+        returns <code>false</code>.
+        The engine asks before assigning.
+        It doesn't assume. It doesn't remember. It has no favourites.
+      </p>
+    </div>
+    <div class="pp-item">
+      <span class="pp-label">Connection with the 8 years</span>
+      <p class="pp-text">
+        In hospitality I learned to think about the end user
+        before thinking about the process.
+        <code>isShiftLegal</code> is not a validation function.
+        It's the first time the hotel worker
+        has a system that can't forget about them.
+      </p>
+    </div>
+  </div>
+
+  <!-- NEXT TARGET -->
+  <div class="next-target">
+    <h3 class="next-target-label">Next target</h3>
+    <ul class="next-target-list">
+      <li>Write <code>isShiftLegal</code> complete — booleans only, all illegal combinations from the contract documented first</li>
+      <li>Integrate it into the 365-day loop before assigning any shift</li>
+      <li>No new fronts until this is closed — I open too many and I know it</li>
+      <li>Next exercises: <code>repeat()</code>, <code>includes()</code>, <code>indexOf()</code> — when <code>isShiftLegal</code> works</li>
+    </ul>
+  </div>
+
+</article>
 <!-- ============================
      ENTRY 26 — MARCH 19
 =============================== -->
