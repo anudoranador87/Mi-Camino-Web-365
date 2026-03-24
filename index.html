@@ -124,6 +124,122 @@
   </p>
 </section>
 
+
+
+<!-- ============================
+     ENTRADA 29 DÍA 24  MARZO 
+=============================== -->
+<article class="entry" data-tags="js css project debug" aria-labelledby="title-d29">
+  <header class="entry-kicker">
+    <span class="day-badge">Día 29</span>
+    <time datetime="2026-03-24" data-i18n="d29-date">24 de Marzo, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">JS Engine</li>
+      <li class="etag">Game UI</li>
+      <li class="etag">Lógica de Estados</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d29" data-i18n="d29-headline">
+    De una página estática a un <br>Motor de Batalla Táctico.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d29-deck">
+    Hoy el proyecto dio el salto definitivo. Implementé un sistema de gestión de energía (Maná), 
+    efectos de estado como quemaduras y escudos, y un flujo de turnos real con IA.
+  </p>
+
+  <div class="entry-media" style="margin: 20px 0; border: 2px solid #333; border-radius: 8px; overflow: hidden;">
+    <video autoplay loop muted playsinline style="width:100%;">
+  <source src="nuevascartas.mp4" type="video/mp4">
+</video>
+    <p style="font-size: 0.8rem; color: #888; text-align: center; padding: 10px; background: #1a1a1a; margin: 0;">
+      🎥 Demo: Sistema de maná, selección de cartas y feedback visual de daño.
+    </p>
+  </div>
+
+  <div class="cols">
+
+    <div>
+      <h3 class="col-label" data-i18n="d29-lbl-star">Resumen STAR</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Tenía una interfaz de cartas funcional pero "plana", donde solo importaba el ataque más alto.<br><br>
+        <strong>T —</strong> Implementar mecánicas de RPG: coste de maná por carta, estados alterados (quemadura, congelación) y una UI que reaccione al daño.<br><br>
+        <strong>A —</strong> Refactoricé el objeto del mazo para incluir costes y tipos, creé un sistema de validación de energía y diseñé barras de progreso dinámicas con CSS Shaders y transiciones.<br><br>
+        <strong>R —</strong> Un juego donde el jugador debe gestionar recursos. Ya no gana el que más clickea, sino el que mejor administra su maná y sus efectos de estado.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d29-lbl-wins">Victorias del día</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Gestión de Maná — Sistema de coste/beneficio funcionando.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Feedback Visual — Barras de HP/Mana con degradados dinámicos.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Lógica de Turnos — IA con "tiempo de pensamiento" (setTimeout).</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "El código es como un mazo de cartas: si la base no es sólida, el castillo se cae al añadir la primera mecánica compleja."
+      </blockquote>
+
+    </div>
+
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d29-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug:</strong> Event Bubbling al clickear botones de acción en la carta.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: Uso de stopPropagation() para aislar la lógica de botones.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug:</strong> El maná bajaba a números negativos.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: Validación previa con un "Early Return" y feedback visual de error (shake).</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Resultado: Motor táctico estable con sincronización de UI.</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d29-lbl-code">Código del día (Mana System)</h3>
+
+      <pre class="code-block"><code>
+function intentarAtacar(carta) {
+  if (manaPlayer >= carta.coste) {
+    manaPlayer -= carta.coste;
+    ejecutarDuelo(carta);
+    actualizarBarras();
+  } else {
+    log.innerText = "¡Energía insuficiente!";
+    this.classList.add('shake');
+  }
+}
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "Hoy he pasado de programar acciones a programar sistemas interconectados."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
 <!-- ============================
      ENTRADA 28— DÍA 23  MARZO 
 =============================== -->

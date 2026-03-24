@@ -122,16 +122,129 @@
     Day 1 = February 20, 2026 · The 365 days are counted from there · Not every day has an entry
   </p>
 </section>
-
 <!-- ============================
-     ENTRY 27 — DAY MARCH 20
+     ENTRY 28 — DAY MARCH 24
+=============================== -->
+<article class="entry" data-tags="js css project debug" aria-labelledby="title-d29">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 29</span>
+    <time datetime="2026-03-24" data-i18n="d29-date">March 24, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">JS Engine</li>
+      <li class="etag">Game UI</li>
+      <li class="etag">State Logic</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d29" data-i18n="d29-headline">
+    From a static page to a <br>Tactical Battle Engine.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d29-deck">
+    Today the project took a definitive leap forward. I implemented an energy management system (Mana), 
+    status effects like burns and shields, and a real turn-based flow with AI.
+  </p>
+
+  <div class="entry-media" style="margin: 20px 0; border: 2px solid #333; border-radius: 8px; overflow: hidden;">
+    <video autoplay loop muted playsinline style="width:100%;">
+      <source src="nuevascartas.mp4" type="video/mp4">
+    </video>
+    <p style="font-size: 0.8rem; color: #888; text-align: center; padding: 10px; background: #1a1a1a; margin: 0;">
+      🎥 Demo: Mana system, card selection, and visual damage feedback.
+    </p>
+  </div>
+
+  <div class="cols">
+
+    <div>
+      <h3 class="col-label" data-i18n="d29-lbl-star">STAR Summary</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> I had a functional but "flat" card interface where only the highest attack mattered.<br><br>
+        <strong>T —</strong> Implement RPG mechanics: mana cost per card, status effects (burn, freeze), and a UI that reacts to damage.<br><br>
+        <strong>A —</strong> Refactored the deck object to include costs and types, created an energy validation system, and designed dynamic progress bars with CSS gradients and transitions.<br><br>
+        <strong>R —</strong> A game where the player must manage resources. It's no longer about who clicks the most, but who best manages their mana and status effects.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d29-lbl-wins">Wins of the Day</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Mana Management — Cost/benefit system fully operational.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Visual Feedback — HP/Mana bars with dynamic gradients.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Turn Logic — AI with "thinking time" (setTimeout).</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "Code is like a deck of cards: if the foundation isn't solid, the castle collapses when you add the first complex mechanic."
+      </blockquote>
+
+    </div>
+
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d29-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug:</strong> Event Bubbling when clicking action buttons on the card.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: Used stopPropagation() to isolate button logic from the card container.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug:</strong> Mana was dropping into negative numbers.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: Added an "Early Return" validation and visual error feedback (shake).</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Result: Stable tactical engine with UI synchronization.</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d29-lbl-code">Code of the Day (Mana System)</h3>
+
+      <pre class="code-block"><code>
+function intentarAtacar(carta) {
+  if (manaPlayer >= carta.coste) {
+    manaPlayer -= carta.coste;
+    ejecutarDuelo(carta);
+    actualizarBarras();
+  } else {
+    log.innerText = "Insufficient energy!";
+    this.classList.add('shake');
+  }
+}
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "Today I moved from programming simple actions to programming interconnected systems."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
+<!-- ============================
+     ENTRY 27 — DAY MARCH 23
 =============================== -->
 
 
 <article class="entry" data-tags="js debug project algo" aria-labelledby="title-d28">
   <header class="entry-kicker">
-    <span class="day-badge">Entry 27</span>
-    <time datetime="2026-03-20" data-i18n="d28-date">March 20, 2026</time>
+    <span class="day-badge">Entry 28</span>
+    <time datetime="2026-03-20" data-i18n="d28-date">March 23, 2026</time>
     <ul class="entry-tags" aria-label="Categories">
       <li class="etag">JS</li>
       <li class="etag">Functions</li>

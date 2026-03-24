@@ -19,6 +19,7 @@
       syncIcon();
     });
   });
+  
 
   function syncIcon() {
     const icon = document.getElementById('theme-icon');
@@ -45,3 +46,4 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 });
+
