@@ -123,8 +123,173 @@
     Día 1 = 20 de febrero de 2026 · Los 365 días se cuentan desde ahí · No todos los días tienen entrada
   </p>
 </section>
+<!-- ============================
+     ENTRADA 30 DÍA 25  MARZO 
+=============================== -->
+<article class="entry" data-tags="javascript logic programming" aria-labelledby="title-d29">
+<header class="entry-kicker">
+<span class="day-badge">Día 30</span>
+<time datetime="2026-03-25">25 de Marzo, 2026</time>
+<ul class="entry-tags" aria-label="Categorías">
+<li class="etag">JavaScript</li>
+<li class="etag">ES6+</li>
+<li class="etag">Arrays</li>
+<li class="etag">Objects</li>
+<li class="etag">Logic</li>
+</ul>
+</header>
+
+<h2 class="entry-headline" id="title-d29">
+De "undefined" a la manipulación total.
 
 
+Entendiendo que el Array es la caja y el Objeto es la ficha.
+</h2>
+
+<p class="entry-deck">
+Hoy el reto no era visual, era mental. He pasado de no saber por qué un <code>console.log</code> daba undefined a encadenar <code>.filter()</code> y <code>.reduce()</code> para calcular inventarios complejos. La sintaxis de las arrow functions ha sido mi mayor enemigo y, al final, mi mejor aliada.
+</p>
+
+<div class="cols">
+
+<div>
+  <h3 class="col-label">Resumen STAR</h3>
+  <p class="body-text">
+    <strong>S —</strong> Tenía dos conjuntos de datos: un inventario de productos y una lista de desarrolladores. El objetivo era extraer información específica: filtrar por categorías, calcular promedios de edad y aplicar descuentos masivos.<br><br>
+
+    <strong>T —</strong> Necesitaba dominar los métodos de arrays (<code>map</code>, <code>filter</code>, <code>find</code>, <code>reduce</code>, <code>sort</code>) para dejar de usar bucles manuales y escribir un código más profesional y limpio.<br><br>
+
+    <strong>A —</strong> Empecé cometiendo errores clásicos: intentar acceder a propiedades del array en lugar de los objetos. Luego, me peleé con la sintaxis de <code>reduce</code>. Fui corrigiendo paso a paso: añadí paréntesis a los parámetros, inicialicé los acumuladores en 0 y usé el <em>Spread Operator</em> para no destruir los datos originales.<br><br>
+
+    <strong>R —</strong> Logré filtrar productos "tech", calcular el valor total del inventario multiplicando precio por stock, y ordenar desarrolladores por experiencia. ✅ La lógica de "entrar" en el objeto mediante un callback ha quedado clara.
+  </p>
+
+  <h3 class="col-label" style="margin-top:20px">Victorias del día</h3>
+
+  <p class="log-item">
+    <span class="li-icon w">+</span>
+    <span class="li-text">
+      Uso correcto de <code>.map()</code> con <code>...spread</code>: He aprendido a modificar solo una propiedad (el precio con 10% de descuento) manteniendo el resto del objeto intacto.
+    </span>
+  </p>
+  <p class="log-item">
+    <span class="li-icon w">+</span>
+    <span class="li-text">
+      Diferenciación entre <code>find</code> y <code>filter</code>: Ahora entiendo que uno me da la primera coincidencia (objeto) y el otro una lista (array).
+    </span>
+  </p>
+  <p class="log-item">
+    <span class="li-icon w">+</span>
+    <span class="li-text">
+      Cálculo de promedios con <code>reduce</code>: Aunque la sintaxis es dura, ya sé que necesito un acumulador y un valor inicial para que no explote.
+    </span>
+  </p>
+
+  <blockquote class="pullquote">
+    "El error no estaba en el código,<br>
+    estaba en mi cabeza: quería leer el nombre<br>
+    de la lista, no el de cada persona en ella."
+  </blockquote>
+
+  <h3 class="col-label" style="margin-top:16px">Niveles al cierre del día</h3>
+
+  <div class="skill-row">
+    <span class="skill-name">Array Methods</span>
+    <div class="skill-bar-bg" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+      <div class="skill-bar-fill" style="width: 75%"></div>
+    </div>
+    <span class="skill-pct">75%</span>
+  </div>
+  <div class="skill-row">
+    <span class="skill-name">Arrow Functions</span>
+    <div class="skill-bar-bg" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+      <div class="skill-bar-fill" style="width: 85%"></div>
+    </div>
+    <span class="skill-pct">85%</span>
+  </div>
+  <div class="skill-row">
+    <span class="skill-name">Lógica de Objetos</span>
+    <div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+      <div class="skill-bar-fill" style="width: 70%"></div>
+    </div>
+    <span class="skill-pct">70%</span>
+  </div>
+</div>
+
+<div class="col-rule">
+  <h3 class="col-label">Análisis del Aprendizaje</h3>
+  <p class="body-text">
+    Hoy he descubierto que la programación funcional en JS es como un colador. <code>filter</code> elige qué pasa, <code>map</code> transforma lo que pasa y <code>reduce</code> lo comprime todo en un solo resultado. <br><br>
+    Lo más difícil ha sido dejar de intentar "adivinar" y empezar a "leer" los errores de la consola. El <em>undefined</em> ya no me asusta; ahora sé que significa que estoy buscando en el lugar equivocado.
+  </p>
+
+  <h3 class="col-label" style="margin-top:20px">Debug Log</h3>
+
+  <p class="log-item">
+    <span class="li-icon b">✗</span>
+    <span class="li-text"><strong>Error de Acceso:</strong> <code>products.name</code> devolvía undefined.</span>
+  </p>
+  <p class="log-item">
+    <span class="li-icon f">→</span>
+    <span class="li-text">Fix: Usar <code>products.forEach(p => p.name)</code>. No puedes pedirle el nombre a la lista, sino a cada elemento.</span>
+  </p>
+
+  <p class="log-item">
+    <span class="li-icon b">✗</span>
+    <span class="li-text"><strong>Sintaxis de Reduce:</strong> <code>reduce(acc, val => ...)</code> fallaba por falta de paréntesis.</span>
+  </p>
+  <p class="log-item">
+    <span class="li-icon f">→</span>
+    <span class="li-text">Fix: <code>reduce((acc, val) => acc + val.price, 0)</code>. Siempre paréntesis si hay más de un argumento.</span>
+  </p>
+
+  <p class="log-item">
+    <span class="li-icon b">✗</span>
+    <span class="li-text"><strong>Auto-referencia:</strong> <code>const dev = dev.find(...)</code></span>
+  </p>
+  <p class="log-item">
+    <span class="li-icon f">→</span>
+    <span class="li-text">Fix: Usar el nombre del array original <code>developers.find(...)</code>. No se puede usar la variable que estás creando.</span>
+  </p>
+
+  <h3 class="col-label" style="margin-top:20px">Código del día</h3>
+  <pre class="code-block"><code>
+/* Valor total del inventario y descuento */
+const valorTotal = products.reduce((total, p) =>
+total + (p.price * p.stock), 0
+);
+
+const conDescuento = products.map(p => ({
+...p,
+price: p.price * 0.90
+}));
+
+/* Filtrado complejo */
+const techLowStock = products.filter(p =>
+p.category === "tech" && p.stock < 10
+);
+</code></pre>
+</div>
+
+</div>
+
+<div class="mental-model">
+<h3 class="mental-model-label">Mental model</h3>
+<ul class="mental-model-list">
+<li><strong>Array vs Objeto</strong>: El array es la estantería, el objeto es el libro. No puedes leer el título de la estantería.</li>
+<li><strong>Callbacks</strong>: Las funciones dentro de los métodos son como "instrucciones de uso" para cada elemento.</li>
+<li><strong>Inmutabilidad</strong>: Usar <code>...spread</code> permite evolucionar los datos sin destruir el original.</li>
+</ul>
+</div>
+
+<div class="next-target">
+<h3 class="next-target-label">Next target</h3>
+<ul class="next-target-list">
+<li>Dominar el método <code>.sort()</code> con lógica de comparación personalizada.</li>
+<li>Empezar a conectar esta lógica de datos con el DOM (pintar los productos en el HTML).</li>
+</ul>
+</div>
+</article>
 
 <!-- ============================
      ENTRADA 29 DÍA 24  MARZO 

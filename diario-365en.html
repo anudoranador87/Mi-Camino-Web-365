@@ -122,6 +122,175 @@
     Day 1 = February 20, 2026 · The 365 days are counted from there · Not every day has an entry
   </p>
 </section>
+
+<!-- ============================
+     ENTRY 29 — DAY MARCH 25
+=============================== -->
+<article class="entry" data-tags="javascript logic programming" aria-labelledby="title-d29">
+<header class="entry-kicker">
+<span class="day-badge">Day 29</span>
+<time datetime="2026-03-25">March 25th, 2026</time>
+<ul class="entry-tags" aria-label="Categories">
+<li class="etag">JavaScript</li>
+<li class="etag">ES6+</li>
+<li class="etag">Arrays</li>
+<li class="etag">Objects</li>
+<li class="etag">Logic</li>
+</ul>
+</header>
+
+<h2 class="entry-headline" id="title-d29">
+From "undefined" to Total Manipulation.
+
+
+Understanding the Array is the Box and the Object is the Card.
+</h2>
+
+<p class="entry-deck">
+Today wasn't a visual challenge; it was a mental one. I went from not knowing why <code>console.log</code> returned undefined to chaining <code>.filter()</code> and <code>.reduce()</code> to calculate complex inventories. Arrow function syntax was my biggest enemy—and eventually, my best ally.
+</p>
+
+<div class="cols">
+
+<div>
+  <h3 class="col-label">STAR Summary</h3>
+  <p class="body-text">
+    <strong>S —</strong> I had two main datasets: a product inventory and a list of developers. The goal was to extract specific insights: filter by categories, calculate average ages, and apply mass discounts.<br><br>
+
+    <strong>T —</strong> I needed to master array methods (<code>map</code>, <code>filter</code>, <code>find</code>, <code>reduce</code>, <code>sort</code>) to move away from manual loops and write cleaner, more professional code.<br><br>
+
+    <strong>A —</strong> I started with classic mistakes: trying to access properties on the array itself instead of the objects inside. Then, I fought the <code>reduce</code> syntax. I corrected it step-by-step: added parentheses to parameters, initialized the accumulator at 0, and used the <em>Spread Operator</em> to keep data immutable.<br><br>
+
+    <strong>R —</strong> Successfully filtered "tech" products, calculated total inventory value by multiplying price x stock, and sorted developers by experience. ✅ The logic of "entering" an object via a callback is finally clicking.
+  </p>
+
+  <h3 class="col-label" style="margin-top:20px">Victories of the Day</h3>
+
+  <p class="log-item">
+    <span class="li-icon w">+</span>
+    <span class="li-text">
+      Correct <code>.map()</code> with <code>...spread</code>: Learned how to update a single property (10% discount) while keeping the rest of the object intact.
+    </span>
+  </p>
+  <p class="log-item">
+    <span class="li-icon w">+</span>
+    <span class="li-text">
+      <code>find</code> vs <code>filter</code>: Now I clearly understand that one gives me the first match (object) and the other a filtered list (array).
+    </span>
+  </p>
+  <p class="log-item">
+    <span class="li-icon w">+</span>
+    <span class="li-text">
+      Averages with <code>reduce</code>: Even though the syntax is tough, I now know I need an accumulator and an initial value of 0 to avoid errors.
+    </span>
+  </p>
+
+  <blockquote class="pullquote">
+    "The error wasn't in the code,<br>
+    it was in my mental model: I was trying to read<br>
+    the name of the list, not the name of the person in it."
+  </blockquote>
+
+  <h3 class="col-label" style="margin-top:16px">Skill Levels at Closing</h3>
+
+  <div class="skill-row">
+    <span class="skill-name">Array Methods</span>
+    <div class="skill-bar-bg" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+      <div class="skill-bar-fill" style="width: 75%"></div>
+    </div>
+    <span class="skill-pct">75%</span>
+  </div>
+  <div class="skill-row">
+    <span class="skill-name">Arrow Functions</span>
+    <div class="skill-bar-bg" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+      <div class="skill-bar-fill" style="width: 85%"></div>
+    </div>
+    <span class="skill-pct">85%</span>
+  </div>
+  <div class="skill-row">
+    <span class="skill-name">Object Logic</span>
+    <div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+      <div class="skill-bar-fill" style="width: 70%"></div>
+    </div>
+    <span class="skill-pct">70%</span>
+  </div>
+</div>
+
+<div class="col-rule">
+  <h3 class="col-label">Learning Analysis</h3>
+  <p class="body-text">
+    Today I discovered that functional programming in JS is like a strainer. <code>filter</code> chooses what passes, <code>map</code> transforms what's inside, and <code>reduce</code> compresses it all into one result. <br><br>
+    The hardest part was stop "guessing" and start "reading" console errors. <em>Undefined</em> doesn't scare me anymore; now I know it means I'm looking in the wrong place.
+  </p>
+
+  <h3 class="col-label" style="margin-top:20px">Debug Log</h3>
+
+  <p class="log-item">
+    <span class="li-icon b">✗</span>
+    <span class="li-text"><strong>Access Error:</strong> <code>products.name</code> returned undefined.</span>
+  </p>
+  <p class="log-item">
+    <span class="li-icon f">→</span>
+    <span class="li-text">Fix: Used <code>products.forEach(p => p.name)</code>. You can't ask the list for a name, only the items inside.</span>
+  </p>
+
+  <p class="log-item">
+    <span class="li-icon b">✗</span>
+    <span class="li-text"><strong>Reduce Syntax:</strong> <code>reduce(acc, val => ...)</code> failed due to missing parentheses.</span>
+  </p>
+  <p class="log-item">
+    <span class="li-icon f">→</span>
+    <span class="li-text">Fix: <code>reduce((acc, val) => acc + val.price, 0)</code>. Always use parentheses for multiple arguments.</span>
+  </p>
+
+  <p class="log-item">
+    <span class="li-icon b">✗</span>
+    <span class="li-text"><strong>Self-reference:</strong> <code>const dev = dev.find(...)</code></span>
+  </p>
+  <p class="log-item">
+    <span class="li-icon f">→</span>
+    <span class="li-text">Fix: Reference the original array <code>developers.find(...)</code>. You can't use a variable before it's defined.</span>
+  </p>
+
+  <h3 class="col-label" style="margin-top:20px">Code of the Day</h3>
+  <pre class="code-block"><code>
+/* Total Inventory Value & Discount */
+const totalValue = products.reduce((sum, p) =>
+sum + (p.price * p.stock), 0
+);
+
+const withDiscount = products.map(p => ({
+...p,
+price: p.price * 0.90
+}));
+
+/* Complex Filtering */
+const techLowStock = products.filter(p =>
+p.category === "tech" && p.stock < 10
+);
+</code></pre>
+</div>
+
+</div>
+
+<div class="mental-model">
+<h3 class="mental-model-label">Mental model</h3>
+<ul class="mental-model-list">
+<li><strong>Array vs Object</strong>: The array is the shelf; the object is the book. You can't read the title of the shelf.</li>
+<li><strong>Callbacks</strong>: Functions inside methods are "instruction manuals" for each item.</li>
+<li><strong>Immutability</strong>: Using <code>...spread</code> allows evolving data without destroying the original source.</li>
+</ul>
+</div>
+
+<div class="next-target">
+<h3 class="next-target-label">Next target</h3>
+<ul class="next-target-list">
+<li>Master <code>.sort()</code> with custom comparison logic.</li>
+<li>Connect this data logic to the DOM (display products on a real web page).</li>
+</ul>
+</div>
+</article>
+
 <!-- ============================
      ENTRY 28 — DAY MARCH 24
 =============================== -->
