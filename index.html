@@ -123,6 +123,187 @@
     Día 1 = 20 de febrero de 2026 · Los 365 días se cuentan desde ahí · No todos los días tienen entrada
   </p>
 </section>
+
+<!-- ============================
+     ENTRADA 31 DÍA 26  MARZO 
+=============================== -->
+
+
+
+<article class="entry" data-tags="js algo debug" aria-labelledby="title-d30">
+  <header class="entry-kicker">
+    <span class="day-badge">Día 31</span>
+    <time datetime="2026-03-25" data-i18n="d30-date">26 de Marzo, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">JS</li>
+      <li class="etag">Arrays</li>
+      <li class="etag">Funciones</li>
+      <li class="etag">Debug</li>
+      <li class="etag">Algoritmos</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d30" data-i18n="d30-headline">
+    De menús de almuerzo a enmascarar emails.<br>El día que indexOf y slice trabajaron juntos.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d30-deck">
+    Dos ejercicios, seis errores documentados y una lección que se repite: las funciones deben ser predecibles.
+    El método correcto no es el que parece más complejo — es el que hace exactamente lo que necesitas.
+  </p>
+
+  <!-- ── COLUMNAS ─────────────────────────────────────────── -->
+  <div class="cols">
+
+    <!-- COLUMNA IZQUIERDA -->
+    <div>
+
+      <h3 class="col-label" data-i18n="d30-lbl-star">Resumen STAR</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Día 30 del reto. Stack JS básico-intermedio. Proyecto principal EquiShift en construcción.<br><br>
+        <strong>T —</strong> Dominar métodos de arrays (push, pop, shift, unshift) y construir un enmascarador de emails desde cero usando slice, indexOf y repeat.<br><br>
+        <strong>A —</strong> Primero construí un gestor de menú de almuerzo con seis funciones. Luego afronté el email masker: identifiqué el patrón (primera letra + asteriscos + última letra + dominio), separé el string con indexOf y slice, calculé los asteriscos con repeat y ensamblé el resultado en el return.<br><br>
+        <strong>R —</strong> <code>maskEmail("apple.pie@example.com")</code> devuelve <code>"a*******e@example.com"</code>. Todos los casos del enunciado pasan.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d30-lbl-wins">Victorias del día</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Validación defensiva con <code>arr.length === 0</code> aplicada en todas las funciones del menú</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Entendí que indexOf localiza y slice corta — dos herramientas separadas que trabajan juntas</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Construí la arrow function correctamente sin mezclar sintaxis</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Diferencia clara entre includes (¿está?) e indexOf (¿dónde está?)</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "indexOf es el cuchillo marcando el corte. slice es el que ejecuta."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d30-lbl-levels">Niveles al cierre del día</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">Array methods</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">String methods</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="50"></div>
+        </div>
+        <span class="skill-pct">50%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Arrow functions</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="55"></div>
+        </div>
+        <span class="skill-pct">55%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Lógica defensiva</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="70"></div>
+        </div>
+        <span class="skill-pct">70%</span>
+      </div>
+
+    </div>
+
+    <!-- COLUMNA DERECHA -->
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d30-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> <code>item.push[Lunch item]</code> — push llamado sobre el item en vez del array</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: el método pertenece al contenedor, no al elemento. <code>arr.push(item)</code></span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> <code>return arr.length</code> — devuelve un número cuando se espera el array</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: si la función promete una lista, devuelve la lista. <code>return arr</code></span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> <code>getRandomLunch</code> devuelve el array en caso vacío y un string en caso normal — tipos inconsistentes</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: una función debe devolver siempre el mismo tipo en todos sus caminos</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> <code>const maskEmail(email => ...)</code> — sintaxis mezclada entre function declaration y arrow function</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: <code>const maskEmail = (email) => { ... }</code></span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 5:</strong> <code>username[0] +  + masked</code> — doble operador produce NaN</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: un solo <code>+</code> entre operandos. NaN aparece cuando JS intenta sumar un hueco vacío</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Resultado final: email masker funcional para todos los casos del enunciado</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d30-lbl-code">Código del día</h3>
+
+      <pre class="code-block"><code>
+const maskEmail = (email) => {
+  const atIndex  = email.indexOf('@')
+  const username = email.slice(0, atIndex)
+  const domain   = email.slice(atIndex)
+  const masked   = "*".repeat(username.length - 2)
+  return username[0] + masked + username[username.length - 1] + domain
+}
+
+// "apple.pie@example.com" → "a*******e@example.com"
+// "freecodecamp@example.com" → "f**********p@example.com"
+// "info@test.dev" → "i**o@test.dev"
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "slice sin segundo argumento corta hasta el final. No necesitas más."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
 <!-- ============================
      ENTRADA 30 DÍA 25  MARZO 
 =============================== -->
