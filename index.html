@@ -123,7 +123,359 @@
     Día 1 = 20 de febrero de 2026 · Los 365 días se cuentan desde ahí · No todos los días tienen entrada
   </p>
 </section>
+<!-- ============================
+     ENTRADA 32 DÍA 29  MARZO 
+=============================== -->
 
+<article class="entry" data-tags="js css debug poo project" aria-labelledby="title-d31">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 32</span>
+    <time datetime="2026-03-29" data-i18n="d31-date">March 29, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">JS</li>
+      <li class="etag">POO</li>
+      <li class="etag">DOM</li>
+      <li class="etag">CSS</li>
+      <li class="etag">Debug</li>
+      <li class="etag">Proyecto</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d31" data-i18n="d31-headline">
+    Carousel desde cero.<br>Papel, lógica, VS Code, Campus Crema.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d31-deck">
+    Carousel JavaScript desde cero en cuatro sesiones: diseño en papel,
+    lógica razonada, código limpio y debugging sistemático.
+    Implementado en CodePen, depurado a fondo e integrado en Campus & Crema.
+    100% funcional — slides, botones, indicadores, contador.
+  </p>
+
+  <!-- CAROUSEL DEMO -->
+  <div style="margin: 24px 0; border: 0.5px solid rgba(255,255,255,0.15); border-radius: 8px; padding: 20px; text-align: center; background: rgba(0,0,0,0.15);">
+    <p style="color: #888; font-size: 0.85rem; margin: 0 0 12px 0;">🎠 Demo del carousel en acción</p>
+    
+    <svg width="100%" viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%; margin: 0 auto;">
+      <defs>
+        <linearGradient id="gd1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#534AB7;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#3C3489;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="gd2" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#1D9E75;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#0F6E56;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="gd3" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#D85A30;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#993C1D;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="gd4" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#D4537E;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#993556;stop-opacity:1" />
+        </linearGradient>
+        <style>
+          @keyframes carouselSlide {
+            0%, 20% { transform: translateX(0%); }
+            25%, 45% { transform: translateX(-100%); }
+            50%, 70% { transform: translateX(-200%); }
+            75%, 95% { transform: translateX(-300%); }
+            100% { transform: translateX(0%); }
+          }
+          .carousel-track { animation: carouselSlide 12s ease-in-out infinite; transform-origin: 0; }
+          @keyframes dotPulse {
+            0%, 20% { opacity: 1; }
+            25%, 100% { opacity: 0.3; }
+          }
+          .dot-1 { animation: dotPulse 12s ease-in-out infinite; }
+          .dot-2 { animation: dotPulse 12s ease-in-out infinite 3s; }
+          .dot-3 { animation: dotPulse 12s ease-in-out infinite 6s; }
+          .dot-4 { animation: dotPulse 12s ease-in-out infinite 9s; }
+        </style>
+        <clipPath id="carouselMask">
+          <rect x="30" y="20" width="540" height="160" rx="6"/>
+        </clipPath>
+      </defs>
+
+      <!-- Carousel container -->
+      <rect x="30" y="20" width="540" height="160" rx="6" fill="rgba(0,0,0,0.3)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+
+      <!-- Slides track (animated) -->
+      <g clip-path="url(#carouselMask)">
+        <g class="carousel-track">
+          <!-- Slide 1 -->
+          <rect x="30" y="20" width="540" height="160" fill="url(#gd1)" rx="6"/>
+          <text x="300" y="80" font-size="20" font-weight="500" text-anchor="middle" fill="white">Slide 1</text>
+          <text x="300" y="110" font-size="12" text-anchor="middle" fill="rgba(255,255,255,0.8)">Contenido visual</text>
+
+          <!-- Slide 2 -->
+          <rect x="570" y="20" width="540" height="160" fill="url(#gd2)" rx="6"/>
+          <text x="840" y="80" font-size="20" font-weight="500" text-anchor="middle" fill="white">Slide 2</text>
+          <text x="840" y="110" font-size="12" text-anchor="middle" fill="rgba(255,255,255,0.8)">Navegación limpia</text>
+
+          <!-- Slide 3 -->
+          <rect x="1110" y="20" width="540" height="160" fill="url(#gd3)" rx="6"/>
+          <text x="1380" y="80" font-size="20" font-weight="500" text-anchor="middle" fill="white">Slide 3</text>
+          <text x="1380" y="110" font-size="12" text-anchor="middle" fill="rgba(255,255,255,0.8)">Transiciones smooth</text>
+
+          <!-- Slide 4 -->
+          <rect x="1650" y="20" width="540" height="160" fill="url(#gd4)" rx="6"/>
+          <text x="1920" y="80" font-size="20" font-weight="500" text-anchor="middle" fill="white">Slide 4</text>
+          <text x="1920" y="110" font-size="12" text-anchor="middle" fill="rgba(255,255,255,0.8)">OOP pattern</text>
+        </g>
+      </g>
+
+      <!-- Navigation buttons -->
+      <rect x="40" y="200" width="32" height="32" rx="4" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+      <text x="56" y="220" font-size="14" text-anchor="middle" fill="rgba(255,255,255,0.6)">‹</text>
+
+      <rect x="528" y="200" width="32" height="32" rx="4" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+      <text x="544" y="220" font-size="14" text-anchor="middle" fill="rgba(255,255,255,0.6)">›</text>
+
+      <!-- Indicator dots -->
+      <circle class="dot-1" cx="220" cy="212" r="3" fill="rgba(255,255,255,0.6)"/>
+      <circle class="dot-2" cx="238" cy="212" r="3" fill="rgba(255,255,255,0.3)"/>
+      <circle class="dot-3" cx="256" cy="212" r="3" fill="rgba(255,255,255,0.3)"/>
+      <circle class="dot-4" cx="274" cy="212" r="3" fill="rgba(255,255,255,0.3)"/>
+
+      <!-- Counter -->
+      <text x="350" y="220" font-size="12" text-anchor="middle" fill="rgba(255,255,255,0.6)">1 / 4</text>
+    </svg>
+
+    <p style="color: #666; font-size: 0.75rem; margin: 12px 0 0 0; font-style: italic;">
+      <strong>En vivo en:</strong> 
+      <a href="https://anudoranador87.github.io/campus-crema-web/" target="_blank" style="color: #8b9dc3; text-decoration: underline;">campus-crema.vercel.app</a>
+    </p>
+  </div>
+
+  <div class="cols">
+
+    <!-- COLUMNA IZQUIERDA -->
+    <div>
+
+      <h3 class="col-label" data-i18n="d31-lbl-star">Resumen STAR</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Construir un carousel JavaScript desde cero, aplicando OOP.
+        Cuatro sesiones planificadas: (1) Diseño en papel, (2) Lógica sin código, (3) Implementación
+        en CodePen, (4) Integración en Campus & Crema. Hoy: completar sesiones 3 y 4.<br><br>
+
+        <strong>T —</strong> Implementar clase <code>Carousel</code> con métodos:
+        <code>constructor()</code>, <code>actualizarUI()</code>, <code>siguiente()</code>,
+        <code>anterior()</code>, <code>botonEscuchaActiva()</code>. Resolver conflictos de DOM
+        vs. estado. Integrar HTML/CSS/JS. Probar en producción.<br><br>
+
+        <strong>A —</strong> Metodología: papel → razonamiento → código limpio → debugging.
+        Errores típicos encontrados y corregidos: confundir índice numérico con elemento DOM,
+        llaves mal anidadas, referencias de función con paréntesis, conflictos de selectores CSS,
+        signos en <code>translateX</code>. Cada bug documentado con su fix. Resultado: carousel
+        de 60 líneas, funcional y sin compromisos.<br><br>
+
+        <strong>R —</strong> Carousel 100% operativo: navegación prev/next, puntitos indicadores
+        con estado activo, contador numérico, transiciones CSS smooth. Código en CodePen
+        y en producción en Campus & Crema. Aprendizaje: <em>el patrón importa más que la sintaxis.</em>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d31-lbl-wins">Victorias del día</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Clase OOP completa — constructor, 6 métodos, instancia única. 60 líneas. Sin bloat.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text"><code>classList.toggle("active", condición)</code> — comprendido y aplicado correctamente</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text"><code>bind(this)</code> en listeners — ya no cargo la función con paréntesis sin pensar</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Separación clara: índice numérico vs. referencia DOM. Nomenclatura propia en español.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">De CodePen a producción en un día — tested, debugged, deployed en Campus & Crema</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Documentación exhaustiva — cada bug, cada descarte, cada decisión registrada</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "No es un carousel. Es un patrón: estado → renderizar. Todo lo demás es detalle."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d31-lbl-levels">Niveles al cierre del día</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">POO / Clases JS</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="55"></div>
+        </div>
+        <span class="skill-pct">55%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Manipulación DOM</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="60"></div>
+        </div>
+        <span class="skill-pct">60%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Debugging sintaxis</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">CSS Layout</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="58" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="58"></div>
+        </div>
+        <span class="skill-pct">58%</span>
+      </div>
+
+    </div>
+
+    <!-- COLUMNA DERECHA -->
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d31-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Conflicto de nombres:</strong> <code>this.numero</code> como elemento DOM y como fuente de verdad a la vez</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text"><strong>Fix:</strong> separar responsabilidades — <code>this.numero</code> (elemento), <code>this.indiceActual</code> (estado)</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Llaves anidadas:</strong> métodos con cierre de llaves en el lugar equivocado, generando métodos dentro de métodos</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text"><strong>Fix:</strong> escribir <code>}</code> inmediatamente al abrir — nunca dejar llaves abiertas</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Ejecución inmediata:</strong> <code>this.anterior()</code> con paréntesis en addEventListener — se ejecutaba al cargar, no en click</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text"><strong>Fix:</strong> <code>this.anterior.bind(this)</code> — pasar referencia, no invocación</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Selector colisionante:</strong> <code>.mi-slide</code> en contenedor y en slides — conflicto CSS</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text"><strong>Fix:</strong> renombrar a <code>.carousel</code> (contenedor) y <code>.slide</code> (items)</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Dirección inversa:</strong> <code>translateX</code> sin signo negativo — carousel movía al revés</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text"><strong>Fix:</strong> <code>-(this.indiceActual * 100)%</code> — el negativo invierte la dirección</span>
+      </p>
+
+      <p class="log-item" style="margin-top: 16px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 12px;">
+        <span class="li-icon" style="background: rgba(200,150,255,0.3); color: #d0a0ff;">○</span>
+        <span class="li-text"><strong>Descartado — v0 intencionalmente simple:</strong> <code>enMovimiento</code> (bloqueo durante animación), <code>iraSlide(posicion)</code> (click en puntitos), <code>DOMContentLoaded</code></span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text"><strong>Decisión:</strong> primero funcione limpio, luego robusto. Mejoras pendientes para v1.1</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text"><strong>Resultado final:</strong> carousel funcional, tested, integrado en producción, código documentado</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d31-lbl-code">Código del día</h3>
+
+      <p style="font-size: 0.9rem; color: #888; margin-bottom: 12px;">
+        <strong>El corazón del carousel:</strong> cuando el índice cambia, <code>actualizarUI()</code>
+        recalcula la posición, actualiza los indicadores, y muestra el número.
+        Todo fluye de ahí.
+      </p>
+
+      <pre class="code-block"><code>
+class Carousel {
+  constructor(selector) {
+    this.contenedor = document.querySelector(selector);
+    this.track = this.contenedor.querySelector(".track");
+    this.slides = this.contenedor.querySelectorAll(".slide");
+    this.botonPrev = this.contenedor.querySelector(".prev");
+    this.botonNext = this.contenedor.querySelector(".next");
+    this.numero = this.contenedor.querySelector(".numero");
+    
+    this.indiceActual = 0;
+    this.botonEscuchaActiva();
+  }
+
+  // El método que conecta estado con UI
+  actualizarUI() {
+    const desplazar = -(this.indiceActual * 100);
+    this.track.style.transform = `translateX(${desplazar}%)`;
+
+    document.querySelectorAll(".indicador")
+      .forEach((punto, posicion) => {
+        punto.classList.toggle(
+          "active",
+          posicion === this.indiceActual
+        );
+      });
+
+    this.numero.innerText = this.indiceActual + 1;
+  }
+
+  siguiente() {
+    this.indiceActual = (this.indiceActual + 1) % this.slides.length;
+    this.actualizarUI();
+  }
+
+  anterior() {
+    this.indiceActual = (this.indiceActual - 1 + this.slides.length) 
+      % this.slides.length;
+    this.actualizarUI();
+  }
+
+  botonEscuchaActiva() {
+    this.botonPrev.addEventListener("click", this.anterior.bind(this));
+    this.botonNext.addEventListener("click", this.siguiente.bind(this));
+  }
+}
+
+// Instancia única
+const carousel = new Carousel(".carousel-container");
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem; margin-top: 16px;">
+        "Los desarrolladores no memorizan sintaxis. Memorizan patrones.
+        La sintaxis la buscan en Google. Lo importante es entender <em>por qué</em>."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
+
+  
 <!-- ============================
      ENTRADA 31 DÍA 26  MARZO 
 =============================== -->
