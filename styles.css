@@ -66,12 +66,13 @@ code {
 }
 
 /* =========================================
-   LAYOUT BASE
+   LAYOUT BASE — FLEX + PADDING
 ========================================= */
 
 .entries {
-  width: min(1300px, 92%);
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
+  padding: 0 4%;
 }
 
 .cols {
@@ -85,7 +86,42 @@ code {
   border-left: 2px solid var(--paper-d);
   padding-left: 24px;
 }
+/* =========================================
+   BARRAS DE BÚSQUEDA — ESTILO PERIÓDICO
+========================================= */
 
+
+.search-container {
+  margin-bottom: 20px; 
+  padding: 10px 0;
+  border-bottom: 1px solid #eee; 
+}
+
+
+#search-input {
+  width: 100%;
+  padding: 10px 15px;
+  font-family: 'Georgia', serif; 
+  font-size: 1.1em;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f9f9f9; 
+  border: 1px solid #ddd; 
+  border-radius: 5px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); 
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#search-input::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+#search-input:focus {
+  border-color: #888;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1), 0 0 8px rgba(136,136,136,0.2); 
+  outline: none; 
+}
 /* =========================================
    NAVBAR FIJA
 ========================================= */
@@ -97,11 +133,11 @@ code {
   width: 100%;
   background: var(--paper);
   border-bottom: 1px solid var(--paper-d);
-  padding: 14px 28px;
+  padding: 14px 4%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 100; /* por encima del filter-nav sticky (z-index: 40) y cualquier contenido */
+  z-index: 100;
 }
 
 .nav-brand {
@@ -169,9 +205,9 @@ code {
 }
 
 .lang-btn:hover {
-  background: var(--primary);
+  background: var(--accent);
   color: white;
-  border-color: var(--primary);
+  border-color: var(--accent);
   transform: translateY(-1px);
   box-shadow: 0 3px 8px rgba(55,66,250,0.2);
 }
@@ -191,8 +227,9 @@ code {
 
 .masthead {
   text-align: center;
-  padding: 60px 0 40px;
+  padding: 60px 4% 40px;
   border-bottom: 1px solid var(--paper-d);
+  width: 100%;
 }
 
 .mast-top {
@@ -227,15 +264,16 @@ code {
 }
 
 /* =========================================
-   STATS — contadores animados( progress)
+   STATS — contadores animados
 ========================================= */
 
 .stats-row {
   display: flex;
   justify-content: center;
   gap: 40px;
-  padding: 30px 0;
+  padding: 30px 4%;
   border-bottom: 1px solid var(--paper-d);
+  width: 100%;
 }
 
 .stat-item {
@@ -263,13 +301,13 @@ code {
   display: flex;
   justify-content: center;
   gap: 14px;
-  padding: 22px 0;
+  padding: 22px 4%;
   border-bottom: 1px solid var(--paper-d);
-  /* Sticky: se queda visible al scrollear, justo debajo de la navbar fija */
   position: sticky;
-  top: 57px;           /* altura exacta de .nav (padding 14px*2 + línea) */
+  top: 57px;
   background: var(--paper);
-  z-index: 40;         /* por debajo de .nav (z-index: 100) pero sobre el contenido */
+  z-index: 40;
+  width: 100%;
 }
 
 .filter-btn {
@@ -299,6 +337,7 @@ code {
 .entry {
   padding: 50px 0;
   border-bottom: 1px solid var(--paper-d);
+  width: 100%;
 }
 
 .entry:last-of-type {
@@ -315,7 +354,6 @@ code {
   color: var(--ink-soft);
 }
 
-/* Badge del día */
 .day-badge {
   background: var(--accent);
   color: white;
@@ -325,7 +363,6 @@ code {
   font-size: 0.75rem;
 }
 
-/* Etiquetas de categoría */
 .entry-tags {
   list-style: none;
   display: flex;
@@ -341,7 +378,6 @@ code {
   color: var(--ink-soft);
 }
 
-/* Título principal de cada entrada */
 .entry-headline {
   font-size: 2rem;
   font-weight: 900;
@@ -349,7 +385,6 @@ code {
   line-height: 1.25;
 }
 
-/* Subtítulo / Deck */
 .entry-deck {
   font-family: var(--serif);
   font-size: 1.05rem;
@@ -376,12 +411,10 @@ code {
   text-align: center;
 }
 
-/* Colores de iconos */
-.li-icon.w { color: #006400; }   /* win */
-.li-icon.b { color: #b30000; }   /* bug */
-.li-icon.f { color: #444; }      /* fix */
+.li-icon.w { color: #006400; }
+.li-icon.b { color: #b30000; }
+.li-icon.f { color: #444; }
 
-/* Texto del log */
 .li-text {
   font-size: 0.95rem;
   color: var(--ink);
@@ -402,7 +435,7 @@ code {
 }
 
 /* =========================================
-   BARRAS DE NIVEL (Día 17)
+   BARRAS DE NIVEL
 ========================================= */
 
 .skill-row {
@@ -441,28 +474,13 @@ code {
 }
 
 /* =========================================
-   COLUMNAS Y REGLA VERTICAL
-========================================= */
-
-.cols {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
-  margin-top: 20px;
-}
-
-.col-rule {
-  border-left: 2px solid var(--paper-d);
-  padding-left: 24px;
-}
-
-/* =========================================
-   INTRO BLOCK — sección inicial del diario
+   INTRO BLOCK
 ========================================= */
 
 .intro-block {
   padding: 50px 0;
   border-bottom: 1px solid var(--paper-d);
+  width: 100%;
 }
 
 .intro-kicker {
@@ -528,7 +546,7 @@ code {
 }
 
 /* =========================================
-   TEXTO LARGO — body-text
+   TEXTO LARGO
 ========================================= */
 
 .body-text {
@@ -551,7 +569,7 @@ code {
 }
 
 /* =========================================
-   NO RESULTS (cuando no hay entradas)
+   NO RESULTS
 ========================================= */
 
 .no-results {
@@ -564,7 +582,7 @@ code {
 }
 
 /* =========================================
-   CODE BLOCKS — <pre> y <code>
+   CODE BLOCKS
 ========================================= */
 
 .code-block {
@@ -584,39 +602,6 @@ code {
   color: inherit;
   font-family: var(--mono);
   line-height: 1.5;
-}
-
-/* Inline code (ya definido antes, pero reforzamos) */
-code {
-  background: var(--paper-d);
-  padding: 2px 4px;
-  border-radius: 4px;
-  font-family: var(--mono);
-  font-size: 0.85rem;
-}
-
-/* =========================================
-   SOMBRAS Y BORDES AUXILIARES
-========================================= */
-
-.shadow-soft {
-  box-shadow: var(--shadow-soft);
-}
-
-.shadow-hard {
-  box-shadow: var(--shadow-hard);
-}
-
-.border {
-  border: 1px solid var(--paper-d);
-}
-
-.border-top {
-  border-top: 1px solid var(--paper-d);
-}
-
-.border-bottom {
-  border-bottom: 1px solid var(--paper-d);
 }
 
 /* =========================================
@@ -642,7 +627,7 @@ code {
 }
 
 /* =========================================
-   ANIMACIONES SUAVES
+   ANIMACIONES
 ========================================= */
 
 .fade-in {
@@ -673,10 +658,11 @@ button,
 
 .footer {
   margin-top: 60px;
-  padding: 40px 0;
+  padding: 40px 4%;
   text-align: center;
   border-top: 1px solid var(--paper-d);
   background: var(--paper);
+  width: 100%;
 }
 
 .footer-text {
@@ -746,10 +732,14 @@ button,
 }
 
 @media (max-width: 600px) {
+  body {
+    padding-top: 70px;
+  }
+
   .nav {
     flex-direction: column;
     gap: 12px;
-    padding: 12px 18px;
+    padding: 12px 4%;
   }
 
   .nav-links {
@@ -766,6 +756,7 @@ button,
   .filter-nav {
     flex-wrap: wrap;
     gap: 10px;
+    padding: 16px 4%;
   }
 
   .mast-title {
@@ -815,7 +806,124 @@ button,
   }
 }
 
-/* ── NEXT TARGET ── */
+/* =========================================
+   REFLEXIONES — estilos específicos
+========================================= */
+
+.reflexion {
+  background: white;
+  border: 1px solid var(--paper-d);
+  border-radius: 12px;
+  padding: 60px 50px;
+  margin-bottom: 80px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.reflexion-kicker {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--paper-d);
+  padding-bottom: 15px;
+}
+
+.reflexion-num {
+  font-weight: 700;
+  background: var(--accent-soft);
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+
+.reflexion-headline {
+  font-size: 2.8rem;
+  line-height: 1.1;
+  margin-bottom: 25px;
+  color: var(--ink);
+}
+
+.reflexion-deck {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin-bottom: 45px;
+  font-style: italic;
+  max-width: none;
+}
+
+.reflexion .cols {
+  gap: 50px;
+  align-items: start;
+}
+
+.reflexion .col-label {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent);
+  margin-bottom: 20px;
+  display: inline-block;
+  border-bottom: 2px solid var(--accent-soft);
+}
+
+.reflexion .body-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: #2d2d2d;
+}
+
+.reflexion .pullquote {
+  font-size: 1.4rem;
+  color: var(--ink);
+  border-left: none;
+  border-top: 1px solid var(--paper-d);
+  border-bottom: 1px solid var(--paper-d);
+  padding: 30px 0;
+  margin: 40px 0;
+  text-align: center;
+  position: relative;
+}
+
+.reflexion .pullquote::before {
+  content: """;
+  font-family: var(--display);
+  font-size: 4rem;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--paper-d);
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  .reflexion {
+    padding: 40px 20px;
+    margin-bottom: 40px;
+  }
+  .reflexion-headline {
+    font-size: 1.8rem;
+  }
+  .reflexion-deck {
+    font-size: 1.1rem;
+  }
+}
+
+/* =========================================
+   NEXT TARGET
+========================================= */
+
 .next-target {
   margin-top: 32px;
   border-top: 2px solid var(--ink);
@@ -841,9 +949,8 @@ button,
 }
 
 .next-target-list li {
-  font-family: var(--body-serif);
   font-size: 13px;
-  color: var(--ink-mid);
+  color: var(--ink-soft);
   padding-left: 16px;
   position: relative;
   line-height: 1.6;
@@ -858,20 +965,23 @@ button,
 }
 
 .next-target-list code {
-  background: var(--paper-dark);
+  background: var(--paper-d);
   padding: 1px 5px;
   font-family: var(--mono);
   font-size: 11px;
 }
 
-/* ── PROBLEM PATTERN ── */
+/* =========================================
+   PROBLEM PATTERN
+========================================= */
+
 .problem-pattern {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 24px;
   margin-top: 32px;
-  border-top: 1px solid var(--ink-light);
-  border-bottom: 1px solid var(--ink-light);
+  border-top: 1px solid var(--paper-d);
+  border-bottom: 1px solid var(--paper-d);
   padding: 20px 0;
 }
 
@@ -899,23 +1009,22 @@ button,
 }
 
 .pp-text {
-  font-family: var(--body-serif);
   font-size: 13px;
-  color: var(--ink-mid);
+  color: var(--ink-soft);
   line-height: 1.7;
   margin: 0;
-  background: none;
-  border: none;
-  padding: 0;
 }
 
-/* ── MENTAL MODEL ── */
+/* =========================================
+   MENTAL MODEL
+========================================= */
+
 .mental-model {
   margin-top: 32px;
-  border-top: 1px solid var(--ink-light);
+  border-top: 1px solid var(--paper-d);
   padding-top: 20px;
   padding-bottom: 20px;
-  border-bottom: 1px solid var(--ink-light);
+  border-bottom: 1px solid var(--paper-d);
 }
 
 .mental-model-label {
@@ -937,10 +1046,9 @@ button,
 }
 
 .mental-model-list li {
-  font-family: var(--body-serif);
   font-size: 13px;
-  color: var(--ink-mid);
-  background: var(--paper-dark);
+  color: var(--ink-soft);
+  background: var(--paper-d);
   padding: 6px 14px;
   line-height: 1.5;
 }
@@ -952,84 +1060,4 @@ button,
   color: var(--ink);
   background: none;
   padding: 0;
-}
-
-/* ══════════════════════════════════════════════
-   FIX LAYOUT ESCRITORIO — Dev Log 365
-  En escritorio se veia demasiado espacio en blanc.
-══════════════════════════════════════════════ */
-
-/* Contenedor principal más ancho en escritorio */
-.entries {
-  width: min(1200px, 92%);
-  margin: 0 auto;
-}
-
-
-.masthead {
-  padding: 60px 4% 40px;
-}
-
-
-.stats-row {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 30px 4%;
-}
-
-
-.filter-nav {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 22px 4%;
-}
-
-
-@media (min-width: 1200px) {
-  .entries {
-    width: 92%;
-    max-width: 1300px;
-  }
-
-
-  .cols {
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-  }
-
-
-  .code-block {
-    font-size: 0.95rem;
-  }
-
-
-  .entry {
-    padding: 60px 0;
-  }
-
-  
-  .nav {
-    padding: 14px 4%;
-  }
-
-  /* Filter nav sticky más baja
-     porque la nav es más alta en escritorio */
-  .filter-nav {
-    top: 57px;
-  }
-}
-
-/* Para Pantallas muy grandes — 1600px+ */
-@media (min-width: 1600px) {
-  .entries {
-    max-width: 1500px;
-  }
-
-  .cols {
-    gap: 64px;
-  }
-
-  .entry-headline {
-    font-size: 2.4rem;
-  }
 }
