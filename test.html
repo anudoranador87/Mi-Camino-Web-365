@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diario de Dev 365 — Jose Aparicio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Space+Mono:wght@400;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav" aria-label="Navegación principal">
+  <a href="index.html" class="nav-brand">jose<em>.</em>dev</a>
+  <ul class="nav-links">
+    <li><a href="https://anudoranador87.github.io/JoseMaria-Frondtend-Portfolio/" target="_blank" rel="noopener noreferrer" class="nav-cta">CV</a></li>
+    <li><a href="Projects.html">Proyectos</a></li>
+    <li><a href="index.html" class="here" aria-current="page">Diario 365</a></li>
+    <li><a href="reflexionesen.html">Reflexiones</a></li>
+    <li><a href="https://github.com/anudoranador87" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+    <li><a href="https://wa.me/34613019444">Contacto</a></li>
+  </ul>
+  <a href="index.html" class="lang-btn" aria-label="Cambiar a Inglés">
+    <span class="lang-flag">EN</span>
+    <span class="lang-label"></span>
+  </a>
+</nav>
+
+<header class="masthead">
+  <p class="mast-top">
+    <span>MÁLAGA, ESPAÑA — 2026</span>
+    <span>VOL. I · No. 17 / 365</span>
+    <span>anudoranador87.github.io</span>
+  </p>
+
+  <h1 class="mast-title">
+    Diario de Dev 365
+    <span class="sub">Bitácora de Ingeniería de Jose Aparicio</span>
+  </h1>
+
+  <p class="mast-tagline">
+    "La lógica es mi superpoder · La sintaxis solo es la herramienta"
+    | 17 días · Errores reales · Sin filtros
+  </p>
+</header>
+
+<section class="stats-row" aria-label="Estadísticas de desarrollo">
+  <article class="stat-item">
+    <span class="stat-n" id="c-days">0</span>
+    <span class="stat-l">Días activos</span>
+  </article>
+
+  <article class="stat-item">
+    <span class="stat-n" id="c-bugs">0</span>
+    <span class="stat-l">Bugs documentados</span>
+  </article>
+
+  <article class="stat-item">
+    <span class="stat-n" id="stat-projects">0</span>
+    <span class="stat-l">Proyectos en vivo</span>
+  </article>
+</section>
+
+<nav class="filter-nav" aria-label="Filtrar entradas por categoría">
+  <button class="filter-btn active" data-filter="all" aria-pressed="true">Todo</button>
+  <button class="filter-btn" data-filter="js" aria-pressed="false">JavaScript</button>
+  <button class="filter-btn" data-filter="css" aria-pressed="false">CSS</button>
+  <button class="filter-btn" data-filter="debug" aria-pressed="false">Debug</button>
+  <button class="filter-btn" data-filter="project" aria-pressed="false">Proyectos</button>
+  <button class="filter-btn" data-filter="algo" aria-pressed="false">Algoritmos</button>
+</nav>
+
+<main class="entries" aria-label="Entradas del diario">
+
+  <section class="intro-block" aria-labelledby="intro-title">
+    <p class="intro-kicker">Sobre este log</p>
+
+    <h2 class="intro-headline" id="intro-title">
+      365 días de aprendizaje.<br>Documentado cuando estudio. Sin rellenos.
+    </h2>
+
+    <p class="intro-body">
+      Este log comienza el 20 de febrero de 2026, el primer día que me senté a estudiar y documentarlo.
+      El viaje dura 365 días a partir de esa fecha. No hay una entrada por cada día del calendario:
+      hay una entrada por cada día que estudio, aprendo o construyo algo real.
+      Los días sin entrada significan que no hubo sesión. Sin excusas, sin relleno.
+    </p>
+
+    <p class="intro-body">
+      Cada entrada documenta errores reales, decisiones de arquitectura y el proceso de convertir 
+      la teoría en código que funciona — o que no funciona, y por qué. La base técnica proviene de dos fuentes:
+    </p>
+
+    <ul class="intro-sources" aria-label="Fuentes de aprendizaje">
+      <li class="intro-source">
+        <span class="source-dot" style="background:#0056d2"></span>
+        <div class="source-info">
+          <strong class="source-name">Meta Front-End Developer</strong>
+          <small class="source-sub">Coursera · Certificado Profesional · En curso</small>
+        </div>
+      </li>
+
+      <li class="intro-source">
+        <span class="source-dot" style="background:#006400"></span>
+        <div class="source-info">
+          <strong class="source-name">freeCodeCamp</strong>
+          <small class="source-sub">Diseño Web Responsivo · Algoritmos de JavaScript · En curso</small>
+        </div>
+      </li>
+    </ul>
+
+    <p class="intro-note">
+      Día 1 = 20 de Febrero, 2026 · Los 365 días se cuentan desde ahí · No todos los días tienen entrada
+    </p>
+  </section>
+
+  <div id="log-entries-container" style="margin-top: 60px;"></div>
+
+  <p class="no-results" id="no-results" role="status" aria-live="polite" style="display: none; text-align: center; padding: 40px;">
+    No se han encontrado entradas para este filtro.
+  </p>
+
+</main>
+
+<footer class="footer">
+  <p class="footer-text">
+    © 2026 Jose Aparicio — Diario de Dev 365  
+    <span>Todos los derechos reservados.</span>
+  </p>
+
+  <ul class="footer-links">
+    <li><a href="index.html#about">Habilidades</a></li>
+    <li><a href="index.html#projects">Proyectos</a></li>
+    <li><a href="index.html#doors">EquiShift</a></li>
+    <li><a href="index.html#education">Formación</a></li>
+    <li><a href="index.html#contact">Contacto</a></li>
+  </ul>
+
+  <p class="footer-copy">
+    <i class="fa-solid fa-code"></i>  
+    <span>Construido a mano, línea a línea.</span>
+  </p>
+</footer>
+
+<script src="script.js" defer></script>
+
+</body>
+</html>

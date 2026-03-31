@@ -14,6 +14,10 @@
 <body>
 
 <nav class="nav" aria-label="Main navigation">
+  <!-- BUSQUEDA EN EL DIARIO -->
+<div class="search-container">
+  <input type="text" id="search-input" placeholder="Buscar en el diario...">
+</div>
   <a href="index.html" class="nav-brand">jose<em>.</em>dev</a>
   <ul class="nav-links">
     <li><a href="https://anudoranador87.github.io/JoseMaria-Frondtend-Portfolio/" target="_blank" rel="noopener noreferrer" class="nav-cta">CV</a></li>
@@ -30,6 +34,7 @@
 </nav>
 
 <header class="masthead">
+ 
   <p class="mast-top">
     <span data-i18n="mast-loc">MÁLAGA, ESPAÑA — 2026</span>
     <span>VOL. I · No. 17 / 365</span>
@@ -123,6 +128,308 @@
     Día 1 = 20 de febrero de 2026 · Los 365 días se cuentan desde ahí · No todos los días tienen entrada
   </p>
 </section>
+<!-- ============================
+     ENTRADA 33 DÍA 31  MARZO 
+=============================== -->
+
+<article class="entry" data-tags="js · poo · debug · html · project" aria-labelledby="title-d32">
+  <header class="entry-kicker">
+    <span class="day-badge">Día 33</span>
+    <time datetime="2026-03-31" data-i18n="d32-date">31 de Marzo, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">JS</li>
+      <li class="etag">POO</li>
+      <li class="etag">Debug</li>
+      <li class="etag">DOM</li>
+    </ul>
+  </header>
+
+  <!-- TITULAR -->
+  <h2 class="entry-headline" id="title-d32" data-i18n="d32-headline">
+    FormValidator: Constructor OOP, RegEx Rules,<br>y el patrón Array.from() en el DOM
+  </h2>
+
+  <!-- DECK — el gancho -->
+  <p class="entry-deck" data-i18n="d32-deck">
+    Dominé la arquitectura completa del constructor FormValidator tras una sesión profunda de debugging científico. Copié línea por línea en papel, anotando cada paso en Spanish. Atrapé 8 bugs diferentes — desde confusiones conceptuales (Array.from) hasta errores de scope y orden de ejecución. Descubrí que la mayoría de errores OOP vienen de entender DÓNDE y CUÁNDO ocurre cada cosa. Listo para métodos de validación.
+  </p>
+
+  <!-- ── COLUMNAS ─────────────────────────────────────────── -->
+  <div class="cols">
+
+    <!-- COLUMNA IZQUIERDA — STAR, victorias, reflexión -->
+    <div>
+
+      <!-- BLOQUE STAR -->
+      <h3 class="col-label" data-i18n="d32-lbl-star">Resumen STAR</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Estudiando validación de formularios HTML con clases OOP. Necesitaba entender cómo un <code>FormValidator</code accesa el DOM, selecciona inputs dinámicamente, y define reglas de validación con expresiones regulares reutilizables. Contexto: preparación para implementar contact form funcional en Campus & Crema.<br><br>
+        
+        <strong>T —</strong> Completar el constructor de la clase FormValidator que: (1) guarde referencia al formulario del DOM, (2) traiga todos los inputs con atributo <code>[required]</code> como array iterable, (3) defina reglas de validación (email, password con mín 8 caracteres + número), (4) inicialice estado <code>isValid</code>, (5) ejecute <code>init()</code> que inicie listeners. Bonus: entender cada línea sin dejar gaps conceptuales.<br><br>
+        
+        <strong>A —</strong> Metodología: copié línea por línea en papel, anotando en Spanish cada sección del código. Primero traté de entenderlo mentalmente sin escribir — me perdí en cómo <code>Array.from(querySelectorAll())</code> funcionaba exactamente. Luego probé paso a paso en el navegador: seleccionar → convertir a array → iterar. Tras 5-6 intentos y debugging, vi que NO era mágico, era literal y secuencial. Implementé el config-object pattern para las rules de RegEx (escalable y reutilizable). Anotaciones de debugging en papel = comprensión 3x más rápida.<br><br>
+        
+        <strong>R —</strong> Constructor completamente funcional y profundamente entendido. Puedo explicar cada línea sin dudas. Reconocí mi patrón mental recurrente: "es más fácil de lo que parece, yo lo complico demasiado" — aplica perfectamente aquí. Atrapé y resolví 8 bugs diferentes durante la sesión, muchos de ellos SUTILES (orden de ejecución, this binding, selector incorrecto). La lección clave: OOP no es complejo por las clases, es complejo por el SCOPE y el ORDEN. Listo para pasar a métodos de validación (validate, displayError, removeError).
+      </p>
+
+      <!-- VICTORIAS DEL DÍA -->
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d32-lbl-wins">Victorias del día</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Dominé <code>querySelectorAll()</code> + <code>Array.from()</code> — no es magia, es literal y secuencial</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Implementé RegEx config-object pattern — escalable, reutilizable, profesional</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Atrapé 8 bugs diferentes — incluyendo los SUTILES (orden de ejecución, this binding, null checks)</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Reconocí patrón mental: overcomplicación — paper-first method soluciona esto completamente</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Dominé diferencia entre métodos (parens) vs propiedades (sin parens) — crucial en OOP</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Entendí scope y this binding en ES6 clases — métodos normales vs arrow functions en callbacks</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Código en Spanish (propiedades y métodos) siente genuinamente mío — ownership total</span>
+      </p>
+
+      <!-- CITA DEL DÍA -->
+      <blockquote class="pullquote">
+        "Es más fácil de lo que parece, yo lo complico demasiado. El secreto no es entenderlo mentalmente primero — es verlo ejecutarse, paso a paso, sin buscar magia donde hay solo lógica secuencial."
+      </blockquote>
+
+      <!-- NIVELES -->
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d32-lbl-levels">Niveles al cierre del día</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">DOM API (querySelector/All)</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="80"></div>
+        </div>
+        <span class="skill-pct">80%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Clases OOP (constructor pattern)</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="76" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="76"></div>
+        </div>
+        <span class="skill-pct">76%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">RegEx (validación)</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="68"></div>
+        </div>
+        <span class="skill-pct">68%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Array methods (from, forEach)</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="84"></div>
+        </div>
+        <span class="skill-pct">84%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Debugging científico</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="79" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="79"></div>
+        </div>
+        <span class="skill-pct">79%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Scope & this binding</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="72"></div>
+        </div>
+        <span class="skill-pct">72%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Orden de ejecución (constructor)</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="75"></div>
+        </div>
+        <span class="skill-pct">75%</span>
+      </div>
+
+    </div>
+
+    <!-- COLUMNA DERECHA — Debug Log & Código -->
+    <div class="col-rule">
+
+      <!-- DEBUG LOG -->
+      <h3 class="col-label" data-i18n="d32-lbl-debug">Debug Log (8 bugs atrapados)</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1 — Confusión conceptual (Array.from):</strong> No entendía cómo <code>Array.from(this.form.querySelectorAll())</code> accedía a los inputs. Asumía que había "magia" de binding implícito o acceso automático al scope global.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text"><strong>Fix:</strong> Debuggué paso a paso en papel: (1) <code>this.form</code> = referencia al objeto Form del DOM (guardada en constructor), (2) <code>.querySelectorAll()</code> = retorna NodeList (colección, NO array), (3) <code>Array.from()</code> = convierte NodeList a array iterable. Sin magia. Lógica secuencial.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2 — Sintaxis objeto literal (comas):</strong> Olvidé comas entre propiedades en el objeto <code>rules</code>. Código no compilaba. Error: <code>SyntaxError: Unexpected identifier</code></span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text"><strong>Fix:</strong> Objeto literal = propiedad, coma, siguiente propiedad. <code>{ email: /.../, password: /.../ }</code>. En JavaScript los métodos/propiedades dentro de objetos usan sintaxis clave-valor, no declaraciones separadas.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3 — Template literal en comentario:</strong> Intenté interpolación <code>${minLength}</code> dentro de un comentario de RegEx. Las comillas internas rompían la sintaxis. Error silencioso — la interpolación no funcionaba.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text"><strong>Fix:</strong> Separé comentario fuera de la RegEx: <code>// Mínimo 8 letras y 1 número</code>. Los comentarios inline pueden romper cadenas. Patrón limpio: RegEx ejecutable, comentario separado en línea siguiente.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4 — Paréntesis faltantes:</strong> Escribí <code>querySelectorAll('input[required]')</code> sin los paréntesis finales. Error: no ejecutaba la función, solo la referenciaba (quedaba undefined).</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text"><strong>Fix:</strong> <code>querySelectorAll(...)</code> es un método — SIEMPRE necesita <code>()</code> al final. Sin paréntesis = función sin ejecutar. Patrón: métodos = parens, propiedades = sin parens.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 5 — this.init sin paréntesis (inicialización):</strong> En el constructor escribí <code>this.init</code> en lugar de <code>this.init()</code>. El código no fallaba pero init() nunca se ejecutaba — solo se guardaba la referencia a la función.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text"><strong>Fix:</strong> Para LLAMAR un método: paréntesis obligatorios. <code>this.init()</code>. Sin parens = referencia sin ejecutar. Crítico en constructores donde necesitas ejecución inmediata — el listeners no se attachaban.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 6 — Selector CSS con ID vs clase:</strong> Pasé <code>#contact-form</code> como selector pero el HTML tenía <code>class="contact-form"</code>. El constructor no encontraba el formulario. <code>this.form</code> quedaba <code>null</code> — siguiente línea fallaba.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text"><strong>Fix:</strong> Verificar el HTML antes de escribir selector. <code>#id-name</code> vs <code>.class-name</code> es diferente. Patrón: revisar estructura HTML PRIMERO, luego escribir selectores. El error ocurrió silenciosamente — <code>null</code> no dispara error hasta usar métodos en <code>this.form</code>.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 7 — this binding incorrecto (scope):</strong> Copié código de un tutorial donde usaban arrow functions vs métodos normales. Olvidé que en clases ES6, los métodos usan <code>this</code> automáticamente sin necesidad de bind(). Pero escribí un callback con function() {} normal — perdía contexto.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text"><strong>Fix:</strong> En clases ES6, métodos normales conservan <code>this</code> automáticamente. PERO: si pasas un callback a un event listener, usa arrow function <code>() => {}</code> para mantener scope. Patrón: método de clase = normal, callback = arrow.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 8 — Orden de ejecución (constructor vs init):</strong> Llamé <code>this.init()</code> ANTES de guardar <code>this.form</code> y <code>this.inputs</code>. El init() intentaba usar propiedades que aún no existían. Error: "Cannot read property 'addEventListener' of undefined"</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text"><strong>Fix:</strong> Orden importa en constructores. (1) Asignar propiedades, (2) llamar métodos que dependen de esas propiedades. El constructor es SECUENCIAL — cada línea depende de la anterior. Visualizar en papel ayuda enormemente a ver orden de dependencias.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text"><strong>Resultado final:</strong> Constructor completamente funcional. Todos los inputs con <code>[required]</code> detectados correctamente. Rules de validación listos. Estado <code>isValid</code> inicializado. <code>init()</code> se ejecuta en orden correcto. <code>this.form</code> no es null. Listeners attachados correctamente. Listo para siguiente fase: métodos validate(), displayError(), removeError().</span>
+      </p>
+
+      <!-- CÓDIGO DEL DÍA -->
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d32-lbl-code">Código del día: Constructor FormValidator</h3>
+
+      <pre class="code-block"><code>
+class FormValidator {
+  constructor(formSelector) {
+    // GUARDAR EL FORMULARIO como referencia al objeto DOM
+    this.form = document.querySelector(formSelector);
+
+    // TRAER TODOS LOS INPUTS QUE REQUIEREN VALIDACIÓN
+    // querySelectorAll() retorna NodeList
+    // Array.from() convierte NodeList a Array iterable
+    this.inputs = Array.from(
+      this.form.querySelectorAll('input[required]')
+    );
+
+    // DEFINIR REGLAS DE VALIDACIÓN (Regex)
+    // Patrón config-object — escalable y reutilizable
+    this.rules = {
+      email: /^[\w\S]+@[\w\S]+\.[\w\S]+$/,
+      password: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
+      // Email: básico pero funcional
+      // Password: mínimo 8 caracteres + al menos 1 letra + al menos 1 número
+    };
+
+    // ESTADO: ¿El formulario es válido?
+    // Se actualizará en métodos de validación
+    this.isValid = false;
+
+    // EJECUTAR INICIALIZACIÓN
+    // Sin paréntesis = referencia sin ejecutar
+    // Con paréntesis = ejecuta inmediatamente
+    this.init();
+  }
+
+  init() {
+    // Próximamente: attachEventListeners()
+    this.attachEventListeners();
+  }
+}
+
+// USO:
+const formularioContacto = new FormValidator('#contact-form');
+// ✓ Instancia creada
+// ✓ Inputs detectados
+// ✓ Listeners attachados
+      </code></pre>
+
+      <!-- NOTA TÉCNICA -->
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "El constructor no VALIDA aún — solo prepara el escenario. Almacena referencias, define reglas, inicializa estado. La validación ocurre en métodos separados (validate, displayError). Separación de responsabilidades = código mantenible."
+      </blockquote>
+
+      <!-- MILESTONES — Roadmap visual -->
+      <h3 class="col-label" style="margin-top:20px; font-size:0.85rem;" data-i18n="d32-lbl-milestones">FormValidator Project Roadmap</h3>
+
+      <div style="background:#f5f5f5; padding:12px; border-radius:4px; font-size:0.85rem; line-height:1.6;">
+        <p style="margin:0 0 8px 0;">
+          <strong style="color:#2d5016;">✓ Hito 1 — Día 32 (HOY): Constructor + Deep Debugging</strong><br>
+          <span style="color:#666; margin-left:20px;">8 bugs caught, architecture solid, ready for methods</span>
+        </p>
+        <p style="margin:0 0 8px 0;">
+          <strong style="color:#8b7500;">○ Hito 2 — Día 33-34: Validation Methods</strong><br>
+          <span style="color:#666; margin-left:20px;">validate(), displayError(), removeError() — full validation cycle</span>
+        </p>
+        <p style="margin:0 0 8px 0;">
+          <strong style="color:#8b7500;">○ Hito 3 — Día 35: Event Listeners + Integration</strong><br>
+          <span style="color:#666; margin-left:20px;">attachEventListeners(), form submission, error display</span>
+        </p>
+        <p style="margin:0;">
+          <strong style="color:#8b7500;">○ Hito 4 — Día 36: Campus & Crema Deploy</strong><br>
+          <span style="color:#666; margin-left:20px;">HTML integration, CSS styling, Vercel deployment, testing</span>
+        </p>
+      </div>
+
+</article>
 <!-- ============================
      ENTRADA 32 DÍA 29  MARZO 
 =============================== -->

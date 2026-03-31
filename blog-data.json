@@ -1,0 +1,968 @@
+[
+  {
+    "id": 23,
+    "fecha": "2026-03-26",
+    "metadata": {
+      "tags": ["JS", "Arrays", "Funciones", "Debug", "Algoritmos"],
+      "categoria": "Logica"
+    },
+    "contenido": {
+      "titulo": "De menús de almuerzo a enmascarar emails",
+      "subtitulo": "El día que indexOf y slice trabajaron juntos",
+      "introduccion": "Dos ejercicios, seis errores documentados y una lección que se repite: las funciones deben ser predecibles.",
+      "metodo_star": {
+        "s": "Día 31 del reto. Stack JS básico-intermedio. Proyecto principal EquiShift en construcción.",
+        "t": "Dominar métodos de arrays (push, pop, shift, unshift) y construir un enmascarador de emails desde cero usando slice, indexOf y repeat.",
+        "a": "Primero construí un gestor de menú de almuerzo con seis funciones. Luego afronté el email masker: identifiqué el patrón, separé el string con indexOf y slice, calculé los asteriscos con repeat y ensamblé el resultado en el return.",
+        "r": "maskEmail('apple.pie@example.com') devuelve 'a*******e@example.com'. Todos los casos del enunciado pasan."
+      },
+      "victorias": [
+        "Validación defensiva con arr.length === 0 aplicada en todas las funciones del menú",
+        "Entendí que indexOf localiza y slice corta — dos herramientas separadas que trabajan juntas",
+        "Construí la arrow function correctamente sin mezclar sintaxis",
+        "Diferencia clara entre includes (¿está?) e indexOf (¿dónde está?)"
+      ],
+      "cita": "indexOf es el cuchillo marcando el corte. slice es el que ejecuta."
+    },
+    "stats": [
+      { "label": "Array methods", "value": 65 },
+      { "label": "String methods", "value": 50 },
+      { "label": "Arrow functions", "value": 55 },
+      { "label": "Lógica defensiva", "value": 70 }
+    ],
+    "debug_log": [
+      {
+        "tipo": "error",
+        "bug": "item.push[Lunch item] — push llamado sobre el item en vez del array",
+        "fix": "el método pertenece al contenedor, no al elemento. arr.push(item)"
+      },
+      {
+        "tipo": "error",
+        "bug": "return arr.length — devuelve un número cuando se espera el array",
+        "fix": "si la función promete una lista, devuelve la lista. return arr"
+      },
+      {
+        "tipo": "error",
+        "bug": "getRandomLunch devuelve tipos inconsistentes (array/string)",
+        "fix": "una función debe devolver siempre el mismo tipo en todos sus caminos"
+      },
+      {
+        "tipo": "error",
+        "bug": "const maskEmail(email => ...) — sintaxis mezclada",
+        "fix": "const maskEmail = (email) => { ... }"
+      },
+      {
+        "tipo": "error",
+        "bug": "username[0] + + masked — doble operador produce NaN",
+        "fix": "un solo + entre operandos. NaN aparece cuando JS intenta sumar un hueco vacío"
+      }
+    ],
+    "codigo": "const maskEmail = (email) => {\n  const atIndex = email.indexOf('@')\n  const username = email.slice(0, atIndex)\n  const domain = email.slice(atIndex)\n  const masked = '*'.repeat(username.length - 2)\n  return username[0] + masked + username[username.length - 1] + domain\n}"
+  },
+  {
+    "id": 22,
+    "fecha": "2026-03-25",
+    "metadata": {
+      "tags": ["JavaScript", "ES6+", "Arrays", "Objects", "Logic"],
+      "categoria": "Logica"
+    },
+    "contenido": {
+      "titulo": "De 'undefined' a la manipulación total",
+      "subtitulo": "Entendiendo que el Array es la caja y el Objeto es la ficha",
+      "introduccion": "Hoy el reto no era visual, era mental. De no saber por qué un console.log daba undefined a encadenar .filter() y .reduce() para inventarios complejos.",
+      "metodo_star": {
+        "s": "Tenía dos conjuntos de datos: un inventario de productos y una lista de desarrolladores.",
+        "t": "Dominar los métodos de arrays (map, filter, find, reduce, sort) para dejar de usar bucles manuales.",
+        "a": "Corregí errores de acceso a propiedades. Añadí paréntesis a los parámetros de reduce e inicialicé acumuladores.",
+        "r": "Logré filtrar productos 'tech' y calcular el valor total del inventario."
+      },
+      "victorias": [
+        "Uso correcto de .map() con ...spread",
+        "Diferenciación entre find y filter",
+        "Cálculo de promedios con reduce"
+      ],
+      "cita": "El error no estaba en el código, estaba en mi cabeza.",
+      "modelos_mentales": [
+        "Array vs Objeto: Estantería vs Libro.",
+        "Callbacks: Instrucciones de uso.",
+        "Inmutabilidad: Evolucionar datos sin destruir el original."
+      ]
+    },
+    "stats": [
+      { "label": "Array Methods", "value": 75 },
+      { "label": "Arrow Functions", "value": 85 },
+      { "label": "Lógica de Objetos", "value": 70 }
+    ],
+    "debug_log": [
+      {
+        "tipo": "error",
+        "bug": "products.name devolvía undefined",
+        "fix": "Usar forEach/map para acceder a cada elemento, no a la lista."
+      },
+      {
+        "tipo": "error",
+        "bug": "reduce(acc, val => ...) sin paréntesis",
+        "fix": "reduce((acc, val) => ...)"
+      }
+    ],
+    "codigo": "const valorTotal = products.reduce((total, p) => total + (p.price * p.stock), 0);"
+  },
+  {
+    "id": 21,
+    "fecha": "2026-03-24",
+    "metadata": {
+      "tags": ["JS Engine", "Game UI", "Lógica de Estados"],
+      "categoria": "Proyecto"
+    },
+    "contenido": {
+      "titulo": "De una página estática a un Motor de Batalla Táctico",
+      "subtitulo": "Programar sistemas interconectados vs acciones aisladas",
+      "introduccion": "Implementé un sistema de gestión de energía (Maná) y flujo de turnos.",
+      "metodo_star": {
+        "s": "Interfaz de cartas plana.",
+        "t": "Implementar mecánicas de RPG: coste de maná y estados alterados.",
+        "a": "Refactoricé el mazo y creé validación de energía.",
+        "r": "Motor táctico estable."
+      },
+      "victorias": [
+        "Gestión de Maná",
+        "Feedback Visual dinámico",
+        "IA con setTimeout"
+      ],
+      "cita": "Si la base no es sólida, el castillo se cae."
+    },
+    "stats": [],
+    "debug_log": [
+      {
+        "tipo": "error",
+        "bug": "Event Bubbling",
+        "fix": "stopPropagation()"
+      },
+      {
+        "tipo": "error",
+        "bug": "Maná negativo",
+        "fix": "Early Return con validación"
+      }
+    ],
+    "codigo": "function intentarAtacar(carta) {\n  if (manaPlayer >= carta.coste) {\n    manaPlayer -= carta.coste;\n    ejecutarDuelo(carta);\n    actualizarBarras();\n  } else {\n    log.innerText = '¡Energía insuficiente!';\n    this.classList.add('shake');\n  }\n}"
+  },
+
+{
+  "id": 20,
+  "fecha": "2026-03-23",
+  "metadata": {
+    "tags": ["HTML", "CSS", "freeCodeCamp", "Proyecto", "Responsive"],
+    "categoria": "Proyecto"
+  },
+  "contenido": {
+    "titulo": "El proyecto que esperó más de una semana",
+    "subtitulo": "Cuando volví, tardé una tarde",
+    "introduccion": "Llevaba días metido en JavaScript hasta que la cabeza dijo basta. Abrir este proyecto de HTML y CSS puro para descansar resultó ser la prueba de que el aprendizaje de las últimas semanas estaba funcionando.",
+    "media": {
+      "tipo": "image",
+      "url": "certificado.documentacion.gif",
+      "caption": "Technical Documentation Page — navbar fija, scroll suave, responsive.",
+      "link": "https://anudoranador87.github.io/fcc-technical-documentation/"
+    },
+    "metodo_star": {
+      "s": "Saturación mental tras una semana intensa de JS (Arrays, OOP, EquiShift). Tenía pendiente el proyecto de Documentación Técnica de freeCodeCamp desde hacía días.",
+      "t": "Necesitaba salir de JavaScript sin dejar de producir. El reto era construir una página de documentación técnica cumpliendo todos los user stories de FCC.",
+      "a": "Decidí no usar el ejemplo de FCC y escribir sobre mi propio proceso. Construí una navbar fija lateral, implementé variables CSS alineadas con este Dev Log y aseguré un responsive que colapsa la navegación en móvil.",
+      "r": "Proyecto terminado y publicado en una tarde. Tests pasados al 100%. La cabeza descansada para volver a la lógica de programación al día siguiente."
+    },
+    "victorias": [
+      "Navbar fija lateral con position: fixed y height: 100% funcionando al segundo intento",
+      "Descubrimiento de scroll-margin-top para evitar que la navbar tape los títulos al navegar",
+      "Alineación visual perfecta entre el proyecto y el estilo del Dev Log",
+      "Validación de que ahora domino el posicionamiento CSS mucho más rápido que hace un mes"
+    ],
+    "cita": "Saturación ≠ bloqueo. La solución es cambiar de contexto, no parar.",
+    "modelos_mentales": [
+      "position: fixed saca el elemento del flujo; el resto del documento actúa como si no existiera.",
+      "margin-left en el contenedor compensa físicamente el espacio de una navbar fija.",
+      "La acumulación de conocimiento no se siente mientras ocurre, se ve en los resultados rápidos."
+    ],
+    "analisis_problema": {
+      "realidad": "No fue planificado, fue una válvula de escape para descansar de JS.",
+      "decision": "Elegir contenido propio en lugar del ejemplo genérico hizo que el desarrollo fuera más fluido y motivador.",
+      "confirmacion": "Cambiar de contexto (HTML/CSS) reactiva la capacidad de aprendizaje."
+    },
+    "proximos_objetivos": [
+      "Volver a JavaScript con la mente fresca",
+      "Implementar el resaltado de nav-link activo mediante JS",
+      "Actualizar el CV web con el nuevo certificado"
+    ]
+  },
+  "stats": [
+    { "label": "HTML semántico", "value": 88 },
+    { "label": "CSS positioning", "value": 72 },
+    { "label": "Responsive Design", "value": 82 }
+  ],
+  "debug_log": [
+    {
+      "tipo": "error",
+      "bug": "El contenido principal quedaba oculto bajo la navbar fija",
+      "fix": "margin-left: 280px en el #main-doc (mismo ancho que la navbar)."
+    },
+    {
+      "tipo": "error",
+      "bug": "La navbar tapaba el título de la sección al hacer clic en el ancla",
+      "fix": "scroll-margin-top: 1rem en cada .main-section."
+    },
+    {
+      "tipo": "error",
+      "bug": "El código largo de EquiShift rompía el layout lateral",
+      "fix": "overflow-x: auto y white-space: pre-wrap en el bloque pre."
+    }
+  ],
+  "codigo": "#navbar {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 280px;\n  height: 100%;\n}\n\n@media (max-width: 768px) {\n  #navbar {\n    position: static;\n    width: 100%;\n  }\n}"
+},
+
+{
+  "id": 19,
+  "fecha": "2026-03-20",
+  "metadata": {
+    "tags": ["JS", "Funciones", "Debug", "EquiShift", "Algoritmos"],
+    "categoria": "Logica"
+  },
+  "contenido": {
+    "titulo": "Los errores de llaves han desaparecido",
+    "subtitulo": "Ahora los errores son míos de verdad",
+    "introduccion": "Hoy descubrí que los errores que me quedan ya no son de sintaxis, sino de lógica. El momento clave fue entender que el 'return' no solo devuelve un valor, sino que detiene el mundo para JavaScript.",
+    "media": {
+      "tipo": "image",
+      "url": "certificado.documentacion.gif",
+      "caption": "Technical Documentation Page — el proyecto donde todo empezó a encajar.",
+      "link": "https://anudoranador87.github.io/fcc-technical-documentation/"
+    },
+    "metodo_star": {
+      "s": "Necesitaba validar si los conceptos de la semana (funciones y strings) estaban asentados antes de seguir con la lógica compleja de EquiShift.",
+      "t": "Resolver truncateString y confirmEnding en freeCodeCamp, y modelar la función esTurnoLegal (noche → mañana = ilegal).",
+      "a": "En truncateString, corregí el error de intentar ejecutar código dentro de comillas. En confirmEnding, descubrí por intuición el uso de slice(-n). En esTurnoLegal, decidí que la regla de negocio debe vivir dentro de la función y no en el flujo externo.",
+      "r": "Ejercicios y quiz completados. La arquitectura de validación de turnos quedó definida: dos strings entran, un booleano sale. Los errores de sintaxis han dado paso a retos de arquitectura."
+    },
+    "victorias": [
+      "slice(0, num) + '...' — Dominio de la manipulación básica de strings",
+      "slice(-n) — Uso de índices negativos para buscar desde el final de forma dinámica",
+      "Diferenciación real entre Parámetro (el molde) y Argumento (el dato real)",
+      "Entendí el 'return' como un interruptor que detiene la ejecución de la función",
+      "Separación de responsabilidades: la función valida, el exterior solo pregunta"
+    ],
+    "cita": "Los errores de llaves han desaparecido. Ahora los errores son míos de verdad.",
+    "modelos_mentales": [
+      "slice(0, n) extrae el inicio; slice(-n) extrae el final sin cálculos extra.",
+      "return false (booleano) ≠ 'false' (string). Las validaciones siempre usan booleanos.",
+      "Saturación ≠ Bloqueo. Cambiar de contexto es la clave para seguir produciendo."
+    ],
+    "analisis_problema": {
+      "realidad": "Codificar una regla laboral real: si cierras de noche, no puedes abrir de mañana.",
+      "decision": "esTurnoLegal(turnoAyer, turnoHoy) debe ser una garantía, no una sugerencia dependiente del humano.",
+      "confirmacion": "Ocho años en hostelería tienen código dentro; solo hay que saber encontrarlo."
+    },
+    "proximos_objetivos": [
+      "Escribir esTurnoLegal completa con todas las combinaciones del convenio",
+      "Integrar la validación en el bucle principal de 365 días",
+      "No abrir frentes nuevos hasta cerrar la lógica de asignación"
+    ]
+  },
+  "stats": [
+    { "label": "Funciones", "value": 72 },
+    { "label": "Strings", "value": 65 },
+    { "label": "Algoritmos", "value": 62 },
+    { "label": "Arquitectura", "value": 55 }
+  ],
+  "debug_log": [
+    {
+      "tipo": "error",
+      "bug": "Intentar ejecutar código dentro de backticks o comillas (devuelve texto, no ejecución)",
+      "fix": "Las comillas son para datos. Las órdenes van fuera de ellas."
+    },
+    {
+      "tipo": "error",
+      "bug": "string.slice(num) cortaba al revés de lo necesario",
+      "fix": "slice(0, num) define el rango correcto desde el inicio."
+    },
+    {
+      "tipo": "error",
+      "bug": "Uso de '=' (asignación) en lugar de '===' (comparación) dentro de un if",
+      "fix": "Dentro de un if siempre se pregunta (===), no se ordena (=)."
+    },
+    {
+      "tipo": "arquitectura",
+      "bug": "Regla de negocio escrita fuera de la función de validación",
+      "fix": "Encapsular la lógica dentro de la función para que el exterior sea agnóstico al 'por qué'."
+    }
+  ],
+  "codigo": "function truncateString(str, num) {\n  return str.length > num ? str.slice(0, num) + '...' : str;\n}\n\nfunction confirmEnding(str, target) {\n  return str.slice(-target.length) === target;\n}"
+},
+
+{
+  "id": 18,
+  "fecha": "2026-03-19",
+  "metadata": {
+    "tags": ["JS", "Algoritmos", "Debug", "freeCodeCamp"],
+    "categoria": "Logica"
+  },
+  "contenido": {
+    "titulo": "Cinco ejercicios de freeCodeCamp en una sesión",
+    "subtitulo": "Un patrón de error que se repite — y que ya sé nombrar",
+    "introduccion": "Día de volver a los básicos para consolidar. Cinco ejercicios completados donde el punto de fricción no fue la sintaxis, sino el modelo mental de 'Contenedor vs Valor'.",
+    "metodo_star": {
+      "s": "Tras días en proyectos propios, necesitaba validar mi fluidez con tests automáticos en freeCodeCamp.",
+      "t": "Completar Card Counting, Leap Year, Golf Score, Book Organizer y Quiz Game sin consultar soluciones externas.",
+      "a": "Implementé soluciones desde cero. En 'Card Counting' optimicé condicionales con .includes(). En 'Book Organizer' usé callbacks de ordenación y en 'Quiz Game' gestioné lógica aleatoria con Math.random().",
+      "r": "Cinco ejercicios validados al 100%. Identifiqué el patrón de error recurrente: confundir el elemento con el array o la propiedad con el objeto."
+    },
+    "victorias": [
+      "Uso de .includes() para limpiar listas largas de OR (||)",
+      "Comprensión real de los retornos (-1, 1, 0) en el callback de .sort()",
+      "Acceso seguro a índices aleatorios mediante Math.floor(Math.random() * array.length)",
+      "Orden lógico de condiciones: de lo más específico (400) a lo más general (4) en Leap Year"
+    ],
+    "cita": "Ya no fallo en la sintaxis básica. Fallo en el modelo mental. Y eso es un problema mucho más interesante.",
+    "modelos_mentales": [
+      "Contenedor vs Valor: Antes de operar, identifica si tienes la caja (array) o el objeto (elemento).",
+      "Parámetros arbitrarios: 'arr', 'val', 'x' son solo etiquetas; lo que importa es el tipo de dato que representan.",
+      "La soltura llega repitiendo hasta que la acción se vuelve automática."
+    ]
+  },
+  "stats": [
+    { "label": "Condicionales", "value": 75 },
+    { "label": "Array methods", "value": 78 },
+    { "label": "Objetos", "value": 65 },
+    { "label": "Callbacks", "value": 50 }
+  ],
+  "debug_log": [
+    {
+      "ejercicio": "Card Counting",
+      "bug": "card <= 0 en lugar de count <= 0",
+      "fix": "Confundí el parámetro de entrada con el estado acumulado de la función."
+    },
+    {
+      "ejercicio": "Leap Year",
+      "bug": "%{year} en lugar de ${year}",
+      "fix": "Error de sintaxis en template literals (siempre llevan el símbolo de dólar)."
+    },
+    {
+      "ejercicio": "Golf Score",
+      "bug": "strokes >= 2 en lugar de strokes >= par + 2",
+      "fix": "La lógica estaba desacoplada; las condiciones deben ser relativas a los parámetros de entrada."
+    },
+    {
+      "ejercicio": "Book Organizer",
+      "bug": "function filteredBooks.filter()",
+      "fix": "Mezcla de declaración y ejecución. .filter() devuelve datos, no define funciones."
+    },
+    {
+      "ejercicio": "Quiz Game",
+      "bug": "computerChoice.answer donde no había objeto",
+      "fix": "Asumí estructura de objeto en una variable que solo contenía un valor simple."
+    }
+  ],
+  "codigo": "// includes() para limpiar condicionales\nif ([10, 'J', 'Q', 'K', 'A'].includes(card)) {\n  count -= 1;\n}\n\n// Acceso aleatorio seguro\nconst randomItem = arr[Math.floor(Math.random() * arr.length)];"
+},
+
+{
+  "id": 17,
+  "fecha": "2026-03-18",
+  "metadata": {
+    "tags": ["JS", "CSS", "Debug", "HTML", "Project"],
+    "categoria": "Frontend"
+  },
+  "contenido": {
+    "titulo": "Menú hamburguesa funcionando y avances sólidos",
+    "subtitulo": "La interacción no es magia: es estructura + estilo + lógica",
+    "introduccion": "Día centrado en unir JavaScript con la estructura real de Campus & Crema. Logré que el menú móvil funcione tras entender un error estructural de jerarquía en el HTML.",
+    "metodo_star": {
+      "s": "Trabajando en la versión móvil de Campus & Crema y reforzando JS básico.",
+      "t": "Hacer funcional el menú hamburguesa y afianzar lógica de funciones y objetos.",
+      "a": "Moví el botón fuera del nav (que se ocultaba por CSS), ajusté media queries y apliqué classList.toggle() mediante un event listener.",
+      "r": "Menú 100% funcional. Primera victoria real conectando el DOM con lógica de usuario."
+    },
+    "victorias": [
+      "Diagnóstico estructural: El botón no funcionaba porque estaba dentro de un contenedor oculto",
+      "Implementación exitosa de classList.toggle() para estados on/off",
+      "Refuerzo de la comunicación entre funciones y parámetros en freeCodeCamp"
+    ],
+    "cita": "Si algo no funciona, revisa la estructura antes que el código.",
+    "modelos_mentales": [
+      "El DOM es un árbol: Si cortas la rama (ocultas el nav), el fruto (el botón) también cae.",
+      "Separación de intereses: El HTML da la estructura, el CSS el estado 'active' y el JS activa el interruptor."
+    ]
+  },
+  "stats": [
+    { "label": "JavaScript", "value": 45 },
+    { "label": "Responsive Design", "value": 60 }
+  ],
+  "debug_log": [
+    {
+      "tipo": "error",
+      "bug": "El botón hamburguesa desaparecía en pantallas pequeñas",
+      "fix": "Estaba dentro del <nav>, que tenía un display: none en el media query de móvil."
+    },
+    {
+      "tipo": "error",
+      "bug": "El JS no detectaba el click",
+      "fix": "Mover el botón al nivel del header y asegurar que getElementById apuntaba al ID correcto."
+    }
+  ],
+  "codigo": "const btn = document.getElementById('hamburgerBtn');\nconst nav = document.querySelector('.nav');\n\nbtn.addEventListener('click', () => {\n  nav.classList.toggle('active');\n});"
+}
+,
+{
+  "id": 16,
+  "fecha": "2026-03-17",
+  "metadata": {
+    "tags": ["JS", "Algoritmos", "Proyecto", "EquiShift"],
+    "categoria": "Logica"
+  },
+  "contenido": {
+    "titulo": "EquiShift: el motor arranca",
+    "subtitulo": "365 días, aritmética modular y 104 fines de semana validados",
+    "introduccion": "Hoy EquiShift dejó de ser una base de datos estática para convertirse en un motor funcional. He construido la columna vertebral del algoritmo: un bucle que entiende el paso del tiempo y detecta fines de semana automáticamente.",
+    "metodo_star": {
+      "s": "EquiShift conocía a los trabajadores y los festivos, pero no tenía noción del tiempo ni del calendario.",
+      "t": "Crear un motor que recorra los 365 días de 2026 y detecte sábados y domingos para gestionar descansos equitativos.",
+      "a": "Implementé un contador de turnos de noche en el modelo de datos. Desarrollé un bucle 'for' de 1 a 365 usando aritmética modular (% 7) basada en que el 1 de enero de 2026 es jueves.",
+      "r": "Motor validado con 104 fines de semana exactos (52 sábados + 52 domingos). La base para la rotación automática está lista."
+    },
+    "victorias": [
+      "Implementación de contadores de equidad (turnosNoche: 0) en el modelo de objetos",
+      "Uso exitoso del operador módulo (%) para mapear días de la semana sin librerías externas",
+      "Validación matemática del motor: 104 unidades de fin de semana detectadas correctamente",
+      "Estructuración del repositorio GitHub con README y commits documentados"
+    ],
+    "cita": "El operador % no multiplica: divide y da el resto. Ese resto es el mapa del tiempo.",
+    "modelos_mentales": [
+      "Aritmética Modular: El tiempo es un ciclo. Con '% 7' cualquier número se convierte en una posición dentro de la semana.",
+      "Anclaje Temporal: Para que el módulo funcione, necesitas un punto de partida conocido (1 de enero = Jueves).",
+      "Lógica Booleana (|| vs &&): Un día no puede ser sábado Y domingo a la vez; usamos 'O' (||) para capturar el fin de semana."
+    ]
+  },
+  "stats": [
+    { "label": "Algoritmos", "value": 60 },
+    { "label": "Bucles / for", "value": 65 },
+    { "label": "Aritmética modular", "value": 55 },
+    { "label": "Modelado de datos", "value": 70 }
+  ],
+  "debug_log": [
+    {
+      "tipo": "sintaxis",
+      "bug": "Array de trabajadores sin cerrar (faltaba ];)",
+      "fix": "Los bloques de datos deben cerrarse explícitamente para que el script continúe."
+    },
+    {
+      "tipo": "sintaxis",
+      "bug": "Coma faltante entre propiedades de objetos",
+      "fix": "Cada par propiedad:valor requiere una coma separadora, excepto el último."
+    },
+    {
+      "tipo": "logica",
+      "bug": "Condición imposible: i === 3 && i === 4",
+      "fix": "Cambio por operador OR (||) y comparación con el resto del módulo: i % 7 === 3 || i % 7 === 4."
+    }
+  ],
+  "codigo": "let findeSemana = 0;\nfor (let i = 1; i <= 365; i++) {\n  // 1 de Enero 2026 es Jueves\n  // El resto 3 es Sábado, el resto 4 es Domingo\n  if (i % 7 === 3 || i % 7 === 4) {\n    findeSemana += 1;\n  }\n}\nconsole.log(findeSemana); // Output: 104",
+  "repositorio": "https://github.com/anudoranador87/EquiShift-M-laga-2026-Algoritmo-de-cuadrantes-equitativos-con-JS"
+},
+
+{
+  "id": 15,
+  "fecha": "2026-03-14",
+  "metadata": {
+    "tags": ["JS", "POO", "Proyecto", "Clases"],
+    "categoria": "Logica Avanzada"
+  },
+  "contenido": {
+    "titulo": "MiniShop: De objeto suelto a sistema",
+    "subtitulo": "La lógica ya la tengo, la sintaxis la voy puliendo",
+    "introduccion": "Construcción de un sistema de compra desde cero usando clases. El objetivo: pasar de ejercicios de libro a un flujo real donde un carrito acumula productos.",
+    "metodo_star": {
+      "s": "Dominaba los conceptos teóricos de 'this' y constructor en papel, pero necesitaba verlos funcionar en un sistema interconectado.",
+      "t": "Crear una clase Product (molde) y una clase Cart (sistema) que se comuniquen entre sí.",
+      "a": "Diseñé la clase Product con un método describe(). Luego construí Cart con un array interno (this.items) y un método addProduct(). Validé que cada instancia mantuviera sus propios datos.",
+      "r": "Sistema base funcional. Los productos se añaden correctamente al carrito. Pendiente: implementar el cálculo total con .reduce()."
+    },
+    "victorias": [
+      "Comprensión real de 'this': referencia al objeto específico que se está creando",
+      "Encapsulación: el array de productos vive dentro de la instancia del carrito",
+      "Comunicación entre clases: pasar un objeto Product a un método de Cart"
+    ],
+    "cita": "Product sabe lo que es. Cart sabe lo que tiene. Nadie hace el trabajo del otro.",
+    "modelos_mentales": [
+      "Instanciación (new): Crear un objeto real a partir de un plano (clase).",
+      "Responsabilidad Única: Cada clase se encarga de una sola parte del sistema."
+    ]
+  },
+  "stats": [
+    { "label": "POO / Clases", "value": 55 },
+    { "label": "this / constructor", "value": 65 },
+    { "label": "Array methods", "value": 70 },
+    { "label": "reduce()", "value": 20 }
+  ],
+  "debug_log": [
+    {
+      "tipo": "logica",
+      "bug": "this.name devolvía undefined en describe()",
+      "fix": "Asegurar que this.property = parameter coincidan correctamente en el constructor."
+    },
+    {
+      "tipo": "arquitectura",
+      "bug": "Los productos se mezclaban entre carritos distintos",
+      "fix": "Declarar this.items = [] dentro del constructor para que sea una propiedad de la instancia, no una variable global."
+    }
+  ],
+  "codigo": "class Product {\n  constructor(name, price) { \n    this.name = name; \n    this.price = price; \n  }\n}\n\nclass Cart {\n  constructor() { this.items = []; }\n  addProduct(product) { this.items.push(product); }\n}"
+}
+,
+{
+  "id": 14,
+  "fecha": "2026-03-13",
+  "metadata": {
+    "tags": ["JS", "Algoritmos", "Debug", "Meta"],
+    "categoria": "Logica"
+  },
+  "contenido": {
+    "titulo": "5 intentos para entender la 'i'",
+    "subtitulo": "El calentamiento no era opcional, era el lab",
+    "introduccion": "Finalización del lab de Little Lemon (Curso Meta). Un ejercicio de realismo: loops, condicionales y defensive coding aplicados a una calculadora de recibos.",
+    "metodo_star": {
+      "s": "Necesitaba superar el lab final del módulo de Meta que requería integrar múltiples conceptos de JS.",
+      "t": "Construir getPrices() y getDiscount() con validación de tipos y lógica de negocio.",
+      "a": "Realicé tres ejercicios de pre-calentamiento en el Cuaderno de Pitágoras para dominar el acceso dinámico (array[i]). Luego apliqué typeof para evitar errores de ejecución.",
+      "r": "Lab completado al primer intento oficial tras el calentamiento. Lógica de impuestos y descuentos validada."
+    },
+    "victorias": [
+      "Dominio del acceso dinámico: array[i].propiedad es ahora intuitivo",
+      "Defensive Coding: uso de typeof para proteger la función de inputs erróneos",
+      "Modularidad: una función (getDiscount) llamando a otra (getPrices) para reutilizar lógica"
+    ],
+    "cita": "La 'i' no es un contador. Es la llave que abre cada objeto del array.",
+    "modelos_mentales": [
+      "El índice como contexto: la 'i' sitúa al código en una posición específica de la memoria.",
+      "Entrenamiento de baja presión: cometer errores en ejercicios simples antes de los retos evaluados."
+    ]
+  },
+  "stats": [
+    { "label": "Loops", "value": 80 },
+    { "label": "Funciones", "value": 75 },
+    { "label": "Arrays/Objetos", "value": 75 },
+    { "label": "Defensive Coding", "value": 60 }
+  ],
+  "debug_log": [
+    {
+      "tipo": "logica",
+      "bug": "Intentar pasar 'i' como parámetro a una función",
+      "fix": "La 'i' nace y muere dentro del bucle for. La función debe contener el bucle, no al revés."
+    },
+    {
+      "tipo": "sintaxis",
+      "bug": "Loop infinito o fuera de rango (i <= length)",
+      "fix": "Usar siempre i < array.length para evitar el índice undefined al final."
+    }
+  ],
+  "codigo": "function getPrices(taxBoolean) {\n  for (let i = 0; i < dishData.length; i++) {\n    let finalPrice = taxBoolean ? dishData[i].price * 1.2 : dishData[i].price;\n    console.log(`Dish: ${dishData[i].name} Price: $${finalPrice}`);\n  }\n}"
+},
+
+{
+  "id": 13,
+  "fecha": "2026-03-11",
+  "metadata": {
+    "tags": ["Arquitectura", "i18n", "Deploy", "GitHub Pages"],
+    "categoria": "Estrategia"
+  },
+  "contenido": {
+    "titulo": "Decisión de arquitectura: la versión más simple es la correcta",
+    "subtitulo": "YAGNI — You Aren't Gonna Need It",
+    "introduccion": "Con un diario que supera las 1300 líneas de HTML, la necesidad de una versión bilingüe planteó un dilema técnico: ¿complejidad dinámica o simplicidad estática?",
+    "metodo_star": {
+      "s": "El diario necesitaba ser accesible en inglés para una audiencia global.",
+      "t": "Implementar i18n manteniendo la facilidad de despliegue en GitHub Pages.",
+      "a": "Evalué i18n dinámico (JSON/Fetch) vs. HTML estático. Elegí HTML estático separado (diario-365en.html) compartiendo el CSS.",
+      "r": "Versión bilingüe publicada con cero dependencias y mantenimiento manejable para el tamaño actual."
+    },
+    "victorias": [
+      "Aplicación del principio YAGNI para evitar sobre-ingeniería",
+      "Documentación explícita de Technical Debt (deuda técnica)",
+      "Publicación exitosa de la versión bilingüe en GitHub Pages"
+    ],
+    "cita": "Prefiere la solución más simple que satisfaga los requisitos actuales.",
+    "modelos_mentales": [
+      "YAGNI: No implementes complejidad para problemas que aún no existen.",
+      "Technical Debt: La deuda técnica no es mala si está identificada y tiene fecha de revisión."
+    ]
+  },
+  "stats": [
+    { "label": "Arquitectura", "value": 60 },
+    { "label": "HTML semántico", "value": 90 },
+    { "label": "CSS modular", "value": 70 },
+    { "label": "GitHub Pages", "value": 80 }
+  ],
+  "debug_log": [
+    {
+      "tipo": "arquitectura",
+      "bug": "Contenido duplicado entre idiomas",
+      "fix": "Aceptado como deuda técnica controlada hasta el Día 100 o las 5.000 líneas."
+    }
+  ]
+},
+
+{
+  "id": 12,
+  "fecha": "2026-03-11",
+  "metadata": {
+    "tags": ["JS", "DOM", "Project", "We Playing Cards"],
+    "categoria": "Logica"
+  },
+  "contenido": {
+    "titulo": "Del switch al sistema de batalla",
+    "subtitulo": "Hoy el DOM dejó de ser teoría",
+    "introduccion": "El primer día del módulo de JavaScript en el navegador de Meta. Conecté la lógica de 'We Playing Cards' con la interfaz visual.",
+    "metodo_star": {
+      "s": "Necesitaba que el juego de cartas funcionara al interactuar con el navegador, no solo en la consola.",
+      "t": "Crear un sistema donde al hacer clic en una carta, se dispare una batalla contra la máquina.",
+      "a": "Usé querySelector y addEventListener. Conecté el HTML con JS mediante data-attributes y usé find() para localizar la carta en el mazo.",
+      "r": "Sistema de batalla funcional: Clic → Lógica de comparación → Resultado."
+    },
+    "victorias": [
+      "Uso de dataset.nombre para extraer datos directamente desde el HTML",
+      "Implementación de Math.random() para la inteligencia artificial básica",
+      "Dominio del flujo: Evento -> Captura de datos -> Lógica -> Respuesta"
+    ],
+    "cita": "El DOM es el puente entre la lógica y lo que el usuario ve.",
+    "modelos_mentales": [
+      "HTML como fuente de datos: Los data-attributes guardan información para que JS la procese.",
+      "Máquina de estados: El switch/case permite gestionar diferentes estados de la aplicación de forma ordenada."
+    ]
+  },
+  "stats": [
+    { "label": "DOM basics", "value": 45 },
+    { "label": "addEventListener", "value": 55 },
+    { "label": "find()", "value": 70 },
+    { "label": "switch", "value": 55 }
+  ],
+  "debug_log": [
+    {
+      "tipo": "sintaxis",
+      "bug": "case default: escrito incorrectamente",
+      "fix": "El default no lleva la palabra 'case' delante."
+    },
+    {
+      "tipo": "logica",
+      "bug": "La batalla se ejecutaba al cargar, no al hacer clic",
+      "fix": "Encapsular la lógica de batalla dentro de la función del eventListener."
+    }
+  ],
+  "codigo": "cartas.forEach(carta => {\n  carta.addEventListener('click', function() {\n    const elegido = this.dataset.nombre;\n    const jug = mazo.find(b => b.nombre === elegido);\n    const maq = mazo[Math.floor(Math.random() * mazo.length)];\n    // ... lógica de batalla\n  });\n});"
+},
+
+{
+  "id": 11,
+  "fecha": "2026-03-09",
+  "metadata": {
+    "tags": ["JS", "Project", "Algoritmos", "EquiShift"],
+    "categoria": "Logica"
+  },
+  "contenido": {
+    "titulo": "Prueba de nivel sin Google",
+    "subtitulo": "La lógica ya estaba ahí. Lo único que necesitaba era escribirla.",
+    "introduccion": "Un reto personal para validar el aprendizaje: resolver 5 problemas reales de mis proyectos sin usar documentación externa ni Google. Resultados: Lógica 100% - Sintaxis 50%.",
+    "metodo_star": {
+      "s": "Tras un mes de estudio, dudaba si realmente sabía resolver problemas o solo repetir patrones vistos en tutoriales.",
+      "t": "Resolver 5 ejercicios complejos usando filter, map y forEach sobre los datos de EquiShift y We Playing Cards.",
+      "a": "Apliqué encadenamiento de métodos (filter + forEach) y el Spread Operator (...) para actualizar el convenio laboral de los trabajadores en el array sin mutar los datos originales.",
+      "r": "Confirmación de que la lógica de programación está asentada. Los errores fueron de cierre de llaves y paréntesis, no de resolución del problema."
+    },
+    "victorias": [
+      "Resolución de problemas de negocio reales (Convenio laboral) mediante código",
+      "Uso del Spread Operator para mantener la inmutabilidad de los datos",
+      "Encadenamiento exitoso de métodos de array (Method Chaining)",
+      "Diseño del roadmap de 4 fases para el sistema de combate de cartas"
+    ],
+    "cita": "El proyecto crece al mismo ritmo que mi aprendizaje. No al revés.",
+    "modelos_mentales": [
+      "Inmutabilidad: Usar map + spread para crear nuevos arrays en lugar de modificar los existentes.",
+      "Transformación Condicional: El patrón 'map + if/else' permite actuar solo sobre los elementos que nos interesan.",
+      "Separación de conceptos: Lógica (el 'qué') vs Sintaxis (el 'cómo')."
+    ]
+  },
+  "stats": [
+    { "label": "filter()", "value": 80 },
+    { "label": "map()", "value": 70 },
+    { "label": "forEach()", "value": 70 },
+    { "label": "Sintaxis", "value": 50 }
+  ],
+  "debug_log": [
+    {
+      "tipo": "sintaxis",
+      "bug": "Bloques de funciones mal cerrados (}) antes del paréntesis del método",
+      "fix": "Automatizar visualmente el cierre de llaves: cada { necesita su } antes de seguir."
+    },
+    {
+      "tipo": "logica",
+      "bug": "Intentar devolver múltiples valores con comas en un return",
+      "fix": "Para devolver múltiples datos en JS, deben envolverse en un objeto literal { prop1, prop2 }."
+    }
+  ],
+  "codigo": "const menosFestivo = trabajadores.map(t => {\n  if(t.festivosDisponibles === 13){\n    return { ...t, festivosDisponibles: t.festivosDisponibles - 1 };\n  }\n  return t;\n});"
+},
+
+{
+  "id": 10,
+  "fecha": "2026-03-08",
+  "metadata": {
+    "tags": ["JS", "Estructura", "Campus & Crema", "EquiShift"],
+    "categoria": "Integracion"
+  },
+  "contenido": {
+    "titulo": "De la teoría a la estructura real",
+    "subtitulo": "JS como motor de mis proyectos actuales",
+    "introduccion": "Día dedicado a mapear cómo la lógica de JavaScript que estoy aprendiendo encaja en las necesidades de Campus & Crema y el gestor de turnos EquiShift.",
+    "metodo_star": {
+      "s": "Tenía piezas de código sueltas (variables, funciones básicas) pero sin una arquitectura clara para mis proyectos.",
+      "t": "Diseñar la estructura de datos inicial para los trabajadores de EquiShift y la lógica de precios para Campus & Crema.",
+      "a": "Creé los primeros arrays de objetos para representar la plantilla de trabajadores y definí las funciones de cálculo de costes usando las Arrow Functions aprendidas el día anterior.",
+      "r": "Estructura de datos sólida. Ahora el código no es un ejercicio, es el esqueleto de una herramienta real."
+    },
+    "victorias": [
+      "Primer array de objetos 'trabajadores' con propiedades reales (contrato, horas, festivos)",
+      "Conexión mental entre los tipos de datos y la gestión de inventario",
+      "Definición de las primeras funciones de utilidad para el cálculo de márgenes"
+    ],
+    "cita": "El código empieza a tener sentido cuando resuelve mis propios problemas de gestión.",
+    "modelos_mentales": [
+      "Data-Driven Design: Primero define cómo son tus datos, luego cómo los vas a manipular.",
+      "Escalabilidad: Diseñar arrays pensando en que la plantilla puede crecer."
+    ]
+  },
+  "stats": [
+    { "label": "Estructura de datos", "value": 65 },
+    { "label": "Lógica de negocio", "value": 60 },
+    { "label": "JS aplicado", "value": 55 }
+  ],
+  "debug_log": [
+    {
+      "tipo": "arquitectura",
+      "bug": "Duda sobre si usar variables sueltas o un gran objeto para la configuración",
+      "fix": "Decisión de usar un array de objetos para los trabajadores para facilitar el uso de métodos como .map() o .filter() en el futuro."
+    }
+  ]
+},
+
+{
+  "id": 9,
+  "fecha": "2026-03-08",
+  "metadata": {
+    "tags": ["JS", "Arrow Functions", "Debug", "Refactor"],
+    "categoria": "Sintaxis"
+  },
+  "contenido": {
+    "titulo": "Arrow Functions: cinco intentos fallidos",
+    "subtitulo": "Un 'clic' que cambia cómo pienso el código",
+    "introduccion": "Refactorización de funciones clásicas a Arrow Functions. Un proceso incómodo y lento que resultó en una comprensión profunda de la sintaxis moderna de ES6.",
+    "metodo_star": {
+      "s": "Solo conocía las Function Declarations. El código se veía antiguo y menos eficiente de escribir.",
+      "t": "Refactorizar la función 'formatearPrecio' del Día 7 usando la sintaxis de flecha y parámetros por defecto.",
+      "a": "Tras 5 intentos fallidos (errores de llaves, puntos y retornos), logré descomponer la función en sus 3 zonas: Parámetros, Flecha y Cuerpo.",
+      "r": "Función final funcional que maneja monedas por defecto (€) y formatea strings correctamente."
+    },
+    "victorias": [
+      "Comprensión de los parámetros por defecto (default parameters)",
+      "Identificación visual rápida de la estructura de una Arrow Function",
+      "Uso correcto de Template Literals dentro de funciones de flecha"
+    ],
+    "cita": "Un parámetro no es un valor. Es un asiento reservado para cualquier valor que llegue.",
+    "modelos_mentales": [
+      "Zona de Entrada/Salida: Visualizar la flecha (=>) como el transformador que convierte parámetros en resultados.",
+      "Pausa Estratégica: Identificar cuándo la saturación (el error del 'bb') requiere un descanso para ganar claridad."
+    ]
+  },
+  "stats": [
+    { "label": "Arrow Functions", "value": 40 },
+    { "label": "Default Parameters", "value": 30 },
+    { "label": "Template Literals", "value": 70 }
+  ],
+  "debug_log": [
+    {
+      "tipo": "sintaxis",
+      "bug": "Confundir nombre de función con parámetro (const func = func =>)",
+      "fix": "El parámetro es una variable local nueva, no debe llamarse igual que la constante de la función."
+    },
+    {
+      "tipo": "sintaxis",
+      "bug": "Olvidar cerrar el Backtick en el template literal",
+      "fix": "Regla de oro: Todo lo que abre (`, {, [) debe cerrarse inmediatamente."
+    }
+  ],
+  "codigo": "const formatearPrecio = (moneda = '€', cantidad) => `${moneda}${cantidad}`;"
+},
+
+[
+  {
+    "id": 8,
+    "fecha": "2026-03-01",
+    "metadata": { "tags": ["Reflexión", "Milestone"], "categoria": "Mentalidad" },
+    "contenido": {
+      "titulo": "Saturación positiva: el cerebro también necesita compilar",
+      "metodo_star": {
+        "s": "Después de 60 días de inmersión total entre HTML, CSS y JS, el volumen de información era masivo.",
+        "t": "Validar el conocimiento adquirido y decidir el siguiente paso estratégico.",
+        "a": "Analicé mi progreso (dominio de sintaxis de objetos y lógica de EquiShift) y decidí hacer una pausa táctica.",
+        "r": "Consolidación de conocimientos. Me retiro en una victoria, no en un bloqueo."
+      },
+      "cita": "Aprender también es saber cuándo parar."
+    }
+  },
+  {
+    "id": 7,
+    "fecha": "2026-02-28",
+    "metadata": { "tags": ["JS", "Algoritmos", "EquiShift"], "categoria": "Proyecto" },
+    "contenido": {
+      "titulo": "EquiShift: Codificando justicia laboral",
+      "metodo_star": {
+        "s": "Inequidad en turnos laborales debido a la complejidad de mezclar contratos de 37.5h y 40h.",
+        "t": "Diseñar un algoritmo de rotación equitativa.",
+        "a": "Creé un modelo de datos basado en objetos (id, nombre, contrato) y utilicé aritmética modular (%) para garantizar rotaciones infinitas.",
+        "r": "Estructura de datos 'percha' lista para recibir el motor de turnos."
+      },
+      "codigo": "function calcularTurno(dia, idx) { return turnos[(dia + idx) % turnos.length]; }"
+    }
+  },
+  {
+    "id": 6,
+    "fecha": "2026-02-27",
+    "metadata": { "tags": ["JS", "CSS", "POO"], "categoria": "Arquitectura" },
+    "contenido": {
+      "titulo": "Modo Oscuro Nativo con CSS Variables",
+      "metodo_star": {
+        "s": "Estilos duplicados y colores hardcoded dificultaban el mantenimiento visual.",
+        "t": "Implementar un sistema de temas (Dark/Light) escalable.",
+        "a": "Centralicé los colores en Custom Properties (:root) y usé JS para togglear una clase en el body.",
+        "r": "Cambio de tema instantáneo con un solo punto de mantenimiento."
+      }
+    }
+  }
+],
+
+[
+  {
+    "id": 5,
+    "fecha": "2026-02-26",
+    "metadata": { "tags": ["JS", "Funciones", "Proyecto"], "categoria": "Logica" },
+    "contenido": {
+      "titulo": "Examen aprobado, pero no era suficiente",
+      "subtitulo": "Construir es la única forma de comprender",
+      "metodo_star": {
+        "s": "Aprobé el examen teórico de Coursera, pero sentía que la sintaxis de las funciones seguía siendo una pesadilla.",
+        "t": "Crear un generador de tickets de supermercado para entender cómo viajan los datos entre funciones.",
+        "a": "Diseñé una arquitectura modular: formatearPrecio (procesador), imprimirTicket (interfaz) y realizarCompra (controlador).",
+        "r": "Comprensión total de los parámetros como 'asientos reservados' y del flujo del return."
+      },
+      "codigo": "function realizarCompra(art, val) { let r = formatearPrecio(val); imprimirTicket(art, r); }",
+      "modelos_mentales": [
+        "Invocación vs Operación: Las funciones se activan con (), no se suman con +.",
+        "Nombres Temporales: Los parámetros son para humanos, el ordenador solo ve el flujo de datos."
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "fecha": "2026-02-25",
+    "metadata": { "tags": ["JS", "DOM", "Debug"], "categoria": "Proyecto" },
+    "contenido": {
+      "titulo": "Motor de Estado Circular y los 4 Jinetes",
+      "metodo_star": {
+        "s": "Necesitaba un sistema que incrementara niveles y disparara un efecto visual al llegar al máximo.",
+        "t": "Implementar lógica circular (1 al 10 y reset) y dominar el manejo de errores.",
+        "a": "Construí un bucle lógico y apliqué bloques try...catch para gestionar fallos. Identifiqué errores de Reference, Type, Range y Syntax.",
+        "r": "Sistema visual 'Modo Legendario' funcionando y mayor resiliencia ante errores de consola."
+      },
+      "debug_log": [
+        {
+          "bug": "Punto dentro de classList (classList.)",
+          "fix": "classList es una propiedad/objeto, no una función que reciba un selector CSS con punto."
+        },
+        {
+          "bug": "Conflicto del Else (el efecto visual desaparecía rápido)",
+          "fix": "Priorizar la activación visual antes del reseteo de la variable de estado."
+        }
+      ]
+    }
+  }
+]
+,
+  {
+    "id": 3,
+    "fecha": "2026-02-24",
+    "metadata": { "tags": ["JS", "Algoritmos", "Arrays"], "categoria": "Logica" },
+    "contenido": {
+      "titulo": "Sesión de entrenamiento: Algoritmos y Estructuras",
+      "metodo_star": {
+        "s": "Me enfrentaba a la gestión de perfiles de usuario complejos con múltiples permisos.",
+        "t": "Aprender a manipular listas dentro de objetos sin destruir los datos existentes.",
+        "a": "Consolidé el uso de .push() para añadir elementos a arrays anidados y diferencié el rol de (), {} y [].",
+        "r": "Base sentada para el modelo de datos de EquiShift. Comprendí que los arrays son listas que crecen, no cajas que se sustituyen."
+      },
+      "codigo": "usuario.permisos.push('publicar'); // Añade sin borrar el array original",
+      "leccion": "Diferencia entre Asignación (=) y Mutación (.push())."
+    }
+  },
+  {
+    "id": 2,
+    "fecha": "2026-02-23",
+    "metadata": { "tags": ["JS", "CSS", "Responsive", "Debug"], "categoria": "Arquitectura" },
+    "contenido": {
+      "titulo": "De una web que funciona a una web profesional",
+      "metodo_star": {
+        "s": "La web se rompía en móvil y la lógica de reservas era un caos de paréntesis.",
+        "t": "Refactorizar el CSS para hacerlo responsive y limpiar la lógica de control de reservas.",
+        "a": "Borré el código ineficiente, apliqué Flexbox para móvil y corregí errores de sintaxis críticos (=== vs = y puntos y coma mal puestos).",
+        "r": "Interfaz pulida con micro-interacciones (:user-invalid) y una lógica de control de flujo mucho más robusta."
+      },
+      "debug_log": [
+        {
+          "bug": "Punto y coma tras 'for' (for(...); { ... })",
+          "fix": "El punto y coma termina la sentencia inmediatamente, dejando el bloque de código {} huérfano y sin ejecución repetida."
+        },
+        {
+          "bug": "Estilos globales vs Media Queries",
+          "fix": "Organizar el CSS por especificidad y orden de cascada (Mobile First)."
+        }
+      ]
+    }
+  }
+,
+  {
+    "id": 1,
+    "fecha": "2026-02-22",
+    "metadata": { "tags": ["CSS", "Grid", "Odin Project"], "categoria": "Diseño" },
+    "contenido": {
+      "titulo": "Grid, tipografía de élite y sombras con intención",
+      "subtitulo": "Terminando el formulario de Odin Project",
+      "metodo_star": {
+        "s": "Los formularios suelen verse desalineados y las sombras genéricas ensucian el diseño.",
+        "t": "Aplicar CSS Grid y jerarquía tipográfica para un acabado profesional.",
+        "a": "Implementé grid-template-columns (1fr 1fr) para alinear inputs y combiné las fuentes Norse e Inter.",
+        "r": "Un formulario que no solo funciona, sino que 'flota' y reacciona al usuario con micro-interacciones (translateY)."
+      },
+      "codigo": ".form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }",
+      "leccion": "Un letter-spacing de 0.5px lo cambia todo."
+    }
+  },
+  {
+    "id": 1,
+    "fecha": "2026-02-20",
+    "metadata": { "tags": ["HTML", "CSS", "Inicio"], "categoria": "Hito" },
+    "contenido": {
+      "titulo": "El día que empezó todo",
+      "subtitulo": "La primera línea de código consciente",
+      "metodo_star": {
+        "s": "Punto de partida: cero conocimientos técnicos previos.",
+        "t": "Escribir las primeras líneas de HTML y entender la estructura semántica.",
+        "a": "Creé un archivo index.html desde cero, sin plantillas, entendiendo cada etiqueta.",
+        "r": "Inicio oficial del viaje de 365 días. Dejé de ser espectador para ser creador."
+      },
+      "cita": "No sabía nada. Pero sabía que no quería seguir sin saber."
+    }
+  }
+]
