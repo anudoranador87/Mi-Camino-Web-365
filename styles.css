@@ -895,17 +895,6 @@ button,
   position: relative;
 }
 
-.reflexion .pullquote::before {
-  content: """;
-  font-family: var(--display);
-  font-size: 4rem;
-  position: absolute;
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: var(--paper-d);
-  z-index: -1;
-}
 
 @media (max-width: 768px) {
   .reflexion {

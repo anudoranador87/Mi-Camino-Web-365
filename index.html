@@ -128,18 +128,179 @@
     Día 1 = 20 de febrero de 2026 · Los 365 días se cuentan desde ahí · No todos los días tienen entrada
   </p>
 </section>
+
+<!-- ============================
+     ENTRADA 34 DÍA 01  ABRIL 
+=============================== -->
+<article class="entry" data-tags="js poo debug" aria-labelledby="title-d34">
+  <header class="entry-kicker">
+    <span class="day-badge">Día 34</span>
+    <time datetime="2026-04-01" data-i18n="d34-date">01 de Abril, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">JS</li>
+      <li class="etag">POO</li>
+      <li class="etag">Debug</li>
+      <li class="etag">Proyecto</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d34" data-i18n="d34-headline">
+    FormValidator completado.<br>Validación OOP desde cero.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d34-deck">
+    Hoy completé la clase ValidarFormulario para Campus & Crema. 
+    showError, showSuccess, control de esCorrecto y DOM dinámico — 
+    todo escrito a mano, todo entendido antes de avanzar.
+  </p>
+
+  <div class="cols">
+
+    <div>
+
+      <h3 class="col-label" data-i18n="d34-lbl-star">Resumen STAR</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> El formulario de reservas de Campus & Crema tenía validación básica con Formspree pero sin feedback visual para el usuario.<br><br>
+        <strong>T —</strong> Implementar una clase ValidarFormulario con métodos showError, showSuccess y control del estado esCorrecto.<br><br>
+        <strong>A —</strong> Construí los métodos paso a paso: primero el condicional para evitar spans duplicados, luego la creación dinámica del span con document.createElement, inserción con input.after(), y control de esCorrecto en el submit con forEach + condicional.<br><br>
+        <strong>R —</strong> Formulario validado funcionando. Feedback visual en tiempo real. La clase es reutilizable para cualquier formulario del proyecto.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d34-lbl-wins">Victorias del día</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">showError completo — creación dinámica de spans en el DOM</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">showSuccess completo — limpieza de errores y cambio de estado visual</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">esCorrecto actualizado correctamente en submit</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Aprendido: input.after() e insertAdjacentElement para inserción precisa en el DOM</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "La variable siempre sin comillas. El orden dentro del método importa tanto como la lógica."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d34-lbl-levels">Niveles al cierre del día</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">JS — POO</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="52" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="52"></div>
+        </div>
+        <span class="skill-pct">52%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">DOM dinámico</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="55"></div>
+        </div>
+        <span class="skill-pct">55%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Validación de formularios</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="70"></div>
+        </div>
+        <span class="skill-pct">70%</span>
+      </div>
+
+    </div>
+
+    <div class="col-rule">
+
+      <!-- GIF AQUÍ -->
+   <img src="mesaexterior.gif" alt="FormValidator en acción" style="width:100%; border-radius:8px; margin-bottom:20px;"> 
+
+      <h3 class="col-label" data-i18n="d34-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> document.createElement sin el prefijo document — JS no encontraba la función</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: siempre document.createElement(), no createElement() suelto</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> El span de error se creaba antes de comprobar si ya existía uno — spans duplicados en cada blur</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: el condicional de limpieza siempre al principio del método, antes de crear nada</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> Llave extra }} cerraba la clase antes de tiempo — showSuccess quedaba fuera</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: contar llaves de apertura y cierre. Una clase, un cierre.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> esCorrecto nunca se actualizaba a true — el formulario nunca se enviaba</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: resetear a true antes del forEach, y ponerlo a false dentro si validarCampos devuelve false</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Resultado: ValidarFormulario funciona. Feedback visual en tiempo real. Lista para Campus & Crema.</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d34-lbl-code">Código del día</h3>
+
+      <pre class="code-block"><code>
+showError(input, message) {
+  // Primero limpia — luego crea
+  if (input.nextElementSibling &&
+      input.nextElementSibling.classList.contains("error-message")) {
+    input.nextElementSibling.remove();
+  }
+  const error1 = document.createElement("span");
+  error1.classList.add("error-message");
+  error1.textContent = message;
+  input.classList.add("input-error");
+  input.after(error1);
+}
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "nextElementSibling: la mesa de al lado en el café."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
+
 <!-- ============================
      ENTRADA 33 DÍA 31  MARZO 
 =============================== -->
 
 <article class="entry" data-tags="js · poo · debug · html · project" aria-labelledby="title-d32">
   <header class="entry-kicker">
-<<<<<<< HEAD
+
     <span class="day-badge">Día 33</span>
-=======
-    <span class="day-badge">Día 32</span>
->>>>>>> a3dc893a3ac4860298d43cea84b3161ab39d824d
-    <time datetime="2026-03-31" data-i18n="d32-date">31 de Marzo, 2026</time>
+
+   <time datetime="2026-03-31" data-i18n="d32-date">31 de Marzo, 2026</time>
     <ul class="entry-tags" aria-label="Categorías">
       <li class="etag">JS</li>
       <li class="etag">POO</li>
