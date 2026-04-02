@@ -86,6 +86,118 @@ code {
   border-left: 2px solid var(--paper-d);
   padding-left: 24px;
 }
+
+/* =========================================
+   BANNER PRINCIPAL
+========================================= */
+/* styles.css */
+
+/* Keyframes para la animación de pulso del indicador de estado */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Estilos generales del banner */
+#available-banner {
+  background-color: #f0f0f0; /* Fondo claro y discreto */
+  color: #333; /* Texto oscuro */
+  padding: 10px 20px;
+  text-align: center;
+  font-family: 'DM Sans', sans-serif; /* Tipografía moderna y legible */
+  font-size: 0.95em;
+  display: flex; /* Para alinear elementos */
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Espacio entre elementos */
+  border-bottom: 1px solid #e0e0e0; /* Separador sutil */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Sombra suave */
+  position: relative; /* Para posicionar el botón de cierre */
+}
+
+/* Contenido del banner */
+#available-banner .banner-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Indicador de estado (punto verde) */
+.status-indicator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #28a745; /* Verde para 'disponible' */
+  border-radius: 50%;
+  animation: pulse 1.5s infinite ease-in-out; /* Animación de pulso */
+}
+
+/* Texto del banner */
+#available-banner p {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+/* Enlace de contacto */
+#available-banner .contact-link {
+  color: #007bff; /* Color de enlace estándar */
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+#available-banner .contact-link:hover {
+  text-decoration: underline;
+}
+
+/* Botón de cierre */
+.close-banner {
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  color: #666;
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 5px;
+  line-height: 1;
+}
+
+.close-banner:hover {
+  color: #333;
+}
+
+/* Media queries para responsividad (opcional, pero buena práctica) */
+@media (max-width: 768px) {
+  #available-banner {
+    font-size: 0.85em;
+    padding: 8px 15px;
+  }
+  .close-banner {
+    right: 10px;
+    font-size: 1em;
+  }
+  #available-banner .banner-content {
+    flex-direction: column; /* Apilar elementos en pantallas pequeñas */
+    gap: 5px;
+  }
+  #available-banner p, #available-banner .contact-link {
+    text-align: center;
+  }
+}
 /* =========================================
    BARRAS DE BÚSQUEDA — ESTILO PERIÓDICO
 ========================================= */

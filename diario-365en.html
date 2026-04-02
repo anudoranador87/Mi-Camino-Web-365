@@ -130,6 +130,369 @@
     Day 1 = February 20, 2026 · The 365 days are counted from there · Not every day has an entry
   </p>
 </section>
+
+<!-- ============================
+     ENTRY 35 — 02 APRIL
+=============================== -->
+
+
+<article class="entry" data-tags="js css debug" aria-labelledby="title-d35">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 35</span>
+    <time datetime="2026-04-02" data-i18n="d35-date">April 2, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">JS</li>
+      <li class="etag">CSS</li>
+      <li class="etag">Debug</li>
+      <li class="etag">DOM</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d35" data-i18n="d35-headline">
+    First functional Todo List.<br>Cooked, served, and cleared.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d35-deck">
+    Today I built my first todo list from scratch in vanilla JS — adding tasks, deleting them, and basic CSS styling.
+    I learned the difference between properties and methods through my own mistakes, and discovered that CodePen 2.0 lies.
+    The <code>tareas[]</code> array is still empty — tomorrow we fill it.
+  </p>
+
+  <div class="cols">
+
+    <!-- LEFT COLUMN -->
+    <div>
+
+      <h3 class="col-label" data-i18n="d35-lbl-star">STAR Summary</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Fourth printed exercise in the vanilla JS series: basic todo list with add, delete, and filters. No framework, no external help.<br><br>
+        <strong>T —</strong> Build a functional list: capture the input, dynamically create DOM elements, delete them on button click, and add basic CSS styles.<br><br>
+        <strong>A —</strong> Started with static HTML, captured elements with <code>getElementById</code>, created the <code>addEventListener</code> for the add button, used <code>createElement</code> and <code>appendChild</code> to build each <code>&lt;li&gt;</code> with its delete button inside, and <code>remove()</code> to eliminate it. Then CSS flexbox to center the layout.<br><br>
+        <strong>R —</strong> Functional todo list deployed on JSFiddle. Add tasks ✓, delete tasks ✓, centered layout ✓. Active/completed filters left for tomorrow.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d35-lbl-wins">Wins of the day</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">First 100% own todo list — reasoned logic without copying solutions</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text"><code>createElement</code> + <code>appendChild</code> + <code>remove()</code> mastered</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Clear difference between property (<code>=</code>) and method (<code>()</code>) — internalized through my own mistake</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Centered layout with Flexbox without looking it up — CSS muscle memory activated</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "The dish isn't served until you call appendChild. Cooked is not the same as on the table."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d35-lbl-levels">Skill levels at end of day</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">DOM Manipulation</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="55"></div>
+        </div>
+        <span class="skill-pct">55%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Event Listeners</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">CSS Flexbox</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="60"></div>
+        </div>
+        <span class="skill-pct">60%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">OOP / Arrays</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="35"></div>
+        </div>
+        <span class="skill-pct">35%</span>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d35-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> <code>event</code> used without declaring it as a function parameter</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: the event arrives as a parameter — <code>function(e)</code> or <code>function(event)</code></span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> <code>innerHTML()</code> with parentheses — confused a property with a method</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: properties are assigned with <code>=</code>, methods are called with <code>()</code></span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> <code>classList.remove("li")</code> — confused removing an element with removing a CSS class</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: <code>miLista.remove()</code> with no arguments removes the entire element from the DOM</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> <code>lista.appendChild(eliminarTarea)</code> — appended the button to the <code>&lt;ul&gt;</code> instead of the <code>&lt;li&gt;</code></span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: the button belongs to the task (<code>miLista</code>), not to the parent list</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 5 (environment):</strong> CodePen 2.0 ran the code with no visible errors but nothing worked</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: switched to JSFiddle — the problem was the environment, not the code</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Functional todo list on JSFiddle — add and delete tasks working</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d35-lbl-code">Code of the day</h3>
+
+      <pre class="code-block"><code>
+// Create task with integrated delete button
+añadir.addEventListener("click", function(e) {
+  const texto = tarea.value;
+
+  if (texto !== "") {
+    const miLista = document.createElement("li");
+    miLista.textContent = texto;
+
+    // Build the full dish before serving it
+    const eliminarTarea = document.createElement("button");
+    eliminarTarea.textContent = "Delete";
+    eliminarTarea.addEventListener("click", function() {
+      miLista.remove(); // removes the element, not a class
+    });
+
+    miLista.appendChild(eliminarTarea); // button → li
+    lista.appendChild(miLista);         // li → ul
+    tarea.value = "";
+  }
+});
+      </code></pre>
+
+      <h3 class="col-label" style="margin-top:20px">In action</h3>
+
+      <figure style="margin:0;">
+        <img
+          src="todo.gif"
+          alt="Todo list working — adding and deleting tasks"
+          style="width:100%; border-radius:6px; display:block;"
+        />
+        <figcaption style="font-size:0.75rem; margin-top:6px; opacity:0.6;">
+          Vanilla JS todo list — day 35
+        </figcaption>
+      </figure>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "CSS for styles. JS for logic. The hover button doesn't need JavaScript — it needs two lines of CSS."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
+
+<!-- ============================
+     ENTRY 34 — 01 APRIL
+=============================== -->
+<article class="entry" data-tags="js poo debug" aria-labelledby="title-d34">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 34</span>
+    <time datetime="2026-04-01" data-i18n="d34-date">April 1st, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">JS</li>
+      <li class="etag">OOP</li>
+      <li class="etag">Debug</li>
+      <li class="etag">Project</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d34" data-i18n="d34-headline">
+    FormValidator complete.<br>OOP validation built from scratch.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d34-deck">
+    Today I completed the ValidarFormulario class for Campus & Crema. 
+    showError, showSuccess, esCorrecto control and dynamic DOM — 
+    all written by hand, all understood before moving on.
+  </p>
+
+  <div class="cols">
+
+    <div>
+
+      <h3 class="col-label" data-i18n="d34-lbl-star">STAR Summary</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> The Campus & Crema booking form had basic Formspree validation but no visual feedback for the user.<br><br>
+        <strong>T —</strong> Implement a ValidarFormulario class with showError, showSuccess methods and esCorrecto state control.<br><br>
+        <strong>A —</strong> Built each method step by step: first the conditional to avoid duplicate spans, then dynamic span creation with document.createElement, insertion with input.after(), and esCorrecto control on submit with forEach + conditional.<br><br>
+        <strong>R —</strong> Working validated form. Real-time visual feedback. The class is reusable for any form in the project.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d34-lbl-wins">Wins of the day</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">showError complete — dynamic span creation in the DOM</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">showSuccess complete — error cleanup and visual state change</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">esCorrecto correctly updated on submit</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Learned: input.after() and insertAdjacentElement for precise DOM insertion</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "Variables never in quotes. The order inside a method matters as much as the logic."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d34-lbl-levels">Levels at end of day</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">JS — OOP</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="52" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="52"></div>
+        </div>
+        <span class="skill-pct">52%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Dynamic DOM</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="55"></div>
+        </div>
+        <span class="skill-pct">55%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Form validation</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="70"></div>
+        </div>
+        <span class="skill-pct">70%</span>
+      </div>
+
+    </div>
+
+    <div class="col-rule">
+
+      
+      <img src="mesaexterior.gif" alt="FormValidator in action" style="width:100%; border-radius:8px; margin-bottom:20px;"> 
+
+      <h3 class="col-label" data-i18n="d34-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> createElement without the document prefix — JS couldn't find the function</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: always document.createElement(), never bare createElement()</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> Error span was created before checking if one already existed — duplicate spans on every blur</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: cleanup conditional always first, before creating anything</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> Extra }} closed the class early — showSuccess ended up outside</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: count opening and closing braces. One class, one closing brace.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> esCorrecto never updated to true — form never submitted</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: reset to true before forEach, set to false inside if validarCampos returns false</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Result: ValidarFormulario works. Real-time visual feedback. Ready for Campus & Crema.</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d34-lbl-code">Code of the day</h3>
+
+      <pre class="code-block"><code>
+showError(input, message) {
+  // Clean first — then create
+  if (input.nextElementSibling &&
+      input.nextElementSibling.classList.contains("error-message")) {
+    input.nextElementSibling.remove();
+  }
+  const error1 = document.createElement("span");
+  error1.classList.add("error-message");
+  error1.textContent = message;
+  input.classList.add("input-error");
+  input.after(error1);
+}
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "nextElementSibling: the table next to yours in the café."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
 <!-- ============================
      ENTRY 33 — DAY MARCH 31
 =============================== -->

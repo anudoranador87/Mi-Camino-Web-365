@@ -34,7 +34,15 @@
 </nav>
 
 <header class="masthead">
- 
+ <!-- available_banner.html -->
+<div id="available-banner">
+  <div class="banner-content">
+    <span class="status-indicator"></span>
+    <p>Disponible para trabajar &middot; Front-End Developer</p>
+    <a href="mailto:josemaparicio87@gmail.com" class="contact-link">Contáctame</a>
+  </div>
+  <button class="close-banner" aria-label="Cerrar banner">&times;</button>
+</div>
   <p class="mast-top">
     <span data-i18n="mast-loc">MÁLAGA, ESPAÑA — 2026</span>
     <span>VOL. I · No. 17 / 365</span>
@@ -128,6 +136,207 @@
     Día 1 = 20 de febrero de 2026 · Los 365 días se cuentan desde ahí · No todos los días tienen entrada
   </p>
 </section>
+<!-- ============================
+     ENTRADA 35 DÍA 02  ABRIL 
+=============================== -->
+
+<article class="entry" data-tags="js css debug" aria-labelledby="title-d35">
+  <header class="entry-kicker">
+    <span class="day-badge">Día 35</span>
+    <time datetime="2026-04-02" data-i18n="d35-date">2 de Abril, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">JS</li>
+      <li class="etag">CSS</li>
+      <li class="etag">Debug</li>
+      <li class="etag">DOM</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d35" data-i18n="d35-headline">
+    Primera Todo List funcional.<br>El plato cocinado, servido y retirado.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d35-deck">
+    Hoy construí mi primera todo list desde cero en vanilla JS — añadir tareas, borrarlas, y estilo básico con CSS.
+    Aprendí la diferencia entre propiedad y método a base de errores, y descubrí que CodePen 2.0 miente.
+    El array <code>tareas[]</code> sigue vacío — mañana lo llenamos.
+  </p>
+
+  <div class="cols">
+
+    <!-- COLUMNA IZQUIERDA -->
+    <div>
+
+      <h3 class="col-label" data-i18n="d35-lbl-star">Resumen STAR</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Cuarto ejercicio impreso de la serie vanilla JS: todo list básica con añadir, borrar y filtros. Sin framework, sin ayuda externa.<br><br>
+        <strong>T —</strong> Construir una lista funcional: capturar el input, crear elementos dinámicamente en el DOM, borrarlos al pulsar un botón, y añadir estilos CSS básicos.<br><br>
+        <strong>A —</strong> Empecé con el HTML estático, capturé los elementos con <code>getElementById</code>, creé el <code>addEventListener</code> del botón añadir, usé <code>createElement</code> y <code>appendChild</code> para montar cada <code>&lt;li&gt;</code> con su botón borrar dentro, y <code>remove()</code> para eliminarlo. Luego CSS con flexbox para centrar el layout.<br><br>
+        <strong>R —</strong> Todo list funcional desplegada en JSFiddle. Añadir tareas ✓, borrar tareas ✓, layout centrado ✓. Filtros de activas/completadas quedan para mañana.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d35-lbl-wins">Victorias del día</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Primera todo list 100% propia — lógica razonada sin copiar soluciones</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text"><code>createElement</code> + <code>appendChild</code> + <code>remove()</code> dominados</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Diferencia clara entre propiedad (<code>=</code>) y método (<code>()</code>) — interiorizada por error propio</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Layout centrado con Flexbox sin consultar — memoria muscular CSS activada</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "El plato no está servido hasta que haces el appendChild. Cocinado no es lo mismo que en la mesa."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d35-lbl-levels">Niveles al cierre del día</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">DOM Manipulation</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="55"></div>
+        </div>
+        <span class="skill-pct">55%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Event Listeners</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">CSS Flexbox</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="60"></div>
+        </div>
+        <span class="skill-pct">60%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">OOP / Arrays</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="35"></div>
+        </div>
+        <span class="skill-pct">35%</span>
+      </div>
+
+    </div>
+
+    <!-- COLUMNA DERECHA -->
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d35-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> <code>event</code> usado sin declarar como parámetro de la función</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: el evento llega como parámetro — <code>function(e)</code> o <code>function(event)</code></span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> <code>innerHTML()</code> con paréntesis — confundí propiedad con método</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: las propiedades se asignan con <code>=</code>, los métodos se llaman con <code>()</code></span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> <code>classList.remove("li")</code> — confundí eliminar elemento con eliminar clase CSS</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: <code>miLista.remove()</code> sin argumentos elimina el elemento entero del DOM</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> <code>lista.appendChild(eliminarTarea)</code> — metí el botón en el <code>&lt;ul&gt;</code> en vez del <code>&lt;li&gt;</code></span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: el botón pertenece a la tarea (<code>miLista</code>), no a la lista padre</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 5 (entorno):</strong> CodePen 2.0 ejecutaba el código sin errores visibles pero nada funcionaba</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: migrar a JSFiddle — el problema era el entorno, no el código</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Todo list funcional en JSFiddle — añadir y borrar tareas operativos</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d35-lbl-code">Código del día</h3>
+
+      <pre class="code-block"><code>
+// Crear tarea con botón borrar integrado
+añadir.addEventListener("click", function(e) {
+  const texto = tarea.value;
+
+  if (texto !== "") {
+    const miLista = document.createElement("li");
+    miLista.textContent = texto;
+
+    // Montar el plato completo antes de servir
+    const eliminarTarea = document.createElement("button");
+    eliminarTarea.textContent = "Eliminar";
+    eliminarTarea.addEventListener("click", function() {
+      miLista.remove(); // elimina el elemento, no una clase
+    });
+
+    miLista.appendChild(eliminarTarea); // botón → li
+    lista.appendChild(miLista);         // li → ul
+    tarea.value = "";
+  }
+});
+      </code></pre>
+
+      <h3 class="col-label" style="margin-top:20px">En acción</h3>
+
+      <figure style="margin:0;">
+        <img
+          src="todo.gif"
+          alt="Todo list funcionando — añadir y borrar tareas"
+          style="width:100%; border-radius:6px; display:block;"
+        />
+        <figcaption style="font-size:0.75rem; margin-top:6px; opacity:0.6;">
+          Todo list vanilla JS — día 35
+        </figcaption>
+      </figure>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "CSS para estilos. JS para lógica. El botón hover no necesita JavaScript — necesita dos líneas de CSS."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
+
+
 
 <!-- ============================
      ENTRADA 34 DÍA 01  ABRIL 

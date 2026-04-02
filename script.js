@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// ── BARRAS DE BÚSQUEDA
+// ── BARRAS DE BÚSQUEDA  // NO FUNCIONA, PENDIENTE DE CORREGIR
 // ─────────────────────────────────────────────
 
 
@@ -108,4 +108,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
   
   applyFilters();
+});
+
+// ──BANNER PRINCIPAL
+// ──
+
+document.addEventListener('DOMContentLoaded', () => {
+  const availableBanner = document.getElementById('available-banner');
+  const closeBannerButton = availableBanner ? availableBanner.querySelector('.close-banner') : null;
+  const localStorageKey = 'availableBannerClosed';
+
+  // 1. Comprobar si el banner fue cerrado previamente
+  if (availableBanner && localStorage.getItem(localStorageKey) === 'true') {
+    availableBanner.style.display = 'none';
+  }
+
+  // 2. Añadir event listener al botón de cierre
+  if (closeBannerButton) {
+    closeBannerButton.addEventListener('click', () => {
+      if (availableBanner) {
+        availableBanner.style.display = 'none'; // Ocultar el banner
+        localStorage.setItem(localStorageKey, 'true'); // Guardar preferencia en localStorage
+      }
+    });
+  }
 });
