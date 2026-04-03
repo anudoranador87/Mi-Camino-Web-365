@@ -130,7 +130,160 @@
     Day 1 = February 20, 2026 · The 365 days are counted from there · Not every day has an entry
   </p>
 </section>
+<!-- ============================
+     ENTRY 36 — 03 APRIL
+=============================== -->
+<article class="entry" data-tags="js dom debug" aria-labelledby="title-d35">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 36</span>
+    <time datetime="2026-04-03" data-i18n="d35-date">April 03, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">JS</li>
+      <li class="etag">DOM</li>
+      <li class="etag">Debug</li>
+    </ul>
+  </header>
 
+  <h2 class="entry-headline" id="title-d35" data-i18n="d35-headline">
+    Filters, checkboxes and missing braces.<br>The logic lives in my head. The syntax, almost.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d35-deck">
+    Two projects, one day. I built the filter logic for Campus & Crema
+    and added task completion to the TodoList. Everything from scratch, no copying.
+    Every error was mine — and that's why I'll remember them.
+  </p>
+
+  <div class="cols">
+
+    <div>
+      <h3 class="col-label" data-i18n="d35-lbl-star">STAR Summary</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Two open fronts: category filters in Campus & Crema and completion functionality in the TodoList.<br><br>
+        <strong>T —</strong> Filters: select buttons, listen for clicks, remove and add <code>.active</code> class. TodoList: checkbox that strikes through the task text in red, reversible.<br><br>
+        <strong>A —</strong> For filters: reasoned the full flow — querySelectorAll → forEach → addEventListener → inner forEach to remove .active → add .active to clicked button. For TodoList: created checkbox with JS, wrapped text in a span to avoid striking through the Delete button, used <code>completada.checked</code> with if/else to toggle completion.<br><br>
+        <strong>R —</strong> Filters: logic built, pending connecting the clicked button. TodoList: mark and unmark works. Extra brace bug resolved.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d35-lbl-wins">Wins of the day</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Understood why <code>toggle</code> doesn't work for multiple filters</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Created a <code>span</code> to isolate text from the button — without help</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text"><code>completada.checked</code> is boolean — no comparison needed</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">TodoList works: add, delete, complete and uncomplete</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "The logic already lives in my head. The syntax is just the uniform."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d35-lbl-levels">Skill levels at end of day</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">DOM</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="50"></div>
+        </div>
+        <span class="skill-pct">50%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">JS Events</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="50"></div>
+        </div>
+        <span class="skill-pct">50%</span>
+      </div>
+
+    </div>
+
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d35-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> <code>btnfilter.addEventListener</code> — listener applied to the whole list, not each element</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: <code>querySelectorAll</code> returns a list — iterate with <code>forEach</code> first</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> <code>btn.addEventListener("click", =>{</code> — arrow function missing <code>()</code></span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: anonymous functions always need <code>()</code> before the arrow</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> <code>myspan.style.textDecoration = "none" && myspan.style.color = "black"</code> — two assignments with &&</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: each assignment goes on its own line</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> Extra <code>}</code> brace — <code>SyntaxError: missing ) after argument list</code></span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: count closing braces — every block opens and closes its own</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">TodoList working: add, delete, complete and uncomplete all functional</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d35-lbl-code">Code of the day</h3>
+
+      <pre class="code-block"><code>
+// Checkbox that strikes only the text, not the button
+const myspan = document.createElement("span");
+myspan.innerText = texto;
+miLista.appendChild(myspan);
+
+const completada = document.createElement("input");
+completada.type = "checkbox";
+miLista.appendChild(completada);
+
+completada.addEventListener("click", () => {
+  if (completada.checked) {
+    myspan.style.textDecoration = "line-through";
+    myspan.style.color = "red";
+  } else {
+    myspan.style.textDecoration = "none";
+    myspan.style.color = "black";
+  }
+});
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "I didn't copy anything. Every error was mine — and that's why I remember them."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
 <!-- ============================
      ENTRY 35 — 02 APRIL
 =============================== -->

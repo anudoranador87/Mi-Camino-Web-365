@@ -137,6 +137,160 @@
   </p>
 </section>
 <!-- ============================
+     ENTRADA 36 DÍA 03  ABRIL 
+=============================== -->
+<article class="entry" data-tags="js dom debug" aria-labelledby="title-d35">
+  <header class="entry-kicker">
+    <span class="day-badge">Día 36</span>
+    <time datetime="2026-04-03" data-i18n="d35-date">03 de Abril, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">JS</li>
+      <li class="etag">DOM</li>
+      <li class="etag">Debug</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d35" data-i18n="d35-headline">
+    Filtros, checkboxes y llaves perdidas.<br>La lógica vive en mi cabeza. La sintaxis, casi.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d35-deck">
+    Dos proyectos, un mismo día. Construí la lógica de filtros de Campus & Crema
+    y marqué tareas como completadas en la TodoList. Todo desde cero,
+    Cada error fue mío — y por eso los recuerdo.
+  </p>
+
+  <div class="cols">
+
+    <div>
+      <h3 class="col-label" data-i18n="d35-lbl-star">Resumen STAR</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Dos frentes abiertos: filtros de categoría en Campus & Crema y funcionalidad de completado en la TodoList.<br><br>
+        <strong>T —</strong> Filtros: seleccionar botones, escuchar clicks, quitar y añadir clase <code>.activo</code>. TodoList: checkbox que tacha en rojo el texto de la tarea, reversible.<br><br>
+        <strong>A —</strong> En los filtros: razoné el flujo completo — querySelectorAll → forEach → addEventListener → forEach interior para quitar .activo → añadir .activo al clicado. En la TodoList: creé checkbox con JS, envolví el texto en un span para no tachar el botón Eliminar, usé <code>completada.checked</code> con if/else para marcar y desmarcar.<br><br>
+        <strong>R —</strong> Filtros: lógica construida, pendiente conectar el botón clicado. TodoList: marcar y desmarcar funciona. Bug de llave extra resuelto.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d35-lbl-wins">Victorias del día</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Entendí por qué <code>toggle</code> no sirve para filtros múltiples</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Creé un <code>span</code> para aislar el texto del botón</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text"><code>completada.checked</code> es booleano — no necesita comparación</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">TodoList funciona: añadir, eliminar, completar y descompletar</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "La lógica ya vive en mi cabeza. La sintaxis es solo el uniforme."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d35-lbl-levels">Niveles al cierre del día</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">DOM</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="50"></div>
+        </div>
+        <span class="skill-pct">50%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">JS Events</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="50"></div>
+        </div>
+        <span class="skill-pct">50%</span>
+      </div>
+
+    </div>
+
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d35-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> <code>btnfilter.addEventListener</code> — listener en la lista entera, no en cada elemento</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: <code>querySelectorAll</code> devuelve una lista — recorrer con <code>forEach</code> primero</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> <code>btn.addEventListener("click", =>{</code> — arrow function sin <code>()</code></span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: la función anónima siempre lleva <code>()</code> antes de la flecha</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> <code>myspan.style.textDecoration = "none" && myspan.style.color = "black"</code> — dos asignaciones con &&</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: cada asignación va en su propia línea</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> Llave extra <code>}</code> suelta — <code>SyntaxError: missing ) after argument list</code></span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: contar llaves de cierre — cada bloque abre y cierra el suyo</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">TodoList operativa: añadir, eliminar, completar y descompletar funcionan</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d35-lbl-code">Código del día</h3>
+
+      <pre class="code-block"><code>
+// Checkbox que tacha solo el texto, no el botón
+const myspan = document.createElement("span");
+myspan.innerText = texto;
+miLista.appendChild(myspan);
+
+const completada = document.createElement("input");
+completada.type = "checkbox";
+miLista.appendChild(completada);
+
+completada.addEventListener("click", () => {
+  if (completada.checked) {
+    myspan.style.textDecoration = "line-through";
+    myspan.style.color = "red";
+  } else {
+    myspan.style.textDecoration = "none";
+    myspan.style.color = "black";
+  }
+});
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "No copié nada. Cada error fue mío — y por eso lo recuerdo."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
+<!-- ============================
      ENTRADA 35 DÍA 02  ABRIL 
 =============================== -->
 
