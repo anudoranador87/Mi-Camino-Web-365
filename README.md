@@ -1,168 +1,169 @@
-# Dev Log 365 — Jose Aparicio
-
-> "La lógica es mi superpoder. La sintaxis es solo la herramienta."  
-> "Logic is my superpower. Syntax is just the tool."
-
----
-
-## 🚀 Front-End Developer in Transition
-
-Building real-world projects with JavaScript — not tutorials.
-
-- 🔥 27+ day coding streak
-- 🐛 40+ bugs solved and documented
-- 🏗️ 5 projects shipped
-- ⚙️ Currently building a real-world shift rotation algorithm (EquiShift)
-
-👉 This is not a portfolio. It's a public engineering log.
-
----
+# Dev Log 365 — Diario público de aprendizaje / Public Learning Log
 
 🇪🇸 [Español](#español) · 🇬🇧 [English](#english)
+
+🌐 **[Ver en vivo / Live](https://anudoranador87.github.io/Mi-Camino-Web-365/)**
 
 ---
 
 ## Español
 
-### 📓 Qué es esto
+### Qué es esto
 
-365 días de aprendizaje público documentados sin filtros.  
+Diario técnico de mi transición de hostelería a frontend. 365 días documentados sin filtros.
 
-Errores reales. Decisiones de arquitectura.  
-El proceso de convertir teoría en código que funciona — o que no funciona, y por qué.
+Cada entrada documenta una sesión de estudio: errores reales, decisiones de arquitectura, código que funciona y código que no, y por qué. Los días sin entrada son días que no estudié. Sin relleno.
 
-Esto no es un portfolio. Es un **registro de ingeniería real**.
-
----
-
-### 🌐 Ver el diario
-
-👉 https://anudoranador87.github.io/Mi-Camino-Web-365/
+**Esto no es un tutorial. Es el proceso.**
 
 ---
 
-### 👤 Sobre mí
+### Clonar y ver en local
 
-Más de 8 años gestionando equipos en hostelería (UK y España).  
-A los 39 años decidí cambiar de carrera y documentarlo en público.
+```bash
+git clone https://github.com/anudoranador87/Mi-Camino-Web-365.git
+cd Mi-Camino-Web-365
+open index.html
+```
 
-No vengo del código.  
-Pero sí de resolver problemas reales bajo presión.
-
----
-
-### 🧠 En qué me enfoco
-
-- Debugging > copiar soluciones
-- Entender por qué el código falla
-- Construir desde cero (no solo seguir tutoriales)
-- Documentar errores como parte del proceso
+Sin npm. Sin build tools. Sin dependencias. Funciona directamente en el navegador.
 
 ---
 
-### 🛠️ Stack actual
+### Qué hay dentro
 
-HTML5 · CSS3 · JavaScript · Git · GitHub · VS Code
-
----
-
-### 📌 Proyectos activos
-
-#### 🔧 EquiShift Málaga
-Algoritmo de rotación de turnos equitativos para plantillas con múltiples contratos.
-
-Resuelve problemas reales:
-- Conflictos de horarios
-- Reparto justo de turnos
-- Lógica de rotación
-
-👉 No es un tutorial. Es una solución a un problema real.
+```
+Mi-Camino-Web-365/
+├── index.html          # Diario en español — entrada principal
+├── diario-365en.html   # Versión en inglés
+├── Projects.html       # Vista de proyectos
+├── reflexiones.html    # Reflexiones del proceso
+├── css/
+│   └── styles.css      # Estilos compartidos entre versiones de idioma
+└── assets/             # GIFs y capturas de proyectos
+```
 
 ---
 
-#### ✅ Campus & Crema
-Web de cafetería con:
-- Menú dinámico
-- Formulario
-- Menú hamburguesa en JS vanilla
+### Decisiones técnicas
 
-👉 https://anudoranador87.github.io/campus-crema-web/
+**HTML estático por idioma en lugar de i18n dinámico.**  
+El diario tiene 1300+ líneas de HTML y crece cada semana. Implementar JSON + fetch para internacionalización añadía complejidad innecesaria para un proyecto estático en GitHub Pages. Principio aplicado: YAGNI. El trade-off está documentado en la [entrada del Día 21](https://anudoranador87.github.io/Mi-Camino-Web-365/).
 
----
+**CSS variables para theming.**  
+Un solo punto de cambio para colores. Preparado para dark mode.
 
-#### ✅ Mangata & Gallo
-Landing page con HTML semántico + CSS avanzado
+**Filtros de entradas con JS vanilla.**  
+`querySelectorAll` + `forEach` + `classList.toggle`. Sin librerías.
 
----
-
-#### ✅ We Playing Cards
-Layout interactivo con:
-- Flexbox
-- 3D transforms
-- Lógica en JavaScript
+**Contadores animados.**  
+Los números de la cabecera se animan al cargar. Estado actualizado manualmente por entrada. Automatizar los contadores está identificado como deuda técnica — pendiente antes del Día 100.
 
 ---
 
-### 📊 Estado del reto
+### Stack
 
-- 📅 Inicio: 20 febrero 2026
-- 🔥 Días estudiados: 27+
-- 🐛 Bugs documentados: 40+
-- 🏗️ Proyectos: 5
+`HTML5` · `CSS3 (Custom Properties)` · `JavaScript ES6+` · `GitHub Pages`
 
 ---
 
-### 📩 Trabajemos juntos
+### Estado del reto
 
-Buscando oportunidades como **Junior Front-End Developer** donde aportar:
+| | |
+|---|---|
+| 📅 Inicio | 18 enero 2026 |
+| 🔥 Días documentados | 74+ |
+| 🐛 Bugs documentados | 40+ |
+| 🏗️ Proyectos | 5 |
 
-- Mentalidad de resolución de problemas reales
-- Capacidad de debugging
-- Consistencia (aprendizaje diario documentado)
+---
+
+### Autor
+
+Jose Aparicio — Frontend developer en transición desde hostelería.
 
 📧 josemaparicio87@gmail.com  
-🔗 https://www.linkedin.com/in/joseaparicio87/  
-🐙 https://github.com/anudoranador87
+🔗 [LinkedIn](https://www.linkedin.com/in/joseaparicio87/)  
+🐙 [GitHub](https://github.com/anudoranador87)
 
 ---
 
 ## English
 
-### 📓 What this is
+### What this is
 
-365 days of public learning — documented without filters.
+A technical journal of my transition from hospitality to frontend development. 365 days documented without filters.
 
-Real errors. Real decisions.  
-Turning theory into code that works — or doesn't, and why.
+Each entry covers one study session: real bugs, architecture decisions, code that works and code that doesn't, and why. Days with no entry are days I didn't study. No filler.
 
-This is not a portfolio.  
-It's a **real engineering log**.
+**This is not a tutorial. It's the process.**
 
 ---
 
-### 👤 About me
+### Clone and run locally
 
-8+ years managing teams in hospitality (UK & Spain).  
-At 39, I decided to switch careers and build in public.
+```bash
+git clone https://github.com/anudoranador87/Mi-Camino-Web-365.git
+cd Mi-Camino-Web-365
+open index.html
+```
 
-I don't come from tech.  
-But I do come from solving real problems under pressure.
-
----
-
-### 🧠 What I focus on
-
-- Debugging over copying solutions
-- Understanding WHY code breaks
-- Building from scratch
-- Documenting mistakes
+No npm. No build tools. No dependencies. Opens directly in the browser.
 
 ---
 
-### 📩 Let's work together
+### What's inside
 
-Looking for junior front-end opportunities.
+```
+Mi-Camino-Web-365/
+├── index.html          # Spanish diary — main entry point
+├── diario-365en.html   # English version
+├── Projects.html       # Projects view
+├── reflexiones.html    # Reflections on the process
+├── css/
+│   └── styles.css      # Shared styles across language versions
+└── assets/             # GIFs and project screenshots
+```
+
+---
+
+### Technical decisions
+
+**Static HTML per language instead of dynamic i18n.**  
+The diary has 1300+ lines of HTML and grows every week. Implementing JSON + fetch for internationalisation added unnecessary complexity for a static GitHub Pages project. Principle applied: YAGNI. The trade-off is documented in [Day 21's entry](https://anudoranador87.github.io/Mi-Camino-Web-365/).
+
+**CSS custom properties for theming.**  
+Single source of truth for colors. Ready for dark mode.
+
+**Entry filters in vanilla JS.**  
+`querySelectorAll` + `forEach` + `classList.toggle`. No libraries.
+
+**Animated counters.**  
+The header numbers animate on load. State is updated manually per entry. Automating the counters is identified as technical debt — scheduled before Day 100.
+
+---
+
+### Stack
+
+`HTML5` · `CSS3 (Custom Properties)` · `JavaScript ES6+` · `GitHub Pages`
+
+---
+
+### Challenge status
+
+| | |
+|---|---|
+| 📅 Start | January 18, 2026 |
+| 🔥 Days documented | 74+ |
+| 🐛 Bugs documented | 40+ |
+| 🏗️ Projects | 5 |
+
+---
+
+### Author
+
+Jose Aparicio — Frontend developer transitioning from hospitality.
 
 📧 josemaparicio87@gmail.com  
-🔗 LinkedIn  
-🐙 GitHub
+🔗 [LinkedIn](https://www.linkedin.com/in/joseaparicio87/)  
+🐙 [GitHub](https://github.com/anudoranador87)
