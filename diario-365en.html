@@ -12,13 +12,30 @@
 <body>
 
 <nav class="nav" aria-label="Main navigation">
-   <!-- BUSQUEDA EN EL DIARIO -->
+   <!-- SEARCH IN DIARY -->
 <div class="search-container">
-  <input type="text" id="search-input" placeholder="Buscar en el diario...">
+  <input type="text" id="search-input" placeholder="Search in the diary...">
 </div>
-   <!-- BUSQUEDA EN EL DIARIO -->
-<div class="search-container">
-  <input type="text" id="search-input" placeholder="Buscar en el diario...">
+<div class="search-container" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;">
+  <select id="search-field" aria-label="Search field">
+    <option value="all">Everything</option>
+    <option value="headline">Headline</option>
+    <option value="wins">Wins</option>
+    <option value="debug">Debug Log</option>
+  </select>
+  <select id="tag-select" aria-label="Filter by tag">
+    <option value="all">Tag: All</option>
+    <option value="js">js</option>
+    <option value="css">css</option>
+    <option value="debug">debug</option>
+    <option value="project">project</option>
+    <option value="algo">algo</option>
+    <option value="html">html</option>
+    <option value="poo">poo</option>
+  </select>
+  <input type="date" id="date-from" aria-label="Date from">
+  <input type="date" id="date-to" aria-label="Date to">
+  <button type="button" id="clear-filters">Clear</button>
 </div>
   <a href="index.html" class="nav-brand">jose<em>.</em>dev</a>
   <ul class="nav-links">
@@ -33,7 +50,16 @@
     <span class="lang-flag">ES</span>
     <span class="lang-label"></span>
   </a>
+  <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+    <i id="theme-icon" class="fas fa-moon" aria-hidden="true"></i>
+  </button>
 </nav>
+
+<section class="results-toolbar" aria-label="Filter results">
+  <p id="results-count" class="results-count">Showing 0 of 0 entries</p>
+  <div id="active-filters" class="active-filters" style="display:none;"></div>
+  <button type="button" id="load-more-btn" class="load-more-btn" style="display:none;">Load more</button>
+</section>
 
 <header class="masthead">
   <p class="mast-top">
@@ -52,7 +78,7 @@
     | 17 days · Real errors · No filters
   </p>
 </header>
-<<section class="stats-row" aria-label="Dev statistics">
+<section class="stats-row" aria-label="Dev statistics">
 
   <article class="stat-item">
     <span class="stat-n" id="c-days">0</span>
@@ -68,6 +94,21 @@
 <article class="stat-item">
   <span class="stat-n" id="stat-projects">0</span>
   <span class="stat-l">Projects live</span>
+</article>
+
+<article class="stat-item">
+  <span class="stat-n" id="c-month">0</span>
+  <span class="stat-l">Sessions this month</span>
+</article>
+
+<article class="stat-item">
+  <span class="stat-n" id="c-streak">0</span>
+  <span class="stat-l">Current streak</span>
+</article>
+
+<article class="stat-item">
+  <span class="stat-n" id="c-fixratio">0%</span>
+  <span class="stat-l">Bug→fix ratio</span>
 </article>
 
 
@@ -131,12 +172,12 @@
   </p>
 </section>
 <!-- ============================
-     ENTRY 38 — 06 APRIL
+     ENTRY 18 — 06 APRIL
 =============================== -->
 
 <article class="entry" data-tags="js debug oop algo project" aria-labelledby="title-d38en">
   <header class="entry-kicker">
-    <span class="day-badge">Day 38</span>
+    <span class="day-badge">Day 26</span>
     <time datetime="2026-04-06" data-i18n="d38en-date">April 6, 2026</time>
     <ul class="entry-tags" aria-label="Categories">
       <li class="etag">JS</li>
@@ -441,13 +482,13 @@ const jugador = {
 
 
 <!-- ============================
-     ENTRY 37 — 05 APRIL
+     ENTRY 17 — 05 APRIL
 =============================== -->
 
 
 <article class="entry" data-tags="js · debug · algo" aria-labelledby="title-d36-en">
   <header class="entry-kicker">
-    <span class="day-badge">Day 37</span>
+    <span class="day-badge">Day 25</span>
     <time datetime="2026-03-05" data-i18n="d36-date-en">April 5, 2026</time>
     <ul class="entry-tags" aria-label="Categories">
       <li class="etag">JS</li>
@@ -705,11 +746,11 @@ const [a, b, ...resto] = [1, 2, 3, 4, 5]
     
 
 <!-- ============================
-     ENTRY 36 — 03 APRIL
+     ENTRY 16 — 03 APRIL
 =============================== -->
 <article class="entry" data-tags="js dom debug" aria-labelledby="title-d35">
   <header class="entry-kicker">
-    <span class="day-badge">Day 36</span>
+    <span class="day-badge">Day 24</span>
     <time datetime="2026-04-03" data-i18n="d35-date">April 03, 2026</time>
     <ul class="entry-tags" aria-label="Categories">
       <li class="etag">JS</li>
@@ -859,13 +900,13 @@ completada.addEventListener("click", () => {
   </div>
 </article>
 <!-- ============================
-     ENTRY 35 — 02 APRIL
+     ENTRY 15 — 02 APRIL
 =============================== -->
 
 
 <article class="entry" data-tags="js css debug" aria-labelledby="title-d35">
   <header class="entry-kicker">
-    <span class="day-badge">Day 35</span>
+    <span class="day-badge">Day 23</span>
     <time datetime="2026-04-02" data-i18n="d35-date">April 2, 2026</time>
     <ul class="entry-tags" aria-label="Categories">
       <li class="etag">JS</li>
@@ -1060,11 +1101,11 @@ añadir.addEventListener("click", function(e) {
 </article>
 
 <!-- ============================
-     ENTRY 34 — 01 APRIL
+     ENTRY 14 — 01 APRIL
 =============================== -->
 <article class="entry" data-tags="js poo debug" aria-labelledby="title-d34">
   <header class="entry-kicker">
-    <span class="day-badge">Day 34</span>
+    <span class="day-badge">Day 22</span>
     <time datetime="2026-04-01" data-i18n="d34-date">April 1st, 2026</time>
     <ul class="entry-tags" aria-label="Categories">
       <li class="etag">JS</li>
@@ -1221,13 +1262,13 @@ showError(input, message) {
   </div>
 </article>
 <!-- ============================
-     ENTRY 33 — DAY MARCH 31
+     ENTRY 13 — DAY MARCH 31
 =============================== -->
 
 
 <article class="entry" data-tags="js · poo · debug · html · project" aria-labelledby="title-d32">
   <header class="entry-kicker">
-    <span class="day-badge">Day 33</span>
+    <span class="day-badge">Day 21</span>
     <time datetime="2026-03-31" data-i18n="d32-date">March 31, 2026</time>
     <ul class="entry-tags" aria-label="Categories">
       <li class="etag">JS</li>
@@ -1526,13 +1567,13 @@ const contactForm = new FormValidator('#contact-form');
   </div>
 </article>
   <!-- ============================
-     ENTRY 31 — DAY MARCH 29
+     ENTRY 12 — DAY MARCH 29
 =============================== -->
 
 
 <article class="entry" data-tags="js css debug poo project" aria-labelledby="title-d31-en">
   <header class="entry-kicker">
-    <span class="day-badge">Day 31</span>
+    <span class="day-badge">Day 20</span>
     <time datetime="2026-03-29" data-i18n="d31-en-date">March 29, 2026</time>
     <ul class="entry-tags" aria-label="Categories">
       <li class="etag">JS</li>
@@ -1879,11 +1920,11 @@ const carousel = new Carousel(".carousel-container");
 </article>
   
 <!-- ============================
-     ENTRY 31 — DAY MARCH 26
+     ENTRY 11 — DAY MARCH 26
 =============================== -->
 <article class="entry" data-tags="js algo debug" aria-labelledby="title-d30">
   <header class="entry-kicker">
-    <span class="day-badge">Day 31</span>
+    <span class="day-badge">Day 19</span>
     <time datetime="2026-03-25" data-i18n="d30-date">March 26, 2026</time>
     <ul class="entry-tags" aria-label="Categories">
       <li class="etag">JS</li>
@@ -2054,11 +2095,11 @@ const maskEmail = (email) => {
 </article>
 
 <!-- ============================
-     ENTRY 30 — DAY MARCH 25
+     ENTRY 10 — DAY MARCH 25
 =============================== -->
 <article class="entry" data-tags="javascript logic programming" aria-labelledby="title-d29">
 <header class="entry-kicker">
-<span class="day-badge">Day 30</span>
+<span class="day-badge">Day 18</span>
 <time datetime="2026-03-25">March 25th, 2026</time>
 <ul class="entry-tags" aria-label="Categories">
 <li class="etag">JavaScript</li>
@@ -2222,11 +2263,11 @@ p.category === "tech" && p.stock < 10
 </article>
 
 <!-- ============================
-     ENTRY 28 — DAY MARCH 24
+     ENTRY 9 — DAY MARCH 24
 =============================== -->
 <article class="entry" data-tags="js css project debug" aria-labelledby="title-d29">
   <header class="entry-kicker">
-    <span class="day-badge">Day 29</span>
+    <span class="day-badge">Day 17</span>
     <time datetime="2026-03-24" data-i18n="d29-date">March 24, 2026</time>
     <ul class="entry-tags" aria-label="Categories">
       <li class="etag">JS Engine</li>
@@ -2336,13 +2377,13 @@ function intentarAtacar(carta) {
   </div>
 </article>
 <!-- ============================
-     ENTRY 27 — DAY MARCH 23
+     ENTRY 8 — DAY MARCH 23
 =============================== -->
 
 
 <article class="entry" data-tags="js debug project algo" aria-labelledby="title-d28">
   <header class="entry-kicker">
-    <span class="day-badge">Entry 28</span>
+    <span class="day-badge">Day 16</span>
     <time datetime="2026-03-20" data-i18n="d28-date">March 23, 2026</time>
     <ul class="entry-tags" aria-label="Categories">
       <li class="etag">JS</li>
@@ -2583,13 +2624,13 @@ function esTurnoLegal(turnoAyer, turnoHoy) {
 
 </article>
 <!-- ============================
-     ENTRY 27 — MARCH 20
+     ENTRY 6 — MARCH 20
 =============================== -->
 
 
 <article class="entry" data-tags="js debug project algo" aria-labelledby="title-d28">
   <header class="entry-kicker">
-    <span class="day-badge">Entry 27</span>
+    <span class="day-badge">Day 15</span>
     <time datetime="2026-03-20" data-i18n="d28-date">March 20, 2026</time>
     <ul class="entry-tags" aria-label="Categories">
       <li class="etag">JS</li>
@@ -3020,11 +3061,11 @@ function isShiftLegal(shiftYesterday, shiftToday) {
 
 </article>
 <!-- ============================
-     ENTRY 26 — MARCH 19
+     ENTRY 4 — MARCH 19
 =============================== -->
 <article class="entry" data-tags="js algo debug" aria-labelledby="title-d27">
   <header class="entry-kicker">
-    <span class="day-badge">Entry 26</span>
+    <span class="day-badge">Day 14</span>
     <time datetime="2026-03-19" data-i18n="d27-date">March 19, 2026</time>
     <ul class="entry-tags" aria-label="Categories">
       <li class="etag">JS</li>
@@ -3280,12 +3321,12 @@ if ([10, "J", "Q", "K", "A"].includes(card)) {
   </div>
 </article>
 <!-- ============================
-     ENTRY 25 — DAY 18 — Hamburger Menu + JS (Campus & Crema)
+     ENTRY 2 — DAY 18 — Hamburger Menu + JS (Campus & Crema)
 =============================== -->
 
 <article class="entry" data-tags="js css debug html project" aria-labelledby="title-d18">
   <header class="entry-kicker">
-    <span class="day-badge">Day 25</span>
+    <span class="day-badge">Day 13</span>
     <time datetime="2026-03-18" data-i18n="d18-date">March 18, 2026</time>
     <ul class="entry-tags" aria-label="Categories">
       <li class="etag">JS</li>
@@ -3382,7 +3423,7 @@ btn.addEventListener("click", () => {
 <!-- DAY 24 -->
  <article class="entry" data-tags="js algorithm project" aria-labelledby="title-d24">
   <header class="entry-kicker">
-    <span class="day-badge">Entry 24</span>
+    <span class="day-badge">Day 12</span>
     <time datetime="2026-03-17">March 17, 2026</time>
     <ul class="entry-tags" aria-label="Categories">
       <li class="etag">JS</li>
@@ -3603,7 +3644,7 @@ console.log(weekendDays); // → 104 ✅
 <!-- DAY 23 -->
 <article class="entry" data-tags="js oop project" aria-labelledby="title-d73">
   <header class="entry-kicker">
-    <span class="day-badge">Day 23</span>
+    <span class="day-badge">Day 11</span>
     <time datetime="2026-03-14" data-i18n="d73-date">March 14, 2026</time>
     <ul class="entry-tags" aria-label="Categories">
       <li class="etag">JS</li>
@@ -3777,7 +3818,7 @@ console.log(cart.items); // [leche, pan] ✅
 
 <article class="entry" data-tags="js algo debug" aria-labelledby="title-d22">
   <header class="entry-kicker">
-    <span class="day-badge">Day 22</span>
+    <span class="day-badge">Day 10</span>
     <time datetime="2026-03-13">March 13, 2026</time>
     <ul class="entry-tags" aria-label="Categories">
       <li class="etag">JS</li>
@@ -4013,7 +4054,7 @@ function getDiscount(taxBoolean, guests) {
 <article id="day-21" class="entry" data-tags="architecture i18n deploy" aria-labelledby="title-d21">
 
   <header class="entry-kicker">
-    <span class="day-badge">Day 21</span>
+    <span class="day-badge">Day 9</span>
     <time datetime="2026-03-11">11 Mar 2026</time>
     <ul class="entry-tags" aria-label="Tags">
       <li class="etag">Architecture</li>
@@ -4240,7 +4281,7 @@ document.querySelectorAll(".entry").length
 
 <article class="entry" data-tags="js project algo" aria-labelledby="title-d19">
   <header class="entry-kicker">
-    <span class="day-badge">Day 19</span>
+    <span class="day-badge">Day 8</span>
     <time datetime="2026-03-09">March 9, 2026</time>
     <ul class="entry-tags">
       <li class="etag">JS</li>
@@ -4411,7 +4452,7 @@ Fair distribution: ~33 days per person (~16 full weekends)</code></pre>
 
 <article class="entry" data-tags="js debug" aria-labelledby="title-d17">
   <header class="entry-kicker">
-    <span class="day-badge">Day 17</span>
+    <span class="day-badge">Day 7</span>
     <time datetime="2026-03-08">March 8, 2026</time>
     <ul class="entry-tags">
       <li class="etag">JS</li>
@@ -4527,7 +4568,7 @@ formatPrice("£", 5);   // → "£5"
 
 <article class="entry" data-tags="css js" aria-labelledby="title-d10">
   <header class="entry-kicker">
-    <span class="day-badge">Day 10</span>
+    <span class="day-badge">Day 6</span>
     <time datetime="2026-03-01">March 1, 2026</time>
     <ul class="entry-tags" aria-label="Categories">
       <li class="etag">Reflection</li>
@@ -4594,7 +4635,7 @@ formatPrice("£", 5);   // → "£5"
 
 <article class="entry" data-tags="js algo project" aria-labelledby="title-d9">
   <header class="entry-kicker">
-    <span class="day-badge">Day 9</span>
+    <span class="day-badge">Day 5</span>
     <time datetime="2026-02-28">February 28, 2026</time>
     <ul class="entry-tags" aria-label="Categories">
       <li class="etag">JS</li>
@@ -4712,7 +4753,7 @@ function calcularTurno(dia, idx) {
 
 <article class="entry" data-tags="js css poo" aria-labelledby="title-d8">
   <header class="entry-kicker">
-    <span class="day-badge">Day 8</span>
+    <span class="day-badge">Day 4</span>
     <time datetime="2026-02-27">February 27, 2026</time>
     <ul class="entry-tags" aria-label="Categories">
       <li class="etag">JS</li>
@@ -4810,7 +4851,7 @@ btn.addEventListener('click', () =>
 
 <article class="entry" data-tags="js funciones project" aria-labelledby="title-d7">
   <header class="entry-kicker">
-    <span class="day-badge">Day 7</span>
+    <span class="day-badge">Day 3</span>
     <time datetime="2026-02-26">February 26, 2026</time>
     <ul class="entry-tags" aria-label="Categories">
       <li class="etag">JS</li>
@@ -4921,7 +4962,7 @@ makePurchase("Apples", 5);
 
 <article class="entry" data-tags="js dom debug" aria-labelledby="title-d6">
   <header class="entry-kicker">
-    <span class="day-badge">Day 6</span>
+    <span class="day-badge">Day 2</span>
     <time datetime="2026-02-25">February 25, 2026</time>
     <ul class="entry-tags" aria-label="Categories">
       <li class="etag">JS</li>
@@ -5021,7 +5062,7 @@ if (level >= 10) {
 
 <article class="entry" data-tags="js algo arrays" aria-labelledby="title-d5">
   <header class="entry-kicker">
-    <span class="day-badge">Day 5</span>
+    <span class="day-badge">Day 1</span>
     <time datetime="2026-02-24">February 24, 2026</time>
     <ul class="entry-tags" aria-label="Categories">
       <li class="etag">JS</li>
@@ -5130,7 +5171,7 @@ user.permissions.push("publish");
 
 <article class="entry" data-tags="js css responsive debug" aria-labelledby="title-d4">
   <header class="entry-kicker">
-    <span class="day-badge">Day 4</span>
+    <span class="day-badge">Day 3</span>
     <time datetime="2026-02-23">February 23, 2026</time>
     <ul class="entry-tags" aria-label="Categories">
       <li class="etag">JS</li>
@@ -5225,7 +5266,7 @@ if (activeBooking === true) {
 
 <article class="entry" data-tags="css grid project" aria-labelledby="title-d3">
   <header class="entry-kicker">
-    <span class="day-badge">Day 3</span>
+    <span class="day-badge">Day 2</span>
     <time datetime="2026-02-22">February 22, 2026</time>
     <ul class="entry-tags" aria-label="Categories">
       <li class="etag">CSS</li>
@@ -5418,6 +5459,10 @@ box-shadow: 0 8px 15px
      FOOTER
 =============================== -->
 
+<div class="load-more-bottom-wrap">
+  <button type="button" id="load-more-btn-bottom" class="load-more-btn" style="display:none;">Load more</button>
+</div>
+
 <footer class="footer">
   <p class="footer-text">
     © 2026 Jose Aparicio — Dev Log 365
@@ -5443,3 +5488,4 @@ box-shadow: 0 8px 15px
 
 </body>
 </html>
+
