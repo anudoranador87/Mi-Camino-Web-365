@@ -171,8 +171,184 @@
     Day 1 = February 20, 2026 · The 365 days are counted from there · Not every day has an entry
   </p>
 </section>
+
+  <!-- ============================
+     ENTRY 27 — 06 APRIL
+=============================== -->
+<article class="entry" data-tags="js debug project" aria-labelledby="title-d27">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 27</span>
+    <time datetime="2026-04-08" data-i18n="d27-date">April 8, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">JS</li>
+      <li class="etag">DOM</li>
+      <li class="etag">Debug</li>
+      <li class="etag">Project</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d27" data-i18n="d27-headline">
+    The first interface that works.<br>And I built it.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d27-deck">
+    JavaScript no longer looks like random formulas. I still make a lot of mistakes — almost always the same ones — but I'm starting to see the point of building things. Today the biggest lesson wasn't syntax. It was that clean code equals success.
+  </p>
+
+  <div class="cols">
+
+    <div>
+
+      <h3 class="col-label" data-i18n="d27-lbl-star">STAR Summary</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> DOM challenge exercise 04: restaurant order system. Menu by category, reactive ticket, quantity buttons, send to kitchen.<br><br>
+        <strong>T —</strong> Build renderCarta, añadirAlTicket, cambiarCantidad and renderTicket from scratch — data in an array, DOM as its reflection.<br><br>
+        <strong>A —</strong> One function at a time, in order. When the messy code got confusing, I stopped, cleaned it up, and kept going. Without that discipline I would have lost track completely.<br><br>
+        <strong>R —</strong> Working interface: add dishes, adjust quantities, item disappears at zero. Best part: once I wrote the code, I could read it back. That didn't used to happen.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d27-lbl-wins">Wins</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">First complex DOM project working — menu + reactive ticket</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">innerHTML with template literals — HTML and variables in one clean line</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">splice + findIndex — delete array items by id</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Patterns repeat — I'm starting to recognise them before I write them</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "Clean code === success. Messy code with unclear variable names — easy to get lost."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d27-lbl-levels">Levels at close</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">DOM manipulation</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="55"></div>
+        </div>
+        <span class="skill-pct">55%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Array methods</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="60"></div>
+        </div>
+        <span class="skill-pct">60%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">JS syntax</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="45"></div>
+        </div>
+        <span class="skill-pct">45%</span>
+      </div>
+
+    </div>
+
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d27-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> ticket.forEach(("item", => { — extra parenthesis, "item" as a string instead of a parameter</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: ticket.forEach(item => { — no quotes, no extra parenthesis. Parameters are not strings.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> cont resultado — typo. "cont" doesn't exist in JavaScript.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: const. Reserved words don't take shortcuts or variations.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> ticket.splice(indice, 1) — "indice" existed as an intention, not as a variable.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: const guardoIndice = ticket.findIndex(...) first, then splice. Store before using.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> addEventListener("click," => — comma inside the quotes.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: addEventListener("click", () => — always two arguments, comma outside the quotes.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Menu rendered from data, reactive ticket, quantities and deletion working.</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d27-lbl-code">Code of the day</h3>
+
+      <pre class="code-block"><code>
+// innerHTML + template literals
+ticket.forEach(item => {
+  const li = document.createElement("li");
+  li.classList.add("ticket-item");
+  li.innerHTML = `
+    <span>${item.nombre}</span>
+    <span>${item.cantidad}</span>
+    <span>${item.precio} €</span>
+    <button class="quitar">-</button>
+    <button class="agregar">+</button>
+  `;
+  li.querySelector(".quitar").addEventListener("click", () => {
+    cambiarCantidad(item.id, -1);
+  });
+  li.querySelector(".agregar").addEventListener("click", () => {
+    cambiarCantidad(item.id, +1);
+  });
+  contenedor.appendChild(li);
+});
+
+// splice + findIndex — delete by id
+function cambiarCantidad(id, delta) {
+  const resultado = ticket.find(item => item.id === id);
+  resultado.cantidad += delta;
+  if (resultado.cantidad === 0) {
+    const guardoIndice = ticket.findIndex(item => item.id === id);
+    ticket.splice(guardoIndice, 1);
+  }
+  renderTicket();
+}
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "Proud of building this. It wasn't easy, but the pattern kept repeating — and that's what's finally sticking."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
+  
 <!-- ============================
-     ENTRY 18 — 06 APRIL
+     ENTRY 26 — 06 APRIL
 =============================== -->
 
 <article class="entry" data-tags="js debug oop algo project" aria-labelledby="title-d38en">
