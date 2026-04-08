@@ -181,8 +181,184 @@
     Día 1 = 20 de febrero de 2026 · Los 365 días se cuentan desde ahí · No todos los días tienen entrada
   </p>
 </section>
+
+  <!-- ============================
+     ENTRADA 27 DÍA 08  ABRIL 
+=============================== -->
+<article class="entry" data-tags="js debug project" aria-labelledby="title-d27">
+  <header class="entry-kicker">
+    <span class="day-badge">Día 27</span>
+    <time datetime="2026-04-08" data-i18n="d27-date">8 de Abril, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">JS</li>
+      <li class="etag">DOM</li>
+      <li class="etag">Debug</li>
+      <li class="etag">Proyecto</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d27" data-i18n="d27-headline">
+    La primera interfaz que funciona.<br>Y la construí yo.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d27-deck">
+    Ya no veo JavaScript como fórmulas raras. Sigo cometiendo errores, casi siempre los mismos, pero ya le voy viendo el sentido a construir cosas. Hoy lo más importante que aprendí no fue sintaxis — fue que un código ordenado es igual a éxito.
+  </p>
+
+  <div class="cols">
+
+    <div>
+
+      <h3 class="col-label" data-i18n="d27-lbl-star">Resumen STAR</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Ejercicio 04 del reto DOM: sistema de pedidos de sala. Carta con categorías, ticket reactivo, botones de cantidad y envío a cocina.<br><br>
+        <strong>T —</strong> Construir renderCarta, añadirAlTicket, cambiarCantidad y renderTicket desde cero, con los datos en un array y el DOM reflejándolos.<br><br>
+        <strong>A —</strong> Fui función a función en orden. Cuando me lié con el código desordenado, paré, lo limpié y continué. Sin eso, me hubiera perdido del todo.<br><br>
+        <strong>R —</strong> Interfaz funcional: añadir platos, subir y bajar cantidades, item desaparece al llegar a cero. Y lo mejor: escrito el código, lo entiendo de mi propia letra. Eso antes no pasaba.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d27-lbl-wins">Victorias del día</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Primera interfaz DOM compleja funcionando — carta + ticket reactivo</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">innerHTML con template literals — HTML y variables en una sola línea limpia</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">splice + findIndex — eliminar elementos del array por id</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Los patrones se repiten — ya los reconozco antes de escribirlos</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "Un código ordenado === éxito. Código desordenado y sin nombres de variables claras, fácil perderse."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d27-lbl-levels">Niveles al cierre del día</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">DOM manipulation</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="55"></div>
+        </div>
+        <span class="skill-pct">55%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Array methods</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="60"></div>
+        </div>
+        <span class="skill-pct">60%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Sintaxis JS</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="45"></div>
+        </div>
+        <span class="skill-pct">45%</span>
+      </div>
+
+    </div>
+
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d27-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> ticket.forEach(("item", => { — paréntesis de más e "item" entre comillas</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: ticket.forEach(item => { — sin comillas, sin paréntesis extra. El parámetro no es un string.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> cont resultado — typo. "cont" no existe en JavaScript.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: const. Las palabras reservadas no admiten variaciones.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> ticket.splice(indice, 1) — "indice" no existía como variable, solo como intención.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: const guardoIndice = ticket.findIndex(...) primero, luego splice. Guardar antes de usar.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> addEventListener("click," => — la coma dentro de las comillas.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: addEventListener("click", () => — siempre dos argumentos, coma fuera de las comillas.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Carta renderizada desde datos, ticket reactivo, cantidades y eliminación funcionando.</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d27-lbl-code">Código del día</h3>
+
+      <pre class="code-block"><code>
+// innerHTML + template literals
+ticket.forEach(item => {
+  const li = document.createElement("li");
+  li.classList.add("ticket-item");
+  li.innerHTML = `
+    <span>${item.nombre}</span>
+    <span>${item.cantidad}</span>
+    <span>${item.precio} €</span>
+    <button class="quitar">-</button>
+    <button class="agregar">+</button>
+  `;
+  li.querySelector(".quitar").addEventListener("click", () => {
+    cambiarCantidad(item.id, -1);
+  });
+  li.querySelector(".agregar").addEventListener("click", () => {
+    cambiarCantidad(item.id, +1);
+  });
+  contenedor.appendChild(li);
+});
+
+// splice + findIndex — eliminar por id
+function cambiarCantidad(id, delta) {
+  const resultado = ticket.find(item => item.id === id);
+  resultado.cantidad += delta;
+  if (resultado.cantidad === 0) {
+    const guardoIndice = ticket.findIndex(item => item.id === id);
+    ticket.splice(guardoIndice, 1);
+  }
+  renderTicket();
+}
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "Orgulloso de haber construido esto. No ha sido fácil, pero casi siempre se sigue el mismo patrón — y eso es lo que más me está entrando."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
+  
 <!-- ============================
-     ENTRADA 14 DÍA 06  ABRIL 
+     ENTRADA 26 DÍA 06  ABRIL 
 =============================== -->
 
 
