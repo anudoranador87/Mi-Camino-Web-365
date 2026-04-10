@@ -171,7 +171,203 @@
     Day 1 = February 20, 2026 · The 365 days are counted from there · Not every day has an entry
   </p>
 </section>
+<!-- ============================
+     ENTRY 28 — 10 APRIL
+=============================== -->
+<article class="entry" data-tags="js project debug" aria-labelledby="title-d28">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 28</span>
+    <time datetime="2026-04-10" data-i18n="d28-date">April 10, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">React</li>
+      <li class="etag">Vite</li>
+      <li class="etag">Debug</li>
+      <li class="etag">Project</li>
+      <li class="etag">Deploy</li>
+    </ul>
+  </header>
 
+  <h2 class="entry-headline" id="title-d28" data-i18n="d28-headline">
+    Campus & Crema goes React.<br>From vanilla to components in a single day.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d28-deck">
+    Today I migrated my Campus & Crema project from vanilla HTML/CSS/JS to React + Vite.
+    It wasn't just copying code — it was solving a chain of real problems:
+    a broken GitHub repo, an outdated Node version, imports pointing to missing files.
+    By the end of the day the project was deployed on Vercel and live.
+  </p>
+
+  <!-- DEMO GIF -->
+  <figure style="margin: 0 0 2rem; border-radius: 10px; overflow: hidden;">
+    <img
+      src="./demo-react-campuscrema.gif"
+      alt="Campus & Crema React demo — navbar, carousel and menu grid"
+      style="width: 100%; display: block;"
+    />
+    <figcaption style="font-size: 0.8rem; color: #888; padding: 8px 0;">
+      Campus & Crema React — live demo · vercel.app
+    </figcaption>
+  </figure>
+
+  <!-- ── COLUMNS ─────────────────────────────────────────── -->
+  <div class="cols">
+
+    <!-- LEFT COLUMN -->
+    <div>
+
+      <h3 class="col-label" data-i18n="d28-lbl-star">STAR Summary</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Campus & Crema had been running as a vanilla project for weeks. It had a carousel, accordion, dark mode and a FormValidator in OOP — but everything in loose files with no component architecture.<br><br>
+        <strong>T —</strong> Migrate the full project to React + Vite, keep all existing features, and deploy it on Vercel.<br><br>
+        <strong>A —</strong> Built the folder structure with 6 components (Navbar, Hero, Carousel, Menu, ReservationForm, Footer). Decided which components needed state and which didn't. Fixed the GitHub repo structure, upgraded Node to v20, corrected broken imports and missing CSS files. Added the products array with images to the Menu component in a responsive grid.<br><br>
+        <strong>R —</strong> Project migrated, structured by components, architecture decisions documented, and deployed at https://campus-crema-react.vercel.app/
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d28-lbl-wins">Wins of the day</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">First personal project migrated to React — from vanilla to real components</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Conscious architecture decision — local state vs. App.jsx state reasoned on paper before coding</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">GitHub repo fixed from Codespaces with no local VSCode</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Responsive menu grid with images — auto-fit minmax with no media queries</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Deployed on Vercel with a clean URL on the same day</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "It's easier than it looks. I'm the one overcomplicating it."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d28-lbl-levels">Skill levels at end of day</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">React components</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="40"></div>
+        </div>
+        <span class="skill-pct">40%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">useState</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="45"></div>
+        </div>
+        <span class="skill-pct">45%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Vite + config</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="35"></div>
+        </div>
+        <span class="skill-pct">35%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Git / deploy</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d28-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> Repo uploaded with an extra folder — GitHub saw campus-crema-react/ inside the repo instead of src/ at the root</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: git init from inside the correct folder + git push -f to force overwrite</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> crypto.getRandomValues is not a function — Vite wouldn't start</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: Node 16 is incompatible with modern Vite. nvm install 20 + nvm use 20 solved it</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> Dev server broken — module not found</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: import './Footer.css' was pointing to a file that didn't exist. One word can break the entire server</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> Remote origin already exists when trying to add the repo URL</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: git remote set-url origin [url] instead of git remote add</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Result: 6 components working, menu grid with images, deployed on Vercel</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d28-lbl-code">Code of the day</h3>
+
+      <pre class="code-block"><code>
+// Decision: local state per component
+// Carousel knows which photo to show — nobody else needs to
+
+function Carousel() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  return (
+    &lt;div className="carousel"&gt;
+      &lt;img src={imagenes[currentIndex]} alt="foto" /&gt;
+      &lt;button onClick={() => setCurrentIndex(i => i - 1)}&gt;←&lt;/button&gt;
+      &lt;button onClick={() => setCurrentIndex(i => i + 1)}&gt;→&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+
+// Responsive grid with no media queries
+// auto-fit does all the work
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "One wrong capital letter, one missing extension — and Vite won't start. React is strict because Node is."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
   <!-- ============================
      ENTRY 27 — 06 APRIL
 =============================== -->
