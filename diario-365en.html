@@ -171,6 +171,156 @@
     Day 1 = February 20, 2026 · The 365 days are counted from there · Not every day has an entry
   </p>
 </section>
+
+<!-- ============================
+     ENTRY 29 — 11 APRIL
+=============================== -->
+
+<article class="entry" data-tags="js algo" aria-labelledby="title-d29">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 29</span>
+    <time datetime="2026-04-11" data-i18n="d29-date">April 11, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">JS</li>
+      <li class="etag">Algorithms</li>
+      <li class="etag">Codewars</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d29" data-i18n="d29-headline">
+    Nested ternaries, filter+reduce<br>and spread operator across three katas.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d29-deck">
+    Three level-8 Codewars katas solved from scratch, reasoning out loud before writing any code.
+    Key discovery: the "easy" exercises cost me more than the complex ones.
+    My brain thinks in processes, not in operators.
+  </p>
+
+  <div class="cols">
+
+    <div>
+
+      <h3 class="col-label" data-i18n="d29-lbl-star">STAR Summary</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Algorithm session on Codewars. Three level-8 katas solved in the browser console, reasoning through each step before writing any code.<br><br>
+        <strong>T —</strong> Solve makeNegative, sumPositive and reverseString without direct solutions — hints only, own logic.<br><br>
+        <strong>A —</strong> makeNegative: discovered nested ternaries. sumPositive: chained filter + reduce. reverseString: used spread operator to explode string into an array, reverse(), then join() to rebuild it as a string.<br><br>
+        <strong>R —</strong> All three exercises work and I understand them. Each one revealed a concept I didn't know I was missing.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d29-lbl-wins">Wins of the day</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Nested ternaries — didn't know they could be chained, now I do</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">filter + reduce chained — filter first, then sum</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Spread operator on strings — [...str] explodes a string into an array of characters</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "The easy exercises cost me more than the hard ones. My brain thinks in processes, not in operators."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d29-lbl-levels">Skill levels</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">JavaScript</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="42"></div>
+        </div>
+        <span class="skill-pct">42%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Algorithms</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="28"></div>
+        </div>
+        <span class="skill-pct">28%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Problem Solving</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="35"></div>
+        </div>
+        <span class="skill-pct">35%</span>
+      </div>
+
+    </div>
+
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d29-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> Ternary without return — value was computed and thrown away</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: <code>return condition ? valueA : valueB</code> — return goes before the ternary</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> sumPositive — used external variable instead of <code>arr</code> parameter</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: function receives <code>arr</code> as a parameter, not an external variable</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> console.log(sumPositive) without parentheses — logged the function itself, not the result</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: <code>console.log(sumPositive([1, -4, 7, 12, -3]))</code> — call it with the array</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">makeNegative ✓ — sumPositive ✓ — reverseString ✓</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d29-lbl-code">Code of the day</h3>
+
+      <pre class="code-block"><code>
+// Kata 1 — makeNegative (nested ternaries)
+function makeNegative(numero) {
+  return numero > 0 ? -numero
+       : numero < 0 ?  numero
+       : 0;
+}
+
+// Kata 2 — sumPositive (filter + reduce)
+function sumPositive(arr) {
+  const positivos = arr.filter(num => num > 0);
+  return positivos.reduce((acc, num) => acc + num, 0);
+}
+
+// Kata 3 — reverseString (spread operator)
+const reverseString = (str) =>
+  [...str].reverse().join("");
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "Every kata hides a concept. The simple exercise teaches more than it looks."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
 <!-- ============================
      ENTRY 28 — 10 APRIL
 =============================== -->

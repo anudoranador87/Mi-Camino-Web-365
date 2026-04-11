@@ -181,8 +181,157 @@
     Día 1 = 20 de febrero de 2026 · Los 365 días se cuentan desde ahí · No todos los días tienen entrada
   </p>
 </section>
+<!-- ============================
+     ENTRADA 29 DÍA 11  ABRIL 
+=============================== -->
+<article class="entry" data-tags="js algo" aria-labelledby="title-d29">
+  <header class="entry-kicker">
+    <span class="day-badge">Día 29</span>
+    <time datetime="2026-04-11" data-i18n="d29-date">11 de Abril, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">JS</li>
+      <li class="etag">Algoritmos</li>
+      <li class="etag">Codewars</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d29" data-i18n="d29-headline">
+    Ternarios anidados, filter+reduce<br>y spread operator en tres katas.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d29-deck">
+    Tres ejercicios de Codewars nivel 8 resueltos desde cero, razonando en voz alta antes de escribir código.
+    Descubrimiento del día: los ejercicios "simples" me cuestan más que los complejos.
+    Mi cerebro piensa en procesos, no en operadores.
+  </p>
+
+  <div class="cols">
+
+    <div>
+
+      <h3 class="col-label" data-i18n="d29-lbl-star">Resumen STAR</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Sesión de algoritmos en Codewars. Tres katas de nivel 8 resueltas en la consola del navegador, razonando cada paso antes de codificar.<br><br>
+        <strong>T —</strong> Resolver makeNegative, sumPositive y reverseString sin soluciones directas — solo pistas y lógica propia.<br><br>
+        <strong>A —</strong> makeNegative: descubrí que los ternarios se pueden anidar. sumPositive: apliqué filter + reduce en cadena. reverseString: usé spread operator para convertir el string en array, reverse(), y join() para reconstruirlo.<br><br>
+        <strong>R —</strong> Los tres ejercicios funcionan y los entiendo. Cada uno reveló un concepto que no sabía que me faltaba.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d29-lbl-wins">Victorias del día</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Ternarios anidados — no sabía que se podían encadenar, ahora sí</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">filter + reduce en cadena — filtra primero, luego suma</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Spread operator en strings — [...str] explota el string en array de caracteres</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "Los ejercicios fáciles me cuestan más que los difíciles. Mi cerebro piensa en procesos, no en operadores."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d29-lbl-levels">Niveles al cierre del día</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">JavaScript</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="42"></div>
+        </div>
+        <span class="skill-pct">42%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Algoritmos</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="28"></div>
+        </div>
+        <span class="skill-pct">28%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Resolución de problemas</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="35"></div>
+        </div>
+        <span class="skill-pct">35%</span>
+      </div>
+
+    </div>
+
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d29-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> Ternario sin return — el valor se calculaba y se perdía</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: <code>return condicion ? valorA : valorB</code> — el return va delante del ternario</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> sumPositive — variable externa en vez del parámetro <code>arr</code></span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: la función recibe <code>arr</code> como parámetro, no una variable externa</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> console.log(sumPositive) sin paréntesis — logueaba la función entera</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: <code>console.log(sumPositive([1, -4, 7, 12, -3]))</code> — llamarla con el array</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">makeNegative ✓ — sumPositive ✓ — reverseString ✓</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d29-lbl-code">Código del día</h3>
+
+      <pre class="code-block"><code>
+// Kata 1 — makeNegative (ternarios anidados)
+function makeNegative(numero) {
+  return numero > 0 ? -numero
+       : numero < 0 ?  numero
+       : 0;
+}
+
+// Kata 2 — sumPositive (filter + reduce)
+function sumPositive(arr) {
+  const positivos = arr.filter(num => num > 0);
+  return positivos.reduce((acc, num) => acc + num, 0);
+}
+
+// Kata 3 — reverseString (spread operator)
+const reverseString = (str) =>
+  [...str].reverse().join("");
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "Cada kata tiene un concepto escondido. El ejercicio fácil enseña más de lo que parece."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
+
  <!-- ============================
-     ENTRADA 27 DÍA 08  ABRIL 
+     ENTRADA 28 DÍA 10  ABRIL 
 =============================== -->
 <article class="entry" data-tags="js project debug" aria-labelledby="title-d28">
   <header class="entry-kicker">
