@@ -95,6 +95,21 @@
       <button class="proj-filter-btn" data-filter="html">HTML</button>
       <button class="proj-filter-btn" data-filter="algo">Algorithms</button>
     </div>
+    <div class="proj-controls">
+      <select id="status-filter" class="proj-control-input" aria-label="Filter by status">
+        <option value="all">All statuses</option>
+        <option value="live">Active / Published</option>
+        <option value="progress">In progress</option>
+        <option value="done">Completed</option>
+      </select>
+      <input id="project-search" class="proj-control-input" type="search" placeholder="Search by title, problem or solution..." aria-label="Search projects">
+      <select id="project-sort" class="proj-control-input" aria-label="Sort projects">
+        <option value="default">Default order</option>
+        <option value="status">By status</option>
+        <option value="title">By title (A-Z)</option>
+      </select>
+    </div>
+    <p id="project-results" class="proj-results-count">Showing all projects</p>
   </section>
 
   <!-- FLAGSHIP PROJECT -->
@@ -215,7 +230,7 @@ const MAX_WEEKENDS = 33;</code></pre>
             <span class="ptag">Classes</span><span class="ptag">Arrays</span>
           </div>
           <div class="project-actions">
-            <a href="https://github.com/anudoranador87/minishop-js" class="btn-code" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+            <a href="https://github.com/anudoranador87/-MiniShop-JS" class="btn-code" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
             <a href="diario-365en.html" class="btn-live"><i class="fas fa-book-open"></i> Dev Log</a>
           </div>
         </div>
@@ -299,6 +314,63 @@ const MAX_WEEKENDS = 33;</code></pre>
         </div>
       </div>
 
+      <!-- my-todo-list -->
+      <div class="project-card" data-tags="js">
+        <div class="project-browser-bar">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+        </div>
+        <div class="project-content">
+          <div class="proj-card-kicker">Personal · Published</div>
+          <h3>my-todo-list</h3>
+          <p>Vanilla JavaScript task app with add, complete and delete actions. Practical project to strengthen UI state handling, events and DOM manipulation.</p>
+          <div class="project-tags">
+            <span class="ptag">JavaScript</span><span class="ptag">DOM</span><span class="ptag">UI State</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/anudoranador87/my-todo-list" class="btn-code" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+            <a href="#" class="btn-live"><i class="fas fa-eye"></i> Coming soon</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- fcc-technical-documentation -->
+      <div class="project-card" data-tags="html css">
+        <div class="project-browser-bar">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+        </div>
+        <div class="project-content">
+          <div class="proj-card-kicker">freeCodeCamp · Completed</div>
+          <h3>fcc-technical-documentation</h3>
+          <p>Technical documentation page about Dev Log 365, learning philosophy and stack. Editorial structure with clear navigation and semantic markup.</p>
+          <div class="project-tags">
+            <span class="ptag">HTML</span><span class="ptag">CSS</span><span class="ptag">Docs</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/anudoranador87/fcc-technical-documentation" class="btn-code" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+            <a href="#" class="btn-live"><i class="fas fa-eye"></i> Coming soon</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- malaga-photo-walk -->
+      <div class="project-card" data-tags="html css">
+        <div class="project-browser-bar">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+        </div>
+        <div class="project-content">
+          <div class="proj-card-kicker">Personal · Completed</div>
+          <h3>malaga-photo-walk</h3>
+          <p>Interactive checklist for a Malaga photo route. Focused on CSS pseudo-classes, accessibility and interaction clarity.</p>
+          <div class="project-tags">
+            <span class="ptag">HTML</span><span class="ptag">CSS</span><span class="ptag">Accessibility</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/anudoranador87/malaga-photo-walk" class="btn-code" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Code</a>
+            <a href="#" class="btn-live"><i class="fas fa-eye"></i> Coming soon</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -320,23 +392,173 @@ const MAX_WEEKENDS = 33;</code></pre>
 <script>
   const filterBtns = document.querySelectorAll('.proj-filter-btn');
   const projectCards = document.querySelectorAll('.project-card[data-tags]');
+  const projectContainer = document.querySelector('.project-container');
+  const statusFilter = document.getElementById('status-filter');
+  const projectSearch = document.getElementById('project-search');
+  const projectSort = document.getElementById('project-sort');
+  const projectResults = document.getElementById('project-results');
+  let activeTechFilter = 'all';
+  const statusOrder = { live: 0, progress: 1, done: 2 };
+  const projectMetaByTitle = {
+    "Campus & Crema": {
+      status: "live",
+      statusLabel: "Published",
+      metric: "3 bugs fixed",
+      problem: "Cafe UI felt unclear on mobile.",
+      solution: "Responsive redesign + accessible JS menu."
+    },
+    "MiniShop JS": {
+      status: "progress",
+      statusLabel: "In progress",
+      metric: "6 bugs documented",
+      problem: "Cart logic was not maintainable.",
+      solution: "OOP model with classes and pure methods."
+    },
+    "We Playing Cards": {
+      status: "done",
+      statusLabel: "Completed",
+      metric: "Working 3D UI",
+      problem: "Flat interaction experience.",
+      solution: "CSS 3D transforms + circular state logic."
+    },
+    "Mangata & Gallo": {
+      status: "done",
+      statusLabel: "Completed",
+      metric: "Premium landing",
+      problem: "Brand lacked polished web presence.",
+      solution: "Semantic layout and micro-interactions."
+    },
+    "Hotel Survey Form": {
+      status: "done",
+      statusLabel: "Completed",
+      metric: "HTML5 validated",
+      problem: "Feedback capture was not user-friendly.",
+      solution: "Accessible form with industry-driven UX."
+    },
+    "Dev Log 365": {
+      status: "live",
+      statusLabel: "Active",
+      metric: "26+ published days",
+      problem: "Learning progress lacked daily traceability.",
+      solution: "Technical diary with filters and metrics."
+    },
+    "my-todo-list": {
+      status: "live",
+      statusLabel: "Published",
+      metric: "Task CRUD flow",
+      problem: "Daily task flow lacked a simple system.",
+      solution: "To-do app with events and local state."
+    },
+    "fcc-technical-documentation": {
+      status: "done",
+      statusLabel: "Completed",
+      metric: "Structured docs page",
+      problem: "Technical insights were scattered.",
+      solution: "Navigable semantic documentation page."
+    },
+    "malaga-photo-walk": {
+      status: "done",
+      statusLabel: "Completed",
+      metric: "Accessibility applied",
+      problem: "Route checklist was not user-friendly.",
+      solution: "Clear UI focused on accessibility."
+    }
+  };
+
+  function enhanceProjectCards() {
+    projectCards.forEach(card => {
+      const titleEl = card.querySelector('h3');
+      const descEl = card.querySelector('.project-content > p');
+      if (!titleEl || !descEl) return;
+
+      const meta = projectMetaByTitle[titleEl.textContent.trim()];
+      if (!meta || card.querySelector('.project-meta')) return;
+
+      const metaRow = document.createElement('div');
+      metaRow.className = 'project-meta';
+      metaRow.innerHTML = `
+        <span class="proj-status ${meta.status}">${meta.statusLabel}</span>
+        <span class="proj-metric">${meta.metric}</span>
+      `;
+
+      const miniBlock = document.createElement('div');
+      miniBlock.className = 'proj-mini-block';
+      miniBlock.innerHTML = `
+        <p><strong>Problem:</strong> ${meta.problem}</p>
+        <p><strong>Solution:</strong> ${meta.solution}</p>
+      `;
+
+      card.dataset.status = meta.status;
+      card.dataset.search = `${titleEl.textContent} ${meta.problem} ${meta.solution}`.toLowerCase();
+      descEl.insertAdjacentElement('afterend', miniBlock);
+      titleEl.insertAdjacentElement('afterend', metaRow);
+    });
+  }
+
+  enhanceProjectCards();
+
+  function sortCards(sortValue) {
+    const cards = Array.from(projectCards);
+    if (sortValue === 'title') {
+      cards.sort((a, b) => {
+        const at = a.querySelector('h3')?.textContent.trim() || '';
+        const bt = b.querySelector('h3')?.textContent.trim() || '';
+        return at.localeCompare(bt, 'en');
+      });
+    } else if (sortValue === 'status') {
+      cards.sort((a, b) => {
+        const as = statusOrder[a.dataset.status] ?? 99;
+        const bs = statusOrder[b.dataset.status] ?? 99;
+        if (as !== bs) return as - bs;
+        const at = a.querySelector('h3')?.textContent.trim() || '';
+        const bt = b.querySelector('h3')?.textContent.trim() || '';
+        return at.localeCompare(bt, 'en');
+      });
+    } else {
+      cards.sort((a, b) => Number(a.dataset.originalIndex) - Number(b.dataset.originalIndex));
+    }
+
+    cards.forEach(card => projectContainer.appendChild(card));
+  }
+
+  function applyProjectFilters() {
+    const status = statusFilter.value;
+    const query = projectSearch.value.trim().toLowerCase();
+    let visible = 0;
+
+    projectCards.forEach(card => {
+      const matchesTech = activeTechFilter === 'all' || card.dataset.tags.includes(activeTechFilter);
+      const matchesStatus = status === 'all' || card.dataset.status === status;
+      const matchesSearch = !query || (card.dataset.search || '').includes(query);
+      const show = matchesTech && matchesStatus && matchesSearch;
+      card.style.display = show ? 'flex' : 'none';
+      if (show) visible += 1;
+    });
+
+    projectResults.textContent = visible === 1
+      ? 'Showing 1 project'
+      : `Showing ${visible} projects`;
+
+    sortCards(projectSort.value);
+  }
+
+  Array.from(projectCards).forEach((card, index) => {
+    card.dataset.originalIndex = String(index);
+  });
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', function() {
       filterBtns.forEach(b => b.classList.remove('active'));
       this.classList.add('active');
-
-      const filter = this.dataset.filter;
-
-      projectCards.forEach(card => {
-        if (filter === 'all' || card.dataset.tags.includes(filter)) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
+      activeTechFilter = this.dataset.filter;
+      applyProjectFilters();
     });
   });
+
+  statusFilter.addEventListener('change', applyProjectFilters);
+  projectSearch.addEventListener('input', applyProjectFilters);
+  projectSort.addEventListener('change', applyProjectFilters);
+  applyProjectFilters();
 
   // Dark mode
   const themeBtn = document.getElementById('theme-toggle');

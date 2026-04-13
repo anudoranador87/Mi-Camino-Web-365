@@ -718,6 +718,68 @@ main {
 .btn-live { background: var(--bg-section); color: var(--dark) !important; border: 1px solid var(--border); }
 .btn-live:hover { background: var(--border); }
 
+.project-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 2px 0 10px;
+}
+
+.proj-status {
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  border: 1px solid var(--border);
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.proj-status.live {
+  color: #0a7a37;
+  border-color: #8fd7ad;
+  background: #ecfff3;
+}
+
+.proj-status.progress {
+  color: #8b5e00;
+  border-color: #e7c67f;
+  background: #fff8e8;
+}
+
+.proj-status.done {
+  color: #1e4fbf;
+  border-color: #9eb7f0;
+  background: #eef4ff;
+}
+
+.proj-metric {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--text-soft);
+  white-space: nowrap;
+}
+
+.proj-mini-block {
+  margin: 0 0 12px;
+  padding: 10px;
+  background: var(--bg-section);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.proj-mini-block p {
+  margin: 0 0 6px;
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.proj-mini-block p:last-child {
+  margin-bottom: 0;
+}
+
 /* ── FOOTER ──────────────────────────────────────────────── */
 footer {
   background: var(--dark);
@@ -1128,6 +1190,39 @@ footer p {
   border-color: var(--primary);
 }
 
+.proj-controls {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 10px;
+  max-width: 980px;
+  margin: -12px auto 8px;
+}
+
+.proj-control-input {
+  width: 100%;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-main);
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.2px;
+  padding: 10px 12px;
+}
+
+.proj-control-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--primary) 18%, transparent);
+}
+
+.proj-results-count {
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--text-soft);
+  margin: 12px 0 0;
+}
+
 /* Flagship */
 .proj-flagship {
   display: grid;
@@ -1228,6 +1323,9 @@ footer p {
   }
   .proj-flagship-stats {
     gap: 16px;
+  }
+  .proj-controls {
+    grid-template-columns: 1fr;
   }
 }
 

@@ -171,6 +171,246 @@
     Day 1 = February 20, 2026 · The 365 days are counted from there · Not every day has an entry
   </p>
 </section>
+<!-- ============================
+     ENTRY 30 — 13 APRIL
+=============================== -->
+<!-- ============================
+     DAY 30 — Async/Await in production
+=============================== -->
+
+<article class="entry" data-tags="js project debug" aria-labelledby="title-d30-en">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 30</span>
+    <time datetime="2026-04-13" data-i18n="d30-date-en">April 13, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">JS</li>
+      <li class="etag">Async/Await</li>
+      <li class="etag">API</li>
+      <li class="etag">Project</li>
+      <li class="etag">DOM</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d30-en" data-i18n="d30-headline-en">
+    Async/await finally clicks.<br>I shipped it live on my portfolio, pulling from the GitHub API.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d30-deck-en">
+    After weeks of async/await in theory, today I built it for real — dynamic project loading
+    from the GitHub public API, straight into my CV. The hardest part wasn't the async.
+    It was the DOM. Not because it's difficult, but because manual DOM manipulation is just tedious.
+  </p>
+
+  <!-- SCREENSHOT -->
+  <figure style="margin: 24px 0; text-align:center;">
+    <img src="proyectsapigithub.png" alt="Projects section loaded dynamically from GitHub API" style="max-width:100%; border-radius:8px; border:1px solid var(--border);">
+    <figcaption style="font-size:0.75rem; opacity:0.6; margin-top:8px;">Projects loaded in real time · GitHub API · async/await · fetch</figcaption>
+  </figure>
+
+  <!-- ── COLUMNS ─────────────────────────────────────────── -->
+  <div class="cols">
+
+    <!-- LEFT COLUMN -->
+    <div>
+
+      <h3 class="col-label" data-i18n="d30-lbl-star-en">STAR Summary</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> I'd spent weeks studying Promises and async/await with Jonas. Concepts that always felt abstract — no real use case to anchor them.<br><br>
+        <strong>T —</strong> Implement async/await in a justified way on my CV — not just to tick a box, but because it made sense. The idea: load projects dynamically from the GitHub public API.<br><br>
+        <strong>A —</strong> Built <code>getGithubProjects()</code> step by step: fetch the API, convert to JSON, filter by a whitelist array, and render cards dynamically using <code>innerHTML</code> and template literals. Reasoned every step on paper before writing code. Removed all static project cards from the HTML, leaving only the dynamic container.<br><br>
+        <strong>R —</strong> The projects section on my CV now loads in real time from GitHub. To add a new project, I just update the array — no HTML changes needed. Badge visible: "⚡ Loaded in real time via GitHub API · async/await · fetch".
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d30-lbl-wins-en">Wins of the day</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">async/await shipped with real purpose — not an exercise, a production feature</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Learned to filter arrays of objects with a whitelist: <code>.filter() + .includes()</code></span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Discovered that arrow functions without braces have an implicit return — less code, same logic</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text"><code>innerHTML</code> with template literals is far cleaner than creating elements one by one with <code>createElement</code></span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Brace and parenthesis errors caught faster than before — paper-first methodology pays off</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "The hardest part wasn't async/await — it was the DOM. Not because it's difficult, but because manual manipulation is just tedious. That's exactly why React exists."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d30-lbl-levels-en">Skill levels at end of day</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">async/await</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="55"></div>
+        </div>
+        <span class="skill-pct">55%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">fetch / API</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="60"></div>
+        </div>
+        <span class="skill-pct">60%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">DOM manipulation</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">filter / includes</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="70"></div>
+        </div>
+        <span class="skill-pct">70%</span>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d30-lbl-debug-en">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> <code>const datos</code> declared twice — the second variable needed its own name: <code>jsondatos</code></span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: rename properly. Lesson: every variable should have a semantic name that reflects what it holds</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> called <code>respuesta.json()</code> when the variable was named <code>datos</code> — names didn't match</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: re-read variable names before running. Paper-first would have caught this</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> <code>Myrepos</code> with capital M — JS is case-sensitive, variable not found</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: check casing carefully. Catching it faster now — the eye trains itself</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> <code>filter</code> with <code>{ }</code> but no <code>return</code> — returned an empty array with no visible error</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: with braces you need explicit <code>return</code>. Without braces, return is implicit. Went with the cleaner version</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 5:</strong> <code>forEach</code> written outside the function — <code>filtrados</code> didn't exist in that scope</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: move forEach inside <code>getGithubProjects()</code>. Those braces will get you every time</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 6:</strong> forgot to select the HTML container with <code>querySelector</code> — no reference, nothing to insert into</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: <code>const contenedor = document.querySelector('#github-repos')</code> before the forEach</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 7:</strong> no <code>try/catch</code> on the first version — what happens if the API fails?</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: wrap everything in <code>try/catch</code>. Always in production — an API can fail, or the user might be offline</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Result: CV loads projects in real time from GitHub API. No static HTML. No code changes needed to add new projects.</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d30-lbl-code-en">Code of the day</h3>
+
+      <pre class="code-block"><code>
+async function getGithubProjects() {
+  try {
+    const datos = await fetch(
+      "https://api.github.com/users/anudoranador87/repos"
+    );
+    const jsondatos = await datos.json();
+
+    const myRepos = [
+      "campus-crema-react",
+      "-MiniShop-JS",
+      "mangata-gallo-jewelry",
+      "Mi-Camino-Web-365",
+      "fcc-technical-documentation",
+      "we-playing-cards"
+    ];
+
+    const filtrados = jsondatos.filter(
+      repo => myRepos.includes(repo.name)
+    );
+
+    const contenedor = document.querySelector('#github-repos');
+
+    filtrados.forEach(repo => {
+      contenedor.innerHTML += `
+        &lt;div class="project-card"&gt;
+          &lt;h3&gt;${repo.name}&lt;/h3&gt;
+          &lt;p&gt;${repo.description}&lt;/p&gt;
+          &lt;span class="ptag"&gt;${repo.language}&lt;/span&gt;
+          &lt;p&gt;🕒 ${new Date(repo.pushed_at)
+            .toLocaleDateString('es-ES')}&lt;/p&gt;
+        &lt;/div&gt;
+      `;
+    });
+
+  } catch (error) {
+    console.error('Error loading repos:', error);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', getGithubProjects);
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "If the array is the whitelist and includes() is the bouncer, filter() is the queue. It clicked the moment I drew it on paper."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
+
 
 <!-- ============================
      ENTRY 29 — 11 APRIL
