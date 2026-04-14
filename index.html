@@ -183,8 +183,178 @@
 </section>
 
 <!-- ============================
-     ENTRADA 30 DÍA 13  ABRIL 
+     ENTRADA 31 DÍA 14  ABRIL 
 =============================== -->
+<article class="entry" data-tags="js debug project" aria-labelledby="title-d31">
+  <header class="entry-kicker">
+    <span class="day-badge">Día 31</span>
+    <time datetime="2026-04-14" data-i18n="d31-date">14 de Abril, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">JS</li>
+      <li class="etag">Async/Await</li>
+      <li class="etag">API</li>
+      <li class="etag">Debug</li>
+      <li class="etag">Proyecto</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d31" data-i18n="d31-headline">
+    Weather API en vivo en Campus &amp; Crema.<br>Async/await que funciona de verdad.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d31-deck">
+    Hoy implementé la Weather API en Campus &amp; Crema — segunda API del día, después de la GitHub API en el CV.
+    No fue inmediato — hubo errores de key, de scripts, de servidor local —
+    pero al final el widget del tiempo aparece en el hero, en producción.
+  </p>
+
+  <div class="cols">
+
+    <div>
+
+      <h3 class="col-label" data-i18n="d31-lbl-star">Resumen STAR</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Campus &amp; Crema tenía el hero estático. Quería añadir algo dinámico y útil: el tiempo en Málaga para que el cliente supiera si apetecía terraza antes de reservar.<br><br>
+        <strong>T —</strong> Conectar la OpenWeatherMap API con async/await, renderizar ciudad, temperatura y descripción en el widget del hero.<br><br>
+        <strong>A —</strong> Registré cuenta en OpenWeatherMap, generé API key, escribí la función async con fetch, try/catch, template literal y querySelector. Separé el script del formulario para resolver un conflicto. Moví la llamada dentro de DOMContentLoaded. Añadí CSS con backdrop-filter para el estilo del widget.<br><br>
+        <strong>R —</strong> El widget muestra "📍 Málaga · 18°C · algo de nubes" en tiempo real, encima del título principal. Primer fetch a una API externa en producción.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d31-lbl-wins">Victorias del día</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Weather API conectada y funcionando en el hero de Campus &amp; Crema</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">async/await + try/catch estructurado correctamente</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Identificé que el error era de otro script, no de la API — y lo separé</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Widget con glassmorphism integrado en el hero de Campus &amp; Crema</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "No era difícil. Era nuevo. Hay diferencia."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d31-lbl-levels">Niveles al cierre del día</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">async/await</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="60"></div>
+        </div>
+        <span class="skill-pct">60%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">APIs externas</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="45"></div>
+        </div>
+        <span class="skill-pct">45%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Debug de scripts</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="55"></div>
+        </div>
+        <span class="skill-pct">55%</span>
+      </div>
+
+    </div>
+
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d31-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> API key generada pero devuelve 401 — la inserté inmediatamente después de registrarme</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: Las keys de OpenWeatherMap tardan hasta 2 horas en activarse. Esperé más de 10 minutos sin saber esto. Lección: leer la documentación antes de asumir que algo está roto.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> El widget no aparecía aunque el fetch devolvía 200 — ValidarFormulario lanzaba error en index.html porque buscaba un formulario que no existe en esa página</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: Separé el script del formulario a un archivo independiente. Un script roto interrumpe todo lo que viene después.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> Intenté abrir el archivo desde file:// — el fetch no funciona sin servidor local</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: Live Server en VS Code. Siempre necesario para fetch a APIs externas.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> myApiWeather() no se ejecutaba sola al cargar — me olvidé del DOMContentLoaded</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: Añadí la llamada dentro de DOMContentLoaded. Sin esto, la función existe pero nadie la llama.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Resultado: widget en vivo, datos reales, en producción en Campus &amp; Crema</span>
+      </p>
+
+      <!-- PLACEHOLDER IMAGEN DEMO -->
+      <h3 class="col-label" style="margin-top:20px">Demo</h3>
+      <div style="width:100%; aspect-ratio:16/9; background:#1a1a2e; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#666; font-size:0.85rem; border: 1px solid #333;">
+        <img src = "campusapi.png" alt="Widget del tiempo mostrando datos reales en Campus & Crema" style="max-width:100%; max-height:100%; border-radius:8px;">    
+        <!-- <span>GIF demo del widget funcionando aquí</span> -->
+      </div>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d31-lbl-code">Código del día</h3>
+
+      <pre class="code-block"><code>async function myApiWeather() {
+  try {
+    const datos = await fetch(API_URL);
+    const jsonDatos = await datos.json();
+    const clima = document.querySelector("#weather-widget");
+    clima.innerHTML = `
+      📍 ${jsonDatos.name}
+      · ${Math.round(jsonDatos.main.temp)}°C
+      · ${jsonDatos.weather[0].description}
+    `;
+  } catch (error) {
+    console.log("Error al cargar el clima");
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  myApiWeather();
+});</code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "Nota: esta entrada cubre solo Campus &amp; Crema. La GitHub API del CV está documentada en la entrada del día anterior."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
+
+
+
 <!-- ============================
      DÍA 30 — Async/Await en producción
 =============================== -->
