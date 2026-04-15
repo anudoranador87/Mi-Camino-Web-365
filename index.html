@@ -183,6 +183,166 @@
 </section>
 
 <!-- ============================
+     DÍA 32 — MI PRIMER COMPONENTE CON USESTATE
+     15 de Abril, 2026
+=============================== -->
+
+<article class="entry" data-tags="js" aria-labelledby="title-d32">
+  <header class="entry-kicker">
+    <span class="day-badge">Día 32</span>
+    <time datetime="2026-04-15" data-i18n="d32-date">15 de Abril, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">React</li>
+      <li class="etag">useState</li>
+      <li class="etag">Debug</li>
+      <li class="etag">Componentes</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d32" data-i18n="d32-headline">
+    Mi primer componente con useState<br>construido desde cero.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d32-deck">
+    Quería probar React solo, sin guía. Construí un botón que alterna entre "Hola" y "Adiós" usando un boolean como estado. Más errores de los esperados, más aprendizaje del que esperaba.
+  </p>
+
+  <!-- ── COLUMNAS ─────────────────────────────────────────── -->
+  <div class="cols">
+
+    <!-- COLUMNA IZQUIERDA -->
+    <div>
+
+      <h3 class="col-label" data-i18n="d32-lbl-star">Resumen STAR</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Siguiendo el curso de Meta y Jonas, quise salirme del guión y probar un componente con estado yo solo, sin que nadie me diera el código.<br><br>
+        <strong>T —</strong> Crear un componente <code>ButtonChange</code> que alterne entre "Hola" y "Adiós" al hacer click, usando <code>useState</code> con un boolean.<br><br>
+        <strong>A —</strong> Razoné en papel primero: elegí boolean sobre string porque es más React — solo necesito invertir el valor con <code>!</code>. Fui construyendo el componente pieza a pieza: estado, ternario, onClick, elemento padre, separación de archivos.<br><br>
+        <strong>R —</strong> Componente funcionando, importado desde <code>App.js</code>, con texto dinámico en el botón y fuera de él.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d32-lbl-wins">Victorias del día</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Elegí boolean sobre string por lógica propia — más React, más limpio</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Entendí dónde va el ternario — dentro del botón actualiza el botón, fuera actualiza fuera</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Separé correctamente <code>App.js</code> y <code>ButtonChange.js</code> sin ayuda</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "Cuidado con las llaves — antes eran sintaxis en Vanilla, ahora son sintaxis en React."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d32-lbl-levels">Niveles al cierre del día</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">useState</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="55"></div>
+        </div>
+        <span class="skill-pct">55%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">JSX / ternario</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="60"></div>
+        </div>
+        <span class="skill-pct">60%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Componentes</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="50"></div>
+        </div>
+        <span class="skill-pct">50%</span>
+      </div>
+
+    </div>
+
+    <!-- COLUMNA DERECHA -->
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d32-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> <code>buttonChange</code> con minúscula — React lo ignoró como componente</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Los componentes de React siempre con mayúscula. Sin excepción.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> <code>getSaludo</code> en vez de <code>setSaludo</code> — get es leer, set es cambiar</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">La convención existe por algo. El prefijo describe la intención.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> El botón no se renderizaba — nada envuelto en elemento padre</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">En React el return solo devuelve un elemento raíz. En Vanilla no pienso así todavía.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> <code>( =></code> en vez de <code>() =></code> — arrow function sin cerrar paréntesis</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Las llaves en JSX son de expresión, no de bloque. Sintaxis distinta a Vanilla.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Resultado: <code>ButtonChange</code> funcionando en <code>App.js</code>, texto dinámico dentro y fuera del botón</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d32-lbl-code">Código del día</h3>
+
+      <pre class="code-block"><code>import { useState } from "react";
+
+function ButtonChange() {
+  const [saludo, setSaludo] = useState(false);
+
+  return (
+    &lt;div&gt;
+      {saludo ? "Hola" : "Adios"}
+      &lt;button onClick={() =&gt; setSaludo(!saludo)}&gt;
+        {saludo ? "Cambiar a Adiós" : "Cambiar a Hola"}
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default ButtonChange;</code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "boolean sobre string — no necesito saber qué valor tiene, solo lo niego."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
+
+<!-- ============================
      ENTRADA 31 DÍA 14  ABRIL 
 =============================== -->
 <article class="entry" data-tags="js debug project" aria-labelledby="title-d31">

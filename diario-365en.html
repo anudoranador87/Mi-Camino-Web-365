@@ -171,6 +171,166 @@
     Day 1 = February 20, 2026 · The 365 days are counted from there · Not every day has an entry
   </p>
 </section>
+
+<!-- ============================
+     DAY 32 — MY FIRST USESTATE COMPONENT
+     April 15, 2026
+=============================== -->
+
+<article class="entry" data-tags="js" aria-labelledby="title-d32-en">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 32</span>
+    <time datetime="2026-04-15" data-i18n="d32-date">April 15, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">React</li>
+      <li class="etag">useState</li>
+      <li class="etag">Debug</li>
+      <li class="etag">Components</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d32-en" data-i18n="d32-headline">
+    My first useState component,<br>built from scratch.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d32-deck">
+    I wanted to try React on my own, no guide. I built a button that toggles between "Hello" and "Goodbye" using a boolean as state. More errors than expected, more learning than expected too.
+  </p>
+
+  <!-- ── COLUMNS ─────────────────────────────────────────── -->
+  <div class="cols">
+
+    <!-- LEFT COLUMN -->
+    <div>
+
+      <h3 class="col-label" data-i18n="d32-lbl-star">STAR Summary</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Following the Meta and Jonas courses, I wanted to go off-script and try building a stateful component on my own, without anyone handing me the code.<br><br>
+        <strong>T —</strong> Build a <code>ButtonChange</code> component that toggles between "Hello" and "Goodbye" on click, using <code>useState</code> with a boolean.<br><br>
+        <strong>A —</strong> Reasoned on paper first: chose boolean over string because it's more React — I just need to flip the value with <code>!</code>. Built the component piece by piece: state, ternary, onClick, parent element, file separation.<br><br>
+        <strong>R —</strong> Component working, imported into <code>App.js</code>, with dynamic text both inside and outside the button.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d32-lbl-wins">Wins of the day</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Chose boolean over string on my own reasoning — more React, cleaner logic</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Understood where the ternary goes — inside the button updates the button, outside updates outside</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Correctly separated <code>App.js</code> and <code>ButtonChange.js</code> without help</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "Watch out for curly braces — in Vanilla they were block syntax, in React they're expression syntax."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d32-lbl-levels">Levels at end of day</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">useState</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="55"></div>
+        </div>
+        <span class="skill-pct">55%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">JSX / ternary</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="60"></div>
+        </div>
+        <span class="skill-pct">60%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Components</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="50"></div>
+        </div>
+        <span class="skill-pct">50%</span>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d32-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> <code>buttonChange</code> lowercase — React ignored it as a component</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">React components always start with a capital letter. No exceptions.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> <code>getSaludo</code> instead of <code>setSaludo</code> — get means read, set means change</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">The convention exists for a reason. The prefix describes the intent.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> Button wasn't rendering — nothing wrapped in a parent element</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">React's return can only have one root element. I still think in Vanilla sometimes.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> <code>( =></code> instead of <code>() =></code> — arrow function with unclosed parenthesis</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Curly braces in JSX are for expressions, not blocks. Different syntax from Vanilla JS.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Final result: <code>ButtonChange</code> working inside <code>App.js</code>, dynamic text inside and outside the button</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d32-lbl-code">Code of the day</h3>
+
+      <pre class="code-block"><code>import { useState } from "react";
+
+function ButtonChange() {
+  const [saludo, setSaludo] = useState(false);
+
+  return (
+    &lt;div&gt;
+      {saludo ? "Hello" : "Goodbye"}
+      &lt;button onClick={() =&gt; setSaludo(!saludo)}&gt;
+        {saludo ? "Switch to Goodbye" : "Switch to Hello"}
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default ButtonChange;</code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "boolean over string — I don't need to know the current value, I just negate it."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
 <!-- ============================
      ENTRY 31 — 14 APRIL
 =============================== -->
