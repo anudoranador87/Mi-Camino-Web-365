@@ -171,7 +171,141 @@
     Day 1 = February 20, 2026 · The 365 days are counted from there · Not every day has an entry
   </p>
 </section>
+<!-- ============================
+     DAY 33 — 
+    
+     April 17, 2026
+=============================== -->
 
+<article class="entry" data-tags="js algo" aria-labelledby="title-d31-en">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 33</span>
+    <time datetime="2026-04-17" data-i18n="d31-en-date">April 17, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">JS</li>
+      <li class="etag">Algorithms</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d31-en" data-i18n="d31-en-headline">
+    Katas, bugs, and the return<br>I keep forgetting.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d31-en-deck">
+    Five katas attempted, four completed. Speed improving with each one.
+    Same mistake twice: console.log instead of return.
+    And one mental shift that matters: parameters aren't declared, they're received.
+  </p>
+
+  <div class="cols">
+
+    <div>
+
+      <h3 class="col-label" data-i18n="d31-en-lbl-star">STAR Summary</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Codewars session. Level 8-7 katas in JS.<br><br>
+        <strong>T —</strong> Solve problems using array methods and loop logic.<br><br>
+        <strong>A —</strong> countSheep with filter+length. findNeedle with indexOf and template literal. reverseSeq with a backwards for loop and push. zeroFuel with multiplication and comparison. Attempted the century kata and abandoned it.<br><br>
+        <strong>R —</strong> Four katas completed, one left for tomorrow. Each one faster than the last.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d31-en-lbl-wins">Wins</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">filter + length — clean pattern for counting with a condition</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Backwards for loop — never done it before, now I own it</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">A comparison already returns true/false — the ternary is sometimes redundant</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Speed increasing — last kata was much faster than the first</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "The simple ones are the hardest — you don't transform, you build from scratch."
+      </blockquote>
+
+    </div>
+
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d31-en-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Recurring bug:</strong> console.log instead of return — twice in the same day</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">console.log is for me. return is for the program. Not the same thing.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug:</strong> Redeclared parameters inside the function with let</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Parameters already exist. You don't declare them, you receive them.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug:</strong> push[i] instead of push(i) — brackets instead of parentheses</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Methods: parentheses. Indexes: brackets. Always.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug:</strong> for(let i = myarray.length) — started at 0, never entered the loop</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">The array was empty. The loop starts at n, not myarray.length.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Four katas done. The century kata is pending — picking it up tomorrow.</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d31-en-lbl-code">Code of the day</h3>
+
+      <pre class="code-block"><code>
+// reverseSeq — the one that cost the most
+const reverseSeq = n => {
+  let myarray = [];
+  for (let i = n; i > 0; i--) {
+    myarray.push(i);
+  }
+  return myarray;
+};
+
+// zeroFuel — direct comparison, no ternary needed
+const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+  const millaspuedoHacer = mpg * fuelLeft;
+  return millaspuedoHacer >= distanceToPump;
+};
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "return myarray — not return zeroFuel, not return []. The right name matters."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
 <!-- ============================
      DAY 32 — MY FIRST USESTATE COMPONENT
      April 15, 2026

@@ -181,6 +181,139 @@
     Día 1 = 20 de febrero de 2026 · Los 365 días se cuentan desde ahí · No todos los días tienen entrada
   </p>
 </section>
+<!-- ============================
+     DÍA 33 — MI PRIMER COMPONENTE CON USESTATE
+     17 de Abril, 2026
+=============================== -->
+<article class="entry" data-tags="js algo" aria-labelledby="title-d31">
+  <header class="entry-kicker">
+    <span class="day-badge">Día 33</span>
+    <time datetime="2026-04-17" data-i18n="d31-date">17 de Abril, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">JS</li>
+      <li class="etag">Algoritmos</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d31" data-i18n="d31-headline">
+    Katas, bugs y el return<br>que siempre se me olvida.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d31-deck">
+    Cinco katas resueltas. Velocidad mejorando con cada una.
+    El mismo error dos veces: console.log en vez de return.
+    Y un salto mental importante: los parámetros no se declaran, se reciben.
+  </p>
+
+  <div class="cols">
+
+    <div>
+
+      <h3 class="col-label" data-i18n="d31-lbl-star">Resumen STAR</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Sesión de Codewars. Katas de nivel 8-7 en JS.<br><br>
+        <strong>T —</strong> Resolver problemas aplicando métodos de array y lógica de bucles.<br><br>
+        <strong>A —</strong> countSheep con filter+length. findNeedle con indexOf y template literal. reverseSeq con for hacia atrás y push. zeroFuel con multiplicación y comparación. Intenté el de siglos y lo dejé.<br><br>
+        <strong>R —</strong> Cuatro katas completadas, una abandonada. Cada kata más rápida que la anterior.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d31-lbl-wins">Victorias del día</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">filter + length — patrón limpio para contar con condición</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Bucle for hacia atrás — nunca lo había hecho, ya lo tengo</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Una comparación ya devuelve true/false — el ternario sobra</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Velocidad aumentando — el último kata fue mucho más rápido que el primero</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "Los simples me dan más guerra — no transformas, construyes desde cero."
+      </blockquote>
+
+    </div>
+
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d31-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug recurrente:</strong> console.log en vez de return — dos veces en el mismo día</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">console.log es para mí. return es para el programa. No son lo mismo.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug:</strong> Redeclaré los parámetros dentro de la función con let</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Los parámetros ya existen. No los declaras, los recibes.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug:</strong> push[i] en vez de push(i) — corchetes en lugar de paréntesis</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Métodos: paréntesis. Índices: corchetes. Siempre.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug:</strong> for(let i = myarray.length) — empezaba en 0, nunca entraba al bucle</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">El array estaba vacío. El inicio del bucle es n, no myarray.length.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Cuatro katas completadas. El kata de siglos, pendiente — lo retomo mañana.</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d31-lbl-code">Código del día</h3>
+
+      <pre class="code-block"><code>
+// reverseSeq — el que más costó
+const reverseSeq = n => {
+  let myarray = [];
+  for (let i = n; i > 0; i--) {
+    myarray.push(i);
+  }
+  return myarray;
+};
+
+// zeroFuel — comparación directa sin ternario
+const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+  const millaspuedoHacer = mpg * fuelLeft;
+  return millaspuedoHacer >= distanceToPump;
+};
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "return myarray — no return zeroFuel, no return []. El nombre correcto importa."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
 
 <!-- ============================
      DÍA 32 — MI PRIMER COMPONENTE CON USESTATE
