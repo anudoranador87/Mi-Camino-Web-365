@@ -181,6 +181,223 @@
     Día 1 = 20 de febrero de 2026 · Los 365 días se cuentan desde ahí · No todos los días tienen entrada
   </p>
 </section>
+
+<!-- ============================
+     DÍA 34
+     20 de Abril, 2026
+=============================== -->
+<article class="entry" data-tags="js css debug project" aria-labelledby="title-d34">
+  <header class="entry-kicker">
+    <span class="day-badge">Día 34</span>
+    <time datetime="2026-04-20" data-i18n="d34-date">20 de Abril, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">JS</li>
+      <li class="etag">React</li>
+      <li class="etag">CSS</li>
+      <li class="etag">Debug</li>
+      <li class="etag">Proyecto</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d34" data-i18n="d34-headline">
+    reduce(), useState y filtros:<br>un día de patrones que encajan.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d34-deck">
+    Hoy el objetivo era consolidar <code>reduce()</code> — y acabé aplicándolo directamente en Campus & Crema.
+    Construí una sección de horarios desde cero, añadí filtros con <code>useState</code> tanto a los horarios
+    como al menú, y encadené <code>.filter().map()</code> por primera vez. El tercer ejercicio salió a la primera.
+  </p>
+
+  <div class="cols">
+
+    <div>
+
+      <h3 class="col-label" data-i18n="d34-lbl-star">Resumen STAR</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Sesión de estudio intensiva con dos frentes: teoría de <code>reduce()</code>
+        con ejercicios progresivos, y aplicación directa en Campus & Crema con dos componentes nuevos.<br><br>
+
+        <strong>T —</strong> Consolidar los tres patrones de <code>reduce()</code> (número, objeto, array de objetos),
+        construir el componente <code>Horarios</code> con filtro por semana/finde, y añadir filtro de categorías al menú.<br><br>
+
+        <strong>A —</strong> Tres ejercicios de <code>reduce()</code> en papel primero, luego código.
+        Creé <code>src/data/Horarios.js</code> con el array de datos, <code>Horarios.jsx</code> con
+        <code>useState</code> y <code>.filter().map()</code> encadenado, y <code>Horarios.css</code>
+        con la paleta de Campus & Crema. Añadí propiedad <code>categoria</code> al array de items del menú
+        y repliqué el patrón de filtro en <code>Menu.jsx</code>.<br><br>
+
+        <strong>R —</strong> Dos componentes nuevos funcionando en producción. El filtro de horarios
+        distingue semana/fin de semana visualmente. El menú filtra por café, salado y dulce.
+        Arquitectura <code>data/</code> + <code>components/</code> aplicada correctamente.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d34-lbl-wins">Victorias del día</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Ejercicio 3 de <code>reduce()</code> (array de objetos) — resuelto a la primera sin ayuda</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Componente <code>Horarios</code> construido desde cero con arquitectura correcta: <code>data/</code> separado de <code>components/</code></span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text"><code>.filter().map()</code> encadenado — primer uso real en un proyecto propio</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Filtro de categorías en el menú — <code>useState</code> aplicado a datos reales de Campus & Crema</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Corregido <code>key={index}</code> → <code>key={item.id}</code> en el menú</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "El patrón es siempre el mismo: datos separados, estado que filtra, JSX que renderiza. Una vez que lo ves, lo ves en todas partes."
+      </blockquote>
+
+      <!-- GIF 1 — filtro de horarios (semana / fin de semana) -->
+      <h3 class="col-label" style="margin-top:20px">Filtro de horarios</h3>
+      <img src="filtrobotones.gif" alt="Filtro semana y fin de semana en la sección de horarios" style="width:100%; border-radius:10px; border:1px solid #e8dfcf;" />
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d34-lbl-levels">Niveles al cierre del día</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">reduce() — número</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="85"></div>
+        </div>
+        <span class="skill-pct">85%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">reduce() — objeto</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="55"></div>
+        </div>
+        <span class="skill-pct">55%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">useState + filter</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="75"></div>
+        </div>
+        <span class="skill-pct">75%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Arquitectura React</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="70"></div>
+        </div>
+        <span class="skill-pct">70%</span>
+      </div>
+
+    </div>
+
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d34-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Tilde en variable:</strong> <code>núm</code> con tilde → <code>ReferenceError</code> en runtime</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">JavaScript no acepta caracteres especiales en nombres de variable. Los acentos no existen en código.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Archivo no guardado:</strong> el componente no aparecía en pantalla — 20 minutos de debug innecesario</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Antes de debuggear: confirmar siempre que el archivo está guardado y el servidor corriendo.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Nombre inconsistente:</strong> importado como <code>Horarios</code>, usado en JSX como <code>HorariosComponent</code></span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">El nombre del import y el del JSX tienen que coincidir. El componente no renderiza si no.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Import circular:</strong> <code>Horarios.jsx</code> intentaba importarse a sí mismo con ruta <code>./Data/Horarios</code></span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Los datos están en <code>src/Data/</code>, no en <code>src/components/</code>. La ruta correcta es <code>../Data/Horarios</code>.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Estado inconsistente:</strong> <code>className</code> comparaba con <code>"cafe"</code> pero <code>onClick</code> ponía <code>"cafes"</code></span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">El valor del estado tiene que ser idéntico en el <code>className</code> y en el <code>onClick</code>. Una letra rompe el filtro.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Resultado: horarios con toggle semana/finde + menú filtrado por categoría, ambos funcionando en local y listos para deploy</span>
+      </p>
+
+      <!-- GIF 2 — filtro de categorías del menú -->
+      <h3 class="col-label" style="margin-top:20px">Filtro de carta</h3>
+      <img src="filtrocarta.gif" alt="Filtro por categoría café, salado y dulce en el menú" style="width:100%; border-radius:10px; border:1px solid #e8dfcf;" />
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d34-lbl-code">Código del día</h3>
+
+      <pre class="code-block"><code>
+// Patrón reduce() → objeto contador
+const frutas = ['manzana', 'pera', 'manzana', 'uva'];
+
+const conteo = frutas.reduce((acc, fruta) => {
+  if (acc[fruta]) {
+    acc[fruta] += 1;
+  } else {
+    acc[fruta] = 1;
+  }
+  return acc;
+}, {});
+// { manzana: 2, pera: 1, uva: 1 }
+
+// Patrón useState + .filter().map()
+const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('todos');
+
+{items
+  .filter((item) => {
+    if (categoriaSeleccionada === 'todos') return true;
+    return item.categoria === categoriaSeleccionada;
+  })
+  .map((item) => (
+    &lt;article key={item.id} className="menu-item"&gt;
+      ...
+    &lt;/article&gt;
+  ))
+}
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "reduce() no es solo para sumar. Es para construir cualquier cosa a partir de un array."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
+
 <!-- ============================
      DÍA 33 — MI PRIMER COMPONENTE CON USESTATE
      17 de Abril, 2026

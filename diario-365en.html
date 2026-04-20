@@ -171,6 +171,224 @@
     Day 1 = February 20, 2026 · The 365 days are counted from there · Not every day has an entry
   </p>
 </section>
+
+<!-- ============================
+     DAY 34 — 
+    
+     April 20, 2026
+=============================== -->
+<article class="entry" data-tags="js css debug project" aria-labelledby="title-d34">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 34</span>
+    <time datetime="2026-04-20" data-i18n="d34-date">April 20, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">JS</li>
+      <li class="etag">React</li>
+      <li class="etag">CSS</li>
+      <li class="etag">Debug</li>
+      <li class="etag">Project</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d34" data-i18n="d34-headline">
+    reduce(), useState and filters:<br>a day of patterns clicking into place.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d34-deck">
+    The goal today was to consolidate <code>reduce()</code> — and I ended up applying it directly in Campus & Crema.
+    I built a schedule section from scratch, added filters with <code>useState</code> to both the schedule
+    and the menu, and chained <code>.filter().map()</code> for the first time. The third exercise came out right on the first try.
+  </p>
+
+  <div class="cols">
+
+    <div>
+
+      <h3 class="col-label" data-i18n="d34-lbl-star">STAR Summary</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Intensive study session on two fronts: <code>reduce()</code> theory
+        with progressive exercises, and direct application in Campus & Crema with two new components.<br><br>
+
+        <strong>T —</strong> Consolidate the three <code>reduce()</code> patterns (number, object, array of objects),
+        build the <code>Horarios</code> component with a weekday/weekend filter, and add a category filter to the menu.<br><br>
+
+        <strong>A —</strong> Three <code>reduce()</code> exercises on paper first, then code.
+        Created <code>src/data/Horarios.js</code> with the data array, <code>Horarios.jsx</code> with
+        <code>useState</code> and chained <code>.filter().map()</code>, and <code>Horarios.css</code>
+        using the Campus & Crema colour palette. Added a <code>categoria</code> property to the menu items array
+        and replicated the filter pattern in <code>Menu.jsx</code>.<br><br>
+
+        <strong>R —</strong> Two new components working in production. The schedule filter visually
+        distinguishes weekdays from weekends. The menu filters by coffee, savoury, and sweet.
+        <code>data/</code> + <code>components/</code> architecture applied correctly.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d34-lbl-wins">Wins of the day</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Exercise 3 of <code>reduce()</code> (array of objects) — solved on the first try without help</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text"><code>Horarios</code> component built from scratch with correct architecture: <code>data/</code> separated from <code>components/</code></span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Chained <code>.filter().map()</code> — first real use in my own project</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Category filter in the menu — <code>useState</code> applied to real Campus & Crema data</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Fixed <code>key={index}</code> → <code>key={item.id}</code> in the menu</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "The pattern is always the same: data separated, state that filters, JSX that renders. Once you see it, you see it everywhere."
+      </blockquote>
+
+      <!-- GIF 1 — schedule filter (weekday / weekend) -->
+      <h3 class="col-label" style="margin-top:20px">Schedule filter</h3>
+      <img src="filtrobotones.gif" alt="Weekday and weekend filter in the schedule section" style="width:100%; border-radius:10px; border:1px solid #e8dfcf;" />
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d34-lbl-levels">Skill levels at end of day</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">reduce() — number</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="85"></div>
+        </div>
+        <span class="skill-pct">85%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">reduce() — object</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="55"></div>
+        </div>
+        <span class="skill-pct">55%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">useState + filter</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="75"></div>
+        </div>
+        <span class="skill-pct">75%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">React architecture</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="70"></div>
+        </div>
+        <span class="skill-pct">70%</span>
+      </div>
+
+    </div>
+
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d34-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Accented variable name:</strong> <code>núm</code> with accent → <code>ReferenceError</code> at runtime</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">JavaScript does not accept special characters in variable names. Accents do not exist in code.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>File not saved:</strong> component was not showing on screen — 20 minutes of unnecessary debugging</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Before debugging: always confirm the file is saved and the dev server is running.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Inconsistent name:</strong> imported as <code>Horarios</code>, used in JSX as <code>HorariosComponent</code></span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">The import name and the JSX tag must match. The component won't render if they don't.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Circular import:</strong> <code>Horarios.jsx</code> was trying to import itself with path <code>./Data/Horarios</code></span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">The data lives in <code>src/Data/</code>, not in <code>src/components/</code>. The correct path is <code>../Data/Horarios</code>.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Inconsistent state value:</strong> <code>className</code> compared against <code>"cafe"</code> but <code>onClick</code> set <code>"cafes"</code></span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">The state value must be identical in both <code>className</code> and <code>onClick</code>. One letter breaks the filter.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Result: schedule with weekday/weekend toggle + menu filtered by category, both working locally and ready to deploy</span>
+      </p>
+
+      <!-- GIF 2 — menu category filter -->
+      <h3 class="col-label" style="margin-top:20px">Menu filter</h3>
+      <img src="filtrocarta.gif" alt="Category filter — coffee, savoury and sweet — in the menu" style="width:100%; border-radius:10px; border:1px solid #e8dfcf;" />
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d34-lbl-code">Code of the day</h3>
+
+      <pre class="code-block"><code>
+// reduce() pattern → object counter
+const fruits = ['apple', 'pear', 'apple', 'grape'];
+
+const count = fruits.reduce((acc, fruit) => {
+  if (acc[fruit]) {
+    acc[fruit] += 1;
+  } else {
+    acc[fruit] = 1;
+  }
+  return acc;
+}, {});
+// { apple: 2, pear: 1, grape: 1 }
+
+// useState + .filter().map() pattern
+const [selectedCategory, setSelectedCategory] = useState('todos');
+
+{items
+  .filter((item) => {
+    if (selectedCategory === 'todos') return true;
+    return item.categoria === selectedCategory;
+  })
+  .map((item) => (
+    &lt;article key={item.id} className="menu-item"&gt;
+      ...
+    &lt;/article&gt;
+  ))
+}
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "reduce() is not just for adding numbers. It's for building anything from an array."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
+
 <!-- ============================
      DAY 33 — 
     
