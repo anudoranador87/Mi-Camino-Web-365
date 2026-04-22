@@ -68,8 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// ── BARRAS DE BÚSQUEDA  // NO FUNCIONA, PENDIENTE DE CORREGIR
-// ─────────────────────────────────────────────
+// ── BÚSQUEDA Y FILTROS ─────────────────────────────────────────────
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -362,4 +361,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const ratio = bugs > 0 ? `${Math.round((fixes / bugs) * 100)}%` : '0%';
   setText('c-fixratio', ratio);
+
+  // Actualizar número de entradas en el masthead
+  const mastheadCount = document.getElementById('masthead-count');
+  if (mastheadCount) mastheadCount.textContent = String(daysCount);
 });
