@@ -171,6 +171,268 @@
     Day 1 = February 20, 2026 · The 365 days are counted from there · Not every day has an entry
   </p>
 </section>
+<!-- ============================
+     DAY 35 — 
+    
+     April 22, 2026
+=============================== -->
+<article class="entry" data-tags="js algo debug" aria-labelledby="title-d35">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 35</span>
+    <time datetime="2026-04-22" data-i18n="d35-date">April 22, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">JS</li>
+      <li class="etag">Algorithms</li>
+      <li class="etag">Debug</li>
+      <li class="etag">Strings</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d35" data-i18n="d35-headline">
+    Katas, frustration and the separator that breaks everything.<br>Strings are my next battle.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d35-deck">
+    Six katas solved across two sessions. None of them perfect on the first try.
+    The errors weren't logic errors — they were detail errors: one extra separator, a missing parenthesis, a half-finished template literal, <code>includes</code> backwards.
+    Today I found where my real gaps are. And I filled one of them.
+  </p>
+
+  <div class="cols">
+
+    <div>
+
+      <h3 class="col-label" data-i18n="d35-lbl-star">STAR Summary</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Two Codewars sessions. Morning: 8kyu katas focused on strings and arrays — ranked up to 7kyu, 10 katas completed total. Afternoon: 7kyu kata — Disemvowel Trolling — with full debugging documented.<br><br>
+        <strong>T —</strong> Solve string and array manipulation exercises applying learned methods:
+        <code>split</code>, <code>toLowerCase</code>, <code>startsWith</code>, <code>toString</code>, template literals, <code>filter</code>, <code>includes</code>, <code>join</code>.<br><br>
+        <strong>A —</strong> Morning: five katas — number to string, string to array, banjo, football points with split + accumulator, started BankAccount. Afternoon: Disemvowel Trolling — learned the <code>split → filter → join</code> pattern from scratch, with every error documented in real time.<br><br>
+        <strong>R —</strong> Six katas completed. Two clear patterns consolidated: split + accumulator, and split → filter → join. Error pattern confirmed: logic is there, syntax details are the bottleneck.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d35-lbl-wins">Wins of the day</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text"><code>toLowerCase().startsWith("r")</code> — identified on my own that this was the right combination for banjo</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Template literal with two variables — <code>`${name} ${resultado}`</code> — the return I always forgot to complete</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text"><code>split + accumulator</code> pattern consolidated: split the string, compare, add points</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Ranked up to 7kyu — 10 katas completed</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Learned <code>split("") → filter → join("")</code> — the Swiss army knife of string transformation</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Understood why <code>includes</code> direction matters — and can now explain it</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "I can see the logic. The details slow me down. That's already a different level from a month ago."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d35-lbl-levels">Skill levels at end of day</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">String methods</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="55"></div>
+        </div>
+        <span class="skill-pct">55%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">split + accumulator</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">split → filter → join</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="60"></div>
+        </div>
+        <span class="skill-pct">60%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Template literals</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="70"></div>
+        </div>
+        <span class="skill-pct">70%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">OOP — class + methods</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="52" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="52"></div>
+        </div>
+        <span class="skill-pct">52%</span>
+      </div>
+
+    </div>
+
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d35-lbl-debug">Debug Log — Morning Session</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>toLowerCase without parentheses:</strong> <code>name.toLowerCase.startsWith("r")</code> — references the function, doesn't execute it</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text"><code>toLowerCase()</code> is a method — always add parentheses to call it. Without them JS only stores the reference, doesn't invoke it.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Incomplete template literal:</strong> <code>return `name ${nombre}`</code> — name as literal text, not as a variable</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Inside backticks, variables go inside <code>${}</code>. Without the braces, it's plain text.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Wrong separator in split:</strong> <code>string.split(", ")</code> with comma and space — the string only had a space</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">The separator must match exactly what's between the elements. Look at the input before writing the split.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>BankAccount — constructor vs method:</strong> tried putting the push inside the constructor instead of the <code>deposit</code> method</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">The constructor initializes. Methods act. Two separate responsibilities.</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px">Debug Log — Afternoon Session (Disemvowel)</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Wrong tool — includes:</strong> <code>str.includes("a", "e", "i"...)</code> — includes only accepts one argument, and returns true/false, not a filtered result</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">I needed to transform, not just check. Different problem, different tool.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>split with multiple separators:</strong> <code>str.split("a", "e", "i"...)</code> — split only accepts one separator</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">To work letter by letter, use <code>split("")</code> — empty string splits every character.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>includes backwards:</strong> <code>elemento.includes("aeiouAEIOU")</code> — asking a single letter if it contains a 10-character string. Always false.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Flip it: <code>"aeiouAEIOU".includes(elemento)</code> — ask the vowel list if it contains the letter. The logic reads left to right but the direction matters.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>toString instead of join:</strong> <code>filtradas.toString()</code> returned <code>"T,h,s, ,w,b..."</code> — arrays stringify with commas by default</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text"><code>join("")</code> lets you choose the separator. Empty string = no separator = clean string.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>toString + join chained:</strong> <code>filtradas.toString().join("")</code> — toString returns a string, strings don't have join</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Pick one. <code>join("")</code> directly on the array. That's it.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Disemvowel solved. Pattern locked: <code>split("") → filter + includes → join("")</code></span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d35-lbl-code">Code of the day</h3>
+
+      <pre class="code-block"><code>
+// split + accumulator — football points
+function points(games) {
+  let puntos = 0;
+  games.forEach(game => {
+    const partes = game.split(":");
+    const x = partes[0];
+    const y = partes[1];
+    if (x > y)      puntos += 3;
+    else if (x < y) puntos += 0;
+    else             puntos += 1;
+  });
+  return puntos;
+}
+
+// Template literal with two variables
+function areYouPlayingBanjo(name) {
+  const resultado = name.toLowerCase().startsWith("r")
+    ? "plays banjo"
+    : "does not play banjo";
+  return `${name} ${resultado}`;
+}
+
+// Disemvowel — split → filter → join
+function disemvowel(str) {
+  const letras = str.split("")
+  const filtradas = letras.filter(elemento => !"aeiouAEIOU".includes(elemento))
+  return filtradas.join("")
+}
+
+// includes — direction matters
+"aeiouAEIOU".includes("a")  // ✅ true — list contains the letter
+"a".includes("aeiouAEIOU")  // ❌ false — a letter can't contain a list
+
+// split — the separator matters
+"Robin Singh".split(" ")   // ✅ ["Robin", "Singh"]
+"Robin Singh".split(", ")  // ❌ ["Robin Singh"] — doesn't split
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "Simple exercises aren't easy — they're the ones with the least margin for error."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:20px">Pending for tomorrow</h3>
+      <p class="body-text">
+        Sum of odd numbers (7kyu) — got blocked on the for loop logic with two counters.
+        The pattern: one variable tracks the current number, another counts how many odd numbers found so far. Stop when the counter reaches <code>n</code>.
+      </p>
+
+    </div>
+  </div>
+</article>
 
 <!-- ============================
      DAY 34 — 
