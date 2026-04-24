@@ -173,6 +173,261 @@
     Day 1 = February 20, 2026 · The 365 days are counted from there · Not every day has an entry
   </p>
 </section>
+
+<!-- ============================
+     DAY 36 — 
+    
+     April 24, 2026
+=============================== -->
+<article class="entry" data-tags="js css debug project html" aria-labelledby="title-d35">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 36</span>
+    <time datetime="2026-04-24">April 24, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">JS</li>
+      <li class="etag">CSS</li>
+      <li class="etag">API</li>
+      <li class="etag">async/await</li>
+      <li class="etag">DOM</li>
+      <li class="etag">Project</li>
+      <li class="etag">Deploy</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d35">
+    DeskPedia: from zero to deployed<br>in a single session.
+  </h2>
+
+  <p class="entry-deck">
+    Today I built DeskPedia — a Málaga guide for hotel receptionists powered by the Wikipedia API.
+    Third project using <code>async/await</code> and <code>fetch</code> against real APIs — after the weather API in Campus &amp; Crema and the GitHub API in my portfolio CV.
+    By end of day: working, styled, live on GitHub Pages.
+  </p>
+
+  <!-- Demo GIF -->
+  <figure style="margin: 1.5rem 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--color-border, #E2DDD6);">
+    <img src="deskpedia.gif" alt="DeskPedia demo — real-time search against the Wikipedia API" style="width:100%; display:block;">
+    <figcaption style="font-size:12px; color: var(--color-muted, #A09A94); padding: 8px 12px; text-align:center;">
+      DeskPedia v1 — real-time search · GitHub Pages · April 24 2026
+    </figcaption>
+  </figure>
+
+  <div class="cols">
+
+    <!-- LEFT COLUMN -->
+    <div>
+
+      <h3 class="col-label">STAR Summary</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> I'd had DeskPedia in mind for days. The async/await pattern was already consolidated — weather API and GitHub API — but I wanted a project that connected my 8 years of front desk experience with frontend development.<br><br>
+        <strong>T —</strong> Build DeskPedia from scratch: semantic HTML, custom CSS, JavaScript with a real fetch call to the Wikipedia API, and deploy it to GitHub Pages the same day.<br><br>
+        <strong>A —</strong> Started with architecture on paper — functions, states, data flow. Then HTML skeleton, then JS function by function: <code>mostrarEstado()</code>, <code>renderizarChips()</code>, <code>buscarWikipedia()</code>, <code>mostrarResultados()</code>, events. CSS last. GitHub Pages deploy at close.<br><br>
+        <strong>R —</strong> DeskPedia v1 working and live at <a href="https://anudoranador87.github.io/DeskPedia/" target="_blank" rel="noopener">anudoranador87.github.io/DeskPedia</a> — real Wikipedia search, 19 predefined chips about Málaga, 4 UI states, custom design with Playfair Display and a terracotta palette, SVG silhouette of the Alcazaba.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px">Problem it solves</h3>
+
+      <p class="body-text">
+        A hotel receptionist in Málaga answers international guests' questions all shift — monuments, history, food, transport, day trips. DeskPedia centralises that lookup: predefined chips for the most common topics, free search, direct link to the full article. No leaving the desk, no opening Google, no wasting time.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px">Wins of the day</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text"><strong>async/await + fetch</strong> — third project with a real external API. The <code>try/catch</code> pattern with two <code>await</code>s is now in muscle memory.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text"><strong>4 UI states</strong> — empty, loading, results, error. Managed without a framework, just DOM and custom logic.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text"><strong>JSON is clear now</strong> — <code>JSON.stringify</code> to save, <code>JSON.parse</code> to retrieve, <code>respuesta.json()</code> to parse a fetch response. Three different methods, three different contexts.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text"><strong>forEach vs map</strong> — <code>map</code> transforms and returns a new array. <code>forEach</code> executes with no return. Here it's always <code>forEach</code>.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text"><strong>textContent vs innerHTML</strong> — <code>textContent</code> is a property, not a method (no parentheses). <code>innerHTML</code> parses HTML — necessary for Wikipedia snippets containing <code>&lt;span&gt;</code> tags.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text"><strong>Deploy on GitHub Pages</strong> — project live with a real public URL.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text"><strong>Custom design</strong> — CSS from scratch with custom properties, Playfair Display, terracotta palette, Alcazaba SVG silhouette, skeleton loaders with shimmer animation.</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "I knew the theory. Today I applied it against a real API, watched it work, and shipped it. That's different."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px">Skill levels at close of day</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">async / await</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">fetch + API</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="60"></div>
+        </div>
+        <span class="skill-pct">60%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Dynamic DOM</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="70"></div>
+        </div>
+        <span class="skill-pct">70%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">CSS / design</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="60"></div>
+        </div>
+        <span class="skill-pct">60%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">JSON</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="75"></div>
+        </div>
+        <span class="skill-pct">75%</span>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="col-rule">
+
+      <h3 class="col-label">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>SyntaxError line 102:</strong> <code>Uncaught SyntaxError: Unexpected token '.'</code> — a stray dot broke the entire script.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: checked line 102, found the dot, deleted it. Lesson: one character breaks everything. The console always gives you the exact line.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Assignment to constant variable:</strong> <code>listaResultados = ""</code> inside <code>mostrarResultados</code> — tried to reassign a DOM constant.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: <code>listaResultados.innerHTML = ""</code> — don't reassign the variable, empty the element's HTML content.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Invisible results:</strong> cards were being created in the DOM but nothing showed — the <code>#estado-resultados</code> container had a <code>hidden</code> attribute that was never removed.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: add <code>mostrarEstado("resultados")</code> at the start of <code>mostrarResultados()</code>. The DOM existed, it was just hidden.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>HTML tags visible in snippets:</strong> results were displaying <code>&lt;span class="searchmatch"&gt;</code> as plain text.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: change <code>snippet.textContent = obj.snippet</code> to <code>snippet.innerHTML = obj.snippet</code> — Wikipedia returns HTML inside the snippet field, it needs to be parsed.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Search button not responding:</strong> click did nothing — I had accidentally deleted the <code>addEventListener</code> for the button while editing.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: re-add the listener on <code>btnBuscar</code>. Diagnosed with <code>console.log("click detected")</code> inside the callback.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>forEach without arrow or function:</strong> <code>CHIPS.forEach((chip){</code> — invalid syntax JavaScript doesn't recognise.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: <code>forEach</code> takes a function as its argument — either with an explicit <code>function</code> keyword or an arrow <code>=></code>. Without one of the two, it won't work.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">DeskPedia v1 deployed and working — real search, 19 chips, custom design, GitHub Pages.</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px">Code of the day</h3>
+
+      <pre class="code-block"><code>
+// The core pattern of DeskPedia
+// async/await + fetch + state management
+
+async function buscarWikipedia(termino) {
+  mostrarEstado("cargando");
+  try {
+    const respuesta = await fetch(API_URL + termino);
+    const data = await respuesta.json();
+    const miArray = data.query.search;
+    mostrarResultados(miArray);
+  } catch (error) {
+    mostrarEstado("error");
+    console.log("Error searching:", error);
+  }
+}
+
+// Why two awaits:
+// 1st → waits for the HTTP response to arrive (the envelope)
+// 2nd → waits for the JSON inside to be read (the contents)
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "fetch doesn't throw on 404 or 500. Always check <code>respuesta.ok</code> in production."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:20px">Pending v2</h3>
+
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">AI-generated background image for the header</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Search history in <code>localStorage</code></span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Surprise article button using the <code>action=random</code> endpoint</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Check <code>respuesta.ok</code> before parsing JSON</span>
+      </p>
+
+    </div>
+  </div>
+</article>
+
+
+
 <!-- ============================
      DAY 35 — 
     
