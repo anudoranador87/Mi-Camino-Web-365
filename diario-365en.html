@@ -173,7 +173,213 @@
     Day 1 = February 20, 2026 · The 365 days are counted from there · Not every day has an entry
   </p>
 </section>
+<!-- ============================
+     DAY 37 — TriviaShift: From zero to own logic
+     April 25, 2026
+     Tags: js · debug · project
+=============================== -->
 
+<article class="entry" data-tags="js debug project" aria-labelledby="title-d36">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 37</span>
+    <time datetime="2026-04-25" data-i18n="d36-date">April 25, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">JS</li>
+      <li class="etag">DOM</li>
+      <li class="etag">Debug</li>
+      <li class="etag">Project</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d36" data-i18n="d36-headline">
+    TriviaShift: I built the logic<br>from scratch, step by step.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d36-deck">
+    I had AI-generated JS that I had never read. I ignored it, mentally deleted it, and rebuilt it from the gameState to the question modal. Today I understood the callback pattern — define functions outside, call them inside.
+  </p>
+
+  <!-- GIF OF THE DAY -->
+  <div style="margin: 1.5rem 0; border: 1px solid var(--border, #1e2330); border-radius: 10px; overflow: hidden; max-width: 100%;">
+    <img src="trivialShift.gif" alt="TriviaShift in action" style="width:100%; display:block;"> -->
+    <div style="background: var(--bg-surface, #111318); padding: 2rem; text-align: center; color: var(--text-muted, #3d4258); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;">
+      [ GIF here — drag the file or paste the URL ]
+    </div>
+  </div>
+
+  <!-- ── COLUMNS ─────────────────────────────────────────── -->
+  <div class="cols">
+
+    <!-- LEFT COLUMN -->
+    <div>
+
+      <h3 class="col-label" data-i18n="d36-lbl-star">STAR Summary</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> I had the AI-generated TriviaShift code. I had never touched or read it. The goal was to understand it and rebuild it with my own thinking, not copy it.<br><br>
+        <strong>T —</strong> Build the game logic from scratch: state, game start, cell click, question modal, answer validation — step by step, without looking at the original code.<br><br>
+        <strong>A —</strong> I started by defining <code>gameState</code> by hand. Then the start event with <code>classList.add/remove</code>. Then the <code>forEach</code> over the cells with <code>dataset.index</code>. Then <code>renderTarjetas</code> with an external counter so questions don’t repeat. I reasoned through each function before writing it.<br><br>
+        <strong>R —</strong> In one session I built 80% of the game — from <code>gameState</code> to a working modal with real questions. <code>validarRespuesta</code> and <code>checkWinner</code> are left for the next session.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d36-lbl-wins">Wins of the day</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">I designed the <code>gameState</code> from scratch — structure, properties, correct data types</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">I understood <code>dataset.index</code> to connect the DOM with the board state</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">I applied <code>forEach</code> on <code>querySelectorAll</code> for the 9 clicks — no repeated code</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">The callback pattern clicked — define functions outside, call them inside the event</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Full dark mode — Syne + DM Mono, glow, animations, modal with backdrop blur</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "I almost did it all by myself. Faster each time, fewer mistakes."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d36-lbl-levels">End-of-day levels</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">DOM manipulation</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="72"></div>
+        </div>
+        <span class="skill-pct">72%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">State + callbacks</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">CSS dark mode</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="80"></div>
+        </div>
+        <span class="skill-pct">80%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">JS architecture</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="60"></div>
+        </div>
+        <span class="skill-pct">60%</span>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d36-lbl-why">Why this project exists</h3>
+
+      <p class="body-text">
+        TriviaShift comes from a real problem I experienced at reception: onboarding new staff was done through manuals no one read. Difficult situations — overbooking, aggressive guests, system outages — were only learned when you were already alone on shift and the problem had already happened.
+      </p>
+      <p class="body-text" style="margin-top: 0.8rem;">
+        The idea is simple: learn to make correct decisions under pressure <em>before</em> the lobby is full and the card terminal isn’t working. Game format because repetition without context doesn’t work — competition does.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d36-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> <code>tablero = [...]</code> inside the object — I used <code>=</code> instead of <code>:</code></span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: in object literals, pairs always use <code>:</code>, not <code>=</code></span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> <code>this.nombre</code> inside the object — <code>this</code> doesn’t work in object literals</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: names go as <code>nombres: &#123; X: '', O: '' &#125;</code> — no <code>this</code></span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> <code>screenConfig.addClassList("hidden")</code> — method name reversed</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: it’s <code>classList.add()</code> — object first, method after</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> <code>document.getElementByID</code> — capital D at the end</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: <code>getElementById</code> — lowercase except the I and final D</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 5:</strong> <code>opcion.document.createElement</code> — <code>document</code> chained to parameter</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: <code>document.createElement</code> is global — not chained to anything</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Result: working modal, ordered non-repeating questions, dark mode deployed</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d36-lbl-code">The pattern that clicked today</h3>
+
+      <pre class="code-block"><code>
+// The pattern: define outside, call inside
+// This keeps the callback clean and each function
+// has a single responsibility
+
+celdas.forEach((celda) => {
+  celda.addEventListener("click", () => {
+    if (gameState.tablero[celda.dataset.index] === null) {
+      renderTarjetas(celda.dataset.index); // call, don’t define
+    }
+  });
+});
+
+function renderTarjetas(index) {
+  // all logic here, separated and reusable
+  let pregunta = SECTORES.recepcion.preguntas[contador];
+  textPreguntas.textContent = pregunta.pregunta;
+  // ...
+  contador++;
+}
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "I almost did everything myself. Logic comes before syntax — syntax is memorized through repetition."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
 <!-- ============================
      DAY 36 — 
     

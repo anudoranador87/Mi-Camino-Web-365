@@ -183,6 +183,213 @@
     Día 1 = 20 de febrero de 2026 · Los 365 días se cuentan desde ahí · No todos los días tienen entrada
   </p>
 </section>
+<!-- ============================
+     DÍA 37 — TriviaShift: De cero a lógica propia
+     25 de Abril, 2026
+     Tags: js · debug · project
+=============================== -->
+
+<article class="entry" data-tags="js debug project" aria-labelledby="title-d36">
+  <header class="entry-kicker">
+    <span class="day-badge">Día 37</span>
+    <time datetime="2026-04-25" data-i18n="d36-date">25 de Abril, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">JS</li>
+      <li class="etag">DOM</li>
+      <li class="etag">Debug</li>
+      <li class="etag">Proyecto</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d36" data-i18n="d36-headline">
+    TriviaShift: construí la lógica<br>desde cero, paso a paso, mucha consola y consolidando DOM
+  </h2>
+
+  <p class="entry-deck" data-i18n="d36-deck">
+    Tenía un JS generado por IA que nunca había leído. Lo ignoré, lo borré mentalmente, y lo reconstruí desde el gameState hasta el modal de preguntas. Hoy entendí el patrón de callbacks — definir las funciones fuera, llamarlas dentro.
+  </p>
+
+  <!-- GIF DEL DÍA -->
+  <div style="margin: 1.5rem 0; border: 1px solid var(--border, #1e2330); border-radius: 10px; overflow: hidden; max-width: 100%;">
+    <img src="trivialShift.gif" alt="TriviaShift en acción" style="width:100%; display:block;"> -->
+    <div style="background: var(--bg-surface, #111318); padding: 2rem; text-align: center; color: var(--text-muted, #3d4258); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;">
+      
+    </div>
+  </div>
+
+  <!-- ── COLUMNAS ─────────────────────────────────────────── -->
+  <div class="cols">
+
+    <!-- COLUMNA IZQUIERDA -->
+    <div>
+
+      <h3 class="col-label" data-i18n="d36-lbl-star">Resumen STAR</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Tenía el código de TriviaShift generado por IA. Nunca lo había tocado ni leído. El objetivo era entenderlo y rehacerlo con mi propia cabeza, no copiarlo.<br><br>
+        <strong>T —</strong> Construir la lógica del juego desde cero: estado, arranque de partida, clic en celda, modal de preguntas, validación de respuesta — paso a paso, sin mirar el código original.<br><br>
+        <strong>A —</strong> Empecé definiendo el <code>gameState</code> a mano. Luego el evento de arranque con <code>classList.add/remove</code>. Después el <code>forEach</code> sobre las celdas con <code>dataset.index</code>. Luego <code>renderTarjetas</code> con un contador externo para que las preguntas no se repitan. Cada función la razoné antes de escribirla.<br><br>
+        <strong>R —</strong> En una sesión construí el 80% del juego — del <code>gameState</code> al modal funcionando con preguntas reales. Quedan <code>validarRespuesta</code> y <code>checkWinner</code> para la próxima sesión.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d36-lbl-wins">Victorias del día</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Diseñé el <code>gameState</code> desde cero — estructura, propiedades, tipos de dato correctos</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Entendí <code>dataset.index</code> para conectar el DOM con el estado del tablero</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Apliqué <code>forEach</code> sobre <code>querySelectorAll</code> para los 9 clicks — sin repetir código</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">El patrón de callbacks hizo clic — definir funciones fuera, llamarlas dentro del evento</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Dark mode completo — Syne + DM Mono, glow, animaciones, modal con backdrop blur</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "Casi lo hice yo solo. Cada vez más rápido y menos fallos."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d36-lbl-levels">Niveles al cierre del día</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">DOM manipulation</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="72"></div>
+        </div>
+        <span class="skill-pct">72%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Estado + callbacks</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">CSS dark mode</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="80"></div>
+        </div>
+        <span class="skill-pct">80%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Arquitectura JS</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="60"></div>
+        </div>
+        <span class="skill-pct">60%</span>
+      </div>
+
+    </div>
+
+    <!-- COLUMNA DERECHA -->
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d36-lbl-why">Por qué existe este proyecto</h3>
+
+      <p class="body-text">
+        TriviaShift nace de un problema real que viví en recepción: el onboarding de personal nuevo se hacía con manuales que nadie leía. Las situaciones complicadas — overbooking, clientes agresivos, sistemas caídos — solo se aprendían cuando ya estabas solo en el turno y el problema ya había ocurrido.
+      </p>
+      <p class="body-text" style="margin-top: 0.8rem;">
+        La idea es simple: aprender a tomar decisiones correctas bajo presión <em>antes</em> de que el lobby esté lleno y el datáfono no funcione. Formato juego porque la repetición sin contexto no funciona — la competición sí.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d36-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> <code>tablero = [...]</code> dentro del objeto — usé <code>=</code> en vez de <code>:</code></span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: en objetos literales, los pares siempre van con <code>:</code> no con <code>=</code></span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> <code>this.nombre</code> dentro del objeto — <code>this</code> no funciona en objetos literales</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: los nombres son <code>nombres: &#123; X: '', O: '' &#125;</code> — sin <code>this</code></span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> <code>screenConfig.addClassList("hidden")</code> — nombre del método al revés</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: es <code>classList.add()</code> — el objeto primero, el método después</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> <code>document.getElementByID</code> — mayúscula en la D</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: <code>getElementById</code> — todo minúsculas excepto la I y la D al final</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 5:</strong> <code>opcion.document.createElement</code> — <code>document</code> enganchado al parámetro</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: <code>document.createElement</code> es global — no va encadenado a nada</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Resultado: modal funcional, preguntas en orden sin repetición, dark mode desplegado</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d36-lbl-code">El patrón que hizo clic hoy</h3>
+
+      <pre class="code-block"><code>
+// El patrón: definir fuera, llamar dentro
+// Así el callback queda limpio y cada función
+// tiene una sola responsabilidad
+
+celdas.forEach((celda) => {
+  celda.addEventListener("click", () => {
+    if (gameState.tablero[celda.dataset.index] === null) {
+      renderTarjetas(celda.dataset.index); // llama, no define
+    }
+  });
+});
+
+function renderTarjetas(index) {
+  // toda la lógica aquí, separada y reutilizable
+  let pregunta = SECTORES.recepcion.preguntas[contador];
+  textPreguntas.textContent = pregunta.pregunta;
+  // ...
+  contador++;
+}
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        " La lógica llega antes que la sintaxis — la sintaxis se memoriza con repetición."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
 <!-- DÍA 36
      24 de Abril, 2026-->
 <article class="entry" data-tags="js css debug project html" aria-labelledby="title-d35">
