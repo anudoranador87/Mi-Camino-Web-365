@@ -235,6 +235,25 @@ html.dark-mode .close-banner {
   border: 0;
 }
 
+.search-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+@media (max-width: 600px) {
+  .search-filters {
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .search-filters > * {
+    flex: 1 1 auto;
+    min-width: 120px;
+  }
+}
+
 
 #search-input {
   width: min(340px, 100%);
@@ -1003,19 +1022,26 @@ button,
 
 @media (max-width: 600px) {
   body {
-    padding-top: 70px;
+    padding-top: 120px; /* Aumentado para acomodar la nav más alta */
   }
 
   .nav {
     flex-direction: column;
     gap: 12px;
     padding: 12px 4%;
+    position: absolute; /* Cambiado a absolute para evitar problemas de scroll horizontal en algunos navegadores móviles */
+    width: 100%;
   }
 
   .nav-links {
     flex-wrap: wrap;
     justify-content: center;
     gap: 12px;
+    width: 100%;
+  }
+
+  #search-input {
+    width: 100%;
   }
 
   .stats-row {
@@ -1027,6 +1053,7 @@ button,
     flex-wrap: wrap;
     gap: 10px;
     padding: 16px 4%;
+    top: 120px; /* Ajustado para la nueva altura de la nav */
   }
 
   .mast-title {
@@ -1051,7 +1078,36 @@ button,
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 480px) {
+  body {
+    padding-top: 180px; /* Aún más espacio para la nav en pantallas muy pequeñas */
+    font-size: 14px; /* Ajuste de letra general */
+  }
+
+  .filter-nav {
+    top: 180px;
+  }
+
+  .nav-brand {
+    font-size: 1.2rem;
+  }
+
+  .nav-links {
+    gap: 8px;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+  }
+
+  .search-filters > * {
+    min-width: 100%; /* Los filtros ocupan todo el ancho en móviles pequeños */
+  }
+
+  .mast-title {
+    font-size: 1.8rem;
+  }
+
   .mast-top {
     flex-direction: column;
     gap: 4px;
