@@ -183,6 +183,145 @@
     Día 1 = 20 de febrero de 2026 · Los 365 días se cuentan desde ahí · No todos los días tienen entrada
   </p>
 </section>
+<!-- ============================
+     DÍA 39 
+=============================== -->
+<article class="entry" data-tags="js" aria-labelledby="title-d39">
+  <header class="entry-kicker">
+    <span class="day-badge">Día 39</span>
+    <time datetime="2026-04-29" data-i18n="d39-date">29 de Abril, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">JS</li>
+      <li class="etag">React</li>
+      <li class="etag">Hooks</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d39" data-i18n="d39-headline">
+    useState es la pizarra del recepcionista.<br>useEffect es el que la vigila.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d39-deck">
+    Primera sesión dedicada a los hooks de React. Cuatro ejercicios de useState, 
+    cuatro de useEffect, muchos errores de sintaxis, y un click que lo cambia todo: 
+    el array vacío no es un bug — es una intención.
+  </p>
+
+  <div class="cols">
+
+    <div>
+
+      <h3 class="col-label" data-i18n="d39-lbl-star">Resumen STAR</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Antes de lanzarme a proyectos nuevos con React, decidí entender los hooks desde cero. Sin atajos. Sin memorizar sintaxis — entender qué hace cada pieza y por qué existe.<br><br>
+        <strong>T —</strong> Dominar useState y useEffect a través de ejercicios prácticos con contexto real de hostelería: contadores de lobby, toggles de habitación, timers de recepción.<br><br>
+        <strong>A —</strong> Cuatro ejercicios de useState progresivos: contador con límite, toggle booleano, input controlado, y selector de turno. Luego cuatro de useEffect: console.log al montar, vigilar cambios de state, timer con setInterval, y document.title reactivo. Cada error se analizó antes de corregir.<br><br>
+        <strong>R —</strong> useState dominado. useEffect entendido en sus tres formas. El concepto de cleanup integrado. La diferencia entre leer state y modificarlo — que tanto me costó — ya es instintiva.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d39-lbl-wins">Victorias del día</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">useState — declaración, lectura y escritura sin confundirlos</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Arrow function en onClick — entendida de verdad, no memorizada</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Array de dependencias — [] una vez, [variable] cuando cambia, sin array siempre</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">prev => prev + 1 — state basado en valor anterior dentro de timers</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Cleanup con clearInterval — abrir y cerrar procesos correctamente</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "useState es la pizarra. useEffect es el que mira la pizarra y actúa cuando cambia."
+      </blockquote>
+
+    </div>
+
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d39-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> onClick={setContador(contador + 1)} — se ejecuta al pintar, no al hacer clic</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: envolver siempre en arrow function — onClick={() => setContador(contador + 1)}</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> setOcupada("Disponible") — guardaba string en un state booleano</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: el state guarda booleanos, el JSX muestra strings. Son dos operaciones distintas</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> useEffect con [] vacío pero vigilando "nombre" — contradicción lógica</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: [] = solo al montar. [nombre] = cada vez que nombre cambia. El array declara la intención</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> setSegundos(segundos + 1) dentro de setInterval — segundos congelado en 0</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: setSegundos(prev => prev + 1) — React garantiza el valor actual real</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Cuatro ejercicios useState + cuatro useEffect completos y funcionales</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d39-lbl-code">Código del día</h3>
+
+      <pre class="code-block"><code>
+// useEffect — las tres formas
+useEffect(() => {
+  console.log("Solo al montar")
+}, [])
+
+useEffect(() => {
+  console.log("Cuando huespedes cambia:", huespedes)
+}, [huespedes])
+
+// Timer con cleanup
+useEffect(() => {
+  const id = setInterval(() => {
+    setSegundos(prev => prev + 1)
+  }, 1000)
+  return () => clearInterval(id)
+}, [])
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "El array vacío no está vacío de contenido — está lleno de intención."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
 
 <!-- ============================
      DÍA 38 — LOSTDESK: DE LA PAPELERA AL DOM

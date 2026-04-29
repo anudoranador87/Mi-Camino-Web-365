@@ -173,6 +173,145 @@
     Day 1 = February 20, 2026 · The 365 days are counted from there · Not every day has an entry
   </p>
 </section>
+<!-- ============================
+     DAY 39 
+=============================== -->
+<article class="entry" data-tags="js" aria-labelledby="title-d39-en">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 39</span>
+    <time datetime="2026-04-29" data-i18n="d39-date">April 29, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">JS</li>
+      <li class="etag">React</li>
+      <li class="etag">Hooks</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d39-en" data-i18n="d39-headline">
+    useState is the receptionist's whiteboard.<br>useEffect is the one watching it.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d39-deck">
+    First session dedicated to React hooks. Four useState exercises, four useEffect exercises, 
+    plenty of syntax errors, and one click that changed everything: 
+    the empty array isn't a bug — it's an intention.
+  </p>
+
+  <div class="cols">
+
+    <div>
+
+      <h3 class="col-label" data-i18n="d39-lbl-star">STAR Summary</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Before jumping into new React projects, I decided to understand hooks from scratch. No shortcuts. No memorising syntax — understand what each piece does and why it exists.<br><br>
+        <strong>T —</strong> Master useState and useEffect through practical exercises with real hotel context: lobby counters, room availability toggles, reception timers.<br><br>
+        <strong>A —</strong> Four progressive useState exercises: counter with floor limit, boolean toggle, controlled input, and shift selector. Then four useEffect exercises: console.log on mount, watching state changes, timer with setInterval, and reactive document.title. Every error was analysed before correcting.<br><br>
+        <strong>R —</strong> useState mastered. useEffect understood in its three forms. Cleanup concept integrated. The difference between reading state and modifying it — which tripped me up so much — is now instinctive.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d39-lbl-wins">Wins of the day</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">useState — declaration, reading and writing without mixing them up</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Arrow function in onClick — truly understood, not memorised</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Dependency array — [] once, [variable] on change, no array always</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">prev => prev + 1 — state based on previous value inside timers</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Cleanup with clearInterval — opening and closing processes correctly</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "useState is the whiteboard. useEffect is the one watching it and acting when something changes."
+      </blockquote>
+
+    </div>
+
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d39-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> onClick={setContador(contador + 1)} — fires on paint, not on click</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: always wrap in arrow function — onClick={() => setContador(contador + 1)}</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> setOcupada("Disponible") — storing a string in a boolean state</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: state stores booleans, JSX displays strings. Two separate operations</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> useEffect with [] but watching "nombre" — logical contradiction</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: [] = mount only. [nombre] = every time nombre changes. The array declares intent</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> setSegundos(segundos + 1) inside setInterval — segundos frozen at 0</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: setSegundos(prev => prev + 1) — React guarantees the actual current value</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Four useState + four useEffect exercises completed and functional</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d39-lbl-code">Code of the day</h3>
+
+      <pre class="code-block"><code>
+// useEffect — the three forms
+useEffect(() => {
+  console.log("Mount only")
+}, [])
+
+useEffect(() => {
+  console.log("When huespedes changes:", huespedes)
+}, [huespedes])
+
+// Timer with cleanup
+useEffect(() => {
+  const id = setInterval(() => {
+    setSegundos(prev => prev + 1)
+  }, 1000)
+  return () => clearInterval(id)
+}, [])
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "The empty array isn't empty of content — it's full of intention."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
 
 <!-- ============================
      DAY 38 — LOSTDESK: FROM PAPER TO DOM
