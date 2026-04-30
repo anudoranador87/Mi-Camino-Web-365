@@ -174,6 +174,150 @@
   </p>
 </section>
 <!-- ============================
+     DAY 40
+=============================== -->
+<article class="entry" data-tags="js" aria-labelledby="title-d40-en">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 40</span>
+    <time datetime="2026-04-30" data-i18n="d40-date">April 30, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">JS</li>
+      <li class="etag">React</li>
+      <li class="etag">Hooks</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d40-en" data-i18n="d40-headline">
+    useRef and useContext:<br>the notepad and the walkie-talkie.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d40-deck">
+    Hooks day. Started without knowing the difference between useRef and useState. Ended with three working exercises and a full context system with Provider and consumer children. Two concepts, many errors, everything understood.
+  </p>
+
+  <div class="cols">
+
+    <div>
+
+      <h3 class="col-label" data-i18n="d40-lbl-star">STAR Summary</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Continuation of the React hooks session. useState and useEffect were already covered. Today: useRef and useContext, both in the same session.<br><br>
+        <strong>T —</strong> Understand what useRef is, when to use it instead of useState, how to access the DOM with it, and then build a context architecture with createContext, Provider and useContext in child components.<br><br>
+        <strong>A —</strong> Three useRef exercises from scratch: notepad with refs, automatic input focus, and a list combining useState + useRef. Then an App component with two children (Saludo and Despedida) reading the username via useContext with no props passed down.<br><br>
+        <strong>R —</strong> All six components working. Prop drilling concept understood and solved. Difference between DOM ref (useRef(null)) and data ref (useRef("") / useRef(0)) clear and applied.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d40-lbl-wins">Wins of the day</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">useRef(null) for DOM vs useRef("") for data — distinction fully internalized</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Three coordinated refs in a single component: read, write and counter</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Full useContext architecture: createContext → Provider → useContext in children</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Spread operator with useState to add items without mutating the original array</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "useRef is the shift notepad. You write things down, you check them, but the hotel doesn't call a staff meeting."
+      </blockquote>
+
+
+
+    </div>
+
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d40-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> import { userRef } — typo. React is case-sensitive, fails silently.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: always useRef with capital R. Read the console error before hunting for the bug.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> valorGuardado.current.value — a string ref has no .value, that's DOM only.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: only the DOM ref (inputRef) has .value. Data refs only have .current.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> createContext() inside the component — recreated on every render.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: createContext always outside the component, with export so children can import it.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> &lt;UsuarioContexto.provider&gt; — lowercase provider is not valid in JSX.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: Provider always with capital P. In JSX, lowercase = HTML element, uppercase = component.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Result: App + Saludo + Despedida working with useContext. List with useRef + useState fully operational.</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d40-lbl-code">Code of the day</h3>
+
+      <pre class="code-block"><code>
+// useContext — full architecture
+
+// App.jsx
+export const UsuarioContexto = createContext();
+
+function App() {
+  return (
+    &lt;UsuarioContexto.Provider value={"Jose"}&gt;
+      &lt;Saludo /&gt;
+      &lt;Despedida /&gt;
+    &lt;/UsuarioContexto.Provider&gt;
+  );
+}
+
+// Saludo.jsx
+import { useContext } from "react";
+import { UsuarioContexto } from "./App";
+
+function Saludo() {
+  const Jose = useContext(UsuarioContexto);
+  return &lt;p&gt;Hello, {Jose}&lt;/p&gt;;
+}
+
+// No props. No prop drilling. The walkie-talkie works.
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "useContext is the hotel walkie-talkie. The manager broadcasts, any floor listens directly."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
+
+<!-- ============================
      DAY 39 
 =============================== -->
 <article class="entry" data-tags="js" aria-labelledby="title-d39-en">

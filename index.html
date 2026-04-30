@@ -184,6 +184,150 @@
   </p>
 </section>
 <!-- ============================
+     DÍA 40
+=============================== -->
+<article class="entry" data-tags="js" aria-labelledby="title-d40">
+  <header class="entry-kicker">
+    <span class="day-badge">Día 40</span>
+    <time datetime="2026-04-30" data-i18n="d40-date">30 de Abril, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">JS</li>
+      <li class="etag">React</li>
+      <li class="etag">Hooks</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d40" data-i18n="d40-headline">
+    useRef y useContext:<br>el bloc de notas y el walkie-talkie.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d40-deck">
+    Día de hooks. Arrancé sin saber distinguir useRef de useState y acabé con tres ejercicios funcionales y un sistema de contexto con Provider e hijos consumidores. Dos conceptos, muchos errores, todo entendido.
+  </p>
+
+  <div class="cols">
+
+    <div>
+
+      <h3 class="col-label" data-i18n="d40-lbl-star">Resumen STAR</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Continuación de la sesión de hooks de React. Ya tenía useState y useEffect. Hoy tocaba useRef y useContext, los dos en la misma sesión.<br><br>
+        <strong>T —</strong> Entender qué es useRef, cuándo usarlo en vez de useState, cómo acceder al DOM con él, y luego montar una arquitectura de contexto con createContext, Provider y useContext en componentes hijos.<br><br>
+        <strong>A —</strong> Tres ejercicios de useRef desde cero: bloc de notas con refs, foco automático en input, y lista combinando useState + useRef. Luego un componente App con dos hijos (Saludo y Despedida) que leen el nombre del usuario via useContext sin recibir props.<br><br>
+        <strong>R —</strong> Los seis componentes funcionando. Concepto de prop drilling entendido y resuelto. Diferencia entre ref del DOM (useRef(null)) y ref de datos (useRef("") / useRef(0)) clara y aplicada.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d40-lbl-wins">Victorias del día</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">useRef(null) para DOM vs useRef("") para datos — distinción interiorizada</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Tres refs coordinados en un solo componente: lectura, escritura y contador</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Arquitectura useContext completa: createContext → Provider → useContext en hijos</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Spread operator en useState para añadir items sin mutar el array original</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "useRef es el bloc de notas del turno. Apuntas cosas, las consultas, pero el hotel no convoca reunión de personal."
+      </blockquote>
+
+
+
+    </div>
+
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d40-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> import { userRef } — typo. React es case-sensitive, peta en silencio.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: siempre useRef con R mayúscula. Leer el error de consola antes de buscar el fallo.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> valorGuardado.current.value — un ref de string no tiene .value, eso es solo para el DOM.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: solo inputRef (el del DOM) tiene .value. Los refs de datos solo tienen .current.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> createContext() dentro del componente — se recrea en cada render.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: createContext siempre fuera del componente, y con export para que los hijos lo importen.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> &lt;UsuarioContexto.provider&gt; — provider en minúscula no es válido en JSX.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: Provider siempre con P mayúscula. En JSX, minúscula = elemento HTML, mayúscula = componente.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Resultado: App + Saludo + Despedida funcionando con useContext. Lista con useRef + useState operativa.</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d40-lbl-code">Código del día</h3>
+
+      <pre class="code-block"><code>
+// useContext — arquitectura completa
+
+// App.jsx
+export const UsuarioContexto = createContext();
+
+function App() {
+  return (
+    &lt;UsuarioContexto.Provider value={"Jose"}&gt;
+      &lt;Saludo /&gt;
+      &lt;Despedida /&gt;
+    &lt;/UsuarioContexto.Provider&gt;
+  );
+}
+
+// Saludo.jsx
+import { useContext } from "react";
+import { UsuarioContexto } from "./App";
+
+function Saludo() {
+  const Jose = useContext(UsuarioContexto);
+  return &lt;p&gt;Hola, {Jose}&lt;/p&gt;;
+}
+
+// Sin props. Sin prop drilling. El walkie-talkie funciona.
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "useContext es el walkie-talkie del hotel. El director emite, cualquier planta escucha directamente."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
+
+<!-- ============================
      DÍA 39 
 =============================== -->
 <article class="entry" data-tags="js" aria-labelledby="title-d39">
