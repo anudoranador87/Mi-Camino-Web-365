@@ -184,6 +184,163 @@
   </p>
 </section>
 <!-- ============================
+     DÍA 41
+=============================== -->
+<article class="entry" data-tags="js project" aria-labelledby="title-d41">
+  <header class="entry-kicker">
+    <span class="day-badge">Día 41</span>
+    <time datetime="2026-05-01" data-i18n="d41-date">1 de Mayo, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">JS</li>
+      <li class="etag">React</li>
+      <li class="etag">Hooks</li>
+      <li class="etag">Proyecto</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d41" data-i18n="d41-headline">
+    useReducer: cuando useState<br>ya no es suficiente.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d41-deck">
+    Aprendí useReducer desde cero y lo apliqué directamente en Campus Crema — un acordeón de FAQs funcional con lógica de estado centralizada. El salto de useState a useReducer no fue inmediato, pero tiene todo el sentido del mundo.
+  </p>
+
+  <div class="cols">
+
+    <div>
+
+      <h3 class="col-label" data-i18n="d41-lbl-star">Resumen STAR</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Sesión de hooks avanzados. Tenía useRef y useContext del día anterior. Hoy tocaba useReducer — el hook que gestiona estados complejos con múltiples acciones desde un punto central.<br><br>
+        <strong>T —</strong> Entender la arquitectura de useReducer (reducer, dispatch, estadoInicial, action.payload) y aplicarlo en un componente real de Campus Crema: un acordeón de FAQs con apertura/cierre por ID.<br><br>
+        <strong>A —</strong> Dos ejercicios previos: contador con tres acciones e input con lista dinámica. Luego arquitectura completa del acordeón: array de FAQs estático fuera del componente, estado { abierto: null }, reducer con casos "abierto" y "cerrado", ternarios en el JSX para mostrar/ocultar respuestas y rotar el icono.<br><br>
+        <strong>R —</strong> Acordeón funcionando en Campus Crema. Solo una FAQ abierta a la vez. Botón con ternario que alterna entre dispatch "abierto" y "cerrado" según el ID activo. CSS integrado con la paleta del proyecto.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d41-lbl-wins">Victorias del día</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Arquitectura useReducer completa: estadoInicial → reducer → dispatch → JSX</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">action.payload entendido — mandar datos extra con el dispatch</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Primer componente real con useReducer integrado en un proyecto en producción</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Spread operator en el reducer para no perder propiedades del estado</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "useReducer es el panel de control del hotel. Tú dices qué acción, él sabe cómo actualizar el estado."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:20px">Demo</h3>
+      <img src="acordeoncrema.gif" alt="Demo acordeón FAQ Campus Crema" style="width:100%; border-radius:10px; border:1px solid #e8dfcf;" />
+
+    </div>
+
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d41-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> Ternarios encadenados en el reducer sin return — solo ejecutaba el último.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: switch con return en cada caso. El ternario es para el JSX, no para el reducer.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> dispatch con string directo en onClick — React espera una función, no un valor.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: siempre arrow function en onClick: () => dispatch({ type: "..." }).</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> case "cerrado" devolvía { cerrado: null } — propiedad incorrecta.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: { abierto: null } — el nombre de la propiedad tiene que coincidir con el estadoInicial.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> Vite caché — el componente seguía importando @rewind-ui/core aunque ya no existía en el código.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: rm -rf node_modules/.vite && npm run dev. La caché de Vite no se limpia sola.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 5:</strong> estadoInicial y faqs definidos dentro del componente — se recrean en cada render.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: datos estáticos y funciones puras siempre fuera del componente.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Resultado: FAQ acordeón funcionando en Campus Crema con useReducer y estilos integrados.</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d41-lbl-code">Código del día</h3>
+
+      <pre class="code-block"><code>
+// useReducer — acordeón FAQ Campus Crema
+
+const estadoInicial = { abierto: null };
+
+function reducer(state, action) {
+  switch(action.type) {
+    case "abierto":
+      return { abierto: action.payload };
+    case "cerrado":
+      return { abierto: null };
+    default:
+      return state;
+  }
+}
+
+// En el JSX — lógica de apertura por ID
+&lt;button onClick={() =>
+  state.abierto === faq.id
+    ? dispatch({ type: "cerrado" })
+    : dispatch({ type: "abierto", payload: faq.id })
+}&gt;
+  {state.abierto === faq.id ? "Cerrar" : "Abrir"}
+&lt;/button&gt;
+
+{state.abierto === faq.id &amp;&amp; (
+  &lt;p className="faq-respuesta"&gt;{faq.respuesta}&lt;/p&gt;
+)}
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "Acostumbrado a useState para todo — useReducer abre una puerta que no sabía que existía."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
+<!-- ============================
      DÍA 40
 =============================== -->
 <article class="entry" data-tags="js" aria-labelledby="title-d40">
