@@ -183,6 +183,173 @@
     Día 1 = 20 de febrero de 2026 · Los 365 días se cuentan desde ahí · No todos los días tienen entrada
   </p>
 </section>
+
+<!-- ============================
+     DÍA 42
+=============================== -->
+<article class="entry" data-tags="js project" aria-labelledby="title-d42">
+  <header class="entry-kicker">
+    <span class="day-badge">Día 42</span>
+    <time datetime="2026-05-03" data-i18n="d42-date">3 de Mayo, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">JS</li>
+      <li class="etag">React</li>
+      <li class="etag">useReducer</li>
+      <li class="etag">Proyecto</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d42" data-i18n="d42-headline">
+    Carrito de compra en 4 pasos.<br>Un reducer para gobernarlos a todos.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d42-deck">
+    Construí desde cero el flujo completo de compra de Campus Crema — carta, resumen, entrega, pago y confirmación — con un solo useReducer manejando todo el estado. Ternarios anidados, dispatch entre componentes, llaves y paréntesis a destajo.
+  </p>
+
+  <div class="cols">
+
+    <div>
+
+      <h3 class="col-label" data-i18n="d42-lbl-star">Resumen STAR</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Campus Crema tenía un carrito generado por IA con varios useState dispersos. Decidí borrarlo y rehacerlo desde cero con useReducer — un solo estado centralizado para todo el flujo de compra.<br><br>
+        <strong>T —</strong> Construir un proceso de compra de 4 pasos (carta → resumen → datos → pago → confirmación) con lógica real: añadir productos, modificar cantidades, filtrar por categoría, dos tipos de entrega con formularios distintos y pago simulado.<br><br>
+        <strong>A —</strong> Definí el estadoInicial con 5 propiedades. Escribí el reducer con 7 casos desde cero — añadir, cambiarCantidad, setCategoria, setPaso, setTipoEntrega, setFormulario y confirmar. Construí la función renderPasos() con un switch que devuelve JSX distinto según el paso activo. Creé 4 componentes auxiliares: FormularioDomicilio, FormularioRecoger, PagoSimulado y PantallaConfirmacion. Conecté dispatch como prop en cada uno.<br><br>
+        <strong>R —</strong> Flujo completo funcionando en Campus Crema. Carta con filtros activos, resumen con IVA calculado, elección de entrega con ternario anidado, formularios diferenciados, pago simulado y pantalla de confirmación. Badge de cantidad en el botón Ver Resumen.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d42-lbl-wins">Victorias del día</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Reducer con 7 casos escrito desde cero — sin copiar, razonando cada return</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Ternarios anidados con fragmentos — tres condiciones en el mismo bloque JSX</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">dispatch pasado como prop entre componentes — arquitectura limpia sin prop drilling innecesario</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">reduce() para calcular subtotal + IVA + total en tiempo real</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Badge flotante con cantidad de items en el carrito</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "Un reducer, siete casos, cinco pasos. Todo el estado del hotel en un solo panel de control."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:20px">Demo</h3>
+      <img src="procesoCompra.gif" alt="Demo proceso de compra Campus Crema" style="width:100%; border-radius:10px; border:1px solid #e8dfcf;" />
+
+    </div>
+
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d42-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> onClick con string directo en el botón — React espera una función, no un valor.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: siempre arrow function — onClick={() => dispatch(...)}. Sin la arrow function se ejecuta al renderizar.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> Ternario con dos elementos sin raíz — JSX no puede devolver dos elementos hermanos sin envolverlos.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: fragmento &lt;&gt;...&lt;/&gt; — agrupa sin añadir un div extra al DOM.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> El cierre ) del fragmento en el ternario estaba después del : en vez de antes — React no podía parsear.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: el ) cierra el lado izquierdo del ternario, el : separa ambos lados. Orden: fragmento → ) → : → else.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> return fuera del switch — el componente renderizaba en blanco.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: cada case necesita su propio return dentro del switch. El return del componente va fuera de renderPasos().</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 5:</strong> &lt;button className="btn"&gt; onClick={...} — la &gt; cerraba el botón antes del onClick, que aparecía como texto.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: todos los atributos van dentro de la etiqueta de apertura, antes del cierre &gt;.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 6:</strong> dispatch pasado como (dispatch) en vez de ({ dispatch }) — las props siempre se desestructuran con llaves.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: export default function Componente({ dispatch }) — siempre llaves para desestructurar props.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Resultado: flujo de compra completo funcionando — 4 pasos, 7 acciones, 4 componentes auxiliares.</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d42-lbl-code">Código del día</h3>
+
+      <pre class="code-block"><code>
+// El corazón del flujo — ternarios anidados en renderPasos()
+
+case 2:
+  return (
+    &lt;div&gt;
+      {state.tipoEntrega === null
+        ? (
+          &lt;&gt;
+            &lt;button onClick={() =&gt; dispatch({ type: "setTipoEntrega", payload: "domicilio" })}&gt;
+              A domicilio
+            &lt;/button&gt;
+            &lt;button onClick={() =&gt; dispatch({ type: "setTipoEntrega", payload: "recoger" })}&gt;
+              Recogida en tienda
+            &lt;/button&gt;
+          &lt;/&gt;
+        )
+        : state.tipoEntrega === "domicilio"
+          ? &lt;FormularioDomicilio dispatch={dispatch} /&gt;
+          : &lt;FormularioRecoger dispatch={dispatch} /&gt;
+      }
+    &lt;/div&gt;
+  );
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "Aún consolidando el dispatch. Cada componente que lo recibe como prop es un nuevo músculo que se forma."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
+
 <!-- ============================
      DÍA 41
 =============================== -->

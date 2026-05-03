@@ -173,6 +173,171 @@
     Day 1 = February 20, 2026 · The 365 days are counted from there · Not every day has an entry
   </p>
 </section>
+<!-- ============================
+     DAY 42
+=============================== -->
+<article class="entry" data-tags="js project" aria-labelledby="title-d42-en">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 42</span>
+    <time datetime="2026-05-03" data-i18n="d42-date">May 3, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">JS</li>
+      <li class="etag">React</li>
+      <li class="etag">useReducer</li>
+      <li class="etag">Project</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d42-en" data-i18n="d42-headline">
+    Shopping cart in 4 steps.<br>One reducer to rule them all.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d42-deck">
+    Built the complete checkout flow for Campus Crema from scratch — menu, summary, delivery, payment and confirmation — with a single useReducer managing all state. Nested ternaries, dispatch across components, brackets and parentheses all day long.
+  </p>
+
+  <div class="cols">
+
+    <div>
+
+      <h3 class="col-label" data-i18n="d42-lbl-star">STAR Summary</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Campus Crema had an AI-generated cart with several scattered useState hooks. I decided to delete it and rebuild from scratch with useReducer — a single centralized state for the entire checkout flow.<br><br>
+        <strong>T —</strong> Build a 4-step checkout process (menu → summary → details → payment → confirmation) with real logic: add products, modify quantities, filter by category, two delivery types with different forms and simulated payment.<br><br>
+        <strong>A —</strong> Defined initialState with 5 properties. Wrote the reducer with 7 cases from scratch — add, changeQuantity, setCategory, setStep, setDeliveryType, setForm and confirm. Built the renderSteps() function with a switch that returns different JSX based on the active step. Created 4 helper components: FormularioDomicilio, FormularioRecoger, PagoSimulado and PantallaConfirmacion. Connected dispatch as a prop in each one.<br><br>
+        <strong>R —</strong> Complete flow working in Campus Crema. Menu with active filters, summary with calculated VAT, delivery selection with nested ternary, differentiated forms, simulated payment and confirmation screen. Quantity badge on the View Summary button.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d42-lbl-wins">Wins of the day</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Reducer with 7 cases written from scratch — no copying, reasoning through each return</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Nested ternaries with fragments — three conditions in the same JSX block</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">dispatch passed as prop between components — clean architecture without unnecessary prop drilling</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">reduce() to calculate subtotal + VAT + total in real time</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Floating badge showing cart item count on the View Summary button</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "One reducer, seven cases, five steps. The entire hotel state on a single control panel."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:20px">Demo</h3>
+      <img src="procesoCompra.gif" alt="Campus Crema checkout flow demo" style="width:100%; border-radius:10px; border:1px solid #e8dfcf;" />
+
+    </div>
+
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d42-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> onClick with a direct string — React expects a function, not a value.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: always arrow function — onClick={() => dispatch(...)}. Without it, the function fires on render.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> Ternary with two sibling elements and no root — JSX can't return two elements without wrapping them.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: fragment &lt;&gt;...&lt;/&gt; — groups elements without adding an extra div to the DOM.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> The ) closing the fragment was after the : instead of before — React couldn't parse the ternary.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: ) closes the left side of the ternary, : separates both sides. Order: fragment → ) → : → else.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> return outside the switch — component rendered blank.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: each case needs its own return inside the switch. The component return goes outside renderSteps().</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 5:</strong> &lt;button className="btn"&gt; onClick={...} — the &gt; closed the button before onClick, which appeared as text.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: all attributes go inside the opening tag, before the closing &gt;.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 6:</strong> dispatch received as (dispatch) instead of ({ dispatch }) — props are always destructured with curly braces.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: export default function Component({ dispatch }) — always curly braces to destructure props.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Result: complete checkout flow working — 4 steps, 7 actions, 4 helper components.</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d42-lbl-code">Code of the day</h3>
+
+      <pre class="code-block"><code>
+// The heart of the flow — nested ternaries in renderSteps()
+
+case 2:
+  return (
+    &lt;div&gt;
+      {state.tipoEntrega === null
+        ? (
+          &lt;&gt;
+            &lt;button onClick={() =&gt; dispatch({ type: "setTipoEntrega", payload: "domicilio" })}&gt;
+              Home delivery
+            &lt;/button&gt;
+            &lt;button onClick={() =&gt; dispatch({ type: "setTipoEntrega", payload: "recoger" })}&gt;
+              Pick up in store
+            &lt;/button&gt;
+          &lt;/&gt;
+        )
+        : state.tipoEntrega === "domicilio"
+          ? &lt;FormularioDomicilio dispatch={dispatch} /&gt;
+          : &lt;FormularioRecoger dispatch={dispatch} /&gt;
+      }
+    &lt;/div&gt;
+  );
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "Still consolidating dispatch. Every component that receives it as a prop is a new muscle being built."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
 
 <!-- ============================
      DAY 41
