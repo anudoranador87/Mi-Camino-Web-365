@@ -173,6 +173,179 @@
     Day 1 = February 20, 2026 · The 365 days are counted from there · Not every day has an entry
   </p>
 </section>
+
+<!-- ============================
+     DAY 42
+=============================== -->
+<article class="entry" data-tags="js react project" aria-labelledby="title-d43">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 43</span>
+    <time datetime="2026-05-06" data-i18n="d43-date">May 6, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">JS</li>
+      <li class="etag">React</li>
+      <li class="etag">Project</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d43" data-i18n="d43-headline">
+    Custom Hooks and React Router:<br>logic separates, the app navigates.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d43-deck">
+    Today was a day of learning two concepts that changed how I think about React. Custom hooks made me understand that logic can live separately from the component. React Router made me understand that an app can have real URLs without reloading anything.
+  </p>
+
+  <div class="cols">
+
+    <div>
+
+      <h3 class="col-label" data-i18n="d43-lbl-star">STAR Summary</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> App.jsx was overloaded with reducer, useEffect, localStorage logic and JSX all mixed together. I needed to separate responsibilities and add real navigation between sections of LostDesk, so everything looked cleaner.<br><br>
+        <strong>T —</strong> Goal: Create a custom hook <code>useLostItems</code> with all the data logic, and implement React Router with real routes for the dashboard and the registration form.<br><br>
+        <strong>A —</strong> I extracted <code>estadoInicial</code>, <code>reducer</code>, <code>useReducer</code>, both localStorage <code>useEffect</code>s and <code>handleAddItem</code> into <code>useLostItems.js</code>. App.jsx was left with a single line of logic. Then I installed <code>react-router-dom</code>, wrapped the app with <code>BrowserRouter</code> in <code>main.jsx</code>, defined routes with <code>Routes</code> and <code>Route</code>, replaced the modal button with <code>&lt;Link to="/register"&gt;</code> and used <code>useNavigate</code> to redirect to the dashboard after submitting the form.<br><br>
+        <strong>R —</strong> App.jsx clean, UI only. Hook with all logic encapsulated. Real routes — <code>/</code> shows the dashboard, <code>/register</code> shows the form. The form redirects to the dashboard on submit.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d43-lbl-wins">Wins of the day</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Custom hook understood — I can define any hook with <code>use</code> and move all the logic there</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">App.jsx went from a bloated file to a clean component — one line of logic, the rest is UI</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">React Router working with real URLs and navigation without page reload</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text"><code>useNavigate</code> to redirect after an action — the form takes you back to the dashboard on submit</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "Custom hooks keep all the logic together and cleaner. My click: I can define any custom hook with use and move all the logic there."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d43-lbl-levels">Skill levels at end of day</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">Custom Hooks</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="70"></div>
+        </div>
+        <span class="skill-pct">70%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">React Router</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="55"></div>
+        </div>
+        <span class="skill-pct">55%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">React Architecture</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+
+    </div>
+
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d43-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> <code>useNavigate()</code> inside <code>handleSubmit</code> — hooks cannot go inside other functions, only at the component level. I put the hook itself inside the function.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: move <code>const navigate = useNavigate()</code> outside of <code>handleSubmit</code>, alongside the other component hooks</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> <code>&lt;Link&gt;</code> inside <code>&lt;Routes&gt;</code> — Link is navigation, not a route, but they look similar.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: <code>&lt;Link&gt;</code> goes outside of <code>&lt;Routes&gt;</code>, alongside the other navigation elements</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> <code>link</code> lowercase in the import — JavaScript is case sensitive and I didn't know that applied here.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: <code>import { Link } from 'react-router-dom'</code></span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> <code>props.onClose</code> called from ItemForm after removing the modal — the function no longer existed. I should have made sure to remove what was no longer being used.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: remove <code>props.onClose()</code> and replace with <code>navigate('/')</code></span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">LostDesk with real routes. Form redirects to dashboard on submit. App.jsx clean.</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d43-lbl-code">Code of the day</h3>
+
+      <pre class="code-block"><code>
+// Custom hook — all logic in one place
+export function useLostItems() {
+  const [state, dispatch] = useReducer(reducer, estadoInicial)
+
+  useEffect(() => {
+    const datos = localStorage.getItem('items')
+    if (datos) dispatch({ type: "LOAD_ITEMS", payload: JSON.parse(datos) })
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem('items', JSON.stringify(state))
+  }, [state])
+
+  function handleAddItem(nuevoItem) {
+    dispatch({ type: "ADD_ITEM", payload: nuevoItem })
+  }
+
+  return { state, dispatch, handleAddItem }
+}
+
+// React Router — real routes in App.jsx
+&lt;Routes&gt;
+  &lt;Route path="/" element={&lt;Dashboard state={state} dispatch={dispatch} /&gt;} /&gt;
+  &lt;Route path="/register" element={&lt;ItemForm onAddItem={handleAddItem} /&gt;} /&gt;
+&lt;/Routes&gt;
+
+// useNavigate — redirect after action
+const navigate = useNavigate() // outside handleSubmit
+navigate('/') // inside handleSubmit, at the end
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "Link doesn't go inside Route — they're different things. Link navigates, Route defines where you go."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
 <!-- ============================
      DAY 42
 =============================== -->
