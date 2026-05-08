@@ -183,6 +183,180 @@
     Día 1 = 20 de febrero de 2026 · Los 365 días se cuentan desde ahí · No todos los días tienen entrada
   </p>
 </section>
+
+<!-- ============================
+     DÍA 44
+=============================== -->
+<article class="entry" data-tags="js" aria-labelledby="title-d44">
+  <header class="entry-kicker">
+    <span class="day-badge">Día 44</span>
+    <time datetime="2026-05-08" data-i18n="d44-date">08 de Mayo, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">JS</li>
+      <li class="etag">React</li>
+      <li class="etag">Hooks</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d44" data-i18n="d44-headline">
+    useMemo y useCallback:<br>el chef y la fotocopia.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d44-deck">
+    Primer contacto real con optimización en React. Aprendiendo a crear componentes de 0, corrigiendo mis errores palabra a palabra, error a error. Sintaxis nueva. La lógica estaba clara desde el principio. Los errores, todos de sintaxis.
+  </p>
+
+  <div class="cols">
+
+    <div>
+
+      <h3 class="col-label" data-i18n="d44-lbl-star">Resumen STAR</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Día de teoría y práctica pura de React Hooks: componentes escritos desde cero con instrucciones en texto.<br><br>
+        <strong>T —</strong> Entender useMemo y useCallback: qué memorizan, cuándo usarlos, y escribirlos sin ayuda.<br><br>
+        <strong>A —</strong> Teoría pura → analogías propias → ejercicios ensayo-error → componentes de 0 corregidos iterativamente.<br><br>
+        <strong>R —</strong> Dos componentes funcionales escritos con useMemo correcto. Muchos fallos de sintaxis.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d44-lbl-wins">Victorias del día</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">useMemo escrito de 0, tuve que consultar como se escribía el callback: reduce + return + array de dependencias correcto</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Diferencié useMemo (valor) vs useCallback (función) vs React.memo (componente)</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Pasé props al hijo correctamente: &lt;Contador incremento={fn} /&gt;</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Usé analogías propias para mejor entendimiento: el chef, la fotocopia, el sensor de movimiento</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Entendí por qué [] vacío = "ejecutar solo una vez"</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "useMemo: No quiero volver a hacer la cuenta. useCallback: No quiero volver a escribir la instrucción. React.memo: No quiero volver a dibujar el dibujo."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d44-lbl-levels">Niveles al cierre del día</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">useMemo</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="45"></div>
+        </div>
+        <span class="skill-pct">45%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">useCallback</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="40"></div>
+        </div>
+        <span class="skill-pct">40%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">React.memo</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="30"></div>
+        </div>
+        <span class="skill-pct">30%</span>
+      </div>
+
+    </div>
+
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d44-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug:</strong> useState(a) sin comillas → variable inexistente</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: los strings siempre entre comillas: useState("a")</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug:</strong> return const total = ... → sintaxis imposible en JS, no sabía esto</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: const va antes del return. return solo devuelve JSX</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug:</strong> startsWith("letra") hardcodeado → siempre filtra igual</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: startsWith(letra) — usar la variable, no el string</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug:</strong> count en el array de useMemo cuando no debía estar</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: el array solo incluye lo que usa la función. count no se usa → fuera</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug:</strong> onClick={mult + 1} — número, no función. Siempre función con el onClick</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: onClick={() => setMult(c => c + 1)}</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Componente final con useMemo funcionando de 0</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d44-lbl-code">Código del día</h3>
+
+      <pre class="code-block"><code>function operaciones(props) {
+  const [mult, setMult] = useState(2)
+
+  const total = useMemo(() => {
+    const suma = props.numeros
+      .reduce((acc, n) => acc + n, 0)
+    return suma * mult
+  }, [props.numeros, mult])
+
+  return (
+    &lt;&gt;
+      &lt;p&gt;{total}&lt;/p&gt;
+      &lt;button onClick={() =&gt; setMult(c =&gt; c + 1)}&gt;
+        +
+      &lt;/button&gt;
+    &lt;/&gt;
+  )
+}</code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "El array de dependencias es un sensor de movimiento. La luz solo se enciende si algo se mueve en esa zona."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
+
 <!-- ============================
      DÍA 43
 =============================== -->

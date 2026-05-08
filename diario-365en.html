@@ -173,6 +173,178 @@
     Day 1 = February 20, 2026 · The 365 days are counted from there · Not every day has an entry
   </p>
 </section>
+<!-- ============================
+     DAY 43
+=============================== -->
+<article class="entry" data-tags="js" aria-labelledby="title-d44-en">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 44</span>
+    <time datetime="2026-05-08" data-i18n="d44-en-date">May 8, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">JS</li>
+      <li class="etag">React</li>
+      <li class="etag">Hooks</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d44-en" data-i18n="d44-en-headline">
+    useMemo and useCallback:<br>the chef and the photocopy.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d44-en-deck">
+    First real contact with React optimization. Learning to build components from scratch, fixing my mistakes word by word, error by error. New syntax. The logic was clear from the start. The errors, all syntax.
+  </p>
+
+  <div class="cols">
+
+    <div>
+
+      <h3 class="col-label" data-i18n="d44-en-lbl-star">STAR Summary</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> A day of pure theory and practice with React Hooks: components written from scratch using only text instructions.<br><br>
+        <strong>T —</strong> Understand useMemo and useCallback: what they memorize, when to use them, and write them without help.<br><br>
+        <strong>A —</strong> Pure theory → my own analogies → trial-and-error exercises → components built from 0, corrected iteratively.<br><br>
+        <strong>R —</strong> Two functional components written with correct useMemo. Lots of syntax mistakes.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d44-en-lbl-wins">Wins of the day</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">useMemo written from 0 — had to look up how to write the callback: reduce + return + correct dependency array</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Told apart useMemo (value) vs useCallback (function) vs React.memo (component)</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Passed props to child correctly: &lt;Contador incremento={fn} /&gt;</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Used my own analogies to understand better: the chef, the photocopy, the motion sensor</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Understood why empty [] = "run only once"</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "useMemo: I don't want to do the math again. useCallback: I don't want to write the instruction again. React.memo: I don't want to redraw the drawing."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d44-en-lbl-levels">Levels at end of day</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">useMemo</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="45"></div>
+        </div>
+        <span class="skill-pct">45%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">useCallback</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="40"></div>
+        </div>
+        <span class="skill-pct">40%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">React.memo</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="30"></div>
+        </div>
+        <span class="skill-pct">30%</span>
+      </div>
+
+    </div>
+
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d44-en-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug:</strong> useState(a) without quotes → nonexistent variable</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: strings always in quotes: useState("a")</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug:</strong> return const total = ... → impossible syntax in JS, didn't know this</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: const goes before return. return only gives back JSX</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug:</strong> startsWith("letra") hardcoded → always filters the same</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: startsWith(letra) — use the variable, not the string</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug:</strong> count in useMemo dependency array when it shouldn't be</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: the array only includes what the function actually uses. count isn't used → out</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug:</strong> onClick={mult + 1} — number, not a function. onClick always needs a function</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: onClick={() => setMult(c => c + 1)}</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Final component with useMemo working from 0</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d44-en-lbl-code">Code of the day</h3>
+
+      <pre class="code-block"><code>function operaciones(props) {
+  const [mult, setMult] = useState(2)
+
+  const total = useMemo(() => {
+    const suma = props.numeros
+      .reduce((acc, n) => acc + n, 0)
+    return suma * mult
+  }, [props.numeros, mult])
+
+  return (
+    &lt;&gt;
+      &lt;p&gt;{total}&lt;/p&gt;
+      &lt;button onClick={() =&gt; setMult(c =&gt; c + 1)}&gt;
+        +
+      &lt;/button&gt;
+    &lt;/&gt;
+  )
+}</code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "The dependency array is a motion sensor. The light only turns on if something moves in that zone."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
 
 <!-- ============================
      DAY 42
