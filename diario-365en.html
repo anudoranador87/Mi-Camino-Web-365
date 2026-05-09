@@ -173,8 +173,158 @@
     Day 1 = February 20, 2026 · The 365 days are counted from there · Not every day has an entry
   </p>
 </section>
+
 <!-- ============================
-     DAY 43
+     DAY 44
+=============================== -->
+<article class="entry" data-tags="js css debug project" aria-labelledby="title-d45-en">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 45</span>
+    <time datetime="2026-05-09" data-i18n="d45-date">May 9, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">React</li>
+      <li class="etag">CSS</li>
+      <li class="etag">Debug</li>
+      <li class="etag">Project</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d45-en" data-i18n="d45-headline">
+    The day everything broke.<br>And I fixed it anyway.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d45-deck">
+    Intense session, a lot of frustration. Layout and e-commerce logic in React for the Campus Crema checkout flow. I realise the project is growing fast and, not being a React expert yet, managing this much logic, state and functions without a clear mental map is genuinely hard. Everything went wrong — and I still have a long way to go.
+  </p>
+
+  <div class="cols">
+
+    <div>
+
+      <h3 class="col-label" data-i18n="d45-lbl-star">STAR Summary</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Continuing the Campus Crema checkout flow. The goal was to show ResumenTicket across all checkout steps, add an X to close it, keep the menu visible and make the steps more visible.<br><br>
+        <strong>T —</strong> Extract the summary into a reusable component, pass it as a prop to all steps, add visibility logic with useState and build a two-column layout with flex.<br><br>
+        <strong>A —</strong> Extracted ResumenTicket with props: ticket, subtotal, iva, total, dispatch, mostrarBotones. Visible/setVisible logic with local useState. Several failed layout attempts with flex. Debugged wrong prop passing, import without quotes, and a styles object passed as a child instead of a prop.<br><br>
+        <strong>R —</strong> ResumenTicket working across all steps. Two-column layout in steps 1 and 2. Volver/Continuar buttons controlled by mostrarBotones. Functional X with local useState. Backward navigation added.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d45-lbl-wins">Wins of the day</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">ResumenTicket extracted as a reusable component with well-defined props</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">mostrarBotones as a boolean prop — clean pattern to conditionally show/hide JSX</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Local useState in a child component — the X controls its own visibility without depending on the parent</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">resumenProps as an object — avoids repeating the same 5 props in every switch case</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "Bad sessions count too. React isn't hard because it's complex — it's hard because it's strict."
+      </blockquote>
+
+      <p class="body-text" style="margin-top:16px; color:#5f5f5f; font-style:italic;">
+        When you touch one piece of logic you realise another is missing, or that you skipped a step — and you start over. Clean code is written with a clear head, but robust code is forged in the fire of debugging.
+      </p>
+
+    </div>
+
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d45-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> useState imported in Menu but unused — blank screen with no clear error for a while.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: remove the useState import from Menu. The console said so — read it before hunting for the bug.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> useState not imported in ResumenTicket — "useState is not defined".</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: import { useState } from 'react' — with quotes. Without quotes React can't find the module.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> Styles object passed as a child instead of a prop — "Objects are not valid as a React child".</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: style={{ display: "flex" }} — always as a prop, never as element content.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> mostrarResumen with useState in Menu caused the menu to disappear when adding products.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: remove mostrarResumen from Menu. Visibility is controlled by local useState inside ResumenTicket.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 5:</strong> The X triggered setPaso 0 but we were already on step 0 — nothing happened.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: the X uses setVisible(false) from local useState — hides the summary without changing step.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 6:</strong> div missing opening angle bracket — "div style=..." instead of "&lt;div style=...".</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: check JSX character by character when something won't compile.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Result: two-column layout working, ResumenTicket across all steps, full navigation in place.</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d45-lbl-code">Code of the day</h3>
+
+      <pre class="code-block"><code>
+// resumenProps — avoid repeating props in every case
+const resumenProps = { ticket: state.ticket, subtotal, iva, total, dispatch };
+
+// Used in any switch case:
+&lt;ResumenTicket {...resumenProps} mostrarBotones={false} /&gt;
+
+// Local useState in child component
+const [visible, setVisible] = useState(true);
+if (!visible) return &lt;button onClick={() =&gt; setVisible(true)}&gt;🛒&lt;/button&gt;;
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "Today I learned more than it looks. The most frustrating bugs are the ones you remember most."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
+<!-- ============================
+     DAY 44
 =============================== -->
 <article class="entry" data-tags="js" aria-labelledby="title-d44-en">
   <header class="entry-kicker">
