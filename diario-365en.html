@@ -173,9 +173,181 @@
     Day 1 = February 20, 2026 · The 365 days are counted from there · Not every day has an entry
   </p>
 </section>
+<!-- ============================
+     DAY 46
+=============================== -->
+<article class="entry" data-tags="js css react" aria-labelledby="title-d46">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 46</span>
+    <time datetime="2026-05-10" data-i18n="d46-date">May 10, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">React</li>
+      <li class="etag">Hooks</li>
+      <li class="etag">useState</li>
+      <li class="etag">CSS</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d46" data-i18n="d46-headline">
+    I know what useState does.<br>Writing it from scratch is another story.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d46-deck">
+    Today was pure practice. Understanding a hook in theory and building it from scratch
+    are two completely different things. 8 hours fighting the keyboard to prove to myself
+    that the logic is there — the syntax still betrays me.
+  </p>
+
+  <!-- Demo GIF -->
+  <div style="margin: 24px 0; text-align: center;">
+    <img
+      src="useStatesession.gif"
+      alt="Demo of the 4 React components: CheckInCounter, OccupancyLight, ShiftToggle and IncidentList"
+      style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border, #d4c9b5);"
+    />
+    <p style="font-size: 0.8rem; color: var(--text-muted, #8a7a62); margin-top: 8px;">
+      4 components. 1 day. All from scratch.
+    </p>
+  </div>
+
+  <div class="cols">
+
+    <div>
+
+      <h3 class="col-label" data-i18n="d46-lbl-star">STAR Summary</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Day 46. I've been working with React for weeks, applying it to my projects.
+        I understand the hooks — but doing it completely from scratch is a different challenge.<br><br>
+
+        <strong>T —</strong> Build 4 functional components using only useState — no direct help.
+        Each one with its own logic: a counter, an occupancy light, a shift toggle, and an incident list.<br><br>
+
+        <strong>A —</strong> Started with CheckInCounter — the simplest one. A number, two buttons.
+        Then the traffic light: three states rotating with a ternary and an array index.
+        I got stuck here for over an hour. The logic was in my head but translating it to code cost me.
+        ShiftToggle taught me the style object in JSX with double curly braces.
+        IncidentList was the hardest: array state, spread, filter to delete items.
+        At the end I added CSS to make it more visual.<br><br>
+
+        <strong>R —</strong> 4 working components. Logic built by me.
+        Every bug taught me something concrete about how React handles state.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d46-lbl-wins">Wins of the day</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Ternary with array index to rotate between 3 states — took me a while to figure out how to approach it</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">style={{ backgroundColor: variable }} in JSX — understood why there are two sets of curly braces</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">filter with index to remove array items without mutating state</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Inline onClick logic with ternary — count > 0 ? count - 1 : count</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "I recognise the hooks and understand them all. But it's not the same when you sit at the keyboard and have to define the problem from scratch."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d46-lbl-levels">Skill levels at end of day</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">useState basics</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="70"></div>
+        </div>
+        <span class="skill-pct">70%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">JSX + styles</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="60"></div>
+        </div>
+        <span class="skill-pct">60%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Array logic in state</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="50"></div>
+        </div>
+        <span class="skill-pct">50%</span>
+      </div>
+
+    </div>
+
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d46-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> colores.length as ternary limit — the index reached 3 but the array only has indices 0-2</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: colores.length - 1 is the last valid index. length and last index are not the same thing.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> if(toggle) always truthy — toggle was a string, and non-empty strings are always true</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: always compare against a concrete value — if(toggle === "claro")</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> changeColor and return outside the function — curly braces didn't match and React couldn't find the component</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: everything lives inside the component function. Curly braces matter.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">4 components working with CSS applied</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d46-lbl-code">Code of the day</h3>
+
+      <pre class="code-block"><code>
+// Rotate between N states with index
+const changeColor = () =>
+  setLight(light === colores.length - 1 ? 0 : light + 1);
+
+// Delete array item without mutating state
+function deleteItem(index) {
+  setItem(item.filter((_, i) => i !== index));
+}
+
+// Dynamic style in JSX
+const bgColor = toggle === 'claro' ? 'white' : 'navy';
+&lt;div style={{ backgroundColor: bgColor }}&gt;
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "In React you can do things many different ways. The challenge isn't knowing which ones exist — it's knowing which one to use and why."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
 
 <!-- ============================
-     DAY 44
+     DAY 45
 =============================== -->
 <article class="entry" data-tags="js css debug project" aria-labelledby="title-d45-en">
   <header class="entry-kicker">
