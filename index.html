@@ -183,6 +183,227 @@
     Día 1 = 20 de febrero de 2026 · Los 365 días se cuentan desde ahí · No todos los días tienen entrada
   </p>
 </section>
+
+<!-- ============================
+     DÍA 47
+=============================== -->
+<article class="entry" data-tags="js project debug" aria-labelledby="title-d46">
+  <header class="entry-kicker">
+    <span class="day-badge">Día 47</span>
+    <time datetime="2026-05-10" data-i18n="d46-date">10 de Mayo, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">JS</li>
+      <li class="etag">Proyecto</li>
+      <li class="etag">Debug</li>
+      <li class="etag">React Router</li>
+      <li class="etag">Context</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d46" data-i18n="d46-headline">
+    El portero del hotel.<br>Login, roles y el contexto que lo gobierna todo.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d46-deck">
+    Hoy LostDesk dejó de ser una app abierta a cualquiera. Construí la pantalla de login, 
+    refactoricé el contexto de roles con validación real de PIN y aprendí que React Router 
+    necesita envolver toda la app antes de que Routes exista.
+  </p>
+
+  <div class="cols">
+
+    <div>
+
+      <h3 class="col-label" data-i18n="d46-lbl-star">Resumen STAR</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> LostDesk tenía tres botones provisionales para cambiar de rol. 
+        Cualquiera podía acceder a cualquier parte sin ninguna restricción real.<br><br>
+        <strong>T —</strong> Sustituir esos botones por una pantalla de login real con selección 
+        de rol y validación de PIN. Preparar el contexto y las rutas para la protección por rol.<br><br>
+        <strong>A —</strong> Reconstruí RoleContext desde cero: añadí RoleProvider, la función login 
+        con validación contra un objeto de PINs, y logout. Creé Login.jsx con dos estados locales 
+        y conexión al contexto. Añadí React Router v6 al proyecto y configuré BrowserRouter en main.jsx 
+        con RoleProvider anidado. Definí las rutas en App.jsx.<br><br>
+       
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d46-lbl-wins">Victorias del día</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Entendí la diferencia entre el rol temporal en Login.jsx y el rol confirmado en el contexto</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Aunque ya lo sabia, pero entendi que es mejor aqui acceder a propiedades de objeto con variable como clave — pins[rol] en lugar de pins.rol</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Construí RoleProvider  con lógica real de autenticación</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Entendí que BrowserRouter tiene que envolver todo antes de que Routes funcione</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "El contexto es la recepción del hotel — todo pasa por ahí antes de entrar."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d46-lbl-levels">Niveles al cierre del día</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">useContext</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">React Router</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="45"></div>
+        </div>
+        <span class="skill-pct">45%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Arquitectura React</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="55"></div>
+        </div>
+        <span class="skill-pct">55%</span>
+      </div>
+
+    </div>
+
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d46-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> useState y toda la lógica del contexto estaban sueltos fuera de cualquier función</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: Todo tiene que vivir dentro de RoleProvider. useState solo funciona dentro de un componente o hook</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> export const RoleContext dentro de RoleProvider — export no es válido dentro de una función</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: RoleContext se declara fuera de RoleProvider, al nivel del módulo</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> Routes fuera del return — JSX no puede vivir en la parte lógica de la función</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: Routes y Route son componentes, van dentro del return como cualquier otro JSX</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> useRoutes() may be used only in the context of a Router — BrowserRouter no estaba envolviendo la app</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: BrowserRouter va en main.jsx, por fuera de todo. Sin él, React Router no funciona en ningún componente</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 5:</strong> StackBlitz no soporta React Router correctamente — entorno incompatible</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Próximo paso: mover el proyecto a local para poder verificar el login real</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Código commiteado y listo </span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d46-lbl-code">Código del día</h3>
+
+      <pre class="code-block"><code>
+// RoleContext.jsx — la lógica de autenticación
+export const RoleContext = createContext(null)
+
+export function RoleProvider({ children }) {
+  const [rol, setRol] = useState(null)
+
+  const pins = {
+    recepcion: 1234,
+    housekeeping: 2233,
+    management: 1844
+  }
+
+  function login(pin, rol) {
+    if (pin === pins[rol]) {
+      setRol(rol)
+    } else {
+      alert("Pin incorrecto")
+    }
+  }
+
+  function logout() {
+    setRol(null)
+  }
+
+  return (
+    &lt;RoleContext.Provider value={{ rol, login, logout }}&gt;
+      {children}
+    &lt;/RoleContext.Provider&gt;
+  )
+}
+
+// Login.jsx — dos estados locales, un contexto
+export default function Login() {
+  const [pin, setPin] = useState(null)
+  const [seleccionado, setSeleccionado] = useState(null)
+  const { login } = useContext(RoleContext)
+
+  return (
+    &lt;div className="login-screen"&gt;
+      &lt;button onClick={() => setSeleccionado("recepcion")}&gt;
+        Recepción
+      &lt;/button&gt;
+      &lt;button onClick={() => setSeleccionado("housekeeping")}&gt;
+        Housekeeping
+      &lt;/button&gt;
+      &lt;button onClick={() => setSeleccionado("management")}&gt;
+        Management
+      &lt;/button&gt;
+      &lt;input
+        type="password"
+        onChange={(e) => setPin(e.target.value)}
+      /&gt;
+      &lt;button onClick={() => login(pin, seleccionado)}&gt;
+        Confirmar
+      &lt;/button&gt;
+    &lt;/div&gt;
+  )
+}
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "pins[rol] — no pins.rol. Cuando la clave está en una variable, usas corchetes."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
+
 <!-- ============================
      DÍA 46
 =============================== -->

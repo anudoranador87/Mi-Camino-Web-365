@@ -174,6 +174,190 @@
   </p>
 </section>
 <!-- ============================
+     DAY 47
+=============================== -->
+<article class="entry" data-tags="js project debug" aria-labelledby="title-d46en">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 46</span>
+    <time datetime="2026-05-10" data-i18n="d46en-date">May 10, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">JS</li>
+      <li class="etag">Project</li>
+      <li class="etag">Debug</li>
+      <li class="etag">React Router</li>
+      <li class="etag">Context</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d46en" data-i18n="d46en-headline">
+    The hotel doorman.<br>Login, roles and the context that governs it all.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d46en-deck">
+    Today LostDesk stopped being an open app. I built the login screen, 
+    refactored the role context with real PIN validation, and learned that 
+    React Router needs to wrap the entire app before Routes can exist.
+  </p>
+
+  <div class="cols">
+
+    <div>
+
+      <h3 class="col-label" data-i18n="d46en-lbl-star">STAR Summary</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> LostDesk had three provisional buttons to switch roles. 
+        Anyone could access anything with no real restriction.<br><br>
+        <strong>T —</strong> Replace those buttons with a real login screen with role 
+        selection and PIN validation. Prepare the context and routes for role-based protection.<br><br>
+        <strong>A —</strong> Rebuilt RoleContext from scratch: added RoleProvider, the login 
+        function with validation against a PIN object, and logout. Created Login.jsx with two 
+        local states and context connection. Added React Router v6 and configured BrowserRouter 
+        in main.jsx with RoleProvider nested inside. Defined routes in App.jsx.<br><br>
+        <strong>R —</strong> Code is ready and committed. StackBlitz environment prevents 
+        verification — next step is working locally.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d46en-lbl-wins">Wins of the day</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Understood the difference between the temporary role in Login.jsx and the confirmed role in context</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Learned to access object properties with a variable key — pins[rol] instead of pins.rol</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Built RoleProvider from scratch with real authentication logic</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Understood that BrowserRouter must wrap everything before Routes can work</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "Context is the hotel reception — everything goes through it before entering."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d46en-lbl-levels">Levels at end of day</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">useContext</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">React Router</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="45"></div>
+        </div>
+        <span class="skill-pct">45%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">React Architecture</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="55"></div>
+        </div>
+        <span class="skill-pct">55%</span>
+      </div>
+
+    </div>
+
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d46en-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> useState and all context logic floating outside any function</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: Everything must live inside RoleProvider. useState only works inside a component or hook</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> export const RoleContext inside RoleProvider — export is not valid inside a function</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: RoleContext is declared outside RoleProvider, at module level</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> Routes outside the return — JSX cannot live in the logic section of a function</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: Routes and Route are components, they go inside the return like any other JSX</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> useRoutes() may be used only in the context of a Router — BrowserRouter wasn't wrapping the app</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: BrowserRouter goes in main.jsx, outside everything. Without it, React Router breaks everywhere</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 5:</strong> StackBlitz doesn't support React Router properly — incompatible environment</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Next step: move project to local to verify the real login flow</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Code committed and ready to test locally</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d46en-lbl-code">Code of the day</h3>
+
+      <pre class="code-block"><code>
+// main.jsx — the correct nesting order
+createRoot(document.getElementById('root')).render(
+  &lt;StrictMode&gt;
+    &lt;BrowserRouter&gt;
+      &lt;RoleProvider&gt;
+        &lt;App /&gt;
+      &lt;/RoleProvider&gt;
+    &lt;/BrowserRouter&gt;
+  &lt;/StrictMode&gt;
+)
+
+// App.jsx — routes live inside the return
+return (
+  &lt;Routes&gt;
+    &lt;Route path="/login" element={&lt;Login /&gt;} /&gt;
+    &lt;Route path="/" element={
+      &lt;div className="main-app-container"&gt;
+        ...dashboard...
+      &lt;/div&gt;
+    } /&gt;
+  &lt;/Routes&gt;
+)
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "pins[rol] — not pins.rol. When the key is in a variable, use brackets."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
+<!-- ============================
      DAY 46
 =============================== -->
 <article class="entry" data-tags="js css react" aria-labelledby="title-d46">
