@@ -173,13 +173,258 @@
     Day 1 = February 20, 2026 · The 365 days are counted from there · Not every day has an entry
   </p>
 </section>
+
+<!-- ============================
+     DAY 48 — useEffect + fetch: my first component with a real API
+=============================== -->
+
+<article class="entry" data-tags="js project" aria-labelledby="title-d48-en">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 48</span>
+    <time datetime="2026-05-15" data-i18n="d48-date">May 15, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">JS</li>
+      <li class="etag">React</li>
+      <li class="etag">Project</li>
+      <li class="etag">API</li>
+      <li class="etag">Debug</li>
+    </ul>
+  </header>
+
+  <img src="weatherAPI.png"
+  <div style="width:100%; height:180px; background:#f0f4f8; border:2px dashed #cbd5e0; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:1.5rem;">
+    <span style="color:#a0aec0; font-size:0.95rem;">[ GIF of the day — paste here ]</span>
+  </div>
+
+  <h2 class="entry-headline" id="title-d48-en" data-i18n="d48-headline">
+    My first React component with a real API call.<br>useEffect, async/await, and live weather data from Málaga.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d48-deck">
+    I saw the fetch + useEffect pattern in the Meta Frontend Developer course on Coursera — and decided not to copy it: I built it from scratch, my way, with async/await instead of chained promises. Brace mismatches, misplaced states, and a finally block I didn't know I needed. End result: temperature, wind speed and sky conditions for Málaga on screen.
+  </p>
+
+  <!-- ── COLUMNS ─────────────────────────────────────────── -->
+  <div class="cols">
+
+    <!-- LEFT COLUMN -->
+    <div>
+
+      <h3 class="col-label" data-i18n="d48-lbl-star">STAR Summary</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Studying the Meta Frontend Developer course on Coursera, I saw how useEffect is used to make API calls. The course example used chained .then() promises.<br><br>
+        <strong>T —</strong> Implement that same pattern on my own inside my React mini app — but using async/await instead of promises. More modern, more readable, more mine.<br><br>
+        <strong>A —</strong> Chose the Open-Meteo API (no signup, no API key) to fetch live weather data for Málaga. Declared three states (load, error, clima), built the fetchWeather function with async/await and try/catch/finally, called it from useEffect with an empty dependency array, and built the JSX with three cases: loading, error, data.<br><br>
+        <strong>R —</strong> UserCard component working — displays temperature, wind speed and sky condition with emojis. Loading and error logic correctly implemented. Inline styles applied.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d48-lbl-wins">Wins of the day</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Chose async/await over .then() by my own decision — not because someone told me to</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Understood that fetchWeather is declared first, and useEffect just calls it — separation of concerns</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Discovered finally through real need, not memorisation — "runs always, no matter what"</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">if statements before the return for conditional rendering — clean, no ternaries tangled inside JSX</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Real API, real data, Málaga on screen — not JSONPlaceholder</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "First I declare the fetch. Then useEffect calls it. Everything in its place."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d48-lbl-levels">Skill levels at end of day</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">useState</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="75"></div>
+        </div>
+        <span class="skill-pct">75%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">useEffect</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="55"></div>
+        </div>
+        <span class="skill-pct">55%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">fetch / async/await</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Conditional JSX</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="70"></div>
+        </div>
+        <span class="skill-pct">70%</span>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d48-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> response.json(data) — passed data as an argument when it takes none</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: .json() reads the response body on its own, like .trim() on a string — no arguments needed</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> setWeather() inside JSX — called a state setter that didn't exist</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: setter functions never go inside JSX — only values are rendered. The state was called setClima</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> useEffect and return outside UserCard — unclosed braces pushed them out of scope</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: indent properly from the start. If return sits at the same level as function, something is wrong</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> setLoad(false) only in the catch — if everything went well, load stayed true forever</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: finally — runs always, success or error. The right place for setLoad(false)</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 5:</strong> conditional if statements inside the return — JS logic does not go inside JSX</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: if statements go before the return, interrupting the function before it reaches the main JSX</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Result: UserCard displaying temperature, wind and sky for Málaga with emojis and inline styles</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d48-lbl-code">Code of the day</h3>
+
+      <pre class="code-block"><code>
+import { useState, useEffect } from 'react'
+
+function UserCard() {
+
+  const [load, setLoad] = useState(true)
+  const [error, setError] = useState(null)
+  const [clima, setClima] = useState(null)
+
+  const fetchWeather = async () => {
+    try {
+      const response = await fetch(
+        "https://api.open-meteo.com/v1/forecast?latitude=36.72&longitude=-4.42&current=temperature_2m,weathercode,windspeed_10m"
+      )
+      if (!response.ok) { throw new Error("Network error") }
+
+      const data = await response.json()
+
+      setClima({
+        temp: data.current.temperature_2m,
+        wind: data.current.windspeed_10m,
+        code: data.current.weathercode
+      })
+
+      console.log("Data ready!", data.current)
+
+    } catch (error) {
+      console.error("Request failed:")
+      setError(error.message)
+    } finally {
+      setLoad(false)
+    }
+  }
+
+  useEffect(() => {
+    fetchWeather()
+  }, [])
+
+  const iconos = {
+    0: '☀️', 1: '🌤️', 2: '⛅',
+    3: '☁️', 61: '🌧️', 80: '🌦️'
+  }
+
+  if (load) return &lt;div className="card"&gt;&lt;p&gt;Loading...&lt;/p&gt;&lt;/div&gt;
+  if (error) return &lt;div className="card"&gt;&lt;p&gt;{error}&lt;/p&gt;&lt;/div&gt;
+
+  return (
+    &lt;div className="card" style={{
+      backgroundColor: '#f0f4f8',
+      border: '1px solid #cbd5e0',
+      boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+      borderRadius: '12px',
+      padding: '1.5rem'
+    }}&gt;
+      &lt;p style={{ fontSize: '1.1rem', color: '#2d3748', margin: '0.5rem 0', fontWeight: '500' }}&gt;
+        Temperature: {clima.temp}° 🌡️
+      &lt;/p&gt;
+      &lt;p style={{ fontSize: '1.1rem', color: '#2d3748', margin: '0.5rem 0', fontWeight: '500' }}&gt;
+        Wind km/h {clima.wind} 💨
+      &lt;/p&gt;
+      &lt;p style={{ fontSize: '1.1rem', color: '#2d3748', margin: '0.5rem 0', fontWeight: '500' }}&gt;
+        Sky {iconos[clima.code] || '🌡️'}
+      &lt;/p&gt;
+    &lt;/div&gt;
+  )
+}
+
+export default UserCard
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "I saw the pattern in Coursera. Decided not to copy it — built it from scratch, my way."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
+
+
 <!-- ============================
      DAY 47
 =============================== -->
 <article class="entry" data-tags="js project debug" aria-labelledby="title-d46en">
   <header class="entry-kicker">
     <span class="day-badge">Day 46</span>
-    <time datetime="2026-05-10" data-i18n="d46en-date">May 10, 2026</time>
+    <time datetime="2026-05-10" data-i18n="d46en-date">May 14, 2026</time>
     <ul class="entry-tags" aria-label="Categories">
       <li class="etag">JS</li>
       <li class="etag">Project</li>

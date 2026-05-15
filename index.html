@@ -185,12 +185,255 @@
 </section>
 
 <!-- ============================
+     DÍA 48 — useEffect + fetch: mi primer componente con API real
+=============================== -->
+
+<article class="entry" data-tags="js project" aria-labelledby="title-d48">
+  <header class="entry-kicker">
+    <span class="day-badge">Día 48</span>
+    <time datetime="2026-05-15" data-i18n="d48-date">15 de Mayo, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">JS</li>
+      <li class="etag">React</li>
+      <li class="etag">Proyecto</li>
+      <li class="etag">API</li>
+      <li class="etag">Debug</li>
+    </ul>
+  </header>
+
+  <img src="weatherAPI.png"
+  <div style="width:100%; height:180px; background:#f0f4f8; border:2px dashed #cbd5e0; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:1.5rem;">
+    <span style="color:#a0aec0; font-size:0.95rem;">[ GIF del día — pegar aquí ]</span>
+  </div>
+
+  <h2 class="entry-headline" id="title-d48" data-i18n="d48-headline">
+    Mi primer componente React con fetch real.<br>useEffect, async/await, y una API del tiempo en Málaga.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d48-deck">
+    Vi el patrón de fetch con useEffect en el curso de Meta Frontend Developer en Coursera — y decidí no copiarlo: lo construí desde cero, a mi manera, con async/await en lugar de promesas encadenadas. Errores de llaves, estados mal colocados, y un finally que no sabía que necesitaba. Al final: temperatura, viento y estado del cielo de Málaga en pantalla.
+  </p>
+
+  <!-- ── COLUMNAS ─────────────────────────────────────────── -->
+  <div class="cols">
+
+    <!-- COLUMNA IZQUIERDA -->
+    <div>
+
+      <h3 class="col-label" data-i18n="d48-lbl-star">Resumen STAR</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Estudiando el curso Meta Frontend Developer en Coursera, vi cómo se usa useEffect para hacer llamadas a APIs. El ejemplo del curso usaba el patrón .then() encadenado.<br><br>
+        <strong>T —</strong> Implementar ese mismo patrón por mi cuenta en mi mini app de React, pero usando async/await en lugar de promesas — más moderno, más legible, más mío.<br><br>
+        <strong>A —</strong> Elegí la API de Open-Meteo (sin registro, sin API key) para fetchear datos del tiempo en Málaga. Declaré tres estados (load, error, clima), construí la función fetchWeather con async/await y try/catch/finally, la llamé desde useEffect con array vacío, y construí el JSX con tres casos: cargando, error, datos.<br><br>
+        <strong>R —</strong> Componente UserCard funcionando — muestra temperatura, viento y estado del cielo con emojis. Lógica de carga y error implementadas correctamente. Inline styles aplicados.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d48-lbl-wins">Victorias del día</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Elegí async/await sobre .then() por decisión propia — no porque me lo dijeran</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Entendí que fetchWeather va declarada antes, y useEffect solo la invoca — separación de responsabilidades</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Descubrí finally por necesidad real, no de memoria — "se ejecuta siempre, pase lo que pase"</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Los if antes del return para renderizado condicional — limpio, sin ternarios mezclados en el JSX</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">API real, datos reales, Málaga en pantalla — no JSONPlaceholder</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "Primero declaro el fetch, luego useEffect lo invoca. Cada cosa en su sitio."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d48-lbl-levels">Niveles al cierre del día</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">useState</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="75"></div>
+        </div>
+        <span class="skill-pct">75%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">useEffect</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="55"></div>
+        </div>
+        <span class="skill-pct">55%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">fetch / async/await</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">JSX condicional</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="70"></div>
+        </div>
+        <span class="skill-pct">70%</span>
+      </div>
+
+    </div>
+
+    <!-- COLUMNA DERECHA -->
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d48-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> response.json(data) — le pasé data como argumento cuando no recibe ninguno</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: .json() lee el body de la respuesta solo, como .trim() en un string — no necesita argumentos</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> setWeather() en el JSX — llamé a la función de actualización de estado que no existía</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: en el JSX nunca se llaman funciones set — solo se muestran valores. El estado se llama setClima</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> useEffect y return fuera de la función UserCard — problema de llaves mal cerradas</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: indentar bien desde el principio. Si el return está al mismo nivel que function, algo está mal</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> setLoad(false) solo en el catch — si todo iba bien, load se quedaba en true para siempre</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: finally — se ejecuta siempre, éxito o error. El sitio correcto para setLoad(false)</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 5:</strong> los if de renderizado condicional dentro del return — la lógica JS no va dentro del JSX</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: los if van antes del return, interrumpen la función antes de llegar al JSX principal</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Resultado: UserCard mostrando temperatura, viento y cielo de Málaga con emojis e inline styles</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d48-lbl-code">Código del día</h3>
+
+      <pre class="code-block"><code>
+import { useState, useEffect } from 'react'
+
+function UserCard() {
+
+  const [load, setLoad] = useState(true)
+  const [error, setError] = useState(null)
+  const [clima, setClima] = useState(null)
+
+  const fetchWeather = async () => {
+    try {
+      const response = await fetch(
+        "https://api.open-meteo.com/v1/forecast?latitude=36.72&longitude=-4.42&current=temperature_2m,weathercode,windspeed_10m"
+      )
+      if (!response.ok) { throw new Error("Error de red") }
+
+      const data = await response.json()
+
+      setClima({
+        temp: data.current.temperature_2m,
+        wind: data.current.windspeed_10m,
+        code: data.current.weathercode
+      })
+
+      console.log("¡Datos listos!", data.current)
+
+    } catch (error) {
+      console.error("Fallo total de la petición:")
+      setError(error.message)
+    } finally {
+      setLoad(false)
+    }
+  }
+
+  useEffect(() => {
+    fetchWeather()
+  }, [])
+
+  const iconos = {
+    0: '☀️', 1: '🌤️', 2: '⛅',
+    3: '☁️', 61: '🌧️', 80: '🌦️'
+  }
+
+  if (load) return &lt;div className="card"&gt;&lt;p&gt;Cargando...&lt;/p&gt;&lt;/div&gt;
+  if (error) return &lt;div className="card"&gt;&lt;p&gt;{error}&lt;/p&gt;&lt;/div&gt;
+
+  return (
+    &lt;div className="card" style={{
+      backgroundColor: '#f0f4f8',
+      border: '1px solid #cbd5e0',
+      boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+      borderRadius: '12px',
+      padding: '1.5rem'
+    }}&gt;
+      &lt;p style={{ fontSize: '1.1rem', color: '#2d3748', margin: '0.5rem 0', fontWeight: '500' }}&gt;
+        Temperatura: {clima.temp}° 🌡️
+      &lt;/p&gt;
+      &lt;p style={{ fontSize: '1.1rem', color: '#2d3748', margin: '0.5rem 0', fontWeight: '500' }}&gt;
+        Viento km/h {clima.wind} 💨
+      &lt;/p&gt;
+      &lt;p style={{ fontSize: '1.1rem', color: '#2d3748', margin: '0.5rem 0', fontWeight: '500' }}&gt;
+        Cielo {iconos[clima.code] || '🌡️'}
+      &lt;/p&gt;
+    &lt;/div&gt;
+  )
+}
+
+export default UserCard
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "Vi el patrón en Coursera. Decidí no copiarlo — lo construí desde cero, a mi manera."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
+
+<!-- ============================
      DÍA 47
 =============================== -->
 <article class="entry" data-tags="js project debug" aria-labelledby="title-d46">
   <header class="entry-kicker">
     <span class="day-badge">Día 47</span>
-    <time datetime="2026-05-10" data-i18n="d46-date">10 de Mayo, 2026</time>
+    <time datetime="2026-05-10" data-i18n="d46-date">14 de Mayo, 2026</time>
     <ul class="entry-tags" aria-label="Categorías">
       <li class="etag">JS</li>
       <li class="etag">Proyecto</li>
