@@ -173,6 +173,236 @@
     Day 1 = February 20, 2026 · The 365 days are counted from there · Not every day has an entry
   </p>
 </section>
+<!-- ============================
+     DAY 49
+=============================== -->
+
+
+<article class="entry" data-tags="js react debug project" aria-labelledby="title-d48">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 49</span>
+    <time datetime="2026-05-16" data-i18n="d48-date">May 16, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">React</li>
+      <li class="etag">Props</li>
+      <li class="etag">useState</li>
+      <li class="etag">Debug</li>
+      <li class="etag">Project</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d48" data-i18n="d48-headline">
+    TextExpander: from Jonas challenge<br>to the Campus & Crema menu.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d48-deck">
+    I reasoned a reusable component from scratch — props, children, dynamic useState and text logic —
+    with no instructions. Then I implemented it directly in Campus & Crema.
+    Today the code went from exercise to product.
+  </p>
+
+  <!-- ── COLUMNS ─────────────────────────────────────────── -->
+  <div class="cols">
+
+    <!-- LEFT COLUMN -->
+    <div>
+
+      <h3 class="col-label" data-i18n="d48-lbl-star">STAR Summary</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Jonas challenge (Udemy): build a <code>TextExpander</code> component that shows truncated or full text when a button is clicked. No instructions — just an empty skeleton in App.jsx.<br><br>
+        <strong>T —</strong> Reason on paper what state it needs, what props it receives and how the JSX works. Then migrate the finished component to Campus & Crema for the menu item descriptions.<br><br>
+        <strong>A —</strong> I identified that the state should live in TextExpander, not in App. Discovered that <code>children</code> is the special prop for content between tags. Used <code>useState(expanded)</code> for dynamic initial state — if the parent passes nothing, expanded is undefined (falsy), so it starts collapsed. Applied <code>split / slice / join</code> to cut the text. Migrated the component to Campus & Crema and integrated it in the menu <code>.map()</code> with new longer descriptions.<br><br>
+        <strong>R —</strong> Component working in the Jonas challenge and live in Campus & Crema. Button with no button appearance, underlined and centred. Brand colours applied via a ternary on the span.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d48-lbl-wins">Wins of the day</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Understood <strong>children</strong> as a special prop — had never seen content passed between component tags before</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Discovered that <strong>useState accepts any expression</strong> as initial value, including a ternary or a variable</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Applied the rule: state lives in the <strong>lowest component that needs it</strong></span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Understood why <strong>undefined is falsy</strong> and how it sets the initial state without an explicit default</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Migrated a course exercise into a <strong>real project</strong> on the same day I learned it</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "I didn't know you could put a ternary inside useState as the initial value. This simplifies things a lot."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d48-lbl-levels">Skill levels at end of day</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">Props / children</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="80"></div>
+        </div>
+        <span class="skill-pct">80%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">useState</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="75"></div>
+        </div>
+        <span class="skill-pct">75%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Reusable comp.</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="70"></div>
+        </div>
+        <span class="skill-pct">70%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Booleans / falsy</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d48-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> <code>import {useState} from " react"</code> — extra space before react. ModuleNotFoundError.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: One invisible character breaks everything. Reading the error calmly always points to the exact spot.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> Opening <code>{</code> of the function body on a separate line from <code>)</code> — export default not recognised.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: <code>) {</code> always together. The function signature and its body are inseparable in JS.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> Two <code>style</code> attributes on the same button — the second one silently overwrote the first.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: A single style object with all properties. JSX does not warn about duplicate attributes.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> <code>children.split is not a function</code> — children is not always a plain string in React.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: <code>String(children).split(" ")</code> — explicitly convert before operating on the value.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 5:</strong> Ternary for the text outside the span — text and JSX mixed, broken render.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: Entire ternary on a single line inside the <code>&lt;span&gt;</code>.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Final result: TextExpander working in the Jonas challenge and integrated into Campus & Crema with brand colours.</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d48-lbl-code">Code of the day</h3>
+
+      <pre class="code-block"><code>import { useState } from "react";
+
+function TextExpander({
+  children,
+  collapsedNumWords = 10,
+  expandButtonText = "Mostrar más",
+  collapseButtonText = "Mostrar menos",
+  buttonColor,
+  expanded,   // undefined → falsy → empieza cerrado
+  className,
+}) {
+  const [isOpen, setOpen] = useState(expanded);
+
+  function handleClick() {
+    setOpen(!isOpen);
+  }
+
+  return (
+    &lt;div className={className}&gt;
+      &lt;span style={{ color: isOpen ? "#b5541a" : "#5f5f5f" }}&gt;
+        {isOpen
+          ? children
+          : String(children).split(" ").slice(0, collapsedNumWords).join(" ")}
+      &lt;/span&gt;
+      &lt;button
+        style={{
+          color: buttonColor || "#b5541a",
+          background: "none",
+          border: "none",
+          cursor: "pointer",
+          padding: 0,
+          fontWeight: 600,
+          display: "block",
+          margin: "0.4rem auto 0",
+          textDecoration: "underline",
+        }}
+        onClick={handleClick}
+      &gt;
+        {isOpen ? collapseButtonText : expandButtonText}
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default TextExpander;
+
+// Uso en Campus &amp; Crema — dentro del .map():
+&lt;TextExpander collapsedNumWords={8}&gt;
+  {item.desc}
+&lt;/TextExpander&gt;
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "State lives in the lowest component that needs it. App doesn't need to know whether TextExpander is open."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:20px">In action</h3>
+
+      <p style="margin-bottom:0.5rem;">Jonas challenge:</p>
+      <img src="JonastextExpander.gif" alt="TextExpander working in the Jonas challenge" style="width:100%;border-radius:8px;margin-bottom:1.5rem;" />
+
+      <p style="margin-bottom:0.5rem;">Live in Campus &amp; Crema:</p>
+      <img src="cremaTextExpander.gif" alt="TextExpander integrated in the Campus & Crema menu" style="width:100%;border-radius:8px;" />
+
+    </div>
+  </div>
+</article>
 
 <!-- ============================
      DAY 48 — useEffect + fetch: my first component with a real API
@@ -180,7 +410,7 @@
 
 <article class="entry" data-tags="js project" aria-labelledby="title-d48-en">
   <header class="entry-kicker">
-    <span class="day-badge">Day 48</span>
+    <span class="day-badge">Day 49</span>
     <time datetime="2026-05-15" data-i18n="d48-date">May 15, 2026</time>
     <ul class="entry-tags" aria-label="Categories">
       <li class="etag">JS</li>
@@ -193,7 +423,7 @@
 
   
   <div style="width:100%; height:180px; background:#f0f4f8; border:2px dashed #cbd5e0; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:1.5rem;">
-    <span style="color:#a0aec0; font-size:0.95rem;"><img src="weatherAPI.png"></span>
+    <span style="color:#a0aec0; font-size:0.95rem;"></span>
   </div>
 
   <h2 class="entry-headline" id="title-d48-en" data-i18n="d48-headline">
