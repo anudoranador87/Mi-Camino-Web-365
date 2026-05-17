@@ -184,6 +184,239 @@
   </p>
 </section>
 <!-- ============================
+     DÍA 50 
+=============================== -->
+<article class="entry" data-tags="js project debug" aria-labelledby="title-d50">
+  <header class="entry-kicker">
+    <span class="day-badge">Día 50</span>
+    <time datetime="2026-05-17" data-i18n="d50-date">17 de Mayo, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">JS</li>
+      <li class="etag">Proyecto</li>
+      <li class="etag">Debug</li>
+      <li class="etag">Supabase</li>
+      <li class="etag">Async/Await</li>
+      <li class="etag">API</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d50" data-i18n="d50-headline">
+    LostDesk conecta con el mundo real.<br>CRUD completo con Supabase desde cero.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d50-deck">
+    Hoy LostDesk dejó de vivir en el navegador. Conecté la app a Supabase por primera vez,
+    implementé las cuatro operaciones de base de datos y entendí por qué cada llamada a una API 
+    necesita su propio async/await.
+  </p>
+
+  <div class="cols">
+
+    <div>
+
+      <h3 class="col-label" data-i18n="d50-lbl-star">Resumen STAR</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> LostDesk guardaba los objetos en localStorage — datos que desaparecían 
+        al limpiar el navegador y no se compartían entre dispositivos.<br><br>
+        <strong>T —</strong> Conectar la app a Supabase e implementar el CRUD completo: 
+        leer, crear, borrar y actualizar objetos en una base de datos real.<br><br>
+        <strong>A —</strong> Creé el proyecto en Supabase, diseñé la tabla objetos, instalé 
+        el cliente, creé supabase.js con la conexión, y fui construyendo función a función 
+        en useLostItems.js — cargarItems con useEffect, handleAddItem, handleDeleteItem 
+        y handleNuevoEstado, cada una con su propio async/await y manejo de errores.<br><br>
+        <strong>R —</strong> CRUD completo funcionando. Los objetos se leen, crean, borran 
+        y actualizan en Supabase en tiempo real desde la app.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d50-lbl-wins">Victorias del día</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Entendí que useEffect no puede ser async directamente — necesita una función async interna que se llama inmediatamente</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Cada operación de Supabase necesita su propio async/await — select, insert, delete y update son llamadas independientes a internet</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">En Supabase se comprueba el error primero — si no hay error, data tiene los datos listos para usar</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">El reducer no le importa de dónde vienen los datos — LOAD_ITEMS funcionó igual con Supabase que con localStorage</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">pins[rol] con corchetes para acceder a propiedades con clave variable — no pins.rol</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "Cada operación con Supabase es una llamada a internet. Cada una necesita su propio async/await."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d50-lbl-levels">Niveles al cierre del día</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">Async/Await</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="70"></div>
+        </div>
+        <span class="skill-pct">70%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Supabase</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="40"></div>
+        </div>
+        <span class="skill-pct">40%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">APIs externas</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="50"></div>
+        </div>
+        <span class="skill-pct">50%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Arquitectura React</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+
+    </div>
+
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d50-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> useEffect y toda la lógica fuera de useLostItems — los hooks no funcionan fuera de componentes o hooks</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: Todo dentro del hook. useState y useEffect solo viven dentro de componentes o custom hooks</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> 404 en la consulta a Supabase — la tabla estaba en mayúsculas "Objetos"</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: Renombrar la tabla a minúsculas "objetos" — Supabase es case-sensitive</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> Dos handleAddItem en el mismo hook — la segunda función sobreescribía a la primera</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: Eliminar la función antigua con solo dispatch — quedarse con la async que llama a Supabase</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> handleDeleteItem no defined — la función existía en el hook pero no en el destructuring de App.jsx</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: Añadir al return del hook Y al destructuring donde se usa. Cada función nueva requiere los dos pasos</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 5:</strong> onUpdate pasaba un objeto dispatch al handleNuevoEstado en lugar de los parámetros simples</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: onUpdate={(id, nuevoEstado) => handleNuevoEstado(id, nuevoEstado)} — la función ya sabe qué hacer con ellos</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 6:</strong> RLS activado en Supabase bloqueaba todas las consultas sin dar error claro</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: Desactivar RLS temporalmente durante el desarrollo. Se reactivará con políticas cuando haya auth real</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">CRUD completo funcionando — objetos leyéndose, creándose, borrándose y actualizándose en Supabase en tiempo real</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d50-lbl-code">Código del día</h3>
+      <img src="supabasegif.gif" alt="Supabase en acción" style="width:100%; border-radius:8px; margin:16px 0;" />
+      <pre class="code-block"><code>
+// El patrón Supabase — se repite en cada operación
+// SELECT — cargar al arrancar
+useEffect(() => {
+  async function cargarItems() {
+    try {
+      const { data, error } = await supabase
+        .from('objetos')
+        .select('*')
+      if (error) {
+        console.error(error)
+      } else {
+        dispatch({ type: "LOAD_ITEMS", payload: data })
+      }
+    } catch (err) {
+      console.error(err)
+    }
+  }
+  cargarItems()
+}, [])
+
+// INSERT — añadir objeto nuevo
+async function handleAddItem(nuevoItem) {
+  const { data, error } = await supabase
+    .from('objetos')
+    .insert(nuevoItem)
+  if (!error) dispatch({ type: "ADD_ITEM", payload: data })
+}
+
+// DELETE — borrar por id
+async function handleDeleteItem(id) {
+  const { error } = await supabase
+    .from('objetos')
+    .delete()
+    .eq('id', id)
+  if (!error) dispatch({ type: "DELETE_ITEM", payload: id })
+}
+
+// UPDATE — cambiar estado
+async function handleNuevoEstado(id, nuevoEstado) {
+  const { error } = await supabase
+    .from('objetos')
+    .update({ estado: nuevoEstado })
+    .eq('id', id)
+  if (!error) dispatch({
+    type: "UPDATE_STATUS",
+    payload: { id, estado: nuevoEstado }
+  })
+}
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "El reducer no sabe de dónde vienen los datos. Solo sabe qué hacer con ellos."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
+
+<!-- ============================
      DÍA 49 
 =============================== -->
 
