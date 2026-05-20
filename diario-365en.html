@@ -174,6 +174,219 @@
   </p>
 </section>
 <!-- ============================
+     DAY 51
+=============================== -->
+<article class="entry" data-tags="js project debug css" aria-labelledby="title-d51en">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 51</span>
+    <time datetime="2026-05-20" data-i18n="d51en-date">May 20, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">JS</li>
+      <li class="etag">Project</li>
+      <li class="etag">Debug</li>
+      <li class="etag">CSS</li>
+      <li class="etag">React Router</li>
+      <li class="etag">Auth</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d51en" data-i18n="d51en-headline">
+    The doorman works.<br>Real login, protected routes and environment variables.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d51en-deck">
+    Today LostDesk has real security. I implemented Supabase authentication, 
+    protected routes with ProtectedRoute, and learned to protect API keys with environment variables. 
+    I also gave the whole app visual consistency.
+  </p>
+
+  <div class="cols">
+
+    <div>
+
+      <h3 class="col-label" data-i18n="d51en-lbl-star">STAR Summary</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> LostDesk had a fake login with hardcoded PINs visible on GitHub 
+        and anyone could access the dashboard without authenticating.<br><br>
+        <strong>T —</strong> Implement real auth with Supabase, protect routes and unify 
+        the visual style across the entire app.<br><br>
+        <strong>A —</strong> Created environment variables with .env to protect Supabase keys. 
+        Updated RoleContext with signInWithPassword and useNavigate to redirect after login. 
+        Created ProtectedRoute that checks the role and redirects to /login if no session exists. 
+        Redesigned Login.jsx with real email and password, added the SVG logo and visual consistency 
+        with the dark theme #1a2744 and gold #c9a84c in header, cards and forms.<br><br>
+        <strong>R —</strong> Functional login with Supabase, protected routes, secure keys 
+        and visually consistent app.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d51en-lbl-wins">Wins of the day</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Understood the difference between Navigate (JSX component) and useNavigate (hook for logic) — useNavigate goes in context, Navigate in JSX</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">ProtectedRoute — checks the role from context and redirects if no active session. Only 5 lines of code</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Environment variables with .env and VITE_ prefix — API keys never go hardcoded in the code</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Created the LostDesk SVG logo from scratch as a reusable React component</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Full visual consistency — dark theme with #1a2744 and gold #c9a84c across the entire app</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "useNavigate is for code. Navigate is for JSX. Never the other way around."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d51en-lbl-levels">Levels at end of day</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">React Router</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Supabase Auth</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="45"></div>
+        </div>
+        <span class="skill-pct">45%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Frontend security</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="50"></div>
+        </div>
+        <span class="skill-pct">50%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Consistent CSS</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="60"></div>
+        </div>
+        <span class="skill-pct">60%</span>
+      </div>
+
+    </div>
+
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d51en-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> ProtectedRoute wrapping Route instead of going inside the element — React Router doesn't accept it that way</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: ProtectedRoute goes inside element={} of Route, not outside wrapping the Route</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> Password arriving as null — onChange on password input was missing the e parameter</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: onChange={(e) => setPassword(e.target.value)} — always include the e parameter in events</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> Form was reloading the page on submit before calling login</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: e.preventDefault() on the confirm button's onClick</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> navigate('/') was missing — login authenticated but never redirected</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: Add navigate('/') after setRol in the else block</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 5:</strong> SVG with style block inside JSX — CSS curly braces clash with JSX syntax</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: Convert CSS styles to inline style={{}} with camelCase on each SVG element</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Real login working with Supabase, protected routes and visually consistent app</span>
+      </p>
+
+      <img src="LostDeskLogin.gif" alt="LostDesk login in action" style="width:100%; border-radius:8px; margin:16px 0;" />
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d51en-lbl-code">Code of the day</h3>
+
+      <pre class="code-block"><code>
+// ProtectedRoute — 5 lines that protect the entire app
+function ProtectedRoute({ children }) {
+  const { rol } = useContext(RoleContext)
+  return rol ? children : &lt;Navigate to="/login" /&gt;
+}
+
+// RoleContext — real login with Supabase
+async function login(email, password) {
+  try {
+    const { data, error } = await supabase.auth
+      .signInWithPassword({ email, password })
+    if (error) {
+      console.error(error)
+    } else {
+      const roles = {
+        'recepcion@lostdesk.com': 'recepcion',
+        'housekeeping@lostdesk.com': 'housekeeping',
+        'management@lostdesk.com': 'management'
+      }
+      setRol(roles[data.user.email])
+      navigate('/')
+    }
+  } catch (err) {
+    console.error(err)
+  }
+}
+
+// .env — keys never go in the code
+VITE_SUPABASE_URL=https://yourproject.supabase.co
+VITE_SUPABASE_KEY=your_public_key
+
+// supabase.js — how to consume them
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
+const supabaseKey = import.meta.env.VITE_SUPABASE_KEY
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "API keys don't go in the code. Never. That's what .env is for."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
+
+<!-- ============================
      DAY 50
 =============================== -->
 <article class="entry" data-tags="js project debug" aria-labelledby="title-d50en">
