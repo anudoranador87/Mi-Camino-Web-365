@@ -12,7 +12,7 @@ A hand-built, interactive Web CV combining portfolio projects, skills and career
 
 📍 Málaga, Spain · 🌱 Stack: HTML · CSS · JavaScript · React · 🎯 Goal: Junior Front-End Developer · Available January 2027
 
-📓 365-Day Dev Journey | Daily learning log: bugs, solutions, and breakthroughs | [Read Log](https://anudoranador87.github.io/Mi-Camino-Web-365/)
+📓 365-Day Dev Journey | Daily learning log: bugs, solutions, and breakthroughs | [Read Log](https://github.com/anudoranador87/JoseMaria-Frontend-Portfolio.git)
 
 ---
 
