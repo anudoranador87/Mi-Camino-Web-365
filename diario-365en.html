@@ -174,6 +174,209 @@
   </p>
 </section>
 <!-- ============================
+     DAY 52
+=============================== -->
+<article class="entry" data-tags="js project css debug" aria-labelledby="title-d52en">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 52</span>
+    <time datetime="2026-05-22" data-i18n="d52en-date">May 22, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">JS</li>
+      <li class="etag">Project</li>
+      <li class="etag">CSS</li>
+      <li class="etag">Debug</li>
+      <li class="etag">Responsive</li>
+      <li class="etag">Supabase</li>
+    </ul>
+  </header>
+   <img src="screenSideLostdesk.jpg" alt="LostDesk dashboard con sidebar" style="width:100%; border-radius:8px; margin:16px 0;" />
+  <h2 class="entry-headline" id="title-d52en" data-i18n="d52en-headline">
+    LostDesk on mobile.<br>Responsive, real logout and navigation sidebar.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d52en-deck">
+    Two intense days. LostDesk now looks good on mobile, properly signs out with Supabase, 
+    restores the session on reload, and has a navigation sidebar that filters options by role. 
+    The app is starting to feel like a real product.
+  </p>
+
+  <div class="cols">
+
+    <div>
+
+      <h3 class="col-label" data-i18n="d52en-lbl-star">STAR Summary</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> LostDesk worked well on desktop but was broken on mobile — 
+        the header collapsed, cards got cut off, stats didn't fit. 
+        Also, refreshing the page lost the session and logout didn't actually do anything.<br><br>
+        <strong>T —</strong> Make the app responsive, implement real logout with Supabase, 
+        restore the session on reload, and add a role-filtered navigation sidebar.<br><br>
+        <strong>A —</strong> Added media queries in Header, StatBar, ItemCard and ItemForm. 
+        Changed stats layout to 2x2 grid on mobile. Implemented logout with 
+        supabase.auth.signOut() and restaurarSesion with getSession() plus a loading state 
+        to prevent premature redirects in ProtectedRoute. Built the Sidebar with 
+        a role-filtered route array using NavLink.<br><br>
+        <strong>R —</strong> Responsive app, persistent session, functional logout and 
+        role-based sidebar navigation. Deploy verified on Vercel.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d52en-lbl-wins">Wins of the day</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">grid-template-columns: 1fr 1fr — stats adapt automatically to mobile width without hardcoding anything</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">The loading state in RoleContext prevents ProtectedRoute from redirecting before getSession finishes</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Sidebar filters the menu with .filter().includes() — each role only sees what belongs to them</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">NavLink detects the active route automatically — smarter than Link</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">supabase.auth.getSession() restores the session from localStorage on reload — no login required again</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "The loading state is the doorman that says: wait, I'm still checking who you are."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d52en-lbl-levels">Levels at end of day</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">CSS Responsive</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="70"></div>
+        </div>
+        <span class="skill-pct">70%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Supabase Auth</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">React Router</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="70"></div>
+        </div>
+        <span class="skill-pct">70%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">React Architecture</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="70"></div>
+        </div>
+        <span class="skill-pct">70%</span>
+      </div>
+
+    </div>
+
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d52en-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> On reload, ProtectedRoute redirected to /login because rol was null before getSession finished</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: loading=true on startup. ProtectedRoute waits until restaurarSesion finishes in the finally block</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> useContext called outside the component function in ProtectedRoute — Invalid hook call</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: Hooks only live inside a component body or custom hook — never outside</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> logout vs logOut — different names in RoleContext and Sidebar, JavaScript is case-sensitive</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: Unify the name across all files — one naming convention for the whole project</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> roles defined inside login — restaurarSesion couldn't access it</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: Move roles to RoleProvider component level — accessible from all functions</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Responsive app, persistent session, real logout and role-filtered sidebar — deploy verified on Vercel</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d52en-lbl-code">Code of the day</h3>
+
+      <pre class="code-block"><code>
+// Restore session on reload
+useEffect(() => {
+  async function restaurarSesion() {
+    try {
+      const { data, error } = await supabase.auth.getSession()
+      if (error) { console.error(error); return }
+      if (data.session) {
+        setRol(roles[data.session.user.email])
+      }
+    } catch(err) {
+      console.error(err)
+    } finally {
+      setCargando(false)
+    }
+  }
+  restaurarSesion()
+}, [])
+
+// ProtectedRoute with loading state
+function ProtectedRoute({ children }) {
+  const { rol, cargando } = useContext(RoleContext)
+  if (cargando) return null
+  return rol ? children : &lt;Navigate to="/login" /&gt;
+}
+
+// Sidebar filtered by role
+const menu = [
+  { label: "Dashboard", path: "/", roles: ["recepcion", "housekeeping", "management"] },
+  { label: "History", path: "/historial", roles: ["management"] }
+]
+
+menu
+  .filter(item =&gt; item.roles.includes(rol))
+  .map(item =&gt; &lt;NavLink to={item.path}&gt;{item.label}&lt;/NavLink&gt;)
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "grid-template-columns: 1fr 1fr — two equal columns that adapt on their own. CSS that thinks for you."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
+
+<!-- ============================
      DAY 51
 =============================== -->
 <article class="entry" data-tags="js project debug css" aria-labelledby="title-d51en">
