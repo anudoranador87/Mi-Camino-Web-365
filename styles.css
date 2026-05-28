@@ -56,6 +56,8 @@ body {
   padding-top: 80px;
   overflow-x: hidden;
   max-width: 100%;
+  /* Asegurar que el contenido no se desborde horizontalmente en móviles */
+  width: 100%;
 }
 
 
@@ -1027,7 +1029,8 @@ button,
 
 @media (max-width: 600px) {
   body {
-    padding-top: 120px;
+    /* Ajuste dinámico si es posible, pero 140px suele ser más seguro para nav de dos líneas */
+    padding-top: 140px;
   }
 
   .nav {
@@ -1042,7 +1045,7 @@ button,
   .nav-links {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 12px;
+    gap: 10px;
     width: 100%;
   }
 
@@ -1051,15 +1054,18 @@ button,
   }
 
   .stats-row {
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
+    padding: 20px 4%;
   }
 
   .filter-nav {
     flex-wrap: wrap;
-    gap: 10px;
-    padding: 16px 4%;
-    top: 120px;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 4%;
+    top: 140px; /* Sincronizado con padding-top de body */
   }
 
   .mast-title     { font-size: 2rem; }
@@ -1079,12 +1085,17 @@ button,
 
 @media (max-width: 480px) {
   body {
-    padding-top: 180px;
+    padding-top: 200px;
     font-size: 14px;
   }
 
   .filter-nav {
-    top: 180px;
+    top: 200px;
+  }
+
+  .stats-row {
+    grid-template-columns: 1fr;
+    gap: 15px;
   }
 
   .nav-brand     { font-size: 1.2rem; }
