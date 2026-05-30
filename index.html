@@ -183,6 +183,130 @@
     Día 1 = 20 de febrero de 2026 · Los 365 días se cuentan desde ahí · No todos los días tienen entrada
   </p>
 </section>
+
+  <!-- ============================
+     DÍA 54 — ESPAÑOL
+=============================== -->
+<article class="entry" data-tags="react • tailwind • css • debug • proyecto" aria-labelledby="title-d54-es">
+  <header class="entry-kicker">
+    <span class="day-badge">Día 54</span>
+    <time datetime="2026-05-30" data-i18n="d54-date">30 de Mayo, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">React</li>
+      <li class="etag">Tailwind CSS</li>
+      <li class="etag">Proyecto</li>
+      <li class="etag">Debug</li>
+    </ul>
+  </header>
+ 
+  <h2 class="entry-headline" id="title-d54-es" data-i18n="d54-headline">
+    Primera migración a Tailwind: choque mental,<br>fricción real y Login completado.
+  </h2>
+ 
+  <p class="entry-deck" data-i18n="d54-deck">
+    Primer día real con Tailwind en LostDesk. Instalación desde cero, colisión frontal con el paradigma utility-first y un componente Login completamente migrado. El Header espera en la siguiente sesión.
+  </p>
+ 
+  <div class="cols">
+    <div>
+      <h3 class="col-label" data-i18n="d54-lbl-star">Resumen STAR</h3>
+ 
+      <p class="body-text">
+        <strong>S —</strong> LostDesk acumulaba CSS disperso en múltiples archivos. Semanas dudando si dar el salto a Tailwind.<br><br>
+        <strong>T —</strong> Instalar Tailwind en un proyecto Vite+React existente y migrar los primeros componentes sin romper lo que ya funciona.<br><br>
+        <strong>A —</strong> Instalación del plugin oficial para Vite, limpieza total de <code>index.css</code>, comprensión del modelo utility-first y migración completa del componente Login. Branch <code>feature/tailwind</code> creada para aislar el trabajo en progreso.<br><br>
+        <strong>R —</strong> Login 100% en Tailwind, funcional y visual. Header en progreso con bug de fondo pendiente de resolver. Commit realizado en rama separada.
+      </p>
+ 
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d54-lbl-wins">Victorias del día</h3>
+ 
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Tailwind instalado en Vite+React via plugin oficial (<code>@tailwindcss/vite</code>)</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Concepto utility-first entendido: una clase → una propiedad, todo en el JSX</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Login completamente migrado — gradiente, inputs, botón y credenciales de prueba</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Colores custom con valores arbitrarios: <code>bg-[#0a0f1e]</code>, <code>from-[#1a2744]</code></span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Patrón <code>estilosRoles</code> para clases dinámicas sin romper el build de Tailwind</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Branch <code>feature/tailwind</code> creada — main protegido mientras el Header está roto</span>
+      </p>
+ 
+      <blockquote class="pullquote">
+        "Si lo sé, hubiera empezado con Tailwind desde el principio. Migrarlo es más difícil — pero aprenderlo así, con fricción real, es como se aprende de verdad."
+      </blockquote>
+ 
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d54-lbl-levels">Niveles al cierre del día</h3>
+ 
+      <div class="skill-row">
+        <span class="skill-name">Tailwind CSS</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="30"></div>
+        </div>
+        <span class="skill-pct">30%</span>
+      </div>
+ 
+      <div class="skill-row">
+        <span class="skill-name">Arquitectura CSS</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="55"></div>
+        </div>
+        <span class="skill-pct">55%</span>
+      </div>
+ 
+    </div>
+ 
+    <div class="col-rule">
+ 
+      <h3 class="col-label" data-i18n="d54-lbl-debug">Debug Log</h3>
+ 
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> CSS del template de Vite en <code>index.css</code> tapaba el gradiente del Login</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix 1: Limpieza total de <code>index.css</code> — solo queda <code>@import "tailwindcss"</code></span>
+      </p>
+ 
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> Clases dinámicas <code>rol-${rol}</code> invisibles para Tailwind en build time — no se generan</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix 2: Objeto <code>estilosRoles</code> con clases completas escritas a mano para que Tailwind las detecte</span>
+      </p>
+ 
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> Fondo del Header no visible pese a <code>bg-blue-900</code> y <code>bg-[#1a2744]</code> correctos en el JSX</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix 3: Pendiente — <code>App.css</code> sospechoso. Committed en <code>feature/tailwind</code>, investigar próxima sesión</span>
+      </p>
+ 
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d54-lbl-code">Código del día</h3>
+ 
+  
+ 
+    </div>
+  </div>
+</article>
 <!-- ============================
      DÍA 53
 =============================== -->
