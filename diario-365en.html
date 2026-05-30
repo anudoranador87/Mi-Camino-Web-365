@@ -173,6 +173,130 @@
     Day 1 = February 20, 2026 · The 365 days are counted from there · Not every day has an entry
   </p>
 </section>
+
+
+  
+<!-- ============================
+     DAY 54 — ENGLISH
+=============================== -->
+<article class="entry" data-tags="react • tailwind • css • debug • project" aria-labelledby="title-d54-en">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 54</span>
+    <time datetime="2026-05-30" data-i18n="d54-date-en">May 30, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">React</li>
+      <li class="etag">Tailwind CSS</li>
+      <li class="etag">Project</li>
+      <li class="etag">Debug</li>
+    </ul>
+  </header>
+ 
+  <h2 class="entry-headline" id="title-d54-en" data-i18n="d54-headline-en">
+    First Tailwind Migration: Mental Shift,<br>Real Friction and Login Done.
+  </h2>
+ 
+  <p class="entry-deck" data-i18n="d54-deck-en">
+    First real day with Tailwind on LostDesk. Set up from scratch, head-on collision with the utility-first paradigm, and one fully migrated Login component to show for it. The Header waits for next session.
+  </p>
+ 
+  <div class="cols">
+    <div>
+      <h3 class="col-label" data-i18n="d54-lbl-star-en">STAR Summary</h3>
+ 
+      <p class="body-text">
+        <strong>S —</strong> LostDesk had CSS scattered across multiple files. Weeks of hesitation before committing to Tailwind.<br><br>
+        <strong>T —</strong> Install Tailwind into an existing Vite+React project and migrate the first components without breaking what already works.<br><br>
+        <strong>A —</strong> Installed the official Vite plugin, cleaned up <code>index.css</code>, grasped the utility-first model and fully migrated the Login component. Created a <code>feature/tailwind</code> branch to isolate the work in progress.<br><br>
+        <strong>R —</strong> Login 100% in Tailwind, functional and styled. Header in progress with an unresolved background bug — committed to the feature branch, to be investigated next session.
+      </p>
+ 
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d54-lbl-wins-en">Wins</h3>
+ 
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Tailwind installed in Vite+React via official plugin (<code>@tailwindcss/vite</code>)</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Utility-first concept understood: one class → one property, all inside the JSX</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Login fully migrated — gradient, inputs, button and test credentials</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Custom colors via arbitrary values: <code>bg-[#0a0f1e]</code>, <code>from-[#1a2744]</code></span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text"><code>estilosRoles</code> object pattern for dynamic classes that won't break the Tailwind build</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text"><code>feature/tailwind</code> branch created — main protected while Header is broken</span>
+      </p>
+ 
+      <blockquote class="pullquote">
+        "I know — I should have started with Tailwind from day one. Migrating is harder. But learning it this way, with real friction, is how it actually sticks."
+      </blockquote>
+ 
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d54-lbl-levels-en">Skill Levels at Close</h3>
+ 
+      <div class="skill-row">
+        <span class="skill-name">Tailwind CSS</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="30"></div>
+        </div>
+        <span class="skill-pct">30%</span>
+      </div>
+ 
+      <div class="skill-row">
+        <span class="skill-name">CSS Architecture</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="55"></div>
+        </div>
+        <span class="skill-pct">55%</span>
+      </div>
+ 
+    </div>
+ 
+    <div class="col-rule">
+ 
+      <h3 class="col-label" data-i18n="d54-lbl-debug-en">Debug Log</h3>
+ 
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> Vite template CSS in <code>index.css</code> was overriding the Login gradient</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix 1: Full cleanup of <code>index.css</code> — only <code>@import "tailwindcss"</code> remains</span>
+      </p>
+ 
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> Dynamic classes <code>rol-${rol}</code> invisible to Tailwind at build time — never generated</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix 2: <code>estilosRoles</code> object with full hardcoded class strings so Tailwind can scan and include them</span>
+      </p>
+ 
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> Header background invisible despite correct <code>bg-blue-900</code> and <code>bg-[#1a2744]</code> in the JSX</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix 3: Open — <code>App.css</code> suspected culprit. Committed to <code>feature/tailwind</code>, investigate next session</span>
+      </p>
+ 
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d54-lbl-code-en">Code of the Day</h3>
+  
+    </div>
+  </div>
+</article>
 <!-- ============================
      DAY 53 — META ADVANCED REACT PROJECT
      
