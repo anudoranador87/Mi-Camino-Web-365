@@ -183,6 +183,12 @@
     Día 1 = 20 de febrero de 2026 · Los 365 días se cuentan desde ahí · No todos los días tienen entrada
   </p>
 </section>
+!-- ============================
+     DÍA 55 — ESPAÑOL
+=============================== -->
+
+
+
 
   <!-- ============================
      DÍA 54 — ESPAÑOL
@@ -198,28 +204,28 @@
       <li class="etag">Debug</li>
     </ul>
   </header>
- 
+
   <h2 class="entry-headline" id="title-d54-es" data-i18n="d54-headline">
     Primera migración a Tailwind: choque mental,<br>fricción real y Login completado.
   </h2>
- 
+
   <p class="entry-deck" data-i18n="d54-deck">
     Primer día real con Tailwind en LostDesk. Instalación desde cero, colisión frontal con el paradigma utility-first y un componente Login completamente migrado. El Header espera en la siguiente sesión.
   </p>
- 
+
   <div class="cols">
     <div>
       <h3 class="col-label" data-i18n="d54-lbl-star">Resumen STAR</h3>
- 
+
       <p class="body-text">
         <strong>S —</strong> LostDesk acumulaba CSS disperso en múltiples archivos. Semanas dudando si dar el salto a Tailwind.<br><br>
         <strong>T —</strong> Instalar Tailwind en un proyecto Vite+React existente y migrar los primeros componentes sin romper lo que ya funciona.<br><br>
         <strong>A —</strong> Instalación del plugin oficial para Vite, limpieza total de <code>index.css</code>, comprensión del modelo utility-first y migración completa del componente Login. Branch <code>feature/tailwind</code> creada para aislar el trabajo en progreso.<br><br>
         <strong>R —</strong> Login 100% en Tailwind, funcional y visual. Header en progreso con bug de fondo pendiente de resolver. Commit realizado en rama separada.
       </p>
- 
+
       <h3 class="col-label" style="margin-top:20px" data-i18n="d54-lbl-wins">Victorias del día</h3>
- 
+
       <p class="log-item">
         <span class="li-icon w">+</span>
         <span class="li-text">Tailwind instalado en Vite+React via plugin oficial (<code>@tailwindcss/vite</code>)</span>
@@ -244,13 +250,13 @@
         <span class="li-icon w">+</span>
         <span class="li-text">Branch <code>feature/tailwind</code> creada — main protegido mientras el Header está roto</span>
       </p>
- 
+
       <blockquote class="pullquote">
         "Si lo sé, hubiera empezado con Tailwind desde el principio. Migrarlo es más difícil — pero aprenderlo así, con fricción real, es como se aprende de verdad."
       </blockquote>
- 
+
       <h3 class="col-label" style="margin-top:16px" data-i18n="d54-lbl-levels">Niveles al cierre del día</h3>
- 
+
       <div class="skill-row">
         <span class="skill-name">Tailwind CSS</span>
         <div class="skill-bar-bg" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
@@ -258,7 +264,7 @@
         </div>
         <span class="skill-pct">30%</span>
       </div>
- 
+
       <div class="skill-row">
         <span class="skill-name">Arquitectura CSS</span>
         <div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
@@ -266,13 +272,13 @@
         </div>
         <span class="skill-pct">55%</span>
       </div>
- 
+
     </div>
- 
+
     <div class="col-rule">
- 
+
       <h3 class="col-label" data-i18n="d54-lbl-debug">Debug Log</h3>
- 
+
       <p class="log-item">
         <span class="li-icon b">✗</span>
         <span class="li-text"><strong>Bug 1:</strong> CSS del template de Vite en <code>index.css</code> tapaba el gradiente del Login</span>
@@ -281,7 +287,7 @@
         <span class="li-icon f">→</span>
         <span class="li-text">Fix 1: Limpieza total de <code>index.css</code> — solo queda <code>@import "tailwindcss"</code></span>
       </p>
- 
+
       <p class="log-item">
         <span class="li-icon b">✗</span>
         <span class="li-text"><strong>Bug 2:</strong> Clases dinámicas <code>rol-${rol}</code> invisibles para Tailwind en build time — no se generan</span>
@@ -290,7 +296,7 @@
         <span class="li-icon f">→</span>
         <span class="li-text">Fix 2: Objeto <code>estilosRoles</code> con clases completas escritas a mano para que Tailwind las detecte</span>
       </p>
- 
+
       <p class="log-item">
         <span class="li-icon b">✗</span>
         <span class="li-text"><strong>Bug 3:</strong> Fondo del Header no visible pese a <code>bg-blue-900</code> y <code>bg-[#1a2744]</code> correctos en el JSX</span>
@@ -299,11 +305,11 @@
         <span class="li-icon f">→</span>
         <span class="li-text">Fix 3: Pendiente — <code>App.css</code> sospechoso. Committed en <code>feature/tailwind</code>, investigar próxima sesión</span>
       </p>
- 
+
       <h3 class="col-label" style="margin-top:20px" data-i18n="d54-lbl-code">Código del día</h3>
- 
-  
- 
+
+
+
     </div>
   </div>
 </article>
@@ -406,7 +412,7 @@
       <h3 class="col-label" style="margin-top:20px" data-i18n="d53-lbl-code">Código del día</h3>
 
       <!-- =======================================================
-           [PLACEHOLDER: MI-PORTFOLIO-REACT.GIF] 
+           [PLACEHOLDER: MI-PORTFOLIO-REACT.GIF]
            ======================================================= -->
       <img src="mi-portfolio-react.gif" alt="Vista previa del Portfolio">
       <!-- ======================================================= -->
@@ -438,8 +444,8 @@
   </h2>
 
   <p class="entry-deck" data-i18n="d52-deck">
-    Dos días intensos. LostDesk ya se ve bien en móvil, cierra sesión correctamente con Supabase, 
-    restaura la sesión al recargar y tiene un sidebar de navegación que filtra opciones por rol. 
+    Dos días intensos. LostDesk ya se ve bien en móvil, cierra sesión correctamente con Supabase,
+    restaura la sesión al recargar y tiene un sidebar de navegación que filtra opciones por rol.
     La app empieza a parecer un producto real.
   </p>
 
@@ -450,17 +456,17 @@
       <h3 class="col-label" data-i18n="d52-lbl-star">Resumen STAR</h3>
 
       <p class="body-text">
-        <strong>S —</strong> LostDesk funcionaba bien en escritorio pero en móvil era un desastre — 
-        el header se rompía, las cards se cortaban, las estadísticas no cabían. 
+        <strong>S —</strong> LostDesk funcionaba bien en escritorio pero en móvil era un desastre —
+        el header se rompía, las cards se cortaban, las estadísticas no cabían.
         Además al recargar la página se perdía la sesión y el logout no hacía nada real.<br><br>
-        <strong>T —</strong> Hacer la app responsive, implementar logout real con Supabase, 
+        <strong>T —</strong> Hacer la app responsive, implementar logout real con Supabase,
         restaurar la sesión al recargar y añadir un sidebar de navegación filtrado por rol.<br><br>
-        <strong>A —</strong> Añadí media queries en Header, StatBar, ItemCard y ItemForm. 
-        Cambié el layout de las estadísticas a grid 2x2 en móvil. Implementé logout con 
-        supabase.auth.signOut() y restaurarSesion con getSession() y un estado cargando 
-        para evitar redirecciones prematuras en ProtectedRoute. Construí el Sidebar con 
+        <strong>A —</strong> Añadí media queries en Header, StatBar, ItemCard y ItemForm.
+        Cambié el layout de las estadísticas a grid 2x2 en móvil. Implementé logout con
+        supabase.auth.signOut() y restaurarSesion con getSession() y un estado cargando
+        para evitar redirecciones prematuras en ProtectedRoute. Construí el Sidebar con
         un array de rutas filtrado por rol usando NavLink.<br><br>
-        <strong>R —</strong> App responsive, sesión persistente, logout funcional y 
+        <strong>R —</strong> App responsive, sesión persistente, logout funcional y
         navegación lateral por roles. Deploy verificado en Vercel.
       </p>
 
@@ -640,8 +646,8 @@ menu
   </h2>
 
   <p class="entry-deck" data-i18n="d51-deck">
-    Hoy LostDesk tiene seguridad real. Implementé autenticación con Supabase, 
-    rutas protegidas con ProtectedRoute y aprendí a proteger claves de API con variables de entorno. 
+    Hoy LostDesk tiene seguridad real. Implementé autenticación con Supabase,
+    rutas protegidas con ProtectedRoute y aprendí a proteger claves de API con variables de entorno.
     Además le di coherencia visual a toda la app.
   </p>
 
@@ -652,16 +658,16 @@ menu
       <h3 class="col-label" data-i18n="d51-lbl-star">Resumen STAR</h3>
 
       <p class="body-text">
-        <strong>S —</strong> LostDesk tenía un login falso con PINs hardcodeados visibles en GitHub 
+        <strong>S —</strong> LostDesk tenía un login falso con PINs hardcodeados visibles en GitHub
         y cualquiera podía acceder al dashboard sin autenticarse.<br><br>
-        <strong>T —</strong> Implementar auth real con Supabase, proteger las rutas y unificar 
+        <strong>T —</strong> Implementar auth real con Supabase, proteger las rutas y unificar
         el estilo visual de toda la app.<br><br>
-        <strong>A —</strong> Creé variables de entorno con .env para proteger las claves de Supabase. 
-        Actualicé RoleContext con signInWithPassword y useNavigate para redirigir tras el login. 
-        Creé ProtectedRoute que comprueba el rol y redirige a /login si no hay sesión. 
-        Rediseñé Login.jsx con email y password reales, añadí el logo SVG y coherencia visual 
+        <strong>A —</strong> Creé variables de entorno con .env para proteger las claves de Supabase.
+        Actualicé RoleContext con signInWithPassword y useNavigate para redirigir tras el login.
+        Creé ProtectedRoute que comprueba el rol y redirige a /login si no hay sesión.
+        Rediseñé Login.jsx con email y password reales, añadí el logo SVG y coherencia visual
         con el tema oscuro #1a2744 y dorado #c9a84c en header, cards y formularios.<br><br>
-        <strong>R —</strong> Login funcional con Supabase, rutas protegidas, claves seguras 
+        <strong>R —</strong> Login funcional con Supabase, rutas protegidas, claves seguras
         y app visualmente coherente.
       </p>
 
@@ -832,7 +838,7 @@ const supabaseKey = import.meta.env.VITE_SUPABASE_KEY
 </article>
 
 <!-- ============================
-     DÍA 50 
+     DÍA 50
 =============================== -->
 <article class="entry" data-tags="js project debug" aria-labelledby="title-d50">
   <header class="entry-kicker">
@@ -854,7 +860,7 @@ const supabaseKey = import.meta.env.VITE_SUPABASE_KEY
 
   <p class="entry-deck" data-i18n="d50-deck">
     Hoy LostDesk dejó de vivir en el navegador. Conecté la app a Supabase por primera vez,
-    implementé las cuatro operaciones de base de datos y entendí por qué cada llamada a una API 
+    implementé las cuatro operaciones de base de datos y entendí por qué cada llamada a una API
     necesita su propio async/await.
   </p>
 
@@ -865,15 +871,15 @@ const supabaseKey = import.meta.env.VITE_SUPABASE_KEY
       <h3 class="col-label" data-i18n="d50-lbl-star">Resumen STAR</h3>
 
       <p class="body-text">
-        <strong>S —</strong> LostDesk guardaba los objetos en localStorage — datos que desaparecían 
+        <strong>S —</strong> LostDesk guardaba los objetos en localStorage — datos que desaparecían
         al limpiar el navegador y no se compartían entre dispositivos.<br><br>
-        <strong>T —</strong> Conectar la app a Supabase e implementar el CRUD completo: 
+        <strong>T —</strong> Conectar la app a Supabase e implementar el CRUD completo:
         leer, crear, borrar y actualizar objetos en una base de datos real.<br><br>
-        <strong>A —</strong> Creé el proyecto en Supabase, diseñé la tabla objetos, instalé 
-        el cliente, creé supabase.js con la conexión, y fui construyendo función a función 
-        en useLostItems.js — cargarItems con useEffect, handleAddItem, handleDeleteItem 
+        <strong>A —</strong> Creé el proyecto en Supabase, diseñé la tabla objetos, instalé
+        el cliente, creé supabase.js con la conexión, y fui construyendo función a función
+        en useLostItems.js — cargarItems con useEffect, handleAddItem, handleDeleteItem
         y handleNuevoEstado, cada una con su propio async/await y manejo de errores.<br><br>
-        <strong>R —</strong> CRUD completo funcionando. Los objetos se leen, crean, borran 
+        <strong>R —</strong> CRUD completo funcionando. Los objetos se leen, crean, borran
         y actualizan en Supabase en tiempo real desde la app.
       </p>
 
@@ -1065,7 +1071,7 @@ async function handleNuevoEstado(id, nuevoEstado) {
 </article>
 
 <!-- ============================
-     DÍA 49 
+     DÍA 49
 =============================== -->
 
 
@@ -1312,7 +1318,7 @@ export default TextExpander;
     </ul>
   </header>
 
- 
+
   <div style="width:100%; height:180px; background:#f0f4f8; border:2px dashed #cbd5e0; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:1.5rem;">
     <span style="color:#a0aec0; font-size:0.95rem;"></span>
   </div>
@@ -1559,8 +1565,8 @@ export default UserCard
   </h2>
 
   <p class="entry-deck" data-i18n="d46-deck">
-    Hoy LostDesk dejó de ser una app abierta a cualquiera. Construí la pantalla de login, 
-    refactoricé el contexto de roles con validación real de PIN y aprendí que React Router 
+    Hoy LostDesk dejó de ser una app abierta a cualquiera. Construí la pantalla de login,
+    refactoricé el contexto de roles con validación real de PIN y aprendí que React Router
     necesita envolver toda la app antes de que Routes exista.
   </p>
 
@@ -1571,15 +1577,15 @@ export default UserCard
       <h3 class="col-label" data-i18n="d46-lbl-star">Resumen STAR</h3>
 
       <p class="body-text">
-        <strong>S —</strong> LostDesk tenía tres botones provisionales para cambiar de rol. 
+        <strong>S —</strong> LostDesk tenía tres botones provisionales para cambiar de rol.
         Cualquiera podía acceder a cualquier parte sin ninguna restricción real.<br><br>
-        <strong>T —</strong> Sustituir esos botones por una pantalla de login real con selección 
+        <strong>T —</strong> Sustituir esos botones por una pantalla de login real con selección
         de rol y validación de PIN. Preparar el contexto y las rutas para la protección por rol.<br><br>
-        <strong>A —</strong> Reconstruí RoleContext desde cero: añadí RoleProvider, la función login 
-        con validación contra un objeto de PINs, y logout. Creé Login.jsx con dos estados locales 
-        y conexión al contexto. Añadí React Router v6 al proyecto y configuré BrowserRouter en main.jsx 
+        <strong>A —</strong> Reconstruí RoleContext desde cero: añadí RoleProvider, la función login
+        con validación contra un objeto de PINs, y logout. Creé Login.jsx con dos estados locales
+        y conexión al contexto. Añadí React Router v6 al proyecto y configuré BrowserRouter en main.jsx
         con RoleProvider anidado. Definí las rutas en App.jsx.<br><br>
-       
+
       </p>
 
       <h3 class="col-label" style="margin-top:20px" data-i18n="d46-lbl-wins">Victorias del día</h3>
@@ -2894,7 +2900,7 @@ function Saludo() {
 </article>
 
 <!-- ============================
-     DÍA 39 
+     DÍA 39
 =============================== -->
 <article class="entry" data-tags="js" aria-labelledby="title-d39">
   <header class="entry-kicker">
@@ -2912,8 +2918,8 @@ function Saludo() {
   </h2>
 
   <p class="entry-deck" data-i18n="d39-deck">
-    Primera sesión dedicada a los hooks de React. Cuatro ejercicios de useState, 
-    cuatro de useEffect, muchos errores de sintaxis, y un click que lo cambia todo: 
+    Primera sesión dedicada a los hooks de React. Cuatro ejercicios de useState,
+    cuatro de useEffect, muchos errores de sintaxis, y un click que lo cambia todo:
     el array vacío no es un bug — es una intención.
   </p>
 
@@ -3274,7 +3280,7 @@ function recorrerLostItems() {
   <div style="margin: 1.5rem 0; border: 1px solid var(--border, #1e2330); border-radius: 10px; overflow: hidden; max-width: 100%;">
     <img src="trivialShift.gif" alt="TriviaShift en acción" style="width:100%; display:block;"> -->
     <div style="background: var(--bg-surface, #111318); padding: 2rem; text-align: center; color: var(--text-muted, #3d4258); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;">
-      
+
     </div>
   </div>
 
@@ -4472,7 +4478,7 @@ export default ButtonChange;</code></pre>
 </article>
 
 <!-- ============================
-     ENTRADA 31 DÍA 14  ABRIL 
+     ENTRADA 31 DÍA 14  ABRIL
 =============================== -->
 <article class="entry" data-tags="js debug project" aria-labelledby="title-2026-04-14">
   <header class="entry-kicker">
@@ -4609,7 +4615,7 @@ export default ButtonChange;</code></pre>
       <!-- PLACEHOLDER IMAGEN DEMO -->
       <h3 class="col-label" style="margin-top:20px">Demo</h3>
       <div style="width:100%; aspect-ratio:16/9; background:#1a1a2e; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#666; font-size:0.85rem; border: 1px solid #333;">
-        <img src = "campusapi.png" alt="Widget del tiempo mostrando datos reales en Campus & Crema" style="max-width:100%; max-height:100%; border-radius:8px;">    
+        <img src = "campusapi.png" alt="Widget del tiempo mostrando datos reales en Campus & Crema" style="max-width:100%; max-height:100%; border-radius:8px;">
         <!-- <span>GIF demo del widget funcionando aquí</span> -->
       </div>
 
@@ -4885,7 +4891,7 @@ document.addEventListener('DOMContentLoaded', getGithubProjects);
 
 
 <!-- ============================
-     ENTRADA 29 DÍA 11  ABRIL 
+     ENTRADA 29 DÍA 11  ABRIL
 =============================== -->
 <article class="entry" data-tags="js algo" aria-labelledby="title-2026-04-11">
   <header class="entry-kicker">
@@ -5034,7 +5040,7 @@ const reverseString = (str) =>
 </article>
 
  <!-- ============================
-     ENTRADA 28 DÍA 10  ABRIL 
+     ENTRADA 28 DÍA 10  ABRIL
 =============================== -->
 <article class="entry" data-tags="js project debug" aria-labelledby="title-2026-04-10">
   <header class="entry-kicker">
@@ -5227,7 +5233,7 @@ function Carousel() {
   </div>
 </article>
   <!-- ============================
-     ENTRADA 27 DÍA 08  ABRIL 
+     ENTRADA 27 DÍA 08  ABRIL
 =============================== -->
 <article class="entry" data-tags="js debug project" aria-labelledby="title-2026-04-08">
   <header class="entry-kicker">
@@ -5400,9 +5406,9 @@ function cambiarCantidad(id, delta) {
     </div>
   </div>
 </article>
-  
+
 <!-- ============================
-     ENTRADA 26 DÍA 06  ABRIL 
+     ENTRADA 26 DÍA 06  ABRIL
 =============================== -->
 
 
@@ -5713,7 +5719,7 @@ const jugador = {
 
 
 <!-- ============================
-     ENTRADA 13 DÍA 05  ABRIL 
+     ENTRADA 13 DÍA 05  ABRIL
 =============================== -->
 
 
@@ -5750,9 +5756,9 @@ const jugador = {
 
       <p class="body-text">
         <strong>S —</strong> Estaba estudiando Bloque 2 (Arrays) de mi Libreta 1. Tenía 32 ejercicios progresivos listos (sin soluciones). Hacía poco había aprendido map(), filter(), reduce() en Jonas Schmedtmann, pero solo teóricamente. Necesitaba practicar sin "cheat".<br><br>
-        
+
         <strong>T —</strong> Hacer máximo 15-20 ejercicios en una sesión, desde lo simple (acceso, push, pop) hasta lo complejo (reduce, encadenamiento, spread, destructuring). Meta: entender el PATRÓN, no memorizar.<br><br>
-        
+
         <strong>A —</strong> Trabajé en bloques temáticos:
         <ul style="margin: 8px 0 8px 20px; font-size: 0.95rem;">
           <li>Nivel 1 (1.1–1.6): Acceso, mutantes (push, pop, shift, unshift) — rápido, sin problemas</li>
@@ -5762,7 +5768,7 @@ const jugador = {
           <li>Nivel 5 (5.1–5.5): Spread y destructuring — nuevo territorio, lo capté rápido</li>
         </ul>
         <br>
-        
+
         <strong>R —</strong> Completé 18 ejercicios sin soluciones. Dominé: acceso a arrays, métodos mutantes/no-mutantes, forEach, reduce (con su acumulador), encadenamiento, spread operator, destructuring básico. Falta: automatizar reduce(), callbacks en objetos de arrays, destructuring avanzado.
       </p>
 
@@ -5977,7 +5983,7 @@ const [a, b, ...resto] = [1, 2, 3, 4, 5]
 
 
 <!-- ============================
-     ENTRADA 12 DÍA 03  ABRIL 
+     ENTRADA 12 DÍA 03  ABRIL
 =============================== -->
 <article class="entry" data-tags="js debug" aria-labelledby="title-2026-04-03">
   <header class="entry-kicker">
@@ -6131,7 +6137,7 @@ completada.addEventListener("click", () => {
   </div>
 </article>
 <!-- ============================
-     ENTRADA 11 DÍA 02  ABRIL 
+     ENTRADA 11 DÍA 02  ABRIL
 =============================== -->
 
 <article class="entry" data-tags="js css debug" aria-labelledby="title-2026-04-02">
@@ -6329,7 +6335,7 @@ añadir.addEventListener("click", function(e) {
 
 
 <!-- ============================
-     ENTRADA 10 DÍA 01  ABRIL 
+     ENTRADA 10 DÍA 01  ABRIL
 =============================== -->
 <article class="entry" data-tags="js poo debug" aria-labelledby="title-2026-04-01">
   <header class="entry-kicker">
@@ -6348,8 +6354,8 @@ añadir.addEventListener("click", function(e) {
   </h2>
 
   <p class="entry-deck" data-i18n="d26-deck">
-    Hoy completé la clase ValidarFormulario para Campus & Crema. 
-    showError, showSuccess, control de esCorrecto y DOM dinámico — 
+    Hoy completé la clase ValidarFormulario para Campus & Crema.
+    showError, showSuccess, control de esCorrecto y DOM dinámico —
     todo escrito a mano, todo entendido antes de avanzar.
   </p>
 
@@ -6420,7 +6426,7 @@ añadir.addEventListener("click", function(e) {
     <div class="col-rule">
 
       <!-- GIF AQUÍ -->
-   <video autoplay loop muted playsinline style="width:100%; border-radius:8px; margin-bottom:20px;" aria-label="FormValidator en acción"><source src="mesaexterior.webm" type="video/webm"><source src="mesaexterior.mp4" type="video/mp4"><img src="mesaexterior.gif" alt="FormValidator en acción" style="width:100%; border-radius:8px; margin-bottom:20px;"></video> 
+   <video autoplay loop muted playsinline style="width:100%; border-radius:8px; margin-bottom:20px;" aria-label="FormValidator en acción"><source src="mesaexterior.webm" type="video/webm"><source src="mesaexterior.mp4" type="video/mp4"><img src="mesaexterior.gif" alt="FormValidator en acción" style="width:100%; border-radius:8px; margin-bottom:20px;"></video>
 
       <h3 class="col-label" data-i18n="d26-lbl-debug">Debug Log</h3>
 
@@ -6491,7 +6497,7 @@ showError(input, message) {
 </article>
 
 <!-- ============================
-     ENTRADA 9 DÍA 31  MARZO 
+     ENTRADA 9 DÍA 31  MARZO
 =============================== -->
 
 <article class="entry" data-tags="js poo debug html project" aria-labelledby="title-2026-03-31">
@@ -6529,11 +6535,11 @@ showError(input, message) {
 
       <p class="body-text">
         <strong>S —</strong> Estudiando validación de formularios HTML con clases OOP. Necesitaba entender cómo un <code>FormValidator</code accesa el DOM, selecciona inputs dinámicamente, y define reglas de validación con expresiones regulares reutilizables. Contexto: preparación para implementar contact form funcional en Campus & Crema.<br><br>
-        
+
         <strong>T —</strong> Completar el constructor de la clase FormValidator que: (1) guarde referencia al formulario del DOM, (2) traiga todos los inputs con atributo <code>[required]</code> como array iterable, (3) defina reglas de validación (email, password con mín 8 caracteres + número), (4) inicialice estado <code>isValid</code>, (5) ejecute <code>init()</code> que inicie listeners. Bonus: entender cada línea sin dejar gaps conceptuales.<br><br>
-        
+
         <strong>A —</strong> Metodología: copié línea por línea en papel, anotando en Spanish cada sección del código. Primero traté de entenderlo mentalmente sin escribir — me perdí en cómo <code>Array.from(querySelectorAll())</code> funcionaba exactamente. Luego probé paso a paso en el navegador: seleccionar → convertir a array → iterar. Tras 5-6 intentos y debugging, vi que NO era mágico, era literal y secuencial. Implementé el config-object pattern para las rules de RegEx (escalable y reutilizable). Anotaciones de debugging en papel = comprensión 3x más rápida.<br><br>
-        
+
         <strong>R —</strong> Constructor completamente funcional y profundamente entendido. Puedo explicar cada línea sin dudas. Reconocí mi patrón mental recurrente: "es más fácil de lo que parece, yo lo complico demasiado" — aplica perfectamente aquí. Atrapé y resolví 8 bugs diferentes durante la sesión, muchos de ellos SUTILES (orden de ejecución, this binding, selector incorrecto). La lección clave: OOP no es complejo por las clases, es complejo por el SCOPE y el ORDEN. Listo para pasar a métodos de validación (validate, displayError, removeError).
       </p>
 
@@ -6795,7 +6801,7 @@ const formularioContacto = new FormValidator('#contact-form');
 
 </article>
 <!-- ============================
-     ENTRADA 8 DÍA 29  MARZO 
+     ENTRADA 8 DÍA 29  MARZO
 =============================== -->
 
 <article class="entry" data-tags="js css debug poo project" aria-labelledby="title-2026-03-29">
@@ -6826,7 +6832,7 @@ const formularioContacto = new FormValidator('#contact-form');
   <!-- CAROUSEL DEMO -->
   <div style="margin: 24px 0; border: 0.5px solid rgba(255,255,255,0.15); border-radius: 8px; padding: 20px; text-align: center; background: rgba(0,0,0,0.15);">
     <p style="color: #888; font-size: 0.85rem; margin: 0 0 12px 0;">🎠 Demo del carousel en acción</p>
-    
+
     <svg width="100%" viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%; margin: 0 auto;">
       <defs>
         <linearGradient id="gd1" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -6914,7 +6920,7 @@ const formularioContacto = new FormValidator('#contact-form');
     </svg>
 
     <p style="color: #666; font-size: 0.75rem; margin: 12px 0 0 0; font-style: italic;">
-      <strong>En vivo en:</strong> 
+      <strong>En vivo en:</strong>
       <a href="https://anudoranador87.github.io/campus-crema-web/" target="_blank" style="color: #8b9dc3; text-decoration: underline;">campus-crema.vercel.app</a>
     </p>
   </div>
@@ -7095,7 +7101,7 @@ class Carousel {
     this.botonPrev = this.contenedor.querySelector(".prev");
     this.botonNext = this.contenedor.querySelector(".next");
     this.numero = this.contenedor.querySelector(".numero");
-    
+
     this.indiceActual = 0;
     this.botonEscuchaActiva();
   }
@@ -7122,7 +7128,7 @@ class Carousel {
   }
 
   anterior() {
-    this.indiceActual = (this.indiceActual - 1 + this.slides.length) 
+    this.indiceActual = (this.indiceActual - 1 + this.slides.length)
       % this.slides.length;
     this.actualizarUI();
   }
@@ -7146,9 +7152,9 @@ const carousel = new Carousel(".carousel-container");
   </div>
 </article>
 
-  
+
 <!-- ============================
-     ENTRADA 7 DÍA 26  MARZO 
+     ENTRADA 7 DÍA 26  MARZO
 =============================== -->
 
 
@@ -7328,7 +7334,7 @@ const maskEmail = (email) => {
   </div>
 </article>
 <!-- ============================
-     ENTRADA 6 DÍA 25  MARZO 
+     ENTRADA 6 DÍA 25  MARZO
 =============================== -->
 <article class="entry" data-tags="js" aria-labelledby="title-2026-03-25-b">
 <header class="entry-kicker">
@@ -7496,7 +7502,7 @@ p.category === "tech" && p.stock < 10
 </article>
 
 <!-- ============================
-     ENTRADA 5 DÍA 24  MARZO 
+     ENTRADA 5 DÍA 24  MARZO
 =============================== -->
 <article class="entry" data-tags="js css project debug" aria-labelledby="title-2026-03-24">
   <header class="entry-kicker">
@@ -7514,7 +7520,7 @@ p.category === "tech" && p.stock < 10
   </h2>
 
   <p class="entry-deck" data-i18n="d21-deck">
-    Hoy el proyecto dio el salto definitivo. Implementé un sistema de gestión de energía (Maná), 
+    Hoy el proyecto dio el salto definitivo. Implementé un sistema de gestión de energía (Maná),
     efectos de estado como quemaduras y escudos, y un flujo de turnos real con IA.
   </p>
 
@@ -7610,7 +7616,7 @@ function intentarAtacar(carta) {
   </div>
 </article>
 <!-- ============================
-     ENTRADA 4— DÍA 23  MARZO 
+     ENTRADA 4— DÍA 23  MARZO
 =============================== -->
 
 
@@ -7887,7 +7893,7 @@ function intentarAtacar(carta) {
               margin-bottom:12px;">
     <video autoplay loop muted playsinline style="width:100%; display:block;" aria-label="Technical Documentation Page — navbar fija, scroll suave, responsive"><source src="certificado.documentacion.webm" type="video/webm"><source src="certificado.documentacion.mp4" type="video/mp4"><img src="certificado.documentacion.gif" alt="Technical Documentation Page — navbar fija, scroll suave, responsive" style="width:100%; display:block;"></video>
   </div>
- 
+
   <!-- Enlace live -->
   <a href="https://anudoranador87.github.io/fcc-technical-documentation/"
      target="_blank"
@@ -7899,7 +7905,7 @@ function intentarAtacar(carta) {
             padding-bottom:2px;text-decoration:none;">
     <i class="fas fa-eye"></i> Ver en vivo
   </a>
- 
+
 </div>
 
 </article>
@@ -7958,7 +7964,7 @@ function intentarAtacar(carta) {
 </article>
 
 <!-- ============================
-     ENTRADA 3— DÍA 20  MARZO 
+     ENTRADA 3— DÍA 20  MARZO
 =============================== -->
 
 
@@ -8392,9 +8398,9 @@ function esTurnoLegal(turnoAyer, turnoHoy) {
     </ul>
   </div>
 <div style="margin:24px 0;">
- 
+
   <h3 class="col-label">El resultado</h3>
- 
+
   <!-- GIF -->
   <div style="border:1px solid var(--paper-d);
               border-radius:6px;
@@ -8402,7 +8408,7 @@ function esTurnoLegal(turnoAyer, turnoHoy) {
               margin-bottom:12px;">
     <video autoplay loop muted playsinline style="width:100%; display:block;" aria-label="Technical Documentation Page — navbar fija, scroll suave, responsive"><source src="certificado.documentacion.webm" type="video/webm"><source src="certificado.documentacion.mp4" type="video/mp4"><img src="certificado.documentacion.gif" alt="Technical Documentation Page — navbar fija, scroll suave, responsive" style="width:100%; display:block;"></video>
   </div>
- 
+
   <!-- Enlace live -->
   <a href="https://anudoranador87.github.io/fcc-technical-documentation/"
      target="_blank"
@@ -8414,11 +8420,11 @@ function esTurnoLegal(turnoAyer, turnoHoy) {
             padding-bottom:2px;text-decoration:none;">
     <i class="fas fa-eye"></i> Ver en vivo
   </a>
- 
+
 </div>
 </article>
 <!-- ============================
-     ENTRADA 2— DÍA 19  MARZO 
+     ENTRADA 2— DÍA 19  MARZO
 =============================== -->
 <article class="entry" data-tags="js algo debug" aria-labelledby="title-2026-03-19">
   <header class="entry-kicker">
@@ -8701,8 +8707,8 @@ if ([10, "J", "Q", "K", "A"].includes(card)) {
 
   <!-- DECK -->
   <p class="entry-deck" data-i18n="d18-deck">
-    Día centrado en unir JavaScript con la estructura real de mi web <a href="https://anudoranador87.github.io/campus-crema-web/#contacto" target="_blank">Campus & Crema</a>.  
-    El menú hamburguesa ya funciona correctamente y entendí por qué antes no lo hacía.  
+    Día centrado en unir JavaScript con la estructura real de mi web <a href="https://anudoranador87.github.io/campus-crema-web/#contacto" target="_blank">Campus & Crema</a>.
+    El menú hamburguesa ya funciona correctamente y entendí por qué antes no lo hacía.
     Además, reforcé conceptos clave de funciones, condicionales y objetos en JS mediante ejercicios de freeCodeCamp.
   </p>
 
@@ -9215,8 +9221,8 @@ console.log(cart.items); // [leche, pan] ✅
   </h2>
 
   <p class="entry-deck">
-    Hoy completé el lab Little Lemon de Meta — funciones, loops, 
-    condicionales y defensive coding. No fue directo: 11 intentos en el 
+    Hoy completé el lab Little Lemon de Meta — funciones, loops,
+    condicionales y defensive coding. No fue directo: 11 intentos en el
     calentamiento y 1 en el lab. Esa diferencia explica la progresión real.
   </p>
 
@@ -9226,22 +9232,22 @@ console.log(cart.items); // [leche, pan] ✅
     <div>
       <h3 class="col-label">Resumen STAR</h3>
       <p class="body-text">
-        <strong>S —</strong> Lab del curso Meta Front-End Developer: construir 
-        una calculadora de recibos para Little Lemon con dos funciones — 
+        <strong>S —</strong> Lab del curso Meta Front-End Developer: construir
+        una calculadora de recibos para Little Lemon con dos funciones —
         <code>getPrices()</code> y <code>getDiscount()</code>.<br><br>
 
-        <strong>T —</strong> Loops sobre arrays de objetos, parámetros booleanos, 
-        defensive coding con <code>typeof</code>, y funciones que llaman 
+        <strong>T —</strong> Loops sobre arrays de objetos, parámetros booleanos,
+        defensive coding con <code>typeof</code>, y funciones que llaman
         a otras funciones.<br><br>
 
-        <strong>A —</strong> Antes del lab, tres ejercicios progresivos en el 
-        Cuaderno de Pitágoras: loop básico sobre <code>platos[]</code>, 
-        condicionales dentro del loop, y todo envuelto en función con parámetro 
-        booleano. Cada error documentado, cada lección aplicada al siguiente 
+        <strong>A —</strong> Antes del lab, tres ejercicios progresivos en el
+        Cuaderno de Pitágoras: loop básico sobre <code>platos[]</code>,
+        condicionales dentro del loop, y todo envuelto en función con parámetro
+        booleano. Cada error documentado, cada lección aplicada al siguiente
         intento.<br><br>
 
-        <strong>R —</strong> Lab completado. <code>getPrices()</code> y 
-        <code>getDiscount()</code> funcionan con validación de inputs, cálculo 
+        <strong>R —</strong> Lab completado. <code>getPrices()</code> y
+        <code>getDiscount()</code> funcionan con validación de inputs, cálculo
         de impuestos y descuentos según número de invitados.
       </p>
 
@@ -9313,18 +9319,18 @@ console.log(cart.items); // [leche, pan] ✅
       <!-- REFLEXIÓN FINAL -->
       <h3 class="col-label" style="margin-top:24px">Reflexión Final</h3>
       <p class="body-text">
-        En hostelería aprendí que los nuevos empleados no aprenden los 
-        procedimientos leyendo el manual. Los aprenden equivocándose en 
+        En hostelería aprendí que los nuevos empleados no aprenden los
+        procedimientos leyendo el manual. Los aprenden equivocándose en
         situaciones de baja presión — un check-in tranquilo, — antes de enfrentarse al turno de fin de semana.<br><br>
 
-        Hoy hice lo mismo con JavaScript. Los tres ejercicios de calentamiento no eran relleno — eran el turno de baja presión donde 
-        podía equivocarme sin coste. Cuando llegó el lab, el patrón ya 
+        Hoy hice lo mismo con JavaScript. Los tres ejercicios de calentamiento no eran relleno — eran el turno de baja presión donde
+        podía equivocarme sin coste. Cuando llegó el lab, el patrón ya
         estaba en el músculo.<br><br>
 
-        La <code>i</code>, Entiendo ahora, haciendo referencias, que la i del loop es como el pase de turno en hostelería: 
-        sin ella, cada trabajador empieza de cero sin saber qué pasó antes. 
-        Con ella, cada iteración sabe exactamente en qué posición está y 
-        qué información necesita. El índice no es un contador — 
+        La <code>i</code>, Entiendo ahora, haciendo referencias, que la i del loop es como el pase de turno en hostelería:
+        sin ella, cada trabajador empieza de cero sin saber qué pasó antes.
+        Con ella, cada iteración sabe exactamente en qué posición está y
+        qué información necesita. El índice no es un contador —
         es contexto.
       </p>
 
@@ -10040,7 +10046,7 @@ formatearPrecio("£", 5);   // → "£5"
 </article>
 
 <!-- ============================
-     DÍA 10 — 
+     DÍA 10 —
 =============================== -->
 
 <article class="entry" data-tags="css js" aria-labelledby="title-2026-03-01">
@@ -10104,7 +10110,7 @@ formatearPrecio("£", 5);   // → "£5"
 </article>
 
 <!-- ============================
-     DÍA 9 — 
+     DÍA 9 —
 =============================== -->
 
 <article class="entry" data-tags="js algo project" aria-labelledby="title-2026-02-28">
@@ -10224,7 +10230,7 @@ function calcularTurno(dia, idx) {
 </article>
 
 <!-- ============================
-     DÍA 8 — 
+     DÍA 8 —
 =============================== -->
 
 <article class="entry" data-tags="js css poo" aria-labelledby="title-2026-02-27">
@@ -10323,7 +10329,7 @@ btn.addEventListener('click', () =>
 </article>
 
 <!-- ============================
-     DÍA 7 — 
+     DÍA 7 —
 =============================== -->
 
 <article class="entry" data-tags="js project" aria-labelledby="title-2026-02-26">
@@ -10446,7 +10452,7 @@ realizarCompra("Manzanas", 5);
 </article>
 
 <!-- ============================
-     DÍA 6 — 
+     DÍA 6 —
 =============================== -->
 
 <article class="entry" data-tags="js debug" aria-labelledby="title-2026-02-25">
@@ -10572,7 +10578,7 @@ if (nivel >= 10) {
 </article>
 
 <!-- ============================
-     DÍA 5 — 
+     DÍA 5 —
 =============================== -->
 
 <article class="entry" data-tags="js algo" aria-labelledby="title-2026-02-24">
@@ -10692,7 +10698,7 @@ usuario.permisos.push("publicar");
 </article>
 
 <!-- ============================
-     DÍA 4 — 
+     DÍA 4 —
 =============================== -->
 
 <article class="entry" data-tags="js css debug" aria-labelledby="title-2026-02-23">
@@ -10805,7 +10811,7 @@ if (reservaActiva === true) {
 </article>
 
 <!-- ============================
-     DÍA 3 — 
+     DÍA 3 —
 =============================== -->
 
 <article class="entry" data-tags="css grid project" aria-labelledby="title-2026-02-22">
@@ -10930,7 +10936,7 @@ box-shadow: 0 8px 15px
 </article>
 
 <!-- ============================
-     DÍA 1 — 
+     DÍA 1 —
 =============================== -->
 
 <article class="entry" data-tags="html css" aria-labelledby="title-2026-02-20">
@@ -10949,8 +10955,8 @@ box-shadow: 0 8px 15px
   </h2>
 
   <p class="entry-deck" data-i18n="d1-deck">
-    No fue bonito. No fue rápido. No fue elegante.  
-    Pero fue real.  
+    No fue bonito. No fue rápido. No fue elegante.
+    Pero fue real.
     Hoy empezó el viaje de 365 días — sin atajos, sin plantillas, sin copiar-pegar.
   </p>
 
@@ -10994,8 +11000,8 @@ box-shadow: 0 8px 15px
       </code></pre>
 
       <p class="body-text" data-i18n="d1-body2" style="margin-top:16px;">
-        No era gran cosa. Pero era mío.  
-        Y lo más importante: entendí cada línea.  
+        No era gran cosa. Pero era mío.
+        Y lo más importante: entendí cada línea.
         Ese fue el verdadero inicio.
       </p>
     </div>
@@ -11014,7 +11020,7 @@ box-shadow: 0 8px 15px
 
 <footer class="footer">
   <p class="footer-text">
-    © 2026 Jose Aparicio — Dev Log 365  
+    © 2026 Jose Aparicio — Dev Log 365
     <span data-i18n="footer-rights">Todos los derechos reservados.</span>
   </p>
 
@@ -11027,14 +11033,14 @@ box-shadow: 0 8px 15px
   </ul>
 
   <p class="footer-copy">
-    <i class="fa-solid fa-code"></i>  
+    <i class="fa-solid fa-code"></i>
     <span data-i18n="footer-built">Construido a mano, línea a línea.</span>
   </p>
 </footer>
 
 <script src="entradas-data.js"></script>
 <script src="script.js" defer></script>
- 
+
 
 </body>
 </html>
