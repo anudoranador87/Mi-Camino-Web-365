@@ -188,6 +188,301 @@
 =============================== -->
 
 
+<article class="entry" data-tags="js debug project" aria-labelledby="title-d55">
+  <header class="entry-kicker">
+    <span class="day-badge">Día 55</span>
+    <time datetime="2026-05-31" data-i18n="d55-date">31 de Mayo, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">JS</li>
+      <li class="etag">React</li>
+      <li class="etag">Debug</li>
+      <li class="etag">Props</li>
+      <li class="etag">useState</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d55" data-i18n="d55-headline">
+    Construir sin red, debuggear sin piedad.<br>El día que mi ojo empezó a ver código.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d55-deck">
+    Intenté construir un Mini Panel de Recepción en React desde cero, sin ayuda.
+    Me bloqueé en la lógica, en la sintaxis y en conceptos que creía tener.
+    Cambié de estrategia: analicé ~20 snippets con trampas y acerté 12 de 16.
+    Resultado: sé más de lo que creo, y menos de lo que necesito.
+  </p>
+
+  <div class="cols">
+
+    <!-- COLUMNA IZQUIERDA -->
+    <div>
+
+      <h3 class="col-label" data-i18n="d55-lbl-star">Resumen STAR</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Quise comprobar de verdad qué sé de React. No teoría: un programa desde cero, sin IA, sin ayuda. Un Mini Panel de Recepción con 2 componentes, estado compartido y un contador de habitaciones ocupadas.<br><br>
+        <strong>T —</strong> Construir el panel completo. Luego, al bloquearme, cambiar de estrategia: entrenar la lectura de código analizando snippets reales con errores para aprender los patrones desde dentro.<br><br>
+        <strong>A —</strong> Peleé con el <code>.map()</code>, debuggeé el <code>return;</code> yo solo, entendí que el estado tiene que vivir en el padre sin que nadie me lo dijera, y escribí por primera vez un <code>useState</code> con un array de objetos. Me bloqueé en la función toggle con id. Cambié al modo snippets: ~20 fragmentos de código, a veces correctos, a veces con trampas ocultas. También construí el componente Finder casi completo: useState, input controlado, onChange, e.target.value.<br><br>
+        <strong>R —</strong> Llegué al 80% del buscador sin ayuda. Acerté 12 de 16 en el test de debugging. Identifiqué patrones de error que antes ni veía. El ojo está mejorando.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d55-lbl-wins">Victorias del día</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Detecté solo, sin pista, que el estado tiene que vivir en el padre cuando los hijos lo comparten</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Primer <code>useState</code> con array de objetos — concepto nuevo, ejecutado correctamente a la primera</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">12 de 16 snippets correctos en el test de debugging con trampas</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Construí el componente Finder casi entero: estado, input controlado, onChange</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Entendí el patrón <code>filter</code> para eliminar elementos sin mutar el estado</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Entendí <code>prev => prev + 1</code> para múltiples <code>setState</code> en el mismo evento</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Identifiqué la mutación directa del estado en todas sus formas: <code>=</code>, <code>push</code>, <code>shift</code></span>
+      </p>
+
+      <blockquote class="pullquote">
+        "Así es como voy a aprender: a las malas. Debuggeando código ajeno entreno el ojo. Escribiendo desde cero construyo el músculo."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d55-lbl-levels">Niveles al cierre del día</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">useState</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="55"></div>
+        </div>
+        <span class="skill-pct">55%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Props</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="45"></div>
+        </div>
+        <span class="skill-pct">45%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Lectura de código</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Patrones React</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="42"></div>
+        </div>
+        <span class="skill-pct">42%</span>
+      </div>
+
+    </div>
+
+    <!-- COLUMNA DERECHA -->
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d55-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> <code>return;</code> con punto y coma — el componente no renderizaba nada</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: Lo encontré yo solo. El <code>return</code> no lleva punto y coma cuando devuelve JSX</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> <code>habitacionesIniciales</code> era una constante — React no detectaba los cambios al hacer click</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: El array tiene que ser el valor inicial del <code>useState</code>. <code>useState</code> puede guardar cualquier tipo de dato: strings, números, arrays, objetos</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> <code>e.input.value</code> — propiedad inexistente en el evento</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: Es <code>e.target.value</code>. <code>target</code> apunta al elemento HTML que disparó el evento</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> <code>onClick={setCount(count + 1)}</code> — se ejecuta al renderizar, no al hacer click. Bucle infinito</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: <code>onClick={() => setCount(count + 1)}</code>. El <code>onClick</code> necesita una función, no el resultado de ejecutarla</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 5:</strong> <code>lista.shift()</code> — muta el array Y devuelve el elemento eliminado, no el array resultante</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: <code>lista.slice(1)</code> devuelve un nuevo array desde el índice 1, sin tocar el original</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 6:</strong> <code>count++</code> — post-incremento devuelve el valor antes de incrementar. React recibe el valor viejo</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: Siempre <code>count + 1</code> en React. Nunca <code>++</code></span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 7:</strong> <code>useEffect</code> sin array de dependencias — se ejecuta en cada renderizado y provoca bucle infinito si tiene un setter dentro</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: <code>useEffect(() => { ... }, [])</code>. El array vacío significa: ejecutar solo una vez, al montar</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Resultado: ojo entrenado en los patrones de error más comunes de React. El próximo snippet no me pilla igual</span>
+      </p>
+
+      <!-- CÓDIGO DEL DÍA -->
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d55-lbl-code">Código del día</h3>
+
+      <h4 style="font-size:0.8rem; opacity:0.6; margin: 12px 0 6px;">Semáforo — primer componente solo, ya dominado</h4>
+      <pre class="code-block"><code>
+function OccupancyLight() {
+  const [light, setLight] = useState(0);
+  const colores = [
+    { id: 1, color: 'red' },
+    { id: 2, color: 'green' },
+    { id: 3, color: 'orange' },
+  ];
+
+  // Ciclo circular: 0 → 1 → 2 → 0 → ...
+  const changeColor = () =>
+    setLight(light === colores.length - 1 ? 0 : light + 1);
+
+  return (
+    &lt;div className="card"&gt;
+      &lt;div style={{ backgroundColor: colores[light].color }} /&gt;
+      &lt;button onClick={changeColor}&gt;{colores[light].color}&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+      </code></pre>
+
+      <h4 style="font-size:0.8rem; opacity:0.6; margin: 12px 0 6px;">Finder — input controlado, construido casi solo</h4>
+      <pre class="code-block"><code>
+function Finder() {
+  const [input, setInput] = useState('');
+
+  const nombres = [
+    'Alejandro', 'Beatriz', 'Carlos',
+    'Diana', 'Eduardo', 'Florencia',
+  ];
+
+  // Input controlado: value + onChange forman el ciclo completo
+  // Sin value={input}, el input no refleja el estado desde fuera
+  return (
+    &lt;div&gt;
+      &lt;input
+        type="text"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+      /&gt;
+      {nombres
+        .filter((n) => n.toLowerCase().includes(input.toLowerCase()))
+        .map((n) => &lt;p key={n}&gt;{n}&lt;/p&gt;)
+      }
+    &lt;/div&gt;
+  );
+}
+      </code></pre>
+
+      <h4 style="font-size:0.8rem; opacity:0.6; margin: 12px 0 6px;">Panel de Recepción — useState con array de objetos</h4>
+      <pre class="code-block"><code>
+// El array vive en el estado — React detecta cualquier cambio
+const [habitaciones, setHabitaciones] = useState([
+  { id: 101, estado: 'libre' },
+  { id: 102, estado: 'ocupada' },
+  { id: 103, estado: 'libre' },
+  { id: 104, estado: 'libre' },
+]);
+
+// Patrón toggle: map recorre todos,
+// cambia el que coincide con el id, devuelve los demás igual
+function toggleHabitacion(id) {
+  setHabitaciones(habitaciones.map((hab) =>
+    hab.id === id
+      ? { ...hab, estado: hab.estado === 'libre' ? 'ocupada' : 'libre' }
+      : hab
+  ));
+}
+      </code></pre>
+
+      <h4 style="font-size:0.8rem; opacity:0.6; margin: 12px 0 6px;">Patrones aprendidos en el test de debugging</h4>
+      <pre class="code-block"><code>
+// Eliminar elemento sin mutar
+setItems(items.filter((i) => i !== item));
+
+// Múltiples setState en el mismo evento — usar prev
+setCount((prev) => prev + 1);
+setCount((prev) => prev + 1);
+setCount((prev) => prev + 1); // suma 3, no 1
+
+// e.preventDefault en formularios
+function handleSubmit(e) {
+  e.preventDefault(); // sin esto, el navegador recarga la página
+  console.log(valor);
+}
+
+// Actualizar objeto en estado sin mutar
+function cumpleaños() {
+  setUser({ ...user, edad: user.edad + 1 }); // spread + sobreescribir
+}
+
+// Hooks: SIEMPRE dentro del componente, NUNCA en condicionales
+function App() {
+  if (algo) {
+    const [x, setX] = useState(0); // ❌ rompe las reglas de hooks
+  }
+  const [x, setX] = useState(0);   // ✅ nivel superior del componente
+}
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "No doy ni una." — Yo, a las 3 horas. Luego acerté 12 de 16. El cerebro aprende aunque no lo parezca.
+      </blockquote>
+
+    </div>
+  </div>
+</article>
+
 
 
   <!-- ============================

@@ -173,9 +173,307 @@
     Day 1 = February 20, 2026 · The 365 days are counted from there · Not every day has an entry
   </p>
 </section>
+<!-- ============================
+     DAY 55 — React from scratch: the day I learned the hard way
+     2026-05-31
+============================== -->
+
+<article class="entry" data-tags="js debug project" aria-labelledby="title-d55en">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 55</span>
+    <time datetime="2026-05-31" data-i18n="d55en-date">May 31, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">JS</li>
+      <li class="etag">React</li>
+      <li class="etag">Debug</li>
+      <li class="etag">Props</li>
+      <li class="etag">useState</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d55en" data-i18n="d55en-headline">
+    Build without a safety net, debug without mercy.<br>The day my eye started reading code.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d55en-deck">
+    I tried to build a Mini Reception Panel in React from scratch, no help allowed.
+    I got stuck on logic, on syntax, and on concepts I thought I had.
+    I changed strategy: analyzed ~20 code snippets with hidden traps and got 12 out of 16 right.
+    Result: I know more than I think, and less than I need.
+  </p>
+
+  <div class="cols">
+
+    <!-- LEFT COLUMN -->
+    <div>
+
+      <h3 class="col-label" data-i18n="d55en-lbl-star">STAR Summary</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> I wanted to genuinely test what I know about React. No theory: a program from scratch, no AI, no help. A Mini Reception Panel with 2 components, shared state, and a counter showing occupied rooms.<br><br>
+        <strong>T —</strong> Build the full panel. Then, once I got stuck, change strategy: train code-reading by analyzing real snippets with errors to learn the patterns from the inside.<br><br>
+        <strong>A —</strong> I wrestled with <code>.map()</code>, debugged the <code>return;</code> semicolon by myself, figured out that state needs to live in the parent without anyone telling me, and wrote my first <code>useState</code> holding an array of objects. Got stuck on the toggle function with id. Switched to snippet mode: ~20 code fragments, some correct, some with hidden traps. Also built the Finder component almost entirely on my own: state, controlled input, onChange, e.target.value.<br><br>
+        <strong>R —</strong> Got to 80% of the Finder component alone. Scored 12 out of 16 on the debugging test. Started identifying error patterns I couldn't even see before. The eye is improving.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d55en-lbl-wins">Wins of the day</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Figured out on my own, without any hint, that state needs to live in the parent when children share it</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">First <code>useState</code> holding an array of objects — new concept, executed correctly on the first try</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">12 out of 16 correct on the debugging test with hidden traps</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Built the Finder component almost entirely: state, controlled input, onChange</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Understood the <code>filter</code> pattern to remove elements without mutating state</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Understood <code>prev => prev + 1</code> for multiple <code>setState</code> calls in the same event</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Identified direct state mutation in all its forms: <code>=</code>, <code>push</code>, <code>shift</code></span>
+      </p>
+
+      <blockquote class="pullquote">
+        "This is how I'm going to learn: the hard way. Debugging other people's code trains the eye. Writing from scratch builds the muscle."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d55en-lbl-levels">Skill levels at end of day</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">useState</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="55"></div>
+        </div>
+        <span class="skill-pct">55%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Props</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="45"></div>
+        </div>
+        <span class="skill-pct">45%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Code reading</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">React patterns</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="42"></div>
+        </div>
+        <span class="skill-pct">42%</span>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d55en-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> <code>return;</code> with a semicolon — component rendered nothing</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: Found it myself. <code>return</code> doesn't take a semicolon when returning JSX</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> <code>habitacionesIniciales</code> was a plain constant — React couldn't detect changes on click</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: The array must be the initial value of <code>useState</code>. <code>useState</code> can hold any data type: strings, numbers, arrays, objects</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3:</strong> <code>e.input.value</code> — property doesn't exist on the event</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: It's <code>e.target.value</code>. <code>target</code> points to the HTML element that fired the event</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4:</strong> <code>onClick={setCount(count + 1)}</code> — executes on render, not on click. Infinite loop</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: <code>onClick={() => setCount(count + 1)}</code>. <code>onClick</code> needs a function reference, not the result of calling one</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 5:</strong> <code>lista.shift()</code> — mutates the array AND returns the removed element, not the resulting array</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: <code>lista.slice(1)</code> returns a new array starting from index 1, without touching the original</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 6:</strong> <code>count++</code> — post-increment returns the value before incrementing. React receives the old value</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: Always use <code>count + 1</code> in React. Never <code>++</code></span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 7:</strong> <code>useEffect</code> with no dependency array — runs on every render and causes an infinite loop if it calls a setter</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: <code>useEffect(() => { ... }, [])</code>. Empty array means: run once only, on mount</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Result: eye trained on the most common React error patterns. The next snippet won't catch me the same way</span>
+      </p>
+
+      <!-- CODE OF THE DAY -->
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d55en-lbl-code">Code of the day</h3>
+
+      <h4 style="font-size:0.8rem; opacity:0.6; margin: 12px 0 6px;">Traffic Light — first component built alone, already mastered</h4>
+      <pre class="code-block"><code>
+function OccupancyLight() {
+  const [light, setLight] = useState(0);
+  const colors = [
+    { id: 1, color: 'red' },
+    { id: 2, color: 'green' },
+    { id: 3, color: 'orange' },
+  ];
+
+  // Circular cycle: 0 → 1 → 2 → 0 → ...
+  const changeColor = () =>
+    setLight(light === colors.length - 1 ? 0 : light + 1);
+
+  return (
+    &lt;div className="card"&gt;
+      &lt;div style={{ backgroundColor: colors[light].color }} /&gt;
+      &lt;button onClick={changeColor}&gt;{colors[light].color}&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+      </code></pre>
+
+      <h4 style="font-size:0.8rem; opacity:0.6; margin: 12px 0 6px;">Finder — controlled input, built almost entirely alone</h4>
+      <pre class="code-block"><code>
+function Finder() {
+  const [input, setInput] = useState('');
+
+  const names = [
+    'Alejandro', 'Beatriz', 'Carlos',
+    'Diana', 'Eduardo', 'Florencia',
+  ];
+
+  // Controlled input: value + onChange form the full cycle
+  // Without value={input}, the input doesn't reflect state changes from outside
+  return (
+    &lt;div&gt;
+      &lt;input
+        type="text"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+      /&gt;
+      {names
+        .filter((n) => n.toLowerCase().includes(input.toLowerCase()))
+        .map((n) => &lt;p key={n}&gt;{n}&lt;/p&gt;)
+      }
+    &lt;/div&gt;
+  );
+}
+      </code></pre>
+
+      <h4 style="font-size:0.8rem; opacity:0.6; margin: 12px 0 6px;">Reception Panel — useState with array of objects</h4>
+      <pre class="code-block"><code>
+// Array lives in state — React detects every change
+const [rooms, setRooms] = useState([
+  { id: 101, status: 'free' },
+  { id: 102, status: 'occupied' },
+  { id: 103, status: 'free' },
+  { id: 104, status: 'free' },
+]);
+
+// Toggle pattern: map loops through all,
+// changes the one matching the id, returns the rest untouched
+function toggleRoom(id) {
+  setRooms(rooms.map((room) =>
+    room.id === id
+      ? { ...room, status: room.status === 'free' ? 'occupied' : 'free' }
+      : room
+  ));
+}
+      </code></pre>
+
+      <h4 style="font-size:0.8rem; opacity:0.6; margin: 12px 0 6px;">Key patterns from the debugging test</h4>
+      <pre class="code-block"><code>
+// Remove element without mutating
+setItems(items.filter((i) => i !== item));
+
+// Multiple setState in same event — use prev
+setCount((prev) => prev + 1);
+setCount((prev) => prev + 1);
+setCount((prev) => prev + 1); // adds 3, not 1
+
+// e.preventDefault in forms
+function handleSubmit(e) {
+  e.preventDefault(); // without this, browser reloads the page
+  console.log(value);
+}
+
+// Update object in state without mutating
+function birthday() {
+  setUser({ ...user, age: user.age + 1 }); // spread + overwrite
+}
+
+// Hooks: ALWAYS inside the component, NEVER in conditionals
+function App() {
+  if (something) {
+    const [x, setX] = useState(0); // ❌ breaks the rules of hooks
+  }
+  const [x, setX] = useState(0);   // ✅ top level of the component
+}
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "I can't get a single one right." — Me, after 3 hours. Then I scored 12 out of 16. The brain learns even when it doesn't feel like it.
+      </blockquote>
+
+    </div>
+  </div>
+</article>
 
 
-  
 <!-- ============================
      DAY 54 — ENGLISH
 =============================== -->
@@ -190,28 +488,28 @@
       <li class="etag">Debug</li>
     </ul>
   </header>
- 
+
   <h2 class="entry-headline" id="title-d54-en" data-i18n="d54-headline-en">
     First Tailwind Migration: Mental Shift,<br>Real Friction and Login Done.
   </h2>
- 
+
   <p class="entry-deck" data-i18n="d54-deck-en">
     First real day with Tailwind on LostDesk. Set up from scratch, head-on collision with the utility-first paradigm, and one fully migrated Login component to show for it. The Header waits for next session.
   </p>
- 
+
   <div class="cols">
     <div>
       <h3 class="col-label" data-i18n="d54-lbl-star-en">STAR Summary</h3>
- 
+
       <p class="body-text">
         <strong>S —</strong> LostDesk had CSS scattered across multiple files. Weeks of hesitation before committing to Tailwind.<br><br>
         <strong>T —</strong> Install Tailwind into an existing Vite+React project and migrate the first components without breaking what already works.<br><br>
         <strong>A —</strong> Installed the official Vite plugin, cleaned up <code>index.css</code>, grasped the utility-first model and fully migrated the Login component. Created a <code>feature/tailwind</code> branch to isolate the work in progress.<br><br>
         <strong>R —</strong> Login 100% in Tailwind, functional and styled. Header in progress with an unresolved background bug — committed to the feature branch, to be investigated next session.
       </p>
- 
+
       <h3 class="col-label" style="margin-top:20px" data-i18n="d54-lbl-wins-en">Wins</h3>
- 
+
       <p class="log-item">
         <span class="li-icon w">+</span>
         <span class="li-text">Tailwind installed in Vite+React via official plugin (<code>@tailwindcss/vite</code>)</span>
@@ -236,13 +534,13 @@
         <span class="li-icon w">+</span>
         <span class="li-text"><code>feature/tailwind</code> branch created — main protected while Header is broken</span>
       </p>
- 
+
       <blockquote class="pullquote">
         "I know — I should have started with Tailwind from day one. Migrating is harder. But learning it this way, with real friction, is how it actually sticks."
       </blockquote>
- 
+
       <h3 class="col-label" style="margin-top:16px" data-i18n="d54-lbl-levels-en">Skill Levels at Close</h3>
- 
+
       <div class="skill-row">
         <span class="skill-name">Tailwind CSS</span>
         <div class="skill-bar-bg" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
@@ -250,7 +548,7 @@
         </div>
         <span class="skill-pct">30%</span>
       </div>
- 
+
       <div class="skill-row">
         <span class="skill-name">CSS Architecture</span>
         <div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
@@ -258,13 +556,13 @@
         </div>
         <span class="skill-pct">55%</span>
       </div>
- 
+
     </div>
- 
+
     <div class="col-rule">
- 
+
       <h3 class="col-label" data-i18n="d54-lbl-debug-en">Debug Log</h3>
- 
+
       <p class="log-item">
         <span class="li-icon b">✗</span>
         <span class="li-text"><strong>Bug 1:</strong> Vite template CSS in <code>index.css</code> was overriding the Login gradient</span>
@@ -273,7 +571,7 @@
         <span class="li-icon f">→</span>
         <span class="li-text">Fix 1: Full cleanup of <code>index.css</code> — only <code>@import "tailwindcss"</code> remains</span>
       </p>
- 
+
       <p class="log-item">
         <span class="li-icon b">✗</span>
         <span class="li-text"><strong>Bug 2:</strong> Dynamic classes <code>rol-${rol}</code> invisible to Tailwind at build time — never generated</span>
@@ -282,7 +580,7 @@
         <span class="li-icon f">→</span>
         <span class="li-text">Fix 2: <code>estilosRoles</code> object with full hardcoded class strings so Tailwind can scan and include them</span>
       </p>
- 
+
       <p class="log-item">
         <span class="li-icon b">✗</span>
         <span class="li-text"><strong>Bug 3:</strong> Header background invisible despite correct <code>bg-blue-900</code> and <code>bg-[#1a2744]</code> in the JSX</span>
@@ -291,15 +589,15 @@
         <span class="li-icon f">→</span>
         <span class="li-text">Fix 3: Open — <code>App.css</code> suspected culprit. Committed to <code>feature/tailwind</code>, investigate next session</span>
       </p>
- 
+
       <h3 class="col-label" style="margin-top:20px" data-i18n="d54-lbl-code-en">Code of the Day</h3>
-  
+
     </div>
   </div>
 </article>
 <!-- ============================
      DAY 53 — META ADVANCED REACT PROJECT
-     
+
 =============================== -->
 
 <article class="entry" data-tags="js · react · css · debug · project" aria-labelledby="title-d53-en">
@@ -396,7 +694,7 @@
       <h3 class="col-label" style="margin-top:20px" data-i18n="d53-lbl-code">Código del día</h3>
 
       <!-- =======================================================
-           [PLACEHOLDER: MI-PORTFOLIO-REACT.GIF] 
+           [PLACEHOLDER: MI-PORTFOLIO-REACT.GIF]
            ======================================================= -->
       <img src="mi-portfolio-react.gif" alt="Portfolio Preview">
       <!-- ======================================================= -->
@@ -426,8 +724,8 @@
   </h2>
 
   <p class="entry-deck" data-i18n="d52en-deck">
-    Two intense days. LostDesk now looks good on mobile, properly signs out with Supabase, 
-    restores the session on reload, and has a navigation sidebar that filters options by role. 
+    Two intense days. LostDesk now looks good on mobile, properly signs out with Supabase,
+    restores the session on reload, and has a navigation sidebar that filters options by role.
     The app is starting to feel like a real product.
   </p>
 
@@ -438,17 +736,17 @@
       <h3 class="col-label" data-i18n="d52en-lbl-star">STAR Summary</h3>
 
       <p class="body-text">
-        <strong>S —</strong> LostDesk worked well on desktop but was broken on mobile — 
-        the header collapsed, cards got cut off, stats didn't fit. 
+        <strong>S —</strong> LostDesk worked well on desktop but was broken on mobile —
+        the header collapsed, cards got cut off, stats didn't fit.
         Also, refreshing the page lost the session and logout didn't actually do anything.<br><br>
-        <strong>T —</strong> Make the app responsive, implement real logout with Supabase, 
+        <strong>T —</strong> Make the app responsive, implement real logout with Supabase,
         restore the session on reload, and add a role-filtered navigation sidebar.<br><br>
-        <strong>A —</strong> Added media queries in Header, StatBar, ItemCard and ItemForm. 
-        Changed stats layout to 2x2 grid on mobile. Implemented logout with 
-        supabase.auth.signOut() and restaurarSesion with getSession() plus a loading state 
-        to prevent premature redirects in ProtectedRoute. Built the Sidebar with 
+        <strong>A —</strong> Added media queries in Header, StatBar, ItemCard and ItemForm.
+        Changed stats layout to 2x2 grid on mobile. Implemented logout with
+        supabase.auth.signOut() and restaurarSesion with getSession() plus a loading state
+        to prevent premature redirects in ProtectedRoute. Built the Sidebar with
         a role-filtered route array using NavLink.<br><br>
-        <strong>R —</strong> Responsive app, persistent session, functional logout and 
+        <strong>R —</strong> Responsive app, persistent session, functional logout and
         role-based sidebar navigation. Deploy verified on Vercel.
       </p>
 
@@ -629,8 +927,8 @@ menu
   </h2>
 
   <p class="entry-deck" data-i18n="d51en-deck">
-    Today LostDesk has real security. I implemented Supabase authentication, 
-    protected routes with ProtectedRoute, and learned to protect API keys with environment variables. 
+    Today LostDesk has real security. I implemented Supabase authentication,
+    protected routes with ProtectedRoute, and learned to protect API keys with environment variables.
     I also gave the whole app visual consistency.
   </p>
 
@@ -641,16 +939,16 @@ menu
       <h3 class="col-label" data-i18n="d51en-lbl-star">STAR Summary</h3>
 
       <p class="body-text">
-        <strong>S —</strong> LostDesk had a fake login with hardcoded PINs visible on GitHub 
+        <strong>S —</strong> LostDesk had a fake login with hardcoded PINs visible on GitHub
         and anyone could access the dashboard without authenticating.<br><br>
-        <strong>T —</strong> Implement real auth with Supabase, protect routes and unify 
+        <strong>T —</strong> Implement real auth with Supabase, protect routes and unify
         the visual style across the entire app.<br><br>
-        <strong>A —</strong> Created environment variables with .env to protect Supabase keys. 
-        Updated RoleContext with signInWithPassword and useNavigate to redirect after login. 
-        Created ProtectedRoute that checks the role and redirects to /login if no session exists. 
-        Redesigned Login.jsx with real email and password, added the SVG logo and visual consistency 
+        <strong>A —</strong> Created environment variables with .env to protect Supabase keys.
+        Updated RoleContext with signInWithPassword and useNavigate to redirect after login.
+        Created ProtectedRoute that checks the role and redirects to /login if no session exists.
+        Redesigned Login.jsx with real email and password, added the SVG logo and visual consistency
         with the dark theme #1a2744 and gold #c9a84c in header, cards and forms.<br><br>
-        <strong>R —</strong> Functional login with Supabase, protected routes, secure keys 
+        <strong>R —</strong> Functional login with Supabase, protected routes, secure keys
         and visually consistent app.
       </p>
 
@@ -843,7 +1141,7 @@ const supabaseKey = import.meta.env.VITE_SUPABASE_KEY
 
   <p class="entry-deck" data-i18n="d50en-deck">
     Today LostDesk stopped living in the browser. I connected the app to Supabase for the first time,
-    implemented all four database operations, and understood why every API call 
+    implemented all four database operations, and understood why every API call
     needs its own async/await.
   </p>
 
@@ -854,15 +1152,15 @@ const supabaseKey = import.meta.env.VITE_SUPABASE_KEY
       <h3 class="col-label" data-i18n="d50en-lbl-star">STAR Summary</h3>
 
       <p class="body-text">
-        <strong>S —</strong> LostDesk stored objects in localStorage — data that disappeared 
+        <strong>S —</strong> LostDesk stored objects in localStorage — data that disappeared
         when clearing the browser and wasn't shared across devices.<br><br>
-        <strong>T —</strong> Connect the app to Supabase and implement full CRUD: 
+        <strong>T —</strong> Connect the app to Supabase and implement full CRUD:
         read, create, delete and update objects in a real database.<br><br>
-        <strong>A —</strong> Created the Supabase project, designed the objetos table, installed 
-        the client, created supabase.js with the connection, and built each function in 
-        useLostItems.js — cargarItems with useEffect, handleAddItem, handleDeleteItem 
+        <strong>A —</strong> Created the Supabase project, designed the objetos table, installed
+        the client, created supabase.js with the connection, and built each function in
+        useLostItems.js — cargarItems with useEffect, handleAddItem, handleDeleteItem
         and handleNuevoEstado, each with its own async/await and error handling.<br><br>
-        <strong>R —</strong> Full CRUD working. Objects are read, created, deleted 
+        <strong>R —</strong> Full CRUD working. Objects are read, created, deleted
         and updated in Supabase in real time from the app.
       </p>
 
@@ -1301,7 +1599,7 @@ export default TextExpander;
     </ul>
   </header>
 
-  
+
   <div style="width:100%; height:180px; background:#f0f4f8; border:2px dashed #cbd5e0; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:1.5rem;">
     <span style="color:#a0aec0; font-size:0.95rem;"></span>
   </div>
@@ -1549,8 +1847,8 @@ export default UserCard
   </h2>
 
   <p class="entry-deck" data-i18n="d46en-deck">
-    Today LostDesk stopped being an open app. I built the login screen, 
-    refactored the role context with real PIN validation, and learned that 
+    Today LostDesk stopped being an open app. I built the login screen,
+    refactored the role context with real PIN validation, and learned that
     React Router needs to wrap the entire app before Routes can exist.
   </p>
 
@@ -1561,15 +1859,15 @@ export default UserCard
       <h3 class="col-label" data-i18n="d46en-lbl-star">STAR Summary</h3>
 
       <p class="body-text">
-        <strong>S —</strong> LostDesk had three provisional buttons to switch roles. 
+        <strong>S —</strong> LostDesk had three provisional buttons to switch roles.
         Anyone could access anything with no real restriction.<br><br>
-        <strong>T —</strong> Replace those buttons with a real login screen with role 
+        <strong>T —</strong> Replace those buttons with a real login screen with role
         selection and PIN validation. Prepare the context and routes for role-based protection.<br><br>
-        <strong>A —</strong> Rebuilt RoleContext from scratch: added RoleProvider, the login 
-        function with validation against a PIN object, and logout. Created Login.jsx with two 
-        local states and context connection. Added React Router v6 and configured BrowserRouter 
+        <strong>A —</strong> Rebuilt RoleContext from scratch: added RoleProvider, the login
+        function with validation against a PIN object, and logout. Created Login.jsx with two
+        local states and context connection. Added React Router v6 and configured BrowserRouter
         in main.jsx with RoleProvider nested inside. Defined routes in App.jsx.<br><br>
-        <strong>R —</strong> Code is ready and committed. StackBlitz environment prevents 
+        <strong>R —</strong> Code is ready and committed. StackBlitz environment prevents
         verification — next step is working locally.
       </p>
 
@@ -2848,7 +3146,7 @@ function Saludo() {
 </article>
 
 <!-- ============================
-     DAY 39 
+     DAY 39
 =============================== -->
 <article class="entry" data-tags="js" aria-labelledby="title-d39-en">
   <header class="entry-kicker">
@@ -2866,8 +3164,8 @@ function Saludo() {
   </h2>
 
   <p class="entry-deck" data-i18n="d39-deck">
-    First session dedicated to React hooks. Four useState exercises, four useEffect exercises, 
-    plenty of syntax errors, and one click that changed everything: 
+    First session dedicated to React hooks. Four useState exercises, four useEffect exercises,
+    plenty of syntax errors, and one click that changed everything:
     the empty array isn't a bug — it's an intention.
   </p>
 
@@ -3406,8 +3704,8 @@ function renderTarjetas(index) {
   </div>
 </article>
 <!-- ============================
-     DAY 36 — 
-    
+     DAY 36 —
+
      April 24, 2026
 =============================== -->
 <article class="entry" data-tags="js css debug project html" aria-labelledby="title-d35">
@@ -3660,8 +3958,8 @@ async function buscarWikipedia(termino) {
 
 
 <!-- ============================
-     DAY 35 — 
-    
+     DAY 35 —
+
      April 22, 2026
 =============================== -->
 <article class="entry" data-tags="js algo debug" aria-labelledby="title-2026-04-22">
@@ -3923,8 +4221,8 @@ function disemvowel(str) {
 </article>
 
 <!-- ============================
-     DAY 34 — 
-    
+     DAY 34 —
+
      April 20, 2026
 =============================== -->
 <article class="entry" data-tags="js css debug project" aria-labelledby="title-2026-04-20">
@@ -4140,8 +4438,8 @@ const [selectedCategory, setSelectedCategory] = useState('todos');
 </article>
 
 <!-- ============================
-     DAY 33 — 
-    
+     DAY 33 —
+
      April 17, 2026
 =============================== -->
 
@@ -4571,8 +4869,8 @@ export default ButtonChange;</code></pre>
       <!-- PLACEHOLDER IMAGE -->
       <h3 class="col-label" style="margin-top:20px">Demo</h3>
       <div style="width:100%; aspect-ratio:16/9; background:#1a1a2e; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#666; font-size:0.85rem; border: 1px solid #333;">
-        <img src = "campusapi.png" alt="Widget del tiempo mostrando datos reales en Campus & Crema" style="max-width:100%; max-height:100%; border-radius:8px;">  
-        
+        <img src = "campusapi.png" alt="Widget del tiempo mostrando datos reales en Campus & Crema" style="max-width:100%; max-height:100%; border-radius:8px;">
+
       </div>
 
       <h3 class="col-label" style="margin-top:20px" data-i18n="d31-lbl-code">Code of the day</h3>
@@ -5359,7 +5657,7 @@ function cambiarCantidad(id, delta) {
     </div>
   </div>
 </article>
-  
+
 <!-- ============================
      ENTRY 26 — 06 APRIL
 =============================== -->
@@ -5708,9 +6006,9 @@ const jugador = {
 
       <p class="body-text">
         <strong>S —</strong> I was studying Block 2 (Arrays) from my Notebook 1. I had 32 progressive exercises ready (without solutions). I had recently learned map(), filter(), reduce() from Jonas Schmedtmann, but only theoretically. I needed to practice without "cheating."<br><br>
-        
+
         <strong>T —</strong> Do maximum 15-20 exercises in one session, from simple (access, push, pop) to complex (reduce, chaining, spread, destructuring). Goal: understand the PATTERN, not memorize.<br><br>
-        
+
         <strong>A —</strong> I worked in thematic blocks:
         <ul style="margin: 8px 0 8px 20px; font-size: 0.95rem;">
           <li>Level 1 (1.1–1.6): Access, mutating methods (push, pop, shift, unshift) — quick, no problems</li>
@@ -5720,7 +6018,7 @@ const jugador = {
           <li>Level 5 (5.1–5.5): Spread and destructuring — new territory, caught on quickly</li>
         </ul>
         <br>
-        
+
         <strong>R —</strong> Completed 18 exercises without solutions. Mastered: array access, mutating/non-mutating methods, forEach, reduce (with accumulator), chaining, spread operator, basic destructuring. Still need: automate reduce(), callbacks with objects in arrays, advanced destructuring.
       </p>
 
@@ -5932,7 +6230,7 @@ const [a, b, ...resto] = [1, 2, 3, 4, 5]
 </article>
 
 
-    
+
 
 <!-- ============================
      ENTRY 16 — 03 APRIL
@@ -6305,8 +6603,8 @@ añadir.addEventListener("click", function(e) {
   </h2>
 
   <p class="entry-deck" data-i18n="d34-deck">
-    Today I completed the ValidarFormulario class for Campus & Crema. 
-    showError, showSuccess, esCorrecto control and dynamic DOM — 
+    Today I completed the ValidarFormulario class for Campus & Crema.
+    showError, showSuccess, esCorrecto control and dynamic DOM —
     all written by hand, all understood before moving on.
   </p>
 
@@ -6376,8 +6674,8 @@ añadir.addEventListener("click", function(e) {
 
     <div class="col-rule">
 
-      
-      <video autoplay loop muted playsinline style="width:100%; border-radius:8px; margin-bottom:20px;" aria-label="FormValidator in action"><source src="mesaexterior.webm" type="video/webm"><source src="mesaexterior.mp4" type="video/mp4"><img src="mesaexterior.gif" alt="FormValidator in action" style="width:100%; border-radius:8px; margin-bottom:20px;"></video> 
+
+      <video autoplay loop muted playsinline style="width:100%; border-radius:8px; margin-bottom:20px;" aria-label="FormValidator in action"><source src="mesaexterior.webm" type="video/webm"><source src="mesaexterior.mp4" type="video/mp4"><img src="mesaexterior.gif" alt="FormValidator in action" style="width:100%; border-radius:8px; margin-bottom:20px;"></video>
 
       <h3 class="col-label" data-i18n="d34-lbl-debug">Debug Log</h3>
 
@@ -6484,11 +6782,11 @@ showError(input, message) {
 
       <p class="body-text">
         <strong>S —</strong> Studying HTML form validation with OOP classes. Needed to understand how a <code>FormValidator</code> accesses the DOM, dynamically selects inputs, and defines reusable validation rules with regular expressions. Context: preparation for implementing a functional contact form in Campus & Crema.<br><br>
-        
+
         <strong>T —</strong> Complete the FormValidator class constructor to: (1) store a reference to the DOM form, (2) fetch all inputs with <code>[required]</code> attribute as an iterable array, (3) define validation rules (email, password with min 8 chars + number), (4) initialize <code>isValid</code> state, (5) execute <code>init()</code> that launches listeners. Bonus: understand every line without conceptual gaps.<br><br>
-        
+
         <strong>A —</strong> Methodology: copied line by line on paper, annotating each code section in Spanish. First tried understanding it mentally without writing — got lost in how exactly <code>Array.from(querySelectorAll())</code> worked. Then tested step by step in the browser: select → convert to array → iterate. After 5-6 attempts and debugging, I saw it was NOT magical, just literal and sequential. Implemented the config-object pattern for RegEx rules (scalable and reusable). Paper debugging annotations = 3x faster understanding.<br><br>
-        
+
         <strong>R —</strong> Fully functional and deeply understood constructor. Can explain every line without doubt. Recognized my recurring mental pattern: "it's easier than it seems, I overcomplicate things too much" — applies perfectly here. Caught and fixed 8 different bugs during the session, many of them SUBTLE (execution order, this binding, wrong selector). Key lesson: OOP isn't complex because of class syntax, it's complex because of SCOPE and ORDER. Ready to move to validation methods (validate, displayError, removeError).
       </p>
 
@@ -6784,7 +7082,7 @@ const contactForm = new FormValidator('#contact-form');
   <!-- CAROUSEL DEMO -->
   <div style="margin: 24px 0; border: 0.5px solid rgba(255,255,255,0.15); border-radius: 8px; padding: 20px; text-align: center; background: rgba(0,0,0,0.15);">
     <p style="color: #888; font-size: 0.85rem; margin: 0 0 12px 0;">🎠 Carousel demo in action</p>
-    
+
     <svg width="100%" viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%; margin: 0 auto;">
       <defs>
         <linearGradient id="gd1" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -6872,7 +7170,7 @@ const contactForm = new FormValidator('#contact-form');
     </svg>
 
     <p style="color: #666; font-size: 0.75rem; margin: 12px 0 0 0; font-style: italic;">
-      <strong>Live at:</strong> 
+      <strong>Live at:</strong>
       <a href="https://anudoranador87.github.io/campus-crema-web/" target="_blank" style="color: #8b9dc3; text-decoration: underline;">campus-crema.vercel.app</a>
     </p>
   </div>
@@ -7053,7 +7351,7 @@ class Carousel {
     this.prevBtn = this.container.querySelector(".prev");
     this.nextBtn = this.container.querySelector(".next");
     this.counter = this.container.querySelector(".counter");
-    
+
     this.currentIndex = 0;
     this.attachButtonListeners();
   }
@@ -7080,7 +7378,7 @@ class Carousel {
   }
 
   previous() {
-    this.currentIndex = (this.currentIndex - 1 + this.slides.length) 
+    this.currentIndex = (this.currentIndex - 1 + this.slides.length)
       % this.slides.length;
     this.updateUI();
   }
@@ -7103,7 +7401,7 @@ const carousel = new Carousel(".carousel-container");
     </div>
   </div>
 </article>
-  
+
 <!-- ============================
      ENTRY 11 — DAY MARCH 26
 =============================== -->
@@ -7125,7 +7423,7 @@ const carousel = new Carousel(".carousel-container");
   </h2>
 
   <p class="entry-deck" data-i18n="d30-deck">
-    Two exercises, six documented bugs, and a recurring lesson: functions must be predictable. 
+    Two exercises, six documented bugs, and a recurring lesson: functions must be predictable.
     The right method isn't the most complex one — it's the one that does exactly what you need.
   </p>
 
@@ -7466,7 +7764,7 @@ p.category === "tech" && p.stock < 10
   </h2>
 
   <p class="entry-deck" data-i18n="d29-deck">
-    Today the project took a definitive leap forward. I implemented an energy management system (Mana), 
+    Today the project took a definitive leap forward. I implemented an energy management system (Mana),
     status effects like burns and shields, and a real turn-based flow with AI.
   </p>
 
@@ -7790,7 +8088,7 @@ function esTurnoLegal(turnoAyer, turnoHoy) {
               margin-bottom:12px;">
     <video autoplay loop muted playsinline style="width:100%; display:block;" aria-label="Technical Documentation Page — navbar fija, scroll suave, responsive"><source src="certificado.documentacion.webm" type="video/webm"><source src="certificado.documentacion.mp4" type="video/mp4"><img src="certificado.documentacion.gif" alt="Technical Documentation Page — navbar fija, scroll suave, responsive" style="width:100%; display:block;"></video>
   </div>
- 
+
   <!-- Enlace live -->
   <a href="https://anudoranador87.github.io/fcc-technical-documentation/"
      target="_blank"
@@ -7802,7 +8100,7 @@ function esTurnoLegal(turnoAyer, turnoHoy) {
             padding-bottom:2px;text-decoration:none;">
     <i class="fas fa-eye"></i> Ver en vivo
   </a>
- 
+
 </div>
 
 </article>
@@ -8524,8 +8822,8 @@ if ([10, "J", "Q", "K", "A"].includes(card)) {
   </h2>
 
   <p class="entry-deck" data-i18n="d18-deck">
-    A day focused on connecting JavaScript with the real structure of my website <a href="https://anudoranador87.github.io/campus-crema-web/#contacto" target="_blank">Campus & Crema</a>.  
-    The hamburger menu is now working correctly and I understood why it didn’t before.  
+    A day focused on connecting JavaScript with the real structure of my website <a href="https://anudoranador87.github.io/campus-crema-web/#contacto" target="_blank">Campus & Crema</a>.
+    The hamburger menu is now working correctly and I understood why it didn’t before.
     I also reinforced key concepts in functions, conditionals, and objects in JS using freeCodeCamp exercises.
   </p>
 
@@ -9017,8 +9315,8 @@ console.log(cart.items); // [leche, pan] ✅
   </h2>
 
   <p class="entry-deck">
-    Today I completed the Little Lemon lab from Meta — functions, loops, 
-    conditionals and defensive coding. It wasn't straightforward: 11 attempts 
+    Today I completed the Little Lemon lab from Meta — functions, loops,
+    conditionals and defensive coding. It wasn't straightforward: 11 attempts
     in the warm-up and 1 in the actual lab. That gap explains the real progression.
   </p>
 
@@ -9028,21 +9326,21 @@ console.log(cart.items); // [leche, pan] ✅
     <div>
       <h3 class="col-label">STAR Summary</h3>
       <p class="body-text">
-        <strong>S —</strong> Lab from the Meta Front-End Developer course: build 
-        a receipt calculator for the Little Lemon restaurant using two functions — 
+        <strong>S —</strong> Lab from the Meta Front-End Developer course: build
+        a receipt calculator for the Little Lemon restaurant using two functions —
         <code>getPrices()</code> and <code>getDiscount()</code>.<br><br>
 
-        <strong>T —</strong> Implement loops over arrays of objects, boolean 
-        parameters, defensive coding with <code>typeof</code>, and functions 
+        <strong>T —</strong> Implement loops over arrays of objects, boolean
+        parameters, defensive coding with <code>typeof</code>, and functions
         calling other functions.<br><br>
 
-        <strong>A —</strong> Before the lab, three progressive exercises in the 
-        Pythagoras Notebook: basic loop over <code>platos[]</code>, conditionals 
-        inside the loop, and everything wrapped in a function with a boolean 
+        <strong>A —</strong> Before the lab, three progressive exercises in the
+        Pythagoras Notebook: basic loop over <code>platos[]</code>, conditionals
+        inside the loop, and everything wrapped in a function with a boolean
         parameter. Every error documented, every lesson applied to the next attempt.<br><br>
 
-        <strong>R —</strong> Lab completed. <code>getPrices()</code> and 
-        <code>getDiscount()</code> working with input validation, tax calculation 
+        <strong>R —</strong> Lab completed. <code>getPrices()</code> and
+        <code>getDiscount()</code> working with input validation, tax calculation
         and discounts based on number of guests.
       </p>
 
@@ -9114,19 +9412,19 @@ console.log(cart.items); // [leche, pan] ✅
       <!-- FINAL REFLECTION -->
       <h3 class="col-label" style="margin-top:24px">Final Reflection</h3>
       <p class="body-text">
-        In hospitality I learned that new staff don't absorb procedures by 
-        reading the manual. They learn by making mistakes in low-pressure 
-        situations — a quiet check-in, an easy table — before facing the 
+        In hospitality I learned that new staff don't absorb procedures by
+        reading the manual. They learn by making mistakes in low-pressure
+        situations — a quiet check-in, an easy table — before facing the
         weekend rush.<br><br>
 
-        Today I did the same with JavaScript. The three Pythagoras Notebook 
-        exercises weren't filler — they were the low-pressure shift where I 
-        could fail without cost. By the time the lab arrived, the pattern 
+        Today I did the same with JavaScript. The three Pythagoras Notebook
+        exercises weren't filler — they were the low-pressure shift where I
+        could fail without cost. By the time the lab arrived, the pattern
         was already in muscle memory.<br><br>
 
-        The loop's <code>i</code> is like the shift handover note in hospitality: 
-        without it, every worker starts from zero with no context of what happened 
-        before. With it, each iteration knows exactly where it is and what 
+        The loop's <code>i</code> is like the shift handover note in hospitality:
+        without it, every worker starts from zero with no context of what happened
+        before. With it, each iteration knows exactly where it is and what
         information it needs. The index isn't a counter — it's context.
       </p>
 
