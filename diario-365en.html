@@ -174,6 +174,209 @@
   </p>
 </section>
 <!-- ============================
+     DAY 56 — ENGLISH
+============================== -->
+
+<article class="entry" data-tags="js debug project" aria-labelledby="title-d56">
+<header class="entry-kicker">
+<span class="day-badge">Day 56</span>
+<time datetime="2026-06-02" data-i18n="d56-date">June 2, 2026</time>
+<ul class="entry-tags" aria-label="Categories">
+<li class="etag">JS</li>
+<li class="etag">React</li>
+<li class="etag">Debug</li>
+<li class="etag">Hooks</li>
+<li class="etag">useEffect</li>
+</ul>
+</header>
+​<h2 class="entry-headline" id="title-d56" data-i18n="d56-headline">
+Training the Clinical Eye.
+Enforcing Immutability and Taming Side Effects.
+</h2>
+​<p class="entry-deck" data-i18n="d56-deck">
+Intensive debugging and refactoring session guided by the AI.
+Analyzed advanced snippets containing subtle concurrency, performance, and lifecycle bugs.
+Tested my core logic, solidified rendering rules, and mastered strict memory control.
+</p>
+​<div class="cols">
+​<div>
+​<h3 class="col-label" data-i18n="d56-lbl-star">STAR Summary</h3>
+​<p class="body-text">
+<strong>S —</strong> Following the initial bottlenecks when writing code completely from scratch, I needed to thoroughly audit my reading comprehension and technical diagnostic skills in Advanced React. The goal was to detect bugs that are invisible at a syntax level but catastrophic during execution.
+
+
+<strong>T —</strong> Analyze code snippets with complex conceptual traps: stale states, race conditions, accidental mutations, incorrect effect dependencies, and memory leaks with timers.
+
+
+<strong>A —</strong> Faced the snippets by immediately identifying direct state mutations and asynchronous synchronization issues. Although I initially tripped over race conditions and hesitated on overlapping side effects (double rendering), I instantly grasped the architectural explanations regarding cleanup functions and lazy initialization.
+
+
+<strong>R —</strong> Demonstrated an excellent logical foundation in immutability and state updates using functional callbacks. Identified the risks of batching and unnecessary re-renders in child components. Received technical feedback to focus my efforts on performance optimization and memory management.
+</p>
+​<h3 class="col-label" style="margin-top:20px" data-i18n="d56-lbl-wins">Wins of the Day</h3>
+​<p class="log-item">
+<span class="li-icon w">+</span>
+<span class="li-text">Spotted direct mutation instantly in <code>isLiked = !isLiked</code>, reinforcing the sacred rule of immutability</span>
+</p>
+<p class="log-item">
+<span class="li-icon w">+</span>
+<span class="li-text">Absolute mastery of the functional updater pattern: <code>prev => prev + 1</code> to avoid stale states</span>
+</p>
+<p class="log-item">
+<span class="li-icon w">+</span>
+<span class="li-text">Identified the critical danger of using the <code>index</code> as a <code>key</code> in dynamic lists</span>
+</p>
+<p class="log-item">
+<span class="li-icon w">+</span>
+<span class="li-text">Understood why the <code>&&</code> operator renders a ghost '0' when an array is empty</span>
+</p>
+<p class="log-item">
+<span class="li-icon w">+</span>
+<span class="li-text">Autonomously proposed a clean variable with a ternary operator to inject dynamic CSS classes</span>
+</p>
+<p class="log-item">
+<span class="li-icon w">+</span>
+<span class="li-text">Comprehended the golden rule: a state change in the parent forces a re-render of all its children by default</span>
+</p>
+​<blockquote class="pullquote">
+"React has two layers: making it work and making it efficient. My core logic is solid; now I'm polishing performance."
+</blockquote>
+​<h3 class="col-label" style="margin-top:16px" data-i18n="d56-lbl-levels">Skill Levels at Close</h3>
+​<div class="skill-row">
+<span class="skill-name">useState (Immutability)</span>
+<div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+<div class="skill-bar-fill" data-width="70"></div>
+</div>
+<span class="skill-pct">70%</span>
+</div>
+​<div class="skill-row">
+<span class="skill-name">Lifecycle (useEffect)</span>
+<div class="skill-bar-bg" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+<div class="skill-bar-fill" data-width="50"></div>
+</div>
+<span class="skill-pct">50%</span>
+</div>
+​<div class="skill-row">
+<span class="skill-name">Code Reading & Debugging</span>
+<div class="skill-bar-bg" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+<div class="skill-bar-fill" data-width="75"></div>
+</div>
+<span class="skill-pct">75%</span>
+</div>
+​<div class="skill-row">
+<span class="skill-name">Performance (Renders)</span>
+<div class="skill-bar-bg" role="progressbar" aria-valuenow="48" aria-valuemin="0" aria-valuemax="100">
+<div class="skill-bar-fill" data-width="48"></div>
+</div>
+<span class="skill-pct">48%</span>
+</div>
+​</div>
+​<div class="col-rule">
+​<h3 class="col-label" data-i18n="d56-lbl-debug">Debug Log</h3>
+​<p class="log-item">
+<span class="li-icon b">✗</span>
+<span class="li-text"><strong>Bug 1:</strong> Analytics executed immediately after a <code>setCount</code> sent the old value (Stale State)</span>
+</p>
+<p class="log-item">
+<span class="li-icon f">→</span>
+<span class="li-text">Fix: State does not update instantly. Calculate the new value in a local variable or trigger a <code>useEffect</code></span>
+</p>
+​<p class="log-item">
+<span class="li-icon b">✗</span>
+<span class="li-text"><strong>Bug 2:</strong> Async API requests in rapid succession overwrote the state with outdated data (Race Condition)</span>
+</p>
+<p class="log-item">
+<span class="li-icon f">→</span>
+<span class="li-text">Fix: Implement a control flag (<code>let active = true</code>) inside the effect and flip it to false in the cleanup function</span>
+</p>
+​<p class="log-item">
+<span class="li-icon b">✗</span>
+<span class="li-text"><strong>Bug 3:</strong> <code>useEffect</code> inappropriately utilized to synchronize two local states caused an avoidable double render</span>
+</p>
+<p class="log-item">
+<span class="li-icon f">→</span>
+<span class="li-text">Fix: Centralize both state updates directly within the click event handler function, removing the effect entirely</span>
+</p>
+​<p class="log-item">
+<span class="li-icon b">✗</span>
+<span class="li-text"><strong>Bug 4:</strong> <code>setInterval</code> created inside an empty dependency array kept ticking after unmounting (Memory Leak)</span>
+</p>
+<p class="log-item">
+<span class="li-icon f">→</span>
+<span class="li-text">Fix: Return a cleanup function executing <code>clearInterval(id)</code> to kill background processes on unmount</span>
+</p>
+​<p class="log-item">
+<span class="li-icon b">✗</span>
+<span class="li-text"><strong>Bug 5:</strong> Local variables declared with <code>let</code> inside the component reset to their initial value on every single render</span>
+</p>
+<p class="log-item">
+<span class="li-icon f">→</span>
+<span class="li-text">Fix: Use the <code>useRef</code> Hook to maintain a persistent data vault across renders without triggering visual re-renders</span>
+</p>
+​<p class="log-item">
+<span class="li-icon b">✗</span>
+<span class="li-text"><strong>Bug 6:</strong> Heavy functions passed directly as an argument like <code>useState(heavy())</code> ran on every single render cycle</span>
+</p>
+<p class="log-item">
+<span class="li-icon f">→</span>
+<span class="li-text">Fix: Lazy Initialization. Pass a function reference or arrow function <code>useState(() => heavy())</code> so it runs exactly once</span>
+</p>
+​<p class="log-item">
+<span class="li-icon w">✓</span>
+<span class="li-text">Outcome: Deep understanding of React's internal architecture. I know exactly what the CPU is doing during each render phase</span>
+</p>
+​<h3 class="col-label" style="margin-top:20px" data-i18n="d56-lbl-code">Code of the Day</h3>
+​<h4 style="font-size:0.8rem; opacity:0.6; margin: 12px 0 6px;">Cleanup in useEffect — Preventing data leaks and race conditions</h4>
+<pre class="code-block"><code>
+useEffect(() => {
+let active = true;
+​const fetchData = async () => {
+const res = await fetch(https://api.com/data/${id});
+const data = await res.json();
+if (active) setItem(data);
+};
+​fetchData();
+return () => {
+active = false; // Aborts state updates if the id changes mid-flight
+};
+}, [id]);
+</code></pre>
+​<h4 style="font-size:0.8rem; opacity:0.6; margin: 12px 0 6px;">useRef — Storing persistent data without triggering renders</h4>
+<pre class="code-block"><code>
+function SilentCounter() {
+// Persistent object. React preserves its .current property between renders
+const clickCount = useRef(0);
+​const handleClick = () => {
+clickCount.current = clickCount.current + 1;
+console.log("Saved in the shadows:", clickCount.current);
+};
+​return <button onClick={handleClick}>Silent click</button>;
+}
+</code></pre>
+​<h4 style="font-size:0.8rem; opacity:0.6; margin: 12px 0 6px;">Lazy Initialization — Optimizing expensive functions in state</h4>
+<pre class="code-block"><code>
+// We pass an anonymous function as the initialization recipe
+// React only executes this costly logic during the component's initial mount
+const [volume, setVolume] = useState(() => {
+return getHeavyInitialVolume();
+});
+</code></pre>
+​<h4 style="font-size:0.8rem; opacity:0.6; margin: 12px 0 6px;">Clean Conditional Rendering — Avoiding the zero number trap</h4>
+<pre class="code-block"><code>
+// BAD: {tasks.length && <p>Text</p>} -> Renders a literal "0" on screen if empty
+// GOOD: Force an explicit, unambiguous boolean comparison instead
+{tasks.length === 0 && (
+<p className="alert">Congratulations! Clean desk.</p>
+)}
+</code></pre>
+​<blockquote class="pullquote" style="font-size:0.9rem;">
+Understanding the "why" behind patterns instead of simply memorizing syntax completely rewrites the rules of the game. The clinical eye is waking up.
+</blockquote>
+​</div>
+</div>
+</article>
+
+<!-- ============================
      DAY 55 — React from scratch: the day I learned the hard way
      2026-05-31
 ============================== -->

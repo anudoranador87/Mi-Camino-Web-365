@@ -485,8 +485,211 @@ function App() {
 
 
 
-  <!-- ============================
-     DÍA 54 — ESPAÑOL
+<!-- ============================
+     DÍA 56 — ESPAÑOL
+=============================== -->
+
+<article class="entry" data-tags="js debug project" aria-labelledby="title-d56">
+<header class="entry-kicker">
+<span class="day-badge">Día 56</span>
+<time datetime="2026-06-02" data-i18n="d56-date">02 de Junio, 2026</time>
+<ul class="entry-tags" aria-label="Categorías">
+<li class="etag">JS</li>
+<li class="etag">React</li>
+<li class="etag">Debug</li>
+<li class="etag">Hooks</li>
+<li class="etag">useEffect</li>
+</ul>
+</header>
+​<h2 class="entry-headline" id="title-d56" data-i18n="d56-headline">
+Entrenar el ojo clínico.
+Garantizar la inmutabilidad y domar los efectos secundarios.
+</h2>
+​<p class="entry-deck" data-i18n="d56-deck">
+Sesión intensiva de debugging y refactorización guiada con la IA.
+Analicé snippets avanzados con errores sutiles de concurrencia, rendimiento y ciclo de vida.
+Puse a prueba mi lógica base, consolidé las reglas del renderizado y el control estricto de la memoria.
+</p>
+​<div class="cols">
+​<div>
+​<h3 class="col-label" data-i18n="d56-lbl-star">Resumen STAR</h3>
+​<p class="body-text">
+<strong>S —</strong> Tras los bloqueos iniciales al picar código desde cero, necesitaba auditar a fondo mi capacidad de lectura y diagnóstico técnico en React Avanzado. El objetivo era detectar fallos invisibles a nivel de sintaxis pero catastróficos en ejecución.
+
+
+<strong>T —</strong> Analizar bloques de código con trampas conceptuales complejas: cierres de entorno (stale state), condiciones de carrera (race conditions), mutaciones encubiertas, dependencias erróneas en efectos y fugas de memoria con temporizadores.
+
+
+<strong>A —</strong> Enfrenté los snippets identificando de inmediato mutaciones directas del estado y problemas de sincronización asíncrona. Aunque caí en la trampa de las race conditions y dudé en el comportamiento de los efectos secundarios cruzados (doble render), asimilé al instante las explicaciones arquitectónicas sobre funciones de limpieza (cleanup) e inicialización perezosa (lazy initialization).
+
+
+<strong>R —</strong> Demostré una base lógica excelente en inmutabilidad y actualizaciones con callbacks funcionales. Identifiqué los riesgos del batching y re-renderizados innecesarios en componentes hijos. Recibí feedback técnico para enfocar mis esfuerzos en optimización y control de memoria.
+</p>
+​<h3 class="col-label" style="margin-top:20px" data-i18n="d56-lbl-wins">Victorias del día</h3>
+​<p class="log-item">
+<span class="li-icon w">+</span>
+<span class="li-text">Cacé al vuelo la mutación directa en <code>isLiked = !isLiked</code>, reforzando la regla sagrada de la inmutabilidad</span>
+</p>
+<p class="log-item">
+<span class="li-icon w">+</span>
+<span class="li-text">Dominio absoluto del patrón functional updater: <code>prev => prev + 1</code> para evitar estados congelados</span>
+</p>
+<p class="log-item">
+<span class="li-icon w">+</span>
+<span class="li-text">Identifiqué el peligro crítico de usar el <code>index</code> como <code>key</code> en listas dinámicas</span>
+</p>
+<p class="log-item">
+<span class="li-icon w">+</span>
+<span class="li-text">Entendí por qué el operador <code>&&</code> renderiza un '0' fantasma cuando el array está vacío</span>
+</p>
+<p class="log-item">
+<span class="li-icon w">+</span>
+<span class="li-text">Propuse de forma autónoma una variable limpia con operador ternario para inyectar clases CSS dinámicas</span>
+</p>
+<p class="log-item">
+<span class="li-icon w">+</span>
+<span class="li-text">Comprendí la regla de oro: un cambio de estado en el padre fuerza el re-renderizado de todos sus hijos por defecto</span>
+</p>
+​<blockquote class="pullquote">
+"React tiene dos capas: hacer que funcione y hacer que sea eficiente. Mi lógica base es sólida; ahora estoy puliendo el rendimiento."
+</blockquote>
+​<h3 class="col-label" style="margin-top:16px" data-i18n="d56-lbl-levels">Niveles al cierre del día</h3>
+​<div class="skill-row">
+<span class="skill-name">useState (Inmutabilidad)</span>
+<div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+<div class="skill-bar-fill" data-width="70"></div>
+</div>
+<span class="skill-pct">70%</span>
+</div>
+​<div class="skill-row">
+<span class="skill-name">Ciclo de vida (useEffect)</span>
+<div class="skill-bar-bg" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+<div class="skill-bar-fill" data-width="50"></div>
+</div>
+<span class="skill-pct">50%</span>
+</div>
+​<div class="skill-row">
+<span class="skill-name">Lectura y Debugging</span>
+<div class="skill-bar-bg" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+<div class="skill-bar-fill" data-width="75"></div>
+</div>
+<span class="skill-pct">75%</span>
+</div>
+​<div class="skill-row">
+<span class="skill-name">Rendimiento (Renders)</span>
+<div class="skill-bar-bg" role="progressbar" aria-valuenow="48" aria-valuemin="0" aria-valuemax="100">
+<div class="skill-bar-fill" data-width="48"></div>
+</div>
+<span class="skill-pct">48%</span>
+</div>
+​</div>
+​<div class="col-rule">
+​<h3 class="col-label" data-i18n="d56-lbl-debug">Debug Log</h3>
+​<p class="log-item">
+<span class="li-icon b">✗</span>
+<span class="li-text"><strong>Bug 1:</strong> Analíticas ejecutadas inmediatamente tras un <code>setCount</code> enviaban el estado viejo (Stale State)</span>
+</p>
+<p class="log-item">
+<span class="li-icon f">→</span>
+<span class="li-text">Fix: El estado no cambia al instante. Hay que calcular el nuevo valor en una variable local o usar <code>useEffect</code></span>
+</p>
+​<p class="log-item">
+<span class="li-icon b">✗</span>
+<span class="li-text"><strong>Bug 2:</strong> Peticiones asíncronas en bucles rápidos machacaban el estado con datos antiguos (Race Condition)</span>
+</p>
+<p class="log-item">
+<span class="li-icon f">→</span>
+<span class="li-text">Fix: Añadir un flag de control (<code>let active = true</code>) en el efecto y apagarlo en la función de limpieza (cleanup)</span>
+</p>
+​<p class="log-item">
+<span class="li-icon b">✗</span>
+<span class="li-text"><strong>Bug 3:</strong> <code>useEffect</code> utilizado inapropiadamente para sincronizar dos estados locales provocaba un doble renderizado</span>
+</p>
+<p class="log-item">
+<span class="li-icon f">→</span>
+<span class="li-text">Fix: Centralizar las actualizaciones del estado dentro del propio manejador de eventos del clic, eliminando el efecto</span>
+</p>
+​<p class="log-item">
+<span class="li-icon b">✗</span>
+<span class="li-text"><strong>Bug 4:</strong> <code>setInterval</code> creado en un array de dependencias vacío continuaba latiendo tras desmontar el componente (Memory Leak)</span>
+</p>
+<p class="log-item">
+<span class="li-icon f">→</span>
+<span class="li-text">Fix: Retornar obligatoriamente una función que ejecute <code>clearInterval(id)</code> para limpiar los procesos en segundo plano</span>
+</p>
+​<p class="log-item">
+<span class="li-icon b">✗</span>
+<span class="li-text"><strong>Bug 5:</strong> Variables locales declaradas con <code>let</code> dentro del componente se reseteaban a su valor inicial en cada render</span>
+</p>
+<p class="log-item">
+<span class="li-icon f">→</span>
+<span class="li-text">Fix: Usar el Hook <code>useRef</code> para mantener una "caja fuerte" de memoria persistente entre renders sin provocar re-pintados</span>
+</p>
+​<p class="log-item">
+<span class="li-icon b">✗</span>
+<span class="li-text"><strong>Bug 6:</strong> Funciones pesadas pasadas directamente como argumento en <code>useState(heavy())</code> se ejecutaban en cada renderizado</span>
+</p>
+<p class="log-item">
+<span class="li-icon f">→</span>
+<span class="li-text">Fix: Lazy Initialization. Pasar la referencia o una función flecha <code>useState(() => heavy())</code> para que corra solo una vez</span>
+</p>
+​<p class="log-item">
+<span class="li-icon w">✓</span>
+<span class="li-text">Resultado: Comprensión profunda de la arquitectura interna de React. Sé qué pasa en la CPU en cada fase de renderizado</span>
+</p>
+​<h3 class="col-label" style="margin-top:20px" data-i18n="d56-lbl-code">Código del día</h3>
+​<h4 style="font-size:0.8rem; opacity:0.6; margin: 12px 0 6px;">Cleanup en useEffect — Evitar fugas de datos y race conditions</h4>
+<pre class="code-block"><code>
+useEffect(() => {
+let active = true;
+​const fetchData = async () => {
+const res = await fetch(https://api.com/data/${id});
+const data = await res.json();
+if (active) setItem(data);
+};
+​fetchData();
+return () => {
+active = false; // Cancela la actualización si el id cambia en mitad de la petición
+};
+}, [id]);
+</code></pre>
+​<h4 style="font-size:0.8rem; opacity:0.6; margin: 12px 0 6px;">useRef — Almacenar datos persistentes sin disparar renderizado</h4>
+<pre class="code-block"><code>
+function SilentCounter() {
+// Objeto persistente. React no destruye su propiedad .current entre renders
+const clickCount = useRef(0);
+​const handleClick = () => {
+clickCount.current = clickCount.current + 1;
+console.log("Guardado en la sombra:", clickCount.current);
+};
+​return <button onClick={handleClick}>Clic silencioso</button>;
+}
+</code></pre>
+​<h4 style="font-size:0.8rem; opacity:0.6; margin: 12px 0 6px;">Lazy Initialization — Optimizar funciones pesadas en el estado</h4>
+<pre class="code-block"><code>
+// Pasamos una función anónima como receta inicial
+// React solo ejecuta esta lógica costosa en el primer montaje del componente
+const [volume, setVolume] = useState(() => {
+return getHeavyInitialVolume();
+});
+</code></pre>
+​<h4 style="font-size:0.8rem; opacity:0.6; margin: 12px 0 6px;">Renderizado condicional limpio — Evitar la trampa del número 0</h4>
+<pre class="code-block"><code>
+// MAL: {tasks.length && <p>Texto</p>} -> Imprime un "0" en pantalla si está vacío
+// BIEN: Forzamos una comparación booleana estricta e inequívoca
+{tasks.length === 0 && (
+<p className="alert">¡Enhorabuena! Escritorio limpio.</p>
+)}
+</code></pre>
+​<blockquote class="pullquote" style="font-size:0.9rem;">
+Entender el "porqué" de las cosas en lugar de limitarse a memorizar la sintaxis es lo que cambia las reglas del juego. El ojo clínico está despertando.
+</blockquote>
+​</div>
+</div>
+</article>
+
+<!-- ============================
+     DÍA 55 — ESPAÑOL
 =============================== -->
 <article class="entry" data-tags="react • tailwind • css • debug • proyecto" aria-labelledby="title-d54-es">
   <header class="entry-kicker">
