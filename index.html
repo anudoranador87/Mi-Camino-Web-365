@@ -183,9 +183,243 @@
     Día 1 = 20 de febrero de 2026 · Los 365 días se cuentan desde ahí · No todos los días tienen entrada
   </p>
 </section>
-!-- ============================
-     DÍA 56 — ESPAÑOL
+
+<!-- ============================
+     DÍA 57 — ESPAÑOL
 =============================== -->
+<article class="entry" data-tags="js debug project" aria-labelledby="title-d57">
+  <header class="entry-kicker">
+    <span class="day-badge">Día 57</span>
+    <time datetime="2026-06-04" data-i18n="d57-date">04 de Junio, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">JS</li>
+      <li class="etag">React</li>
+      <li class="etag">Debug</li>
+      <li class="etag">Lectura de código</li>
+      <li class="etag">Live Coding</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d57" data-i18n="d57-headline">
+    Leer no es saber.<br>Escribir bajo presión revela el gap real.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d57-deck">
+    Recientemente muchas ofertas piden "entender código generado por IA". Eso fue la excusa para estrenar una metodología nueva: leer código ajeno, explicarlo en voz alta, y después intentar reproducirlo sin mirarlo. Nueve snippets leídos, cuatro componentes escritos. El diagnóstico fue claro: la lógica está, la mecánica falla bajo presión.
+  </p>
+
+  <div class="cols">
+
+    <div>
+
+      <h3 class="col-label" data-i18n="d57-lbl-star">Resumen STAR</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Día 57. Entender código generado por IA llevó a proponer una metodología nueva complementaria a los proyectos: sesiones de lectura y live coding con código ajeno, de menor a mayor dificultad.<br><br>
+        <strong>T —</strong> Validar la metodología. Hacer una sesión completa: primero lectura explicada de menor a mayor dificultad, luego live coding con dificultad progresiva, con el objetivo de identificar gaps reales entre reconocer un patrón y producirlo.<br><br>
+        <strong>A —</strong> Lectura de 9 snippets: filter/map, closures, useState, useEffect, fetch con props, array state, toggle con prev callback, useReducer y custom hook useFetch. Live coding: función con filter, closure makeMultiplier, componente LightBulb y componente Saludo con useEffect.<br><br>
+        <strong>R —</strong> Metodología validada. La lectura va bien — el big picture siempre aparece. El live coding reveló el gap real: los patrones se reconocen pero no están mecanizados. Errores concretos documentados. Plan: continuar sesiones combinando ambas fases.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d57-lbl-wins">Victorias del día</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Closure makeCounter explicada correctamente tras corrección — 1, 2, 3 y counter2 independiente</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">useReducer leído y explicado sin haberlo practicado antes en live coding</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Custom hook useFetch — entendí el return destructurado y por qué existe</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">makeMultiplier escrita correctamente desde cero — closure funcional</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Identifiqué mi propio gap antes de que me lo dijeran: "reconozco el patrón, mecanizarlo es otra guerra"</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "Leer sin escribir es solo la mitad. La otra mitad duele más — y enseña más."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d57-lbl-levels">Niveles al cierre del día</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">Lectura React</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="72"></div>
+        </div>
+        <span class="skill-pct">72%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Live coding React</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="52" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="52"></div>
+        </div>
+        <span class="skill-pct">52%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">useEffect (sintaxis)</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="55"></div>
+        </div>
+        <span class="skill-pct">55%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Closures JS</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+
+    </div>
+
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d57-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Closure — output tracing:</strong> Dije que los tres console.log imprimían "lo mismo". No tracé la ejecución paso a paso.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Cada llamada a counter() incrementa su propio count. Resultado: 1, 2, 3 — no el mismo valor.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Live coding — return const:</strong> Escribí <code>return const double = (n) => n * num</code>. No se puede hacer return de una declaración.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Declarar primero, devolver después. O devolver la arrow function directamente sin nombre.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>LightBulb — booleano en JSX:</strong> Puse {on} en el párrafo. Renderiza "true" o "false", no texto.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Ternario — {on ? "Encendida" : "Apagada"}. Los booleanos no se renderizan como texto en JSX.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Saludo — backtick incorrecto:</strong> Usé ´ (acento agudo del teclado español) en vez del backtick real para template literals.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">El backtick correcto es ` — en teclado español suele estar junto al signo +. Mecanizar esto.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Saludo — useState innecesario:</strong> Declaré estado para nombre cuando ya venía como prop. Confusión entre prop y estado.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Si el dato viene de fuera (prop), no necesita useState. Estado solo para lo que el componente gestiona internamente.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Resultado: metodología validada. Lectura hasta nivel 9 (custom hooks). Live coding hasta nivel 4 (useEffect). Gap identificado y documentado.</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d57-lbl-code">Código del día</h3>
+
+      <pre class="code-block"><code>
+// Custom Hook — useFetch (nivel 9, lectura)
+// El patrón más complejo del día. Tres estados,
+// fetch con .then(), res.ok, y return destructurado.
+
+function useFetch(url) {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetch(url)
+      .then(res => {
+        if (!res.ok) throw new Error("Request failed");
+        return res.json();
+      })
+      .then(data => {
+        setData(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }, [url]);
+
+  return { data, loading, error };
+}
+
+// Consumo en componente — destructuring del return
+const { data, loading, error } = useFetch(url);
+      </code></pre>
+
+      <pre class="code-block"><code>
+// Closure — makeMultiplier (nivel 2, live coding)
+// La función devuelve otra función que recuerda num.
+
+function makeMultiplier(num) {
+  return function(n) {
+    return n * num;
+  };
+}
+
+const double = makeMultiplier(2);
+const triple = makeMultiplier(3);
+
+console.log(double(5)); // 10
+console.log(triple(5)); // 15
+      </code></pre>
+
+      <pre class="code-block"><code>
+// LightBulb — toggle con booleano en JSX (nivel 3)
+// Bug del día: {on} renderiza "true"/"false", no texto.
+// Fix: usar ternario para texto legible.
+
+function LightBulb() {
+  const [on, setOn] = useState(false);
+
+  return (
+    &lt;div&gt;
+      &lt;p&gt;{on ? "Encendida" : "Apagada"}&lt;/p&gt;
+      &lt;button onClick={() => setOn(prev => !prev)}&gt;
+        Toggle
+      &lt;/button&gt;
+    &lt;/div&gt;
+  );
+}
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "res.ok no es 'si hay datos' — es si el servidor respondió con 200–299. El fetch resuelve igual con un 404."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
+
+
+
+
 
 
 <article class="entry" data-tags="js debug project" aria-labelledby="title-d56">
