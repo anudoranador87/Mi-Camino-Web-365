@@ -334,6 +334,165 @@
     </div>
   </div>
 </article>
+<!-- ============================
+     DÍA 58 — ESPAÑOL
+=============================== -->
+<article class="entry" data-tags="js" aria-labelledby="title-d59">
+  <header class="entry-kicker">
+    <span class="day-badge">Día 59</span>
+    <time datetime="2026-06-11" data-i18n="d59-date">11 de Junio, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">JS</li>
+      <li class="etag">Testing</li>
+      <li class="etag">Debug</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d59" data-i18n="d59-headline">
+    Mi primer día haciendo tests unitarios.<br>No era tan diferente a lo que ya hacía.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d59-deck">
+    Le tenía miedo al testing. Hoy lo enfrenté.
+    Escribí tests manuales desde cero con if y console.log,
+    cometí errores que se repitieron, y al final los clavé.
+  </p>
+
+  <div class="cols">
+    <div>
+
+      <h3 class="col-label" data-i18n="d59-lbl-star">Resumen STAR</h3>
+      <p class="body-text">
+        <strong>S —</strong> Día de teoría y práctica de testing unitario.
+        Llevaba tiempo evitándolo por miedo a que fuera muy difícil.<br><br>
+        <strong>T —</strong> Entender qué es un test, la estructura AAA,
+        y escribir tests manuales sin librerías.<br><br>
+        <strong>A —</strong> Estudié teoría: unit test, integration, E2E.
+        Practiqué con 6 funciones puras escribiendo tests con if/console.log.
+        Cometí errores repetidos y los corregí uno a uno.<br><br>
+        <strong>R —</strong> Entiendo qué es un test unitario manual.
+        La estructura AAA me sale sola. Mañana: Jest.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d59-lbl-wins">Victorias del día</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Estructura AAA asimilada: Arrange, Act, Assert</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Diferencia clara entre unit test, integration y E2E</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">El error del Act (pasar esperado como argumento) dejó de repetirse</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Entendí qué es una función pura y por qué es fácil de testear</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "Un test es un checklist de recepción antes de abrir el hotel.
+        Los bugs los encuentra el huésped si no lo haces tú primero."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d59-lbl-levels">Niveles al cierre del día</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">Unit Testing manual</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="40"></div>
+        </div>
+        <span class="skill-pct">40%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Estructura AAA</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="70"></div>
+        </div>
+        <span class="skill-pct">70%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Funciones puras</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="60"></div>
+        </div>
+        <span class="skill-pct">60%</span>
+      </div>
+
+    </div>
+
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d59-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug recurrente:</strong> Pasaba `esperado` como argumento en el Act en vez del input real</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: `esperado` es para el Assert, nunca para el Act. El Act recibe inputs, no resultados</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug lógico:</strong> Assert comparaba `precio === esperado` ignorando `resultado` completamente</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: el Assert siempre compara `resultado === esperado`. Si no usa `resultado`, no es un Assert</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug sintaxis:</strong> Redefiní la función en el Act en vez de llamarla</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix: llamar una función es `const resultado = sumar(a, b)`, no `function sumar(a, b){}`</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Último test (`aplicarDescuento`) — Act y Assert correctos a la primera</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d59-lbl-code">Código del día</h3>
+
+      <pre class="code-block"><code>
+// Test unitario manual — estructura AAA
+function aplicarDescuento(precio, descuento) {
+  return precio - (precio * descuento / 100);
+}
+
+// Arrange
+let precio = 200;
+let descuento = 10;
+let esperado = 180;
+
+// Act
+const resultado = aplicarDescuento(precio, descuento);
+
+// Assert
+if (resultado === esperado) {
+  console.log(`Precio: ${precio} con descuento: ${descuento}% es de ${esperado} Euros`);
+} else {
+  console.log(`FAIL ✗ — esperaba ${esperado} pero obtuve ${resultado}`);
+}
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "Me gustó más de lo que pensaba. Y no era tan diferente a lo que ya hacía."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
 
 <!-- ============================
      DÍA 57 — ESPAÑOL
