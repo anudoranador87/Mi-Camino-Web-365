@@ -174,6 +174,205 @@
   </p>
 </section>
 <!-- ============================
+     DAY 61 — ENGLISH
+============================== -->
+<article class="entry" data-tags="js debug" aria-labelledby="title-d61">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 61</span>
+    <time datetime="2026-06-14" data-i18n="d61-date">June 14, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">JS</li>
+      <li class="etag">React</li>
+      <li class="etag">Debug</li>
+      <li class="etag">Hooks</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d61" data-i18n="d61-headline">
+    Today's session learning the Hooks that are making my life complicated — useRef, useMemo and useCallback.<br>Training my debugging eye.
+  </h2>
+
+  <p class="entry-deck" data-i18n="d61-deck">
+    It was a visual debugging session. These Hooks are hard for me to read and interpret. You only train this by catching the traps.
+  </p>
+
+  <div class="cols">
+
+    <!-- LEFT COLUMN -->
+    <div>
+
+      <h3 class="col-label" data-i18n="d61-lbl-star">STAR Summary</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> I've been learning React hooks theoretically and practically for weeks. Today the goal was different: read someone else's code and detect what's wrong, what works but isn't ideal, and what's perfect. 20 pieces prepared with real production traps.<br><br>
+        <strong>T —</strong> Correctly identify each piece: ✅ correct / ❌ bug / ⚠️ works but not ideal, and explain why in my own words.<br><br>
+        <strong>A —</strong> I analysed 20 pieces one by one covering useRef, useMemo, useCallback, Custom Hooks, React Router v6, Protected Routes with Outlet, and Rules of Hooks. When I got it wrong, I explained why I went down that path. When I had the right instinct and dismissed it, I owned it.<br><br>
+        <strong>R —</strong> I correctly identified most bugs. The hardest ones were stale closures with empty dependency arrays and Rules of Hooks violations from a hook called after a conditional return. My eye is getting better — I can tell because now I know where to look first.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d61-lbl-wins">Wins of the day</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">useRef clear — doesn't trigger re-render, the JSX display stays frozen</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">AbortController and signal are native browser JavaScript, not React — big click</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">useHistory = React Router v5. In v6 it's useNavigate. Legacy code identified</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">useMemo for functions = wrong. That's what useCallback is for</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">localStorage is synchronous — the lazy initializer in useState doesn't need useEffect</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">ProtectedRoute with Outlet — one single component protects all child routes in v6</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "Your instinct was right. Don't dismiss it."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d61-lbl-levels">Skill levels at end of day</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">useRef</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">useMemo</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="70"></div>
+        </div>
+        <span class="skill-pct">70%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">useCallback</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="60"></div>
+        </div>
+        <span class="skill-pct">60%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">React Router v6</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Debugging eye</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="68"></div>
+        </div>
+        <span class="skill-pct">68%</span>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d61-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1 — useRef counter:</strong> count.current++ doesn't trigger re-render. The display freezes at 0 forever even though the internal value goes up</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">If the screen needs to reflect the change → useState. If I just need to remember the value → useRef</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2 — incomplete deps:</strong> useMemo using filter in the factory but filter not in the array. User types in the search box and the list doesn't move</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Everything used inside useMemo goes in the array. No exceptions. ESLint exhaustive-deps catches it</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3 — fetchUserData without "use":</strong> Function with useState and useEffect inside named fetchUserData. React can't enforce Rules of Hooks without the prefix</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">If it has hooks inside, it's called useFetchUserData. No discussion</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4 — prevRef mutated during render:</strong> prevRef.current = value outside useEffect. By the time React paints the JSX it already equals value. Never shows the previous one</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Update the ref inside useEffect with no deps — after painting. That way the next render actually has the previous value</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 5 — hook after conditional return:</strong> I had the instinct ("shouldn't hooks go first?") and dismissed it. That was exactly the bug. Rules of Hooks violated</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Hooks always at the top. Never inside an if, loop, or after a return</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">The eye now knows where to look: dep arrays, function names, hook order, React Router version</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d61-lbl-code">Code of the day</h3>
+
+      <pre class="code-block"><code>
+// Rules of Hooks — the one that cost me the most today
+
+// ❌ Hook after conditional return
+function UserWidget({ isLoggedIn, userId }) {
+  if (!isLoggedIn) return &lt;p&gt;Login&lt;/p&gt;;
+  const { user } = useUser(userId); // WRONG — hook after return
+  return &lt;h1&gt;{user.name}&lt;/h1&gt;;
+}
+
+// ✅ Hooks always at the top
+function UserWidget({ isLoggedIn, userId }) {
+  const { user } = useUser(userId); // hooks first, always
+  if (!isLoggedIn) return &lt;p&gt;Login&lt;/p&gt;;
+  return &lt;h1&gt;{user.name}&lt;/h1&gt;;
+}
+
+// And these are not the same thing:
+setValue(!value);        // stale closure — can fail
+setValue(prev => !prev); // always uses the most recent state
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "AbortController, localStorage, setTimeout — they're browser JavaScript. React just wraps them with useEffect."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
+
+<!-- ============================
      DAY 60 — ENGLISH
 ============================== -->
 <article class="entry" data-tags="js" aria-labelledby="title-d60">
