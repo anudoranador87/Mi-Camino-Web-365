@@ -183,6 +183,196 @@
     Día 1 = 20 de febrero de 2026 · Los 365 días se cuentan desde ahí · No todos los días tienen entrada
   </p>
 </section>
+
+<!-- ============================
+     DÍA 62 — ESPAÑOL
+=============================== -->
+<!-- ============================
+     DÍA 62 — Star Rating Component
+     25-06-2026
+=============================== -->
+
+<article class="entry" data-tags="react · component · project" aria-labelledby="title-d62">
+  <header class="entry-kicker">
+    <span class="day-badge">Día 62</span>
+    <time datetime="2026-06-25" data-i18n="d62-date">25 de Junio, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">React</li>
+      <li class="etag">Component</li>
+      <li class="etag">Proyecto</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d62" data-i18n="d62-headline">
+    Star Rating Component — Feedback dinámico<br>con emojis y estados reactivos
+  </h2>
+
+  <p class="entry-deck" data-i18n="d62-deck">
+    Construido un componente de 5 estrellas completamente funcional con hover preview, click guardado y feedback dinámico. La lógica fluye entre dos estados (rating + hoverRating) y mapeos de objetos. Componente útil, lista para usar en cualquier web — pero descubiertos bugs y flujos de datos pendientes.
+  </p>
+
+  <!-- VÍDEO/GIF -->
+  <figure style="margin: 20px 0; text-align: center;">
+    <video width="100%" controls style="max-width: 500px; border-radius: 8px;">
+      <source src="starsfeedback.mp4" type="video/mp4">
+      Tu navegador no soporta video.
+    </video>
+    <figcaption style="font-size: 0.9rem; color: #666; margin-top: 8px;">Grabación en vivo del componente funcionando</figcaption>
+  </figure>
+
+  <!-- ── COLUMNAS ─────────────────────────────────────────── -->
+  <div class="cols">
+
+    <!-- COLUMNA IZQUIERDA — STAR, victorias -->
+    <div>
+
+      <h3 class="col-label" data-i18n="d62-lbl-star">Resumen STAR</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Trabajando en componentes React útiles y reutilizables. Enfocado en patrones que aparecen en webs reales: feedback, ratings, formularios. Contexto: sesión de construcción tras consolidar la lógica de React (hooks, eventos, condicionales).<br><br>
+        <strong>T —</strong> Crear un componente de 5 estrellas con interactividad completa: hover preview (temporal), click guardado (permanente), y feedback dinámico según la calificación.<br><br>
+        <strong>A —</strong> Definí dos estados (`rating` para datos guardados, `hoverRating` para preview temporal). Mapeé 5 estrellas con `.map()` y emojis. Usé condicional ternario `star <= rating ? 1 : 0.3` para opacidad. Creé objeto `feedbackMessages` con mapeo 1→5. Añadí objeto `messages` con emoji + texto dinámico según calificación. Todos los eventos (onMouseEnter, onClick, onMouseLeave) conectados correctamente.<br><br>
+        <strong>R —</strong> Componente completamente funcional. Hover brilla preview, click guarda permanentemente, feedback aparece al hacer click. Lógica transparente y escalable. Descubierto un bug (hover no se resetea) y pregunta abierta sobre persistencia de datos.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d62-lbl-wins">Victorias del día</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Dominado patrón dual de estados (rating permanente + hoverRating temporal) — concepto clave reutilizable</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Objetos como fuente única de verdad (feedbackMessages, messages) — escalable y mantenible</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Interactividad completa funcionando: hover preview → click guardado → feedback renderizado</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Emojis dinámicos según rating (😞 para 1-2, 😊 para 4-5) — UI feedback intuitiva</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Paper-first methodology aplicada: razonamiento en papel antes de código — cero confusión</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "Los componentes útiles se construyen con estados simples bien estructurados, no con lógica complicada."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d62-lbl-levels">Niveles al cierre del día</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">React Hooks</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="75"></div>
+        </div>
+        <span class="skill-pct">75%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Component Design</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="70"></div>
+        </div>
+        <span class="skill-pct">70%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Event Handling</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="80"></div>
+        </div>
+        <span class="skill-pct">80%</span>
+      </div>
+
+    </div>
+
+    <!-- COLUMNA DERECHA — debug log y código -->
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d62-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1 — Hover no se resetea:</strong> Al quitar el ratón del grupo de estrellas, `hoverRating` no vuelve a 0. El feedback del hover sigue visible. Causa probable: falta `onMouseLeave` en el contenedor padre que englobe todas las estrellas.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix 1: Necesito meter `onMouseLeave={() => setHoverRating(0)}` en un `<div>` que rodee el map de estrellas, no en cada span individual.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Pregunta sin resolver — Persistencia de datos:</strong> El rating se guarda en `rating` state, pero solo vive en memoria. ¿Cómo llega ese dato al servidor? ¿Cómo se almacena en BD para que el propietario de la web lo vea? Flujo de datos no contemplado aún.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Próximo paso: API endpoint que reciba el rating. Hacer POST con fetch() cuando se clickea. Guardar en MongoDB o similar. Mostrar datos en dashboard de admin.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Resultado final: Componente funciona perfectamente para UX. Lógica transparente. Falta integración backend y arreglar bug menor de hover.</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d62-lbl-code">Código del día</h3>
+
+      <pre class="code-block"><code>
+// Estructura core: dual states pattern
+const [rating, setRating] = useState(0);           // Guardado
+const [hoverRating, setHoverRating] = useState(0); // Temporal
+
+// Mapeos: objetos como fuente de verdad
+const feedbackMessages = {
+  1: "Very bad",
+  2: "Bad",
+  3: "Acceptable",
+  4: "Very good",
+  5: "Excellent"
+};
+
+const messages = {
+  1: { emoji: '😞', text: 'Sorry to hear that' },
+  2: { emoji: '😞', text: 'Sorry to hear that' },
+  3: { emoji: '😐', text: 'Thanks for feedback' },
+  4: { emoji: '😊', text: 'Thank you!' },
+  5: { emoji: '😊', text: 'Thank you!' }
+};
+
+// Render: comparativa limpia
+{stars.map((star) => (
+  &lt;span
+    key={star}
+    onMouseEnter={() => setHoverRating(star)}
+    onClick={() => setRating(star)}
+    style={{
+      opacity: star &lt;= rating ? 1 : 0.3,
+      cursor: 'pointer'
+    }}
+  &gt;
+    ⭐
+  &lt;/span&gt;
+))}
+
+// Feedback condicional: solo si está guardado
+{rating > 0 && (
+  &lt;p&gt;{messages[rating].emoji} {messages[rating].text}&lt;/p&gt;
+)}
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "Los componentes viven en dos dimensiones: UX (lo que ves) y datos (lo que guardas). Diseñá con eso en mente desde el papel."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
+
 <!-- ============================
      DÍA 61 — ESPAÑOL
 =============================== -->

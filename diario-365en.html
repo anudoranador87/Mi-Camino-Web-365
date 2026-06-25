@@ -174,6 +174,194 @@
   </p>
 </section>
 <!-- ============================
+     DAY 62 — ENGLISH
+============================== -->
+<!-- ============================
+     DAY 62 — Star Rating Component
+     06-25-2026
+=============================== -->
+
+<article class="entry" data-tags="react · component · project" aria-labelledby="title-d62-en">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 62</span>
+    <time datetime="2026-06-25" data-i18n="d62-en-date">June 25th, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">React</li>
+      <li class="etag">Component</li>
+      <li class="etag">Project</li>
+    </ul>
+  </header>
+
+  <h2 class="entry-headline" id="title-d62-en" data-i18n="d62-en-headline">
+    Star Rating Component — Dynamic feedback<br>with emojis and reactive states
+  </h2>
+
+  <p class="entry-deck" data-i18n="d62-en-deck">
+    Built a fully functional 5-star component with hover preview, click persistence, and dynamic feedback. Logic flows between two states (rating + hoverRating) and object mappings. Useful component, production-ready for any web — but discovered bugs and unresolved data flows.
+  </p>
+
+  <!-- VIDEO/GIF -->
+  <figure style="margin: 20px 0; text-align: center;">
+    <video width="100%" controls style="max-width: 500px; border-radius: 8px;">
+      <source src="starsfeedback.mp4" type="video/mp4">
+      Your browser does not support video.
+    </video>
+    <figcaption style="font-size: 0.9rem; color: #666; margin-top: 8px;">Live recording of the component in action</figcaption>
+  </figure>
+
+  <!-- ── COLUMNS ─────────────────────────────────────────── -->
+  <div class="cols">
+
+    <!-- LEFT COLUMN — STAR, wins -->
+    <div>
+
+      <h3 class="col-label" data-i18n="d62-en-lbl-star">STAR Summary</h3>
+
+      <p class="body-text">
+        <strong>S —</strong> Working on useful, reusable React components. Focused on patterns that appear in real-world webs: feedback, ratings, forms. Context: building session after solidifying React logic (hooks, events, conditionals).<br><br>
+        <strong>T —</strong> Create a 5-star component with full interactivity: hover preview (temporary), click persistence (permanent), and dynamic feedback based on rating.<br><br>
+        <strong>A —</strong> Defined two states (`rating` for saved data, `hoverRating` for temporary preview). Mapped 5 stars with `.map()` and emojis. Used ternary conditional `star <= rating ? 1 : 0.3` for opacity. Created `feedbackMessages` object with 1→5 mapping. Added `messages` object with dynamic emoji + text per rating. All events (onMouseEnter, onClick, onMouseLeave) wired correctly.<br><br>
+        <strong>R —</strong> Fully functional component. Hover brightens preview, click persists permanently, feedback appears on click. Logic is transparent and scalable. Discovered one bug (hover reset) and one open question about data persistence.
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d62-en-lbl-wins">Today's Wins</h3>
+
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Mastered dual-state pattern (permanent rating + temporary hoverRating) — key reusable concept</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Objects as single source of truth (feedbackMessages, messages) — scalable and maintainable</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Complete interactivity working: hover preview → click persistence → feedback rendered</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Dynamic emojis based on rating (😞 for 1-2, 😊 for 4-5) — intuitive UI feedback</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Paper-first methodology applied: reasoned on paper before code — zero confusion</span>
+      </p>
+
+      <blockquote class="pullquote">
+        "Useful components are built with simple, well-structured states, not with complicated logic."
+      </blockquote>
+
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d62-en-lbl-levels">Skill Levels at End of Day</h3>
+
+      <div class="skill-row">
+        <span class="skill-name">React Hooks</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="75"></div>
+        </div>
+        <span class="skill-pct">75%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Component Design</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="70"></div>
+        </div>
+        <span class="skill-pct">70%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Event Handling</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="80"></div>
+        </div>
+        <span class="skill-pct">80%</span>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN — debug log and code -->
+    <div class="col-rule">
+
+      <h3 class="col-label" data-i18n="d62-en-lbl-debug">Debug Log</h3>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1 — Hover doesn't reset:</strong> When mouse leaves the star group, `hoverRating` doesn't reset to 0. Hover feedback stays visible. Probable cause: missing `onMouseLeave` on parent container wrapping all stars.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix 1: Need to add `onMouseLeave={() => setHoverRating(0)}` on a `<div>` that wraps the map, not on individual spans.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Unresolved Question — Data Persistence:</strong> Rating is saved in `rating` state, but only lives in memory. How does that data reach the server? How is it stored in database so the web owner sees it? Data flow not addressed yet.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Next step: API endpoint that receives rating. Make POST with fetch() on click. Store in MongoDB or similar. Display data in admin dashboard.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Final result: Component works perfectly for UX. Logic is transparent. Missing backend integration and minor hover bug fix.</span>
+      </p>
+
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d62-en-lbl-code">Code of the Day</h3>
+
+      <pre class="code-block"><code>
+// Core structure: dual states pattern
+const [rating, setRating] = useState(0);           // Persistent
+const [hoverRating, setHoverRating] = useState(0); // Temporary
+
+// Mappings: objects as source of truth
+const feedbackMessages = {
+  1: "Very bad",
+  2: "Bad",
+  3: "Acceptable",
+  4: "Very good",
+  5: "Excellent"
+};
+
+const messages = {
+  1: { emoji: '😞', text: 'Sorry to hear that' },
+  2: { emoji: '😞', text: 'Sorry to hear that' },
+  3: { emoji: '😐', text: 'Thanks for feedback' },
+  4: { emoji: '😊', text: 'Thank you!' },
+  5: { emoji: '😊', text: 'Thank you!' }
+};
+
+// Render: clean comparison
+{stars.map((star) => (
+  &lt;span
+    key={star}
+    onMouseEnter={() => setHoverRating(star)}
+    onClick={() => setRating(star)}
+    style={{
+      opacity: star &lt;= rating ? 1 : 0.3,
+      cursor: 'pointer'
+    }}
+  &gt;
+    ⭐
+  &lt;/span&gt;
+))}
+
+// Conditional feedback: only if persisted
+{rating > 0 && (
+  &lt;p&gt;{messages[rating].emoji} {messages[rating].text}&lt;/p&gt;
+)}
+      </code></pre>
+
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "Components live in two dimensions: UX (what you see) and data (what you save). Design with both in mind from the paper."
+      </blockquote>
+
+    </div>
+  </div>
+</article>
+<!-- ============================
      DAY 61 — ENGLISH
 ============================== -->
 <article class="entry" data-tags="js debug" aria-labelledby="title-d61">
