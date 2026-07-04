@@ -174,8 +174,132 @@
   </p>
 </section>
 <!-- ============================
-     DAY 62 — ENGLISH
+     DAY 63 — ENGLISH
 ============================== -->
+<!-- ============================
+     DAY 63 — FIRST CONTACT WITH PYTHON
+=============================== -->
+ 
+<article class="entry" data-tags="python algo debug" aria-labelledby="title-d63-en">
+  <header class="entry-kicker">
+    <span class="day-badge">Day 63</span>
+    <time datetime="2026-07-04" data-i18n="d63-date-en">July 4, 2026</time>
+    <ul class="entry-tags" aria-label="Categories">
+      <li class="etag">Python</li>
+      <li class="etag">Algorithms</li>
+      <li class="etag">Debug</li>
+      <li class="etag">Reflection</li>
+    </ul>
+  </header>
+ 
+  <h2 class="entry-headline" id="title-d63-en" data-i18n="d63-headline-en">
+    Back on the log with a new language.<br>Python, strings, and the same old brain.
+  </h2>
+ 
+  <p class="entry-deck" data-i18n="d63-deck-en">
+    Over two weeks without writing here. I needed to switch my brain off for a bit. Coming
+    back with a new goal: Python, driven by real needs in backend work and IT automation.
+    First day on strings, and there's already a solid mental click waiting in the Debug Log.
+  </p>
+ 
+  <div class="cols">
+ 
+    <div>
+      <h3 class="col-label" data-i18n="d63-lbl-star-en">STAR Summary</h3>
+ 
+      <p class="body-text">
+        <strong>S —</strong> After a mental break of more than two weeks without touching the log, I'm picking studying back up with a new language: Python, motivated by its weight in backend development and IT systems automation.<br><br>
+        <strong>T —</strong> Master the essential string manipulation methods in Python (transformation, cleaning, search, splitting) by leaning on the logic I already built in JavaScript.<br><br>
+        <strong>A —</strong> Socratic session going method by method: transformation (.upper/.lower/.title), cleaning (.strip/.replace), method chaining, and a deep dive into string immutability comparing it against my JS mental model. Closed the session starting the is_palindrome exercise.<br><br>
+        <strong>R —</strong> I nailed Python's immutability model from the ground up (reassigning ≠ mutating), correctly worked out how many new string objects a chained call produces, and confirmed my JavaScript programming logic transfers almost 1:1 — only the vocabulary changes.
+      </p>
+ 
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d63-lbl-wins-en">Wins of the day</h3>
+ 
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Understood the real difference between reassigning a variable and mutating an object in memory — using the numero = numero + 1 parallel from JS.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Correctly calculated that texto.strip().title().replace() creates 3 new strings in memory, none of them the original.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Worked out on my own that .strip().lower() and .lower().strip() are commutative, and understood why (they operate on different "dimensions" of the string).</span>
+      </p>
+ 
+      <blockquote class="pullquote">
+        "Reassigning isn't mutating: the label moves house, the old house stays empty with nobody inside."
+      </blockquote>
+ 
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d63-lbl-levels-en">Levels at day's close</h3>
+ 
+      <div class="skill-row">
+        <span class="skill-name">Python Strings</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="40"></div>
+        </div>
+        <span class="skill-pct">40%</span>
+      </div>
+ 
+      <div class="skill-row">
+        <span class="skill-name">JS → Python Logic</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+ 
+    </div>
+ 
+    <div class="col-rule">
+ 
+      <h3 class="col-label" data-i18n="d63-lbl-debug-en">Debug Log</h3>
+ 
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> Logical contradiction describing texto.upper() — said "you're mutating it" and "it's immutable" in the same sentence, without noticing both claims can't be true at once.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix 1: Told apart calling a method without reassigning (texto.upper() on its own changes nothing) from reassigning (texto = texto.upper(), which does change what object the variable points to).</span>
+      </p>
+ 
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> Kept calling the reassignment texto = texto.upper() a "mutation."</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix 2: Solved it with the JS analogy numero = numero + 1 — there I'd never doubt that's a brand new value, not a mutation of the original 5. Same principle applies to Python strings.</span>
+      </p>
+ 
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Final result: immutability model internalized + started (not finished) the is_palindrome exercise using for, string concatenation with +, and string comparison.</span>
+      </p>
+ 
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d63-lbl-code-en">Code of the day</h3>
+ 
+      <pre class="code-block"><code>
+# Cleaning up messy input (real case: a guest's badly typed email)
+entrada = "  Jose.Aparicio87@GMAIL.com  "
+entrada = entrada.strip().lower()
+# result: "jose.aparicio87@gmail.com"
+ 
+# Pending for tomorrow: finish is_palindrome
+# using for letter in input_string + string concatenation
+      </code></pre>
+ 
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "All that suffering learning JS wasn't wasted — turns out I already knew how to program, I just needed the accent."
+      </blockquote>
+ 
+    </div>
+  </div>
+</article>
+
 <!-- ============================
      DAY 62 — Star Rating Component
      06-25-2026

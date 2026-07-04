@@ -183,14 +183,138 @@
     Día 1 = 20 de febrero de 2026 · Los 365 días se cuentan desde ahí · No todos los días tienen entrada
   </p>
 </section>
+<!-- ============================
+     DÍA 63 — ESPAÑOL
+=============================== -->
+<!-- ============================
+     DÍA 63 — PRIMER CONTACTO CON PYTHON
+=============================== -->
+ 
+<article class="entry" data-tags="python algo debug" aria-labelledby="title-d63">
+  <header class="entry-kicker">
+    <span class="day-badge">Día 63</span>
+    <time datetime="2026-07-04" data-i18n="d63-date">04 de Julio, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">Python</li>
+      <li class="etag">Algoritmos</li>
+      <li class="etag">Debug</li>
+      <li class="etag">Reflexión</li>
+    </ul>
+  </header>
+ 
+  <h2 class="entry-headline" id="title-d63" data-i18n="d63-headline">
+    Vuelvo a la Bitácora con un idioma nuevo.<br>Python, strings, y el mismo cerebro de siempre.
+  </h2>
+ 
+  <p class="entry-deck" data-i18n="d63-deck">
+    Más de dos semanas sin escribir aquí. Necesitaba parar la cabeza. Vuelvo con un objetivo
+    nuevo: Python, por necesidad real de backend y automatización IT. Primer día de strings
+    y ya hay un click mental gordo esperando en el Debug Log.
+  </p>
+ 
+  <div class="cols">
+ 
+    <div>
+      <h3 class="col-label" data-i18n="d63-lbl-star">Resumen STAR</h3>
+ 
+      <p class="body-text">
+        <strong>S —</strong> Después de un descanso mental de más de dos semanas sin tocar el diario, retomo el estudio con un lenguaje nuevo: Python, motivado por su peso en backend y en automatización de sistemas IT.<br><br>
+        <strong>T —</strong> Dominar los métodos esenciales de manipulación de strings en Python (transformación, limpieza, búsqueda, división) partiendo de mi lógica ya construida en JavaScript.<br><br>
+        <strong>A —</strong> Sesión socrática método a método: transformación (.upper/.lower/.title), limpieza (.strip/.replace), encadenamiento de métodos, y un análisis a fondo de la inmutabilidad de los strings comparando con el modelo mental de JS. Cerré con el arranque del ejercicio is_palindrome.<br><br>
+        <strong>R —</strong> Entendí de raíz el modelo de inmutabilidad de Python (reasignar ≠ mutar), calculé correctamente cuántos objetos string nuevos genera una cadena de métodos, y confirmé que mi lógica de programación de JS se traslada casi 1:1 — solo cambia el vocabulario.
+      </p>
+ 
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d63-lbl-wins">Victorias del día</h3>
+ 
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Entendí la diferencia real entre reasignar una variable y mutar un objeto en memoria — con el paralelismo numero = numero + 1 de JS.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Calculé correctamente que texto.strip().title().replace() genera 3 strings nuevos en memoria, ninguno de ellos el original.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text">Resolví solo que .strip().lower() y .lower().strip() son conmutables, y entendí por qué (operan en "dimensiones" distintas del string).</span>
+      </p>
+ 
+      <blockquote class="pullquote">
+        "Reasignar no es mutar: la etiqueta se muda de casa, la casa vieja se queda vacía y sin nadie dentro."
+      </blockquote>
+ 
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d63-lbl-levels">Niveles al cierre del día</h3>
+ 
+      <div class="skill-row">
+        <span class="skill-name">Python Strings</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="40"></div>
+        </div>
+        <span class="skill-pct">40%</span>
+      </div>
+ 
+      <div class="skill-row">
+        <span class="skill-name">Lógica JS → Python</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="65"></div>
+        </div>
+        <span class="skill-pct">65%</span>
+      </div>
+ 
+    </div>
+ 
+    <div class="col-rule">
+ 
+      <h3 class="col-label" data-i18n="d63-lbl-debug">Debug Log</h3>
+ 
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1:</strong> Contradicción lógica al describir texto.upper() — dije "lo estás mutando" e "es inmutable" en la misma frase, sin ver que ambas afirmaciones no pueden ser ciertas a la vez.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix 1: Diferencié llamar a un método sin reasignar (texto.upper() suelto, no cambia nada) de reasignar (texto = texto.upper(), que sí cambia a qué objeto apunta la variable).</span>
+      </p>
+ 
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2:</strong> Insistí en llamar "mutación" a la reasignación de texto = texto.upper().</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text">Fix 2: Lo resolví con la analogía de JS numero = numero + 1 — ahí nunca dudaría que es un valor nuevo, no una mutación del 5 original. Mismo principio en Python con strings.</span>
+      </p>
+ 
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text">Resultado final: modelo de inmutabilidad interiorizado + arranqué (sin terminar) el ejercicio is_palindrome usando for, concatenación con + y comparación de strings.</span>
+      </p>
+ 
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d63-lbl-code">Código del día</h3>
+ 
+      <pre class="code-block"><code>
+# Normalización de un input sucio (caso real: email de huésped mal escrito)
+entrada = "  Jose.Aparicio87@GMAIL.com  "
+entrada = entrada.strip().lower()
+# resultado: "jose.aparicio87@gmail.com"
+ 
+# Pendiente para mañana: terminar is_palindrome
+# usando for letter in input_string + concatenación
+      </code></pre>
+ 
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "Todo el sufrimiento con JS no fue en vano — resulta que ya sabía programar, solo me faltaba el acento."
+      </blockquote>
+ 
+    </div>
+  </div>
+</article>
+ 
 
 <!-- ============================
      DÍA 62 — ESPAÑOL
 =============================== -->
-<!-- ============================
-     DÍA 62 — Star Rating Component
-     25-06-2026
-=============================== -->
+
 
 <article class="entry" data-tags="react · component · project" aria-labelledby="title-d62">
   <header class="entry-kicker">
