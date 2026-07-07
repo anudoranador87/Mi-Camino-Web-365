@@ -184,8 +184,189 @@
   </p>
 </section>
 <!-- ============================
-     DÍA 63 — ESPAÑOL
+     DÍA 64 — LISTAS EN PYTHON: INDEXING, SLICING, MODIFICACIÓN (6/10)
+     
+     Fecha: 07 de Julio, 2026
+     Tags: Python · Arrays · Listas · Debug · Transición JS/Python
 =============================== -->
+ 
+<article class="entry" data-tags="python · algo · debug" aria-labelledby="title-d64">
+  <header class="entry-kicker">
+    <span class="day-badge">Día 64</span>
+    <time datetime="2026-07-07" data-i18n="d64-date">07 de Julio, 2026</time>
+    <ul class="entry-tags" aria-label="Categorías">
+      <li class="etag">Python</li>
+      <li class="etag">Arrays/Listas</li>
+      <li class="etag">Debug</li>
+      <li class="etag">Transición JS→Python</li>
+    </ul>
+  </header>
+ 
+  <h2 class="entry-headline" id="title-d64" data-i18n="d64-headline">
+    Listas en Python: indexing, slicing, y modificación.<br>Del ❌ al ✅ en 6 ejercicios paso a paso.
+  </h2>
+ 
+  <p class="entry-deck" data-i18n="d64-deck">
+    Completé 6 de 10 ejercicios progresivos de listas Python. Conceptos claros: indexing, slicing con stride, append, insert, remove. Errores clave: confusión slice-vs-assignment, intención de métodos (.remove() solo primera ocurrencia), y la sorpresa de que Python interpreta strings caractér-por-caractér cuando asignas a un slice.
+  </p>
+ 
+  <div class="cols">
+ 
+    <div>
+ 
+      <h3 class="col-label" data-i18n="d64-lbl-star">Resumen STAR</h3>
+ 
+      <p class="body-text">
+        <strong>S —</strong> Día de aprendizaje: Python listas desde cero, usando 10 ejercicios progresivos mentor-driven (hago código, Claude corrige).<br><br>
+        <strong>T —</strong> Dominar estructuras de datos fundamentales en Python: cómo acceder, modificar, buscar y eliminar elementos. Entender diferencias respecto a JavaScript arrays.<br><br>
+        <strong>A —</strong> Aprendizaje iterativo: ejercicio → escribe código → recibe feedback → autocorrección → siguiente. Documenté analogías JS/Python en vivo. Usé el "gancho" del concepto (ej: "slice = [inicio:fin:paso]") para anclar la sintaxis.<br><br>
+        <strong>R —</strong> 6 ejercicios completados, 100% correcto en indexing/slicing/append/insert/remove. Comenzado ejercicio 7 (.pop()). Preparado para loguear en Diario.
+      </p>
+ 
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d64-lbl-wins">Victorias del día</h3>
+ 
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text"><strong>Indexing dominado:</strong> positivos (0, 1, 2...) y negativos (-1, -2...) — sintaxis clara</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text"><strong>Slicing con stride:</strong> `lista[inicio:fin:paso]` — entendió que `.slice()` NO existe en Python</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text"><strong>Assignment vs Insert:</strong> vio su propio error (reemplazar vs insertar), se autocorrigió sin ayuda</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text"><strong>Métodos de modificación:</strong> `.append()`, `.insert(pos, val)`, `.remove(val)` — comportamientos claros</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon w">+</span>
+        <span class="li-text"><strong>Pensamiento crítico:</strong> preguntó sobre `.pop(-2)`, reconoció que `.remove()` solo elimina la primera ocurrencia</span>
+      </p>
+ 
+      <blockquote class="pullquote">
+        "Las listas en Python son como arrays en JavaScript, pero Python es más explícito: slicing integrado, métodos que retornan valores, y cada error enseña la intención de la estructura."
+      </blockquote>
+ 
+      <h3 class="col-label" style="margin-top:16px" data-i18n="d64-lbl-levels">Niveles al cierre del día</h3>
+ 
+      <div class="skill-row">
+        <span class="skill-name">Listas Python (indexing)</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="85"></div>
+        </div>
+        <span class="skill-pct">85%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Listas Python (slicing)</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="80"></div>
+        </div>
+        <span class="skill-pct">80%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Listas Python (métodos de modificación)</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="75"></div>
+        </div>
+        <span class="skill-pct">75%</span>
+      </div>
+
+      <div class="skill-row">
+        <span class="skill-name">Transición mentalidad JS → Python</span>
+        <div class="skill-bar-bg" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+          <div class="skill-bar-fill" data-width="70"></div>
+        </div>
+        <span class="skill-pct">70%</span>
+      </div>
+ 
+    </div>
+ 
+    <div class="col-rule">
+ 
+      <h3 class="col-label" data-i18n="d64-lbl-debug">Debug Log</h3>
+ 
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 1 (Ej 2):</strong> Confusión sintaxis — escribí `servicios.slice(0:2)` buscando método .slice() de JS. Python NO tiene .slice() nativo; usa corchetes.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text"><strong>Fix 1:</strong> Slicing en Python es sintaxis, no método: `lista[inicio:fin:paso]` con corchetes. Raiz: mentalidad JS (todo es método) vs Python (sintaxis nativa).</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 2 (Ej 3):</strong> Asigné string a un slice: `habitaciones[0:2] = "revisada"`. Python lo interpretó como caracteres individuales ['r','e','v','i','s','a','d','a'], no como un elemento.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text"><strong>Fix 2:</strong> Principio: "Si reemplazas N posiciones, asigna N elementos." Slice `[0:2]` = 2 posiciones → necesita lista con 2 elementos: `["revisada", "revisada"]`.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 3 (Ej 3 original):</strong> Intenté usar assignment como si fuera insert: `habitaciones[1] = "ocupada"` en lugar de `.insert(1, "ocupada")`.</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text"><strong>Fix 3:</strong> Autocorrección: vio el error ("no estoy insertando, estoy modificando"), reescribió con `.insert()`. Diferencia clave: `[i] =` reemplaza; `.insert(i, val)` inserta y desplaza.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon b">✗</span>
+        <span class="li-text"><strong>Bug 4 (Conceptual):</strong> Preguntó si `.remove()` eliminaría "Parking" dos veces (había 2 ocurrencias). Asumía behavior de "remove all".</span>
+      </p>
+      <p class="log-item">
+        <span class="li-icon f">→</span>
+        <span class="li-text"><strong>Fix 4:</strong> `.remove(valor)` elimina SOLO la primera ocurrencia. Reconoció correcto después de prueba. Nota para después: loop `for` + remove para eliminar todas.</span>
+      </p>
+
+      <p class="log-item">
+        <span class="li-icon w">✓</span>
+        <span class="li-text"><strong>Resultado final:</strong> 6/6 ejercicios completados 100% correcto. Pronto: .pop(), .clear(), .extend(), .sort(), .reverse().</span>
+      </p>
+ 
+      <h3 class="col-label" style="margin-top:20px" data-i18n="d64-lbl-code">Código del día</h3>
+ 
+      <pre class="code-block"><code>
+# Ejercicio 2: Slicing — descubrimiento del [inicio:fin:paso]
+servicios = ["WiFi", "Parking", "Desayuno", "Spa", "Transporte", "Gym"]
+
+print(servicios[0:3])    # ['WiFi', 'Parking', 'Desayuno']
+print(servicios[2:])     # ['Desayuno', 'Spa', 'Transporte', 'Gym']
+print(servicios[-2:])    # ['Transporte', 'Gym']
+print(servicios[::2])    # ['WiFi', 'Desayuno', 'Transporte']  ← stride!
+
+# Ejercicio 3: Assignment en slice — requiere lista
+habitaciones = ["ocupada", "libre", "ocupada", "libre", "mantenimiento"]
+habitaciones[0:2] = ["revisada", "revisada"]  # ← 2 posiciones = 2 elementos
+print(habitaciones)  # ['revisada', 'revisada', 'ocupada', 'libre', 'mantenimiento']
+
+# Ejercicio 5: Insert vs Assignment
+tareas = ["Limpiar recepción", "Atender clientes", "Hacer reportes"]
+tareas.insert(1, "Revisar inventario")  # Inserta, no reemplaza
+tareas.insert(0, "Preparar café")
+print(tareas)
+# ['Preparar café', 'Limpiar recepción', 'Revisar inventario', 'Atender clientes', 'Hacer reportes']
+
+# Ejercicio 6: Remove — solo primera ocurrencia
+servicios = ["WiFi", "Parking", "Desayuno", "Parking", "Spa", "Gym"]
+servicios.remove("Parking")  # Elimina el PRIMER "Parking" solamente
+print(servicios)  # ['WiFi', 'Desayuno', 'Parking', 'Spa', 'Gym'] ← segundo Parking sigue ahí
+      </code></pre>
+ 
+      <blockquote class="pullquote" style="font-size:0.9rem;">
+        "Transición JS→Python: No es traducción sintaxis-a-sintaxis. Es aprender que Python integra características (slicing, métodos modificadores que retornan) que en JS vienen de librerías o lógica manual. Cada bug es una lección sobre intención."
+      </blockquote>
+ 
+    </div>
+  </div>
+</article>
 <!-- ============================
      DÍA 63 — PRIMER CONTACTO CON PYTHON
 =============================== -->
