@@ -366,3 +366,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const mastheadCount = document.getElementById('masthead-count');
   if (mastheadCount) mastheadCount.textContent = String(daysCount);
 });
+
+// ---------- Fade‑in on scroll ----------
+const fadeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-section').forEach(el => fadeObserver.observe(el));

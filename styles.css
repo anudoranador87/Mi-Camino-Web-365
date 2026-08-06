@@ -9,6 +9,7 @@
   --ink-soft: #444;
   --accent: #0056d2;
   --accent-soft: #dce8ff;
+  --accent-gradient: linear-gradient(135deg, #0066ff, #5a00ff);
   --mono: "Space Mono", monospace;
   --serif: "Libre Baskerville", serif;
   --display: "Playfair Display", serif;
@@ -17,8 +18,8 @@
   --radius: 6px;
   --shadow-soft: 0 4px 12px rgba(0,0,0,0.08);
   --shadow-hard: 0 8px 20px rgba(0,0,0,0.12);
-
   --speed: 0.25s;
+  --fade-distance: 20px;
 }
 
 html.dark-mode {
@@ -352,7 +353,7 @@ html.dark-mode .close-banner {
   top: 0;
   left: 0;
   width: 100%;
-  background: var(--paper);
+  background: rgba(255, 255, 255, 0.6);
   border-bottom: 1px solid var(--paper-d);
   padding: 14px 4%;
   display: flex;
@@ -361,6 +362,8 @@ html.dark-mode .close-banner {
   gap: 14px;
   flex-wrap: wrap;
   z-index: 100;
+  backdrop-filter: saturate(180%) blur(6px);
+  transition: background var(--speed), padding var(--speed);
 }
 
 .nav-brand {
@@ -400,14 +403,15 @@ html.dark-mode .close-banner {
 
 .nav-cta {
   padding: 6px 14px;
-  background: var(--accent);
+  background: var(--accent-gradient);
   color: white !important;
   border-radius: var(--radius);
-  transition: background var(--speed);
+  transition: background var(--speed), transform var(--speed);
 }
 
 .nav-cta:hover {
-  background: #003c96;
+  background: var(--accent-gradient);
+  transform: translateY(-2px);
 }
 
 .lang-btn {
@@ -478,6 +482,9 @@ html.dark-mode .theme-toggle {
   padding: 60px 4% 40px;
   border-bottom: 1px solid var(--paper-d);
   width: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(6px);
+  transition: opacity var(--speed), transform var(--speed);
 }
 
 .mast-top {
@@ -522,6 +529,9 @@ html.dark-mode .theme-toggle {
   padding: 30px 4%;
   border-bottom: 1px solid var(--paper-d);
   width: 100%;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(5px);
+  transition: opacity var(--speed), transform var(--speed);
 }
 
 .stat-item {
@@ -553,10 +563,12 @@ html.dark-mode .theme-toggle {
   border-bottom: 1px solid var(--paper-d);
   position: sticky;
   top: 57px;
-  background: var(--paper);
+  background: rgba(255, 255, 255, 0.6);
   z-index: 40;
   width: 100%;
   flex-wrap: wrap;
+  backdrop-filter: saturate(180%) blur(8px);
+  transition: background var(--speed);
 }
 
 .filter-btn {
@@ -574,7 +586,7 @@ html.dark-mode .theme-toggle {
 }
 
 .filter-btn.active {
-  background: var(--accent);
+  background: var(--accent-gradient);
   color: white;
   border-color: var(--accent);
 }
@@ -584,9 +596,19 @@ html.dark-mode .theme-toggle {
 ========================================= */
 
 .entry {
-  padding: 50px 0;
-  border-bottom: 1px solid var(--paper-d);
+  padding: 30px;
+  margin: 20px 0;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--paper-d);
+  box-shadow: var(--shadow-soft);
   width: 100%;
+  transition: transform var(--speed), box-shadow var(--speed);
+}
+.entry:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hard);
 }
 
 .entry:last-of-type {
@@ -682,6 +704,9 @@ html.dark-mode .theme-toggle {
   border-left: 4px solid var(--accent);
   padding-left: 16px;
   margin: 20px 0;
+  background: rgba(255,255,255,0.3);
+  backdrop-filter: blur(4px);
+  border-radius: var(--radius);
 }
 
 /* =========================================
