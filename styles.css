@@ -11,9 +11,10 @@
   --accent-soft: #dce8ff;
   --accent-gradient: linear-gradient(135deg, #0066ff, #5a00ff);
   --mono: "Space Mono", monospace;
+  --bg-gradient: linear-gradient(135deg, #003541, #190045);
   --serif: "Libre Baskerville", serif;
   --display: "Playfair Display", serif;
-  --sans: "DM Sans", sans-serif;
+  --sans: "Inter", sans-serif;
 
   --radius: 6px;
   --shadow-soft: 0 4px 12px rgba(0,0,0,0.08);
@@ -61,7 +62,7 @@ html {
 }
 
 body {
-  background: var(--paper);
+  background: var(--bg-gradient);
   color: var(--ink);
   font-family: var(--sans);
   line-height: 1.6;
@@ -613,6 +614,15 @@ html.dark-mode .theme-toggle {
 
 .entry:last-of-type {
   border-bottom: none;
+}
+
+/* Glassmorphism card */
+.glass-card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius);
+  border: 1px solid var(--paper-d);
+  box-shadow: var(--shadow-soft);
 }
 
 .entry-kicker {
